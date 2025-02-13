@@ -1,0 +1,32 @@
+# Ignore node_modules in all packages
+node_modules
+**/node_modules
+
+# Turbo build cache
+.turbo
+
+# Environment variables
+*.env
+!.env.example  # Keep an example file for reference
+
+# pnpm lock file (should be committed)
+.pnpm-store
+
+# Build artifacts
+dist
+build
+*.log
+*.cache
+
+# Ignore monorepo-related package files
+.yarn
+.pnp.*
+.pnpm-debug.log
+
+# Ignore local configuration files (VS Code, JetBrains, etc.)
+.vscode
+.idea
+
+# Ignore Mac and system files
+.DS_Store
+Thumbs.db
