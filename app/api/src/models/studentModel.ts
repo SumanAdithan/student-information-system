@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import { Student, UpdateStudent } from '@sis/types';
 
 const studentSchema = new mongoose.Schema({
     profileImage: {
@@ -78,5 +79,11 @@ const studentSchema = new mongoose.Schema({
 
 export const studentModel = mongoose.model('Student', studentSchema);
 export const getAllStudents = () => studentModel.find();
-export const addStudentsData=(students:any) => studentModel.insertMany(students);
-export const deleteStudentsData=() => studentModel.deleteMany();
+export const createStudent = (student: Student) => studentModel.create(student);
+export const getStudentByID = (id: string) => studentModel.findById(id);
+export const updateStudentByID = (id: string, updatedItems: UpdateStudent) =>
+    studentModel.findByIdAndUpdate(id, updatedItems, { new: true, runValidators: true });
+export const deleteStudentByID = (id: string) => studentModel.findByIdAndDelete(id);
+
+export const addStudentsData = (students: any) => studentModel.insertMany(students);
+export const deleteStudentsData = () => studentModel.deleteMany();
