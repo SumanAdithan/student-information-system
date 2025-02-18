@@ -6,7 +6,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start:dev": "nodemon",
-        "seeder":"ts-node -r tsconfig-paths/register ./src/utils/seeder.ts"
+        "seeder": "ts-node -r tsconfig-paths/register ./src/utils/seeder.ts"
     },
     "keywords": [],
     "author": "",
@@ -18,6 +18,7 @@
         "tsconfig-paths": "^4.2.0"
     },
     "devDependencies": {
+        "@sis/types": "workspace:^",
         "@types/express": "^5.0.0",
         "@types/express-serve-static-core": "5.0.6",
         "nodemon": "^3.1.9",
