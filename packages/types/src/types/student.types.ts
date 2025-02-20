@@ -17,6 +17,7 @@ export interface Student {
     email: string;
     mobile: number;
     accomodation: String;
+    semesterWord?: String;
 }
 
 export interface UpdateStudent {

@@ -1,6 +1,7 @@
 import { catchAsyncError } from '@middlewares';
 import { createStudent, deleteStudentByID, getAllStudents, getStudentByID, updateStudentByID } from '@models';
-import { ErrorHandler } from '@utils';
+import { Student, StudentDTO, StudentDTOType } from '@sis/types';
+import { ErrorHandler,assignDefaultData } from '@utils';
 import { NextFunction, Request, Response } from 'express-serve-static-core';
 
 // Get Students - /api/v1/students
@@ -13,13 +14,19 @@ export const getStudents = catchAsyncError(async (req: Request, res: Response, n
 });
 
 // Create Student - /api/v1/student/new
-export const newStudent = catchAsyncError(async (req: Request, res: Response, next: NextFunction) => {
-    const newStudent = req.body;
-    const student = await createStudent(newStudent);
+export const newStudent = catchAsyncError(async (req: Request<{},{},StudentDTO>, res: Response, next: NextFunction) => {
+    const student = StudentDTOType.safeParse(req.body);
+    if(!student.success) {
+        const error = student.error.format();
+        console.error(error);
+        return next(new ErrorHandler('Validation Failed',400));
+    }
+    const newStudent = await createStudent(student.data as Student);
+    await assignDefaultData([newStudent])
     return res.status(201).json({
-        success: true,
-        student,
-    });
+      success: true,
+        newStudent,
+   });
 });
 
 // Update Student - /api/v1/student/:id
