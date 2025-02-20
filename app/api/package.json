@@ -15,7 +15,8 @@
         "dotenv": "^16.4.7",
         "express": "^4.21.2",
         "mongoose": "^8.10.0",
-        "tsconfig-paths": "^4.2.0"
+        "tsconfig-paths": "^4.2.0",
+        "zod": "^3.24.2"
     },
     "devDependencies": {
         "@sis/types": "workspace:^",

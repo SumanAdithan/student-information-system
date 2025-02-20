@@ -1,7 +1,11 @@
-import { addInternalMarkData, addSemesterResultData } from '@models';
-import { Assignment, InternalMark, SemesterGrade, SemesterResult, Semesters, Student } from '@sis/types';
-import { addAssignmentData } from 'models/assignmentModel';
-import { findRegulationInfo } from 'models/regulationInfoModel';
+import {
+    createAssignmentResult,
+    createDues,
+    createInternalResult,
+    createSemesterResult,
+    findRegulationInfo,
+} from '@models';
+import { AssignmentResult, InternalResult, SemesterResult, Semesters, Student } from '@sis/types';
 
 export const assignDefaultData = async (students: Student[]) => {
     await Promise.all(
@@ -24,28 +28,27 @@ export const assignDefaultData = async (students: Student[]) => {
                     { ...initialState, results: {} as Record<string, any> }
                 );
 
-                 const internal = [...assignment, 'semester'];
-                 const internalResult = internal.reduce(
-                     (acc, key) => {
-                         acc.results[key] = subjects;
-                         return acc;
-                     },
-                     { ...initialState, results: {} as Record<string, any> }
-                 );
-                 
+                const internal = [...assignment, 'semester'];
+                const internalResult = internal.reduce(
+                    (acc, key) => {
+                        acc.results[key] = subjects;
+                        return acc;
+                    },
+                    { ...initialState, results: {} as Record<string, any> }
+                );
 
-                 const semesterResult = Object.entries(regulationInfo.semesters).reduce(
-                     (acc, [key, val]) => {
-                         acc.results[key] = [...val.subjects, ...val.laboratory];
-                         return acc;
-                     },
-                     { ...initialState, results: {} as Record<string, any> }
-                 );
+                const semesterResult = Object.entries(regulationInfo.semesters).reduce(
+                    (acc, [key, val]) => {
+                        acc.results[key] = [...val.subjects, ...val.laboratory];
+                        return acc;
+                    },
+                    { ...initialState, results: {} as Record<string, any> }
+                );
 
-                await addAssignmentData([assignmentResult as Assignment]);
-                await addInternalMarkData([internalResult as InternalMark]);
-                await addSemesterResultData([semesterResult as SemesterGrade]);
-               
+                await createAssignmentResult(assignmentResult as AssignmentResult);
+                await createInternalResult(internalResult as InternalResult);
+                await createSemesterResult(semesterResult as SemesterResult);
+                await createDues(initialState);
 
                 return;
             } catch (err) {
