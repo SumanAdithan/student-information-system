@@ -1,0 +1,92 @@
+{
+    "regulation": "R2021",
+    "semesters": {
+        "one": {
+            "subjects": [
+                { "code": "HS3152", "name": "Professional English - I" },
+                { "code": "MA3151", "name": "Matrices and Calculus" },
+                { "code": "PH3151", "name": "Engineering Physics" },
+                { "code": "CY3151", "name": "Engineering Chemistry" },
+                { "code": "GE3151", "name": "Problem Solving and Python Programming" }
+            ],
+            "laboratory": [
+                { "code": "GE3171", "name": "Problem Solving and Python Programming Laboratory" },
+                { "code": "BS3171", "name": "Physics and Chemistry Laboratory" },
+                { "code": "GE3172", "name": "English Laboratory" }
+            ]
+        },
+        "two": {
+            "subjects": [
+                { "code": "HS3252", "name": "Professional English - II" },
+                { "code": "MA3251", "name": "Statistics and Numerical Methods" },
+                { "code": "PH3256", "name": "Physics for Information Science" },
+                { "code": "BE3251", "name": "Basic Electrical and Electronics Engineering" },
+                { "code": "EG3251", "name": "Engineering Graphics" },
+                { "code": "CS3251", "name": "Programming in C" }
+            ],
+            "laboratory": [
+                { "code": "GE3271", "name": "Engineering Practices Laboratory" },
+                { "code": "CS3271", "name": "Programming in C Laboratory" },
+                { "code": "GE3272", "name": "Communication Laboratory" }
+            ]
+        },
+        "three": {
+            "subjects": [
+                { "code": "MA3354", "name": "Discrete Mathematics" },
+                { "code": "CS3351", "name": "Digital Principles and Computer Organization" },
+                { "code": "CS3352", "name": "Foundations of Data Science" },
+                { "code": "CD3291", "name": "Data Structures and Algorithms" },
+                { "code": "CS3391", "name": "Object Oriented Programming" }
+            ],
+            "laboratory": [
+                { "code": "CD3281", "name": "Data Structures and Algorithms Laboratory" },
+                { "code": "CS3381", "name": "Object Oriented Programming Laboratory" },
+                { "code": "CS3361", "name": "Data Science Laboratory" }
+            ]
+        },
+        "four": {
+            "subjects": [
+                { "code": "CS3452", "name": "Theory of Computation" },
+                { "code": "AL3452", "name": "Operating Systems" },
+                { "code": "AD3391", "name": "Database Design and Management" },
+                { "code": "AL3451", "name": "Machine Learning" },
+                { "code": "AL3391", "name": "Artificial Intelligence" },
+                { "code": "GE3451", "name": "Environmental Sciences and Sustainability" }
+            ],
+            "laboratory": [
+                { "code": "AL3411", "name": "Artificial Intelligence & Machine Learning Laboratory" },
+                { "code": "AD3381", "name": "Database Design and Management Laboratory" }
+            ]
+        },
+        "five": {
+            "subjects": [
+                { "code": "AL3501", "name": "Natural Language Processing" },
+                { "code": "AL3502", "name": "Deep Learning for Vision" },
+                { "code": "CB3491", "name": "Cryptography and Cyber Security" },
+                { "code": "CS3551", "name": "Distributed Computing" }
+            ],
+            "laboratory": []
+        },
+        "six": {
+            "subjects": [
+                { "code": "CCS356", "name": "Object Oriented Software Engineering" },
+                { "code": "CS3691", "name": "Embedded Systems and IoT" },
+                { "code": "CCS346", "name": "Exploratory Data Analysis" },
+                { "code": "CCS375", "name": "Web Technologies" }
+            ],
+            "laboratory": []
+        },
+        "seven": {
+            "subjects": [
+                { "code": "GE3791", "name": "Human Values and Ethics" },
+                { "code": "CCS335", "name": "Cloud Computing" },
+                { "code": "CCS344", "name": "Ethical Hacking" }
+            ],
+            "laboratory": []
+        },
+        "eight": {
+            "subjects": [{ "code": "AL3811", "name": "Project Work/Internship" }],
+            "laboratory": []
+        }
+    }
+}
