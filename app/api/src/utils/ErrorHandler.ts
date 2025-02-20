@@ -1,8 +1,13 @@
-export default class ErrorHandler extends Error{
-    statusCode:number;
-    constructor(message:string, statusCode: number) {
+export default class ErrorHandler extends Error {
+    name: string;
+    statusCode: number;
+    details?: Record<string, any>;
+    constructor(message: string, statusCode: number, name?: string, details?: Record<string, any>) {
         super(message);
-        this.statusCode=statusCode;
-        Error.captureStackTrace(this,this.constructor)
+        this.statusCode = statusCode;
+        this.name = name;
+        this.details = details;
+
+        Error.captureStackTrace(this, this.constructor);
     }
 }

@@ -1,7 +1,7 @@
 import { RegulationInfo, Semesters } from '@sis/types';
-import mongoose from 'mongoose';
+import { Schema, model } from 'mongoose';
 
-const subjectSchema = new mongoose.Schema(
+const SubjectSchema = new Schema(
     {
         code: { type: String, required: true },
         name: { type: String, required: true },
@@ -9,30 +9,32 @@ const subjectSchema = new mongoose.Schema(
     { _id: false }
 );
 
-const semesterSchema = new mongoose.Schema(
+const SemesterSchema = new Schema(
     {
-        subjects: [subjectSchema],
-        laboratory: [subjectSchema],
+        subjects: [SubjectSchema],
+        laboratory: [SubjectSchema],
     },
     { _id: false }
 );
 
-const regulationInfoSchema = new mongoose.Schema({
+const RegulationInfoSchema = new Schema({
     regulation: { type: String, required: true, unique: true },
     semesters: {
-        one: semesterSchema,
-        two: semesterSchema,
-        three: semesterSchema,
-        four: semesterSchema,
-        five: semesterSchema,
-        six: semesterSchema,
-        seven: semesterSchema,
-        eight: semesterSchema,
+        one: SemesterSchema,
+        two: SemesterSchema,
+        three: SemesterSchema,
+        four: SemesterSchema,
+        five: SemesterSchema,
+        six: SemesterSchema,
+        seven: SemesterSchema,
+        eight: SemesterSchema,
     },
 });
 
-export const RegulationInfoModel = mongoose.model('RegulationInfo', regulationInfoSchema);
+export const RegulationInfoModel = model('RegulationInfo', RegulationInfoSchema);
 export const getAllRegulationInfo = () => RegulationInfoModel.find();
 export const findRegulationInfo = (regulation: string) => RegulationInfoModel.findOne({ regulation });
+
+// seeder
 export const addRegulationInfoData = (data: RegulationInfo) => RegulationInfoModel.insertMany(data);
 export const deleteRegulationInfoData = () => RegulationInfoModel.deleteMany();

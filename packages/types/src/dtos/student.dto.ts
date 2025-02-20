@@ -124,3 +124,6 @@ export const StudentDTOType = z.object({
 });
 
 export type StudentDTO = z.infer<typeof StudentDTOType>;
+
+export const UpdateStudentDTOType = StudentDTOType.partial();
+export type UpdateStudentDTO = z.infer<typeof UpdateStudentDTOType>;

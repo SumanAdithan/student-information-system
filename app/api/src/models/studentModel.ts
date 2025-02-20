@@ -1,7 +1,7 @@
-import mongoose from 'mongoose';
 import { Student, UpdateStudent } from '@sis/types';
+import { Schema, model } from 'mongoose';
 
-const studentSchema = new mongoose.Schema(
+const StudentSchema = new Schema(
     {
         profileImage: {
             type: String,
@@ -95,7 +95,7 @@ const studentSchema = new mongoose.Schema(
     }
 );
 
-studentSchema.virtual('semesterWord').get(function () {
+StudentSchema.virtual('semesterWord').get(function () {
     const numberToWord: Record<number, string> = {
         1: 'one',
         2: 'two',
@@ -109,13 +109,14 @@ studentSchema.virtual('semesterWord').get(function () {
     return numberToWord[this.semester];
 });
 
-export const studentModel = mongoose.model('Student', studentSchema);
-export const getAllStudents = () => studentModel.find();
-export const createStudent = (student: Student) => studentModel.create(student);
-export const getStudentByID = (id: string) => studentModel.findById(id);
+export const StudentModel = model('Student', StudentSchema);
+export const getAllStudents = () => StudentModel.find();
+export const createStudent = (student: Student) => StudentModel.create(student);
+export const getStudentByID = (id: string) => StudentModel.findById(id);
 export const updateStudentByID = (id: string, updatedItems: UpdateStudent) =>
-    studentModel.findByIdAndUpdate(id, updatedItems, { new: true, runValidators: true });
-export const deleteStudentByID = (id: string) => studentModel.findByIdAndDelete(id);
+    StudentModel.findByIdAndUpdate(id, updatedItems, { new: true, runValidators: true });
+export const deleteStudentByID = (id: string) => StudentModel.findByIdAndDelete(id);
 
-export const addStudentsData = (students: any) => studentModel.insertMany(students);
-export const deleteStudentsData = () => studentModel.deleteMany();
+// seeder
+export const addStudentsData = (students: Student[]) => StudentModel.insertMany(students);
+export const deleteStudentsData = () => StudentModel.deleteMany();
