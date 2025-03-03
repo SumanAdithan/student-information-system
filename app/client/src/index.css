@@ -14,5 +14,6 @@
     --font-secondary: 'Inter', sans-serif;
 
     /* breaking points */
-    --breakpoint-xs: 22rem;
+    --breakpoint-xxs: 22rem;
+    --breakpoint-xs: 28rem;
 }
