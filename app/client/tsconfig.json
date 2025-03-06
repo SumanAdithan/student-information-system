@@ -9,7 +9,10 @@
             "@components": ["components"],
             "@assets": ["assets"],
             "@constants": ["constants"],
-            "@layouts": ["layouts"]
+            "@layouts": ["layouts"],
+            "@ui": ["ui"],
+            "@utils": ["utils"],
+            "@data": ["data"]
         }
     }
 }

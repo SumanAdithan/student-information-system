@@ -13,6 +13,9 @@ export default defineConfig({
             '@assets': resolve(__dirname, 'src/assets'),
             '@constants': resolve(__dirname, 'src/constants'),
             '@layouts': resolve(__dirname, 'src/layouts'),
+            '@ui': resolve(__dirname, 'src/ui'),
+            '@utils': resolve(__dirname, 'src/utils'),
+            '@data': resolve(__dirname, 'src/data'),
         },
     },
     server: {

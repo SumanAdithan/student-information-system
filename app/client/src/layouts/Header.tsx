@@ -1,13 +1,14 @@
 import { headerConfig } from '@constants';
 import { Menu } from 'lucide-react';
-import { useEffect, useRef, useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 interface HeaderProps {
     isMenuBtnVisible: boolean;
+    setIsSidebarOpen: Dispatch<SetStateAction<boolean>>;
 }
 
-export const Header = ({ isMenuBtnVisible }: HeaderProps) => {
+export const Header = ({ isMenuBtnVisible, setIsSidebarOpen }: HeaderProps) => {
     const [isDropDownOpen, setIsDropDownOpen] = useState(false);
     const [title, setTitle] = useState('');
     const profileRef = useRef<HTMLDivElement>(null);
@@ -28,10 +29,16 @@ export const Header = ({ isMenuBtnVisible }: HeaderProps) => {
         setTitle(headerTitles[pathname as keyof typeof headerTitles]);
     }, []);
     return (
-        <div className='bg-background shadow-lg'>
+        <div className='relative md:z-20 bg-background shadow-header'>
             <div className='relative flex items-center justify-between max-w-7xl mx-auto px-4 py-3 xs:py-2 sm:px-6 lg:px-8'>
                 <div className='flex items-center gap-2'>
-                    {isMenuBtnVisible && <Menu size={34} className='bg-primary text-white rounded-sm' />}
+                    {isMenuBtnVisible && (
+                        <Menu
+                            size={34}
+                            className='bg-primary text-white rounded-sm'
+                            onClick={() => setIsSidebarOpen((prev) => !prev)}
+                        />
+                    )}
                     <h1 className='text-lg xs:text-2xl font-semibold'>{title}</h1>
                 </div>
                 <div>
