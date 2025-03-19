@@ -12,7 +12,8 @@
             "@layouts": ["layouts"],
             "@ui": ["ui"],
             "@utils": ["utils"],
-            "@data": ["data"]
+            "@data": ["data"],
+            "@hooks": ["hooks"]
         }
     }
 }

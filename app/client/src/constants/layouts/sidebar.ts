@@ -6,8 +6,8 @@ export const sidebarConfig = {
     menuItems: [
         { name: 'Overview', href: '/student' },
         { name: 'Assignments', href: '/student/assignments' },
-        { name: 'Internal Marks', href: '/student/internal-marks' },
-        { name: 'Semester Marks', href: '/student/semester-marks' },
+        { name: 'Internal Results', href: '/student/internal-results' },
+        { name: 'Semester Results', href: '/student/semester-results' },
         { name: 'Download Notes', href: '/student/download-notes' },
         { name: 'Pay Dues', href: '/student/pay-dues' },
         { name: 'Dues & Approvals', href: '/student/dues-approvals' },

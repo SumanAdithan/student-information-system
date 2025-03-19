@@ -1,11 +1,11 @@
 {
-    "profileImage": "https://example.com/john.jpg",
+    "profileImage": "",
     "name": "john",
     "registerNo": 94132990101,
     "cgpa": 8.5,
     "attendance": 85,
     "dues": 12000,
-    "dob": "2000-04-01T00:00:00.000Z",
+    "dob": "18-06-2002",
     "gender": "Male",
     "department": "CSE",
     "year": 3,

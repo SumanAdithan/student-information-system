@@ -1,3 +1,8 @@
 import studentData from './student.json';
+import assignmentResultData from './assignment.json';
+import internalResultData from './internalMark.json';
+import semesterResultData from './semesterResult.json';
+import downloadNotesData from './notes.json';
+import payDuesData from './dues.json';
 
-export { studentData };
+export { studentData, assignmentResultData, internalResultData, semesterResultData, downloadNotesData, payDuesData };

@@ -1,5 +1,6 @@
 import { Student, UpdateStudent } from '@sis/types';
 import { Schema, model } from 'mongoose';
+import bcrypt from 'bcrypt';
 
 const StudentSchema = new Schema(
     {
@@ -88,6 +89,12 @@ const StudentSchema = new Schema(
                 message: 'Please select correct accomodation',
             },
         },
+        password: {
+            type: String,
+            required: [true, 'Please enter password'],
+            maxlength: [20, 'Password cannot exceed 6 characters'],
+            select: false,
+        },
     },
     {
         toJSON: { virtuals: true },
@@ -109,13 +116,23 @@ StudentSchema.virtual('semesterWord').get(function () {
     return numberToWord[this.semester];
 });
 
+StudentSchema.pre('save', async function (next) {
+    if (!this.isModified('password')) return next();
+    this.password = await bcrypt.hash(this.password, 10);
+    next();
+});
+
+
+
 export const StudentModel = model('Student', StudentSchema);
 export const getAllStudents = () => StudentModel.find();
 export const createStudent = (student: Student) => StudentModel.create(student);
+export const getStudentByEmail = (email: string) => StudentModel.find({ email });
 export const getStudentByID = (id: string) => StudentModel.findById(id);
 export const updateStudentByID = (id: string, updatedItems: UpdateStudent) =>
     StudentModel.findByIdAndUpdate(id, updatedItems, { new: true, runValidators: true });
 export const deleteStudentByID = (id: string) => StudentModel.findByIdAndDelete(id);
+// export const isValidPassword = (password:string) => StudentModel.
 
 // seeder
 export const addStudentsData = (students: Student[]) => StudentModel.insertMany(students);

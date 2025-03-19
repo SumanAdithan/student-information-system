@@ -23,8 +23,10 @@ export const Sidebar = ({ isSidebarOpen, setIsSidebarOpen, isMobile }: SidebarPr
                         to={item.href}
                         end
                         className={({ isActive }) =>
-                            `flex items-center text-lg font-medium text-font-primary p-4 mb-2 rounded-xl transition-colors duration-300 ${
-                                isActive ? 'bg-primary text-white' : 'hover:bg-primary hover:text-white'
+                            `flex items-center text-lg font-medium p-4 mb-2 rounded-xl transition-colors duration-300 ${
+                                isActive
+                                    ? 'bg-primary text-font-primary'
+                                    : 'hover:bg-primary hover:text-font-primary text-font-secondary'
                             }`
                         }
                     >

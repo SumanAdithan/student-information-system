@@ -20,8 +20,15 @@ export const newStudent = catchAsyncError(
         if (!student.success) {
             return next(sendZodError(student.error));
         }
-        const newStudent = await createStudent(student.data as Student);
-        await assignDefaultData([newStudent]);
+        const password = [...student.data.registerNo.toString()].reverse().join('');
+
+        const studentData = {
+            ...student.data,
+            password,
+        };
+        console.log(studentData);
+        const newStudent = await createStudent(studentData as Student);
+        // await assignDefaultData([newStudent]);
         return res.status(201).json({
             success: true,
             newStudent,

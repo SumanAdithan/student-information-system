@@ -1,4 +1,4 @@
-import { attendance, cgpa, dues } from '@assets';
+import { attendance, cgpa, dues, profile } from '@assets';
 
 export const getStudentOverviewData = (data: any) => {
     const overviewStat = [
@@ -10,7 +10,7 @@ export const getStudentOverviewData = (data: any) => {
     const overviewProfile = {
         name: data.name.charAt(0).toUpperCase() + data.name.slice(1),
         regNo: data.registerNo,
-        profileImage: data.profileImage,
+        profileImage: data.profileImage ? data.profileImage : profile,
     };
 
     const yearMapping = { 1: 'First', 2: 'Second', 3: 'Third', 4: 'Fourth' };

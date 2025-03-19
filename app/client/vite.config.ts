@@ -16,6 +16,7 @@ export default defineConfig({
             '@ui': resolve(__dirname, 'src/ui'),
             '@utils': resolve(__dirname, 'src/utils'),
             '@data': resolve(__dirname, 'src/data'),
+            '@hooks': resolve(__dirname, 'src/hooks'),
         },
     },
     server: {
