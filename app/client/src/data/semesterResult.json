@@ -1,0 +1,114 @@
+{
+    "registerNo": 96132021010,
+    "name": "James Shaw",
+    "results": {
+        "one": [
+            {
+                "code": "HS3152",
+                "name": "Professional English - I",
+                "grade": "A"
+            },
+            {
+                "code": "MA3151",
+                "name": "Matrices and Calculus",
+                "grade": "A"
+            },
+            {
+                "code": "PH3151",
+                "name": "Engineering Physics",
+                "grade": "A"
+            },
+            {
+                "code": "CY3151",
+                "name": "Engineering Chemistry",
+                "grade": "A"
+            },
+            {
+                "code": "GE3151",
+                "name": "Problem Solving and Python Programming",
+                "grade": "A"
+            }
+        ],
+        "two": [
+            {
+                "code": "HS3152",
+                "name": "Professional English - I",
+                "grade": "A"
+            },
+            {
+                "code": "MA3151",
+                "name": "Matrices and Calculus",
+                "grade": "A"
+            },
+            {
+                "code": "PH3151",
+                "name": "Engineering Physics",
+                "grade": "A"
+            },
+            {
+                "code": "CY3151",
+                "name": "Engineering Chemistry",
+                "grade": "A"
+            },
+            {
+                "code": "GE3151",
+                "name": "Problem Solving and Python Programming",
+                "grade": "A"
+            }
+        ],
+        "three": [
+            {
+                "code": "HS3152",
+                "name": "Professional English - I",
+                "grade": "A"
+            },
+            {
+                "code": "MA3151",
+                "name": "Matrices and Calculus",
+                "grade": "A"
+            },
+            {
+                "code": "PH3151",
+                "name": "Engineering Physics",
+                "grade": "A"
+            },
+            {
+                "code": "CY3151",
+                "name": "Engineering Chemistry",
+                "grade": "A"
+            },
+            {
+                "code": "GE3151",
+                "name": "Problem Solving and Python Programming",
+                "grade": "A"
+            }
+        ],
+        "four": [
+            {
+                "code": "HS3152",
+                "name": "Professional English - I",
+                "grade": "A"
+            },
+            {
+                "code": "MA3151",
+                "name": "Matrices and Calculus",
+                "grade": "A"
+            },
+            {
+                "code": "PH3151",
+                "name": "Engineering Physics",
+                "grade": "A"
+            },
+            {
+                "code": "CY3151",
+                "name": "Engineering Chemistry",
+                "grade": "A"
+            },
+            {
+                "code": "GE3151",
+                "name": "Problem Solving and Python Programming",
+                "grade": "A"
+            }
+        ]
+    }
+}

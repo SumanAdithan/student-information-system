@@ -1,0 +1,114 @@
+{
+    "registerNo": 96132021010,
+    "name": "James Shaw",
+    "results": {
+        "one": [
+            {
+                "code": "HS3152",
+                "name": "Professional English - I",
+                "mark": 0
+            },
+            {
+                "code": "MA3151",
+                "name": "Matrices and Calculus",
+                "mark": 0
+            },
+            {
+                "code": "PH3151",
+                "name": "Engineering Physics",
+                "mark": 0
+            },
+            {
+                "code": "CY3151",
+                "name": "Engineering Chemistry",
+                "mark": 0
+            },
+            {
+                "code": "GE3151",
+                "name": "Problem Solving and Python Programming",
+                "mark": 0
+            }
+        ],
+        "two": [
+            {
+                "code": "HS3152",
+                "name": "Professional English - I",
+                "mark": 0
+            },
+            {
+                "code": "MA3151",
+                "name": "Matrices and Calculus",
+                "mark": 0
+            },
+            {
+                "code": "PH3151",
+                "name": "Engineering Physics",
+                "mark": 0
+            },
+            {
+                "code": "CY3151",
+                "name": "Engineering Chemistry",
+                "mark": 0
+            },
+            {
+                "code": "GE3151",
+                "name": "Problem Solving and Python Programming",
+                "mark": 0
+            }
+        ],
+        "three": [
+            {
+                "code": "HS3152",
+                "name": "Professional English - I",
+                "mark": 0
+            },
+            {
+                "code": "MA3151",
+                "name": "Matrices and Calculus",
+                "mark": 0
+            },
+            {
+                "code": "PH3151",
+                "name": "Engineering Physics",
+                "mark": 0
+            },
+            {
+                "code": "CY3151",
+                "name": "Engineering Chemistry",
+                "mark": 0
+            },
+            {
+                "code": "GE3151",
+                "name": "Problem Solving and Python Programming",
+                "mark": 0
+            }
+        ],
+        "four": [
+            {
+                "code": "HS3152",
+                "name": "Professional English - I",
+                "mark": 0
+            },
+            {
+                "code": "MA3151",
+                "name": "Matrices and Calculus",
+                "mark": 0
+            },
+            {
+                "code": "PH3151",
+                "name": "Engineering Physics",
+                "mark": 0
+            },
+            {
+                "code": "CY3151",
+                "name": "Engineering Chemistry",
+                "mark": 0
+            },
+            {
+                "code": "GE3151",
+                "name": "Problem Solving and Python Programming",
+                "mark": 0
+            }
+        ]
+    }
+}

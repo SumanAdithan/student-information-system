@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import 'tailwindcss';
+
+@theme {
+    /* colors */
+    --color-background: #eff1f7;
+    --color-primary: #00a6f4;
+    --color-primary-dark: #2f7cf0;
+    --color-primary-light: #cfecf6;
+    --color-search-input: #d1d5db;
+    --color-pageination-btn: #d9d9d9;
+
+    /* font */
+    --color-font-primary: #2e4765;
+    --color-font-secondary: #676b84;
+    --font-primary: 'Roboto', sans-serif;
+    --font-secondary: 'Inter', sans-serif;
+
+    /* breaking points */
+    --breakpoint-xxs: 22rem;
+    --breakpoint-xs: 28rem;
+
+    /* box shadow */
+    --shadow-section: 0 1px 5px 2px rgba(0, 0, 0, 0.25);
+    --shadow-header: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    --shadow-sidebar: 3px 4px 11px 1px rgba(0, 0, 0, 0.25);
+}
