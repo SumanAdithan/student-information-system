@@ -8,5 +8,5 @@ export const sendZodError = (error: ZodError) => {
         acc[key] = (value as any)._errors[0];
         return acc;
     }, {});
-    return new ErrorHandler('validation failed', 400, 'ZodError', zodError);
+    return new ErrorHandler(400, 'validation failed', 'ZodError', zodError);
 };

@@ -21,9 +21,9 @@ export const Header = ({ isMenuBtnVisible, setIsSidebarOpen }: HeaderProps) => {
             if (!profileRef.current?.contains(e.target as Node)) setIsDropDownOpen(false);
         };
 
-        document.addEventListener('mousedown', handleClick);
-        return () => document.removeEventListener('mousedown', handleClick);
-    }, []);
+        document.addEventListener('click', handleClick);
+        return () => document.removeEventListener('click', handleClick);
+    }, [profileRef]);
 
     useEffect(() => {
         setTitle(headerTitles[pathname as keyof typeof headerTitles]);
@@ -58,6 +58,7 @@ export const Header = ({ isMenuBtnVisible, setIsSidebarOpen }: HeaderProps) => {
                                 <button
                                     className='block px-4 py-2 text-sm text-font-primary hover:bg-gray-200 w-full text-left'
                                     key={i}
+                                    onClick={() => console.log(item)}
                                 >
                                     {item}
                                 </button>

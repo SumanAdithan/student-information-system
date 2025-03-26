@@ -1,5 +1,7 @@
 import { loginPageConfig } from '@constants';
+import { api } from '@utils';
 import { ChangeEvent, FormEvent, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export const LoginPage = () => {
     const {
@@ -17,6 +19,8 @@ export const LoginPage = () => {
 
     const [isFaculty, setIsFaculty] = useState(false);
     const [loginData, setLoginData] = useState(initialState);
+    const navigate = useNavigate();
+    const path = isFaculty ? 'faculty' : 'student';
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         setLoginData((prev) => ({
@@ -25,40 +29,33 @@ export const LoginPage = () => {
         }));
     };
 
-    const handleSubmit = (e: FormEvent) => {
+    const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
-        console.log(loginData);
+        try {
+            const { data } = await api.post(`/login/${path}`, loginData);
+            navigate(data.redirectUrl);
+        } catch (err) {
+            console.log(err);
+        }
     };
     const renderLoginForm = () => (
         <form onSubmit={handleSubmit} className='flex flex-col gap-6'>
-            {isFaculty ? (
-                <input
-                    name='email'
-                    type='email'
-                    placeholder='Enter Your Email'
-                    autoComplete='off'
-                    className='p-4 border-2 border-primary rounded-2xl outline-none'
-                    value={loginData.email}
-                    onChange={handleChange}
-                />
-            ) : (
-                <input
-                    name='regNo'
-                    type='number'
-                    placeholder='Enter Your Reg No'
-                    autoComplete='off'
-                    className='p-4 border-2 border-primary rounded-2xl outline-none'
-                    value={loginData.regNo}
-                    onChange={handleChange}
-                />
-            )}
+            <input
+                name='email'
+                type='email'
+                placeholder='Enter Your Email'
+                autoComplete='off'
+                className='p-4 border-2 text-font-primary border-primary rounded-2xl outline-none'
+                value={loginData.email}
+                onChange={handleChange}
+            />
 
             <input
                 name='password'
                 type='password'
                 placeholder='Enter Your Password'
                 autoComplete='off'
-                className='p-4 border-2 border-primary rounded-2xl outline-none'
+                className='p-4 border-2 text-font-primary border-primary rounded-2xl outline-none'
                 value={loginData.password}
                 onChange={handleChange}
             />

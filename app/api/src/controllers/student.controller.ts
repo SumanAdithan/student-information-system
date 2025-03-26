@@ -1,68 +1,10 @@
-import { catchAsyncError } from '@middlewares';
-import { createStudent, deleteStudentByID, getAllStudents, getStudentByID, updateStudentByID } from '@models';
-import { Student, StudentDTO, StudentDTOType, UpdateStudent, UpdateStudentDTO, UpdateStudentDTOType } from '@sis/types';
-import { ErrorHandler, assignDefaultData, sendZodError } from '@utils';
-import { NextFunction, Request, Response } from 'express-serve-static-core';
+import { ErrorHandler, successResponse } from '@utils';
+import { NextFunction, Request, Response } from 'express';
 
-// Get Students - /api/v1/students
-export const getStudents = catchAsyncError(async (req: Request, res: Response, next: NextFunction) => {
-    const students = await getAllStudents();
-    return res.status(200).json({
-        success: true,
-        students,
-    });
-});
+export const getAuthenticatedStudent = (request: Request, response: Response, next: NextFunction) => {
+    const { user } = request;
+    if (!user) return next(new ErrorHandler(401, 'Unauthenticated'));
 
-// Create Student - /api/v1/student/new
-export const newStudent = catchAsyncError(
-    async (req: Request<{}, {}, StudentDTO>, res: Response, next: NextFunction) => {
-        const student = StudentDTOType.safeParse(req.body);
-        if (!student.success) {
-            return next(sendZodError(student.error));
-        }
-        const password = [...student.data.registerNo.toString()].reverse().join('');
-
-        const studentData = {
-            ...student.data,
-            password,
-        };
-        console.log(studentData);
-        const newStudent = await createStudent(studentData as Student);
-        // await assignDefaultData([newStudent]);
-        return res.status(201).json({
-            success: true,
-            newStudent,
-        });
-    }
-);
-
-// Update Student - /api/v1/student/:id
-export const updateStudent = catchAsyncError(
-    async (req: Request<{ id?: string }, {}, UpdateStudentDTO>, res: Response, next: NextFunction) => {
-        let student = await getStudentByID(req.params.id);
-        if (!student) {
-            return next(new ErrorHandler('Student not found', 404));
-        }
-        const updatedItems = UpdateStudentDTOType.safeParse(req.body);
-        if (!updatedItems.success) {
-            return next(sendZodError(updatedItems.error));
-        }
-        student = await updateStudentByID(req.params.id, updatedItems.data as UpdateStudent);
-        return res.status(200).json({
-            success: true,
-            student,
-        });
-    }
-);
-
-// Delete Student - /api/v1/student/:id
-export const deleteStudent = catchAsyncError(async (req: Request, res: Response, next: NextFunction) => {
-    let student = await getStudentByID(req.params.id);
-    if (!student) {
-        return next(new ErrorHandler('Student not found', 404));
-    }
-    student = await deleteStudentByID(req.params.id);
-    return res.status(200).json({
-        success: true,
-    });
-});
+    successResponse(response, 200, user);
+    return;
+};
