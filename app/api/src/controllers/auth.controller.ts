@@ -1,13 +1,58 @@
 import { catchAsyncError } from '@middlewares';
-import { getStudentByEmail } from '@models';
-import { ErrorHandler } from '@utils';
-import { NextFunction, Request, Response } from 'express-serve-static-core';
+import { UserRole } from '@sis/types';
+import { ErrorHandler, successResponse, tokenResponse } from '@utils';
+import { AuthService } from '@services';
+import { Request, Response } from 'express';
 
-export const loginStudent = catchAsyncError(async (req: Request, res: Response, next: NextFunction) => {
-    const { email, password } = req.body;
+// Login by password - api/v1/login
+export const loginByPassword = (role: UserRole) =>
+    catchAsyncError(async (request, response, next) => {
+        const { email, password } = request.body;
+        if (!email || !password) return next(new ErrorHandler(400, 'Please enter email and password'));
 
-    if (!email || password) return next(new ErrorHandler('Please enter email and password', 400));
+        const { token, redirectUrl } = await AuthService.loginUserByPassword(role, email, password);
+        return tokenResponse(response, token, 200, redirectUrl);
+    });
 
-    const student = await getStudentByEmail(email);
-    if (!student) return next(new ErrorHandler('Invalid Email or Password', 401));
-});
+// Login by Qr code - api/v1/login/qr
+export const loginByQrCode = (role: UserRole) =>
+    catchAsyncError(async (request, response, next) => {
+        const { QrToken } = request.body;
+        if (!QrToken) return next(new ErrorHandler(400, 'Invalid QR Code'));
+
+        const { token, redirectUrl } = await AuthService.loginUserByQrCode(role, QrToken);
+        return tokenResponse(response, token, 200, redirectUrl);
+    });
+
+// change password - api/v1/changepassword
+export const changePassword = (role: UserRole) =>
+    catchAsyncError(async (request, response, next) => {
+        const { newPassword } = request.body;
+        const { id, password } = request.user;
+        await AuthService.changePassword(role, id, password, newPassword);
+
+        return response.status(200).json({
+            success: true,
+        });
+    });
+
+// logout - api/v1/logout
+export const logout = (request: Request, response: Response) => {
+    response.clearCookie('token').status(200).json({
+        success: true,
+        redirectUrl: '/',
+    });
+};
+
+// auth status - api/v1/auth/status
+export const authStatus = (request: Request, response: Response) => {
+    if (!request.user) {
+        response.status(400).json({ isAuthenticated: false });
+        return;
+    }
+
+    const { role } = request.user;
+
+    response.status(200).json({ isAuthenticated: true, role });
+    return;
+};

@@ -1,2 +1,2 @@
-export * from './catchAsyncError';
-export * from './errorMiddleware';
+export * from './catchAsyncError.middleware';
+export * from './error.middleware';

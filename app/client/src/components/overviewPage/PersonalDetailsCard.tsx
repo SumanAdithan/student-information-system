@@ -13,8 +13,8 @@ export const PersonalDetailsCard = ({ personalDetails }: PersonalDetailsCardProp
             <h1 className='text-2xl font-medium mb-10'>{title}</h1>
             <div className='flex justify-center'>
                 <div className='grid xs:grid-cols-2 gap-y-2 xs:gap-y-10 xl:px-10 pb-8 text-lg sm:text-xl font-medium'>
-                    {personalDetails.map((details: any) => {
-                        return <div className='min-w-max'>{`${details[0]}: ${details[1]}`}</div>;
+                    {personalDetails.map((details: any, i: number) => {
+                        return <div key={i} className='min-w-max'>{`${details[0]}: ${details[1]}`}</div>;
                     })}
                 </div>
             </div>

@@ -11,9 +11,9 @@
     "year": 3,
     "semester": 6,
     "batch": "2020-2024",
-    "arrears": "4",
+    "arrears": 4,
     "degree": "B.E",
     "email": "john.doe@example.com",
     "accomodation": "Day Scholor",
-    "mobile": "12343455"
+    "mobile": 12343455
 }
