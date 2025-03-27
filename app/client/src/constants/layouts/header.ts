@@ -11,5 +11,14 @@ export const headerConfig = {
     },
     profileImage: profile,
     name: 'john',
-    dropDownItems: ['Notification', 'Circular', 'Logout'],
+    dropDownItems: [
+        { title: 'Notification', action: () => null },
+        { title: 'Circular', action: () => null },
+        {
+            title: 'Logout',
+            action: (logout: any) => {
+                logout.mutate();
+            },
+        },
+    ],
 };

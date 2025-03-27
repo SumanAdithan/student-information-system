@@ -1,10 +1,9 @@
 import type { Router } from 'express';
-import { authStatus } from '@controllers';
+import { authStatus, logout } from '@controllers';
 import { isAuthenticated } from 'middlewares/authenticate.middleware';
 
 // Common routes
 export const commonRoutes = (router: Router) => {
-    router.get('/student/auth/status', isAuthenticated('student'), authStatus);
-    router.get('/faculty/auth/status', isAuthenticated('faculty'), authStatus);
-    router.get('/admin/auth/status', isAuthenticated('admin'), authStatus);
+    router.get('/auth/status', isAuthenticated(), authStatus);
+    router.post('/logout', isAuthenticated(), logout);
 };

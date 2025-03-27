@@ -5,23 +5,26 @@ import { getAdminById, getFacultyById, getStudentById } from '@models';
 import { NextFunction, Request, Response } from 'express';
 
 // Check authenticated
-export const isAuthenticated = (role: UserRole) =>
+export const isAuthenticated = () =>
     catchAsyncError(async (request, response, next) => {
         const { token } = request.cookies;
-        if (!token) return next(new ErrorHandler(401, 'Login first to handle this resource'));
+        if (!token) return next(new ErrorHandler(401, 'Not Authenticated'));
 
         const decodedToken = verifyJwtToken(token);
-        if (typeof decodedToken === 'string') {
+        if (!decodedToken || typeof decodedToken !== 'object') {
             return next(new ErrorHandler(400, 'Invalid token format'));
         }
 
-        let user;
-        if (role.includes('student')) user = await getStudentById(decodedToken.id);
-        if (role.includes('faculty')) user = await getFacultyById(decodedToken.id);
-        if (role.includes('admin')) user = await getAdminById(decodedToken.id);
-        if (!user || !role.includes(user.role as UserRole)) {
-            return next(new ErrorHandler(403, 'Unauthorized access'));
-        }
+        const fetchUserByRole: Record<string, (id: string) => Promise<any>> = {
+            student: getStudentById,
+            faculty: getFacultyById,
+            admin: getAdminById,
+        };
+        const fetchUser = fetchUserByRole[decodedToken.role];
+        if (!fetchUser) return next(new ErrorHandler(403, 'Unauthorized access'));
+
+        const user = await fetchUser(decodedToken.id);
+        if (!user) return next(new ErrorHandler(403, 'Unauthorized access'));
 
         request.user = user;
         next();

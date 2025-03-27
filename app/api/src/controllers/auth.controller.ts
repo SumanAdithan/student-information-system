@@ -17,10 +17,10 @@ export const loginByPassword = (role: UserRole) =>
 // Login by Qr code - api/v1/login/qr
 export const loginByQrCode = (role: UserRole) =>
     catchAsyncError(async (request, response, next) => {
-        const { QrToken } = request.body;
-        if (!QrToken) return next(new ErrorHandler(400, 'Invalid QR Code'));
+        const { qrToken } = request.body;
+        if (!qrToken) return next(new ErrorHandler(400, 'Invalid QR Code'));
 
-        const { token, redirectUrl } = await AuthService.loginUserByQrCode(role, QrToken);
+        const { token, redirectUrl } = await AuthService.loginUserByQrCode(role, qrToken);
         return tokenResponse(response, token, 200, redirectUrl);
     });
 
