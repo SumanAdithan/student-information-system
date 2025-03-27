@@ -1,4 +1,5 @@
 import { headerConfig } from '@constants';
+import { useAuth } from '@hooks';
 import { Menu } from 'lucide-react';
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -12,6 +13,7 @@ export const Header = ({ isMenuBtnVisible, setIsSidebarOpen }: HeaderProps) => {
     const [isDropDownOpen, setIsDropDownOpen] = useState(false);
     const [title, setTitle] = useState('');
     const profileRef = useRef<HTMLDivElement>(null);
+    const { logout } = useAuth();
 
     const { pathname } = useLocation();
     const { headerTitles, name, profileImage, dropDownItems } = headerConfig;
@@ -58,9 +60,9 @@ export const Header = ({ isMenuBtnVisible, setIsSidebarOpen }: HeaderProps) => {
                                 <button
                                     className='block px-4 py-2 text-sm text-font-primary hover:bg-gray-200 w-full text-left'
                                     key={i}
-                                    onClick={() => console.log(item)}
+                                    onClick={() => item.action(logout)}
                                 >
-                                    {item}
+                                    {item.title}
                                 </button>
                             ))}
                         </div>

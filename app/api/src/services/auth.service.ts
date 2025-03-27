@@ -22,14 +22,14 @@ class AuthService {
         const isMatch = await isValidPassword(password, user.password);
         if (!isMatch) throw new ErrorHandler(401, 'Invalid Email or Password');
 
-        const token = getJwtTokwn(user.id.toString());
+        const token = getJwtTokwn(user.id.toString(), user.role as UserRole);
 
         return { token, redirectUrl: AuthService.getRedirectUrl(role) };
     }
 
     // Login by QR service by roles
-    static async loginUserByQrCode(role: UserRole, QrToken: string) {
-        const decodedToken = verifyJwtToken(QrToken);
+    static async loginUserByQrCode(role: UserRole, qrToken: string) {
+        const decodedToken = verifyJwtToken(qrToken);
         if (typeof decodedToken === 'string') throw new ErrorHandler(400, 'Invalid QR Code');
 
         let user;
@@ -38,7 +38,7 @@ class AuthService {
         if (role === 'admin') user = await getAdminById(decodedToken.id);
         if (!user) throw new ErrorHandler(400, 'Invalid QR Code');
 
-        const token = getJwtTokwn(user.id.toString());
+        const token = getJwtTokwn(user.id.toString(), user.role as UserRole);
         return { token, redirectUrl: AuthService.getRedirectUrl(role) };
     }
 

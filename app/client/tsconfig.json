@@ -13,7 +13,8 @@
             "@ui": ["ui"],
             "@utils": ["utils"],
             "@data": ["data"],
-            "@hooks": ["hooks"]
+            "@hooks": ["hooks"],
+            "@api": ["api"]
         }
     }
 }

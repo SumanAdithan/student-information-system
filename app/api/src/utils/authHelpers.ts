@@ -1,3 +1,4 @@
+import { UserRole } from '@sis/types';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
@@ -13,8 +14,8 @@ export const isValidPassword = async (plainPassword: string, hashedPassword: str
 };
 
 // Generate jwt token
-export const getJwtTokwn = (id: string) => {
-    return jwt.sign({ id }, process.env.JWT_SECRET, {
+export const getJwtTokwn = (id: string, role: UserRole) => {
+    return jwt.sign({ id, role }, process.env.JWT_SECRET, {
         expiresIn: Number(process.env.JWT_EXPIRES_TIME) * 24 * 60 * 60,
     });
 };

@@ -5,3 +5,4 @@ export * from './internalResultsPage';
 export * from './semesterResultsPage';
 export * from './downloadNotesPage';
 export * from './payDuesPage';
+export * from './loginPage';

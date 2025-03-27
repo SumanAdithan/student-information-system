@@ -1,10 +1,25 @@
+import { useQuery } from '@tanstack/react-query';
 import { StatCard } from '@components';
-import { studentData } from '@data';
-import { getStudentOverviewData } from '@utils';
+import { api, getStudentOverviewData } from '@utils';
 import { PersonalDetailsCard, ProfileCard } from '@components';
 
 export const OverviewPage = () => {
-    const { overviewStat, overviewProfile, overviewDetails } = getStudentOverviewData(studentData);
+    const {
+        data: student,
+        isLoading,
+        error,
+    } = useQuery({
+        queryKey: ['student'],
+        queryFn: async () => {
+            const response = await api.get('/student');
+            const { data } = response.data;
+            return data;
+        },
+    });
+    if (isLoading) return <div>Loading...</div>;
+    if (error) return <div>Error fetching student data</div>;
+
+    const { overviewStat, overviewProfile, overviewDetails } = getStudentOverviewData(student);
     return (
         <>
             <div className='bg-white p-6 pb-8 rounded-2xl shadow-section mb-7'>

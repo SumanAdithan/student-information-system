@@ -1,7 +1,7 @@
 import { loginPageConfig } from '@constants';
-import { api } from '@utils';
+import { useAuth } from '@hooks';
+import { QrScanner } from '@components';
 import { ChangeEvent, FormEvent, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 export const LoginPage = () => {
     const {
@@ -19,8 +19,9 @@ export const LoginPage = () => {
 
     const [isFaculty, setIsFaculty] = useState(false);
     const [loginData, setLoginData] = useState(initialState);
-    const navigate = useNavigate();
+    const [scan, setScan] = useState(false);
     const path = isFaculty ? 'faculty' : 'student';
+    const { loginByPassword } = useAuth();
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         setLoginData((prev) => ({
@@ -32,8 +33,7 @@ export const LoginPage = () => {
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
         try {
-            const { data } = await api.post(`/login/${path}`, loginData);
-            navigate(data.redirectUrl);
+            loginByPassword.mutate({ path, loginData });
         } catch (err) {
             console.log(err);
         }
@@ -80,15 +80,21 @@ export const LoginPage = () => {
                 </div>
                 <div className='lg:w-1/2 w-full flex items-center justify-center font-medium'>
                     <div className='pl-2 xs:pl-0 min-w-[280px] sm:min-w-96'>
-                        {renderLoginForm()}
-                        <div
-                            className='text-primary-dark font-medium mt-2 ml-1 cursor-pointer'
-                            onClick={() => {
-                                setLoginData(initialState);
-                                setIsFaculty(!isFaculty);
-                            }}
-                        >
-                            {isFaculty ? faculty : student}
+                        {scan ? null : renderLoginForm()}
+                        {scan && <QrScanner scan={scan} setScan={setScan} path={path} />}
+                        <div className='text-primary-dark font-medium flex justify-between items-center mt-2  cursor-pointer'>
+                            <div
+                                className='ml-1'
+                                onClick={() => {
+                                    setLoginData(initialState);
+                                    setIsFaculty(!isFaculty);
+                                }}
+                            >
+                                {isFaculty ? faculty : student}
+                            </div>
+                            <div className='mr-1' onClick={() => setScan((prev) => !prev)}>
+                                {scan ? 'Stop' : 'Login Using QR'}
+                            </div>
                         </div>
                     </div>
                 </div>

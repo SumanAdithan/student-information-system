@@ -8,11 +8,11 @@ import {
     SemesterResultsPage,
 } from '@pages';
 import { Route } from 'react-router-dom';
-import { ProtectedRoute } from './ProtectedRoute';
+import { PrivateRoute } from './ProtectedRoute';
 
 export const studentRoutes = () => {
     return (
-        <Route element={<ProtectedRoute allowedRoles={'student'} />}>
+        <Route element={<PrivateRoute allowedRoles={'student'} />}>
             <Route path='/student' element={<Layout />}>
                 <Route index element={<OverviewPage />} />
                 <Route path='assignments' element={<AssignmentsPage />} />
