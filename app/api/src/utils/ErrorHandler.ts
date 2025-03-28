@@ -1,4 +1,4 @@
-export default class ErrorHandler extends Error {
+export class ErrorHandler extends Error {
     name: string;
     statusCode: number;
     details?: Record<string, any>;

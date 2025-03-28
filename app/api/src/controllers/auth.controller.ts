@@ -1,6 +1,6 @@
 import { catchAsyncError } from '@middlewares';
 import { UserRole } from '@sis/types';
-import { ErrorHandler, successResponse, tokenResponse } from '@utils';
+import { ErrorHandler, tokenResponse } from '@utils';
 import { AuthService } from '@services';
 import { Request, Response } from 'express';
 

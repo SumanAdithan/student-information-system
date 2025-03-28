@@ -37,7 +37,9 @@ export const errorMiddleware = (err: ErrorHandler, request: Request, response: R
         }
 
         if ('code' in err && err.code === 11000) {
-            let message = `Duplicate ${Object.keys((err as any).keyValue)} error`;
+            const field = Object.keys((err as any).keyValue)[0];
+            let message = `${field.charAt(0).toUpperCase() + field.slice(1)} already exists`;
+            // let message = `Duplicate ${Object.keys((err as any).keyValue)} error`;
             error = new ErrorHandler(400, message);
         }
 

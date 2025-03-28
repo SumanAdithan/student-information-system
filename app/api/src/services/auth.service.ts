@@ -10,7 +10,7 @@ import { ErrorHandler, getJwtTokwn, isValidPassword, verifyJwtToken } from '@uti
 
 import type { UserRole } from '@sis/types';
 
-class AuthService {
+export class AuthService {
     // Login by password service by roles
     static async loginUserByPassword(role: UserRole, email: string, password: string) {
         let user;
@@ -59,5 +59,3 @@ class AuthService {
         return role === 'student' ? '/student' : role === 'faculty' ? '/faculty' : role === 'admin' ? '/admin' : '/';
     }
 }
-
-export default AuthService;
