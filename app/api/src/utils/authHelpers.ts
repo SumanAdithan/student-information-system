@@ -24,3 +24,8 @@ export const getJwtTokwn = (id: string, role: UserRole) => {
 export const verifyJwtToken = (token: string) => {
     return jwt.verify(token, process.env.JWT_SECRET);
 };
+
+// Generate QR Token
+export const getQrToken = (id: string) => {
+    return jwt.sign({ id }, process.env.JWT_SECRET);
+};

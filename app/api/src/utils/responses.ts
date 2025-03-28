@@ -1,8 +1,7 @@
-import { Response, NextFunction } from 'express';
-import ErrorHandler from './ErrorHandler';
+import { Response } from 'express';
 
 // success response
-export const successResponse = (response: Response, statusCode: number, data: any, message: string = 'Success') => {
+export const successResponse = (response: Response, statusCode: number, data?: any, message: string = 'Success') => {
     return response.status(statusCode).json({
         success: true,
         message,

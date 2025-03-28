@@ -1,4 +1,3 @@
-export * from './student.types';
 export * from './regulationInfo.types';
 export * from './assignmentResult.types';
 export * from './internalResult.types';

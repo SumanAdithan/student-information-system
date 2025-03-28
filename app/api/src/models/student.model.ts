@@ -1,3 +1,5 @@
+import { Student, UpdateStudent } from '@sis/types';
+import { hashPassword } from '@utils';
 import { Schema, model } from 'mongoose';
 
 const StudentSchema = new Schema(
@@ -13,6 +15,7 @@ const StudentSchema = new Schema(
         registerNo: {
             type: Number,
             required: true,
+            unique: true,
         },
         cgpa: {
             type: Number,
@@ -62,6 +65,7 @@ const StudentSchema = new Schema(
         email: {
             type: String,
             required: true,
+            unique: true,
         },
         accomodation: {
             type: String,
@@ -79,6 +83,10 @@ const StudentSchema = new Schema(
         password: {
             type: String,
             required: true,
+            select: false,
+        },
+        qrCode: {
+            type: String,
             select: false,
         },
     },
@@ -102,7 +110,18 @@ StudentSchema.virtual('semesterWord').get(function () {
     return numberToWord[this.semester];
 });
 
+StudentSchema.pre('save', async function (next) {
+    if (!this.isModified('password')) return next();
+    this.password = await hashPassword(this.password);
+    next();
+});
+
 const StudentModel = model('Student', StudentSchema);
 
 export const getStudentById = (studentId: string) => StudentModel.findById(studentId);
 export const getStudentByEmail = (studentEmail: string) => StudentModel.findOne({ email: studentEmail });
+export const createStudent = (student: Student) => StudentModel.create(student);
+export const getAllStudentData = () => StudentModel.find();
+export const updateStudentById = (studentId: string, updatedItems: UpdateStudent) =>
+    StudentModel.findByIdAndUpdate(studentId, updatedItems, { new: true, runValidators: true });
+export const deleteStudentById = (studentId: string) => StudentModel.findByIdAndDelete(studentId);

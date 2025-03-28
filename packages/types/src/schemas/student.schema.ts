@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const StudentDTOType = z.object({
+export const StudentSchema = z.object({
     profileImage: z.string({
         required_error: 'Please enter profile image URL',
         invalid_type_error: 'Profile image URL must be a string',
@@ -121,9 +121,11 @@ export const StudentDTOType = z.object({
     accomodation: z.enum(['Day Scholar', 'Hosteller'], {
         errorMap: () => ({ message: 'Please select correct accomodation' }),
     }),
+    password: z.string().optional(),
 });
 
-export type StudentDTO = z.infer<typeof StudentDTOType>;
+export const UpdateStudentSchema = StudentSchema.partial();
 
-export const UpdateStudentDTOType = StudentDTOType.partial();
-export type UpdateStudentDTO = z.infer<typeof UpdateStudentDTOType>;
+export type Student = z.infer<typeof StudentSchema>;
+
+export type UpdateStudent = z.infer<typeof UpdateStudentSchema>;
