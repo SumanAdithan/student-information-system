@@ -1,51 +1,36 @@
 import { Navigate, Outlet } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { api } from '@utils';
 import { Loading } from '@components';
+import { useDispatch } from 'react-redux';
+import { AppDispatch, setRole } from '@store';
+import { useEffect } from 'react';
+import { useIsAuthenticated } from '@queries';
 
 export const PrivateRoute = ({ allowedRoles }: { allowedRoles: string }) => {
-    const [authData, setAuthData] = useState<{ isAuthenticated: boolean; role: string } | null>(null);
-    const [loading, setLoading] = useState(true);
+    const dispatch = useDispatch<AppDispatch>();
+    const isAuthenticated = useIsAuthenticated();
+    const { data: authData, isLoading } = isAuthenticated;
 
     useEffect(() => {
-        api.get(`/auth/status`)
-            .then((res) => {
-                setAuthData(res.data);
-                setLoading(false);
-            })
-            .catch(() => {
-                setAuthData({ isAuthenticated: false, role: '' });
-                setLoading(false);
-            });
-    }, []);
+        if (authData?.role) {
+            dispatch(setRole(authData.role));
+        }
+    }, [authData, dispatch]);
 
-    if (loading) return <Loading />;
+    if (isLoading) return <Loading />;
 
-    if (!authData?.isAuthenticated) return <Navigate to='/' replace />;
-    if (!allowedRoles.includes(authData.role)) return <Navigate to='/' replace />;
+    if (!authData?.isAuthenticated) return <Navigate to={authData?.redirectUrl || '/'} replace />;
+    if (!allowedRoles.includes(authData.role)) return <Navigate to={authData?.redirectUrl || '/'} replace />;
 
     return <Outlet />;
 };
 
 export const PublicRoute = () => {
-    const [authData, setAuthData] = useState<{ isAuthenticated: boolean; role: string } | null>(null);
-    const [loading, setLoading] = useState(true);
+    const isAuthenticated = useIsAuthenticated();
+    const { data: authData, isLoading } = isAuthenticated;
 
-    useEffect(() => {
-        api.get(`/auth/status`)
-            .then((res) => {
-                setAuthData(res.data);
-                setLoading(false);
-            })
-            .catch(() => {
-                setAuthData({ isAuthenticated: false, role: '' });
-                setLoading(false);
-            });
-    }, []);
+    if (isLoading) return <Loading />;
 
-    if (loading) return <Loading />;
-
-    if (authData?.isAuthenticated) return <Navigate to={`/${authData.role}`} replace />;
+    if (authData?.isAuthenticated) return <Navigate to={authData.redirectUrl} replace />;
 
     return <Outlet />;
 };

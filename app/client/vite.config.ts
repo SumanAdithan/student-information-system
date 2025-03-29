@@ -18,6 +18,8 @@ export default defineConfig({
             '@data': resolve(__dirname, 'src/data'),
             '@hooks': resolve(__dirname, 'src/hooks'),
             '@api': resolve(__dirname, 'src/api'),
+            '@store': resolve(__dirname, 'src/store'),
+            '@queries': resolve(__dirname, 'src/queries'),
         },
     },
     server: {

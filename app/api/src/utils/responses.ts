@@ -1,11 +1,18 @@
 import { Response } from 'express';
 
 // success response
-export const successResponse = (response: Response, statusCode: number, data?: any, message: string = 'Success') => {
+export const successResponse = (
+    response: Response,
+    statusCode: number,
+    data?: any,
+    message: string = 'Success',
+    redirectUrl?: string
+) => {
     return response.status(statusCode).json({
         success: true,
         message,
         data,
+        redirectUrl,
     });
 };
 

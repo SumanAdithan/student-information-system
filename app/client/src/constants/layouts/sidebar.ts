@@ -3,7 +3,7 @@ import { logo } from '@assets';
 export const sidebarConfig = {
     title: 'MET',
     logo: logo,
-    menuItems: [
+    studentNavLinks: [
         { name: 'Overview', href: '/student' },
         { name: 'Assignments', href: '/student/assignments' },
         { name: 'Internal Results', href: '/student/internal-results' },
@@ -14,5 +14,13 @@ export const sidebarConfig = {
         { name: 'Time Table', href: '/student/time-table' },
         { name: 'Circular', href: '/student/circular' },
         { name: 'Events', href: '/student/events' },
+    ],
+    facultyNavLinks: [
+        { name: 'Overview', href: '/faculty' },
+        { name: 'Students', href: '/faculty/students' },
+    ],
+    adminNavLinks: [
+        { name: 'Overview', href: '/admin' },
+        { name: 'Students', href: '/admin/students' },
     ],
 };

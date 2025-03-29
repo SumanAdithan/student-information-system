@@ -5,5 +5,6 @@ import { PublicRoute } from './ProtectedRoute';
 export const loginRoutes = () => (
     <Route element={<PublicRoute />}>
         <Route path='/' element={<LoginPage />} />;
+        <Route path='/met/admin' element={<LoginPage />} />;
     </Route>
 );

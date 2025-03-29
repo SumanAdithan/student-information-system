@@ -1,7 +1,7 @@
-import { useAuth } from '@hooks';
 import { Html5Qrcode } from 'html5-qrcode';
 import { isMobile } from 'react-device-detect';
 import { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import { useLoginByQr } from '@queries';
 
 interface QrScannerProps {
     scan: boolean;
@@ -11,7 +11,7 @@ interface QrScannerProps {
 
 export const QrScanner = ({ scan, setScan, path }: QrScannerProps) => {
     const [startScan, setStartScan] = useState(false);
-    const { loginByQr } = useAuth();
+    const loginByQr = useLoginByQr();
 
     useEffect(() => {
         setStartScan(scan);

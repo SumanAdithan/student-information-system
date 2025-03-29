@@ -1,7 +1,8 @@
 import { loginPageConfig } from '@constants';
-import { useAuth } from '@hooks';
 import { QrScanner } from '@components';
 import { ChangeEvent, FormEvent, useState } from 'react';
+import { useLoginByPassword } from '@queries';
+import { useLocation } from 'react-router-dom';
 
 export const LoginPage = () => {
     const {
@@ -20,8 +21,9 @@ export const LoginPage = () => {
     const [isFaculty, setIsFaculty] = useState(false);
     const [loginData, setLoginData] = useState(initialState);
     const [scan, setScan] = useState(false);
-    const path = isFaculty ? 'faculty' : 'student';
-    const { loginByPassword } = useAuth();
+    const { pathname } = useLocation();
+    const path = pathname === '/met/admin' ? 'admin' : isFaculty ? 'faculty' : 'student';
+    const loginByPassword = useLoginByPassword();
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         setLoginData((prev) => ({
@@ -83,15 +85,17 @@ export const LoginPage = () => {
                         {scan ? null : renderLoginForm()}
                         {scan && <QrScanner scan={scan} setScan={setScan} path={path} />}
                         <div className='text-primary-dark font-medium flex justify-between items-center mt-2  cursor-pointer'>
-                            <div
-                                className='ml-1'
-                                onClick={() => {
-                                    setLoginData(initialState);
-                                    setIsFaculty(!isFaculty);
-                                }}
-                            >
-                                {isFaculty ? faculty : student}
-                            </div>
+                            {path === 'admin' ? null : (
+                                <div
+                                    className='ml-1'
+                                    onClick={() => {
+                                        setLoginData(initialState);
+                                        setIsFaculty(!isFaculty);
+                                    }}
+                                >
+                                    {isFaculty ? faculty : student}
+                                </div>
+                            )}
                             <div className='mr-1' onClick={() => setScan((prev) => !prev)}>
                                 {scan ? 'Stop' : 'Login Using QR'}
                             </div>

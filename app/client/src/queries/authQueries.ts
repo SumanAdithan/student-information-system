@@ -1,11 +1,11 @@
-import { useMutation } from '@tanstack/react-query';
-import { loginUserByPassword, loginUserByQrCode, logoutUser } from '@api';
+import { checkIsAuthenticated, loginUserByPassword, loginUserByQrCode, logoutUser } from '@api';
+import { useMutation, useQuery } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
 
-export const useAuth = () => {
+export const useLoginByPassword = () => {
     const navigate = useNavigate();
 
-    const loginByPassword = useMutation({
+    return useMutation({
         mutationFn: ({ path, loginData }: { path: string; loginData: { email: string; password: string } }) =>
             loginUserByPassword(path, loginData),
         onSuccess: (data) => {
@@ -15,8 +15,12 @@ export const useAuth = () => {
             console.error('Login failed:', error.message);
         },
     });
+};
 
-    const loginByQr = useMutation({
+export const useLoginByQr = () => {
+    const navigate = useNavigate();
+
+    return useMutation({
         mutationFn: ({ path, qrToken }: { path: string; qrToken: string }) => loginUserByQrCode(path, qrToken),
         onSuccess: (data) => {
             navigate(data.redirectUrl);
@@ -25,8 +29,12 @@ export const useAuth = () => {
             console.error('Login failed:', error.message);
         },
     });
+};
 
-    const logout = useMutation({
+export const useLogout = () => {
+    const navigate = useNavigate();
+
+    return useMutation({
         mutationFn: logoutUser,
         onSuccess: () => {
             navigate('/');
@@ -35,5 +43,12 @@ export const useAuth = () => {
             console.error('Login failed:', error.message);
         },
     });
-    return { loginByPassword, loginByQr, logout };
+};
+
+export const useIsAuthenticated = () => {
+    return useQuery({
+        queryKey: ['isAuthenticated'],
+        queryFn: checkIsAuthenticated,
+        retry: false,
+    });
 };
