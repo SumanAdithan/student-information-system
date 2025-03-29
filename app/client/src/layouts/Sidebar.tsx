@@ -1,50 +1,66 @@
 import { sidebarConfig } from '@constants';
+import { AppDispatch, RootState, toggleSidebarOpen } from '@store';
 import { ExpandableSidebar } from '@ui';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
-import { Dispatch, SetStateAction } from 'react';
-import { NavLink } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { NavLink, useLocation } from 'react-router-dom';
 
-interface SidebarProps {
-    isSidebarOpen: boolean;
-    setIsSidebarOpen: Dispatch<SetStateAction<boolean>>;
-    isMobile: boolean;
-}
+export const Sidebar = () => {
+    const dispatch = useDispatch<AppDispatch>();
+    const { isSidebarOpen, isMobile } = useSelector((state: RootState) => state.layout);
+    const { role } = useSelector((state: RootState) => state.profile);
+    const { logo, title, studentNavLinks, facultyNavLinks, adminNavLinks } = sidebarConfig;
 
-export const Sidebar = ({ isSidebarOpen, setIsSidebarOpen, isMobile }: SidebarProps) => {
-    const { logo, title, menuItems } = sidebarConfig;
+    const navLinks =
+        role === 'student'
+            ? studentNavLinks
+            : role === 'faculty'
+            ? facultyNavLinks
+            : role === 'admin'
+            ? adminNavLinks
+            : [];
+    const { pathname } = useLocation();
+
+    // Function to check if a link should be active
+    const isNavLinkActive = (href: string, pathname: string): boolean => {
+        if (pathname === href) return true;
+        if (pathname.startsWith(href) && !pathname.replace(href, '').includes('/')) return true;
+        if (pathname === `${href}/view`) return true;
+        return false;
+    };
 
     const renderNavigationLinks = () => {
         return (
             <nav className='mt-6 px-4 grow'>
-                {menuItems.map((item) => (
-                    <NavLink
-                        key={item.href}
-                        to={item.href}
-                        end
-                        className={({ isActive }) =>
-                            `flex items-center text-lg font-medium p-4 mb-2 rounded-xl transition-colors duration-300 ${
-                                isActive
+                {navLinks.map((item) => {
+                    const shouldBeActive = isNavLinkActive(item.href, pathname);
+                    return (
+                        <NavLink
+                            key={item.href}
+                            to={item.href}
+                            className={`flex items-center text-lg font-medium p-4 mb-2 rounded-xl transition-colors duration-300 ${
+                                shouldBeActive
                                     ? 'bg-primary text-font-primary'
                                     : 'hover:bg-primary hover:text-font-primary text-font-secondary'
-                            }`
-                        }
-                    >
-                        <AnimatePresence>
-                            {isSidebarOpen && (
-                                <motion.span
-                                    className='text-nowrap'
-                                    initial={{ opacity: 0, width: 0 }}
-                                    animate={{ opacity: 1, width: 'auto' }}
-                                    exit={{ opacity: 0, width: 0 }}
-                                    transition={{ duration: 0.2, delay: 0.3 }}
-                                >
-                                    {item.name}
-                                </motion.span>
-                            )}
-                        </AnimatePresence>
-                    </NavLink>
-                ))}
+                            }`}
+                        >
+                            <AnimatePresence>
+                                {isSidebarOpen && (
+                                    <motion.span
+                                        className='text-nowrap'
+                                        initial={{ opacity: 0, width: 0 }}
+                                        animate={{ opacity: 1, width: 'auto' }}
+                                        exit={{ opacity: 0, width: 0 }}
+                                        transition={{ duration: 0.2, delay: 0.3 }}
+                                    >
+                                        {item.name}
+                                    </motion.span>
+                                )}
+                            </AnimatePresence>
+                        </NavLink>
+                    );
+                })}
             </nav>
         );
     };
@@ -60,7 +76,7 @@ export const Sidebar = ({ isSidebarOpen, setIsSidebarOpen, isMobile }: SidebarPr
                         <h1 className='text-3xl font-medium'>{title}</h1>
                     </div>
                     {isMobile && (
-                        <X size={28} className='text-font-primary' onClick={() => setIsSidebarOpen((prev) => !prev)} />
+                        <X size={28} className='text-font-primary' onClick={() => dispatch(toggleSidebarOpen())} />
                     )}
                 </div>
                 <div className='overflow-y-auto'>{renderNavigationLinks()}</div>

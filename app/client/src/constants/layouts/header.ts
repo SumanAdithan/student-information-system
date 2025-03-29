@@ -1,7 +1,5 @@
-import { profile } from '@assets';
-
 export const headerConfig = {
-    headerTitles: {
+    studentHeaderTitles: {
         '/student': 'OVERVIEW',
         '/student/assignments': 'ASSIGNMENTS',
         '/student/internal-results': 'INTERNAL RESULTS',
@@ -9,8 +7,12 @@ export const headerConfig = {
         '/student/download-notes': 'DOWNLOAD NOTES',
         '/student/pay-dues': 'PAY DUES',
     },
-    profileImage: profile,
-    name: 'john',
+
+    facultyHeaderTitles: {
+        '/faculty': 'OVERVIEW',
+        '/faculty/students': 'STUDENTS',
+    },
+
     dropDownItems: [
         { title: 'Notification', action: () => null },
         { title: 'Circular', action: () => null },

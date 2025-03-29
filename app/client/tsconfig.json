@@ -14,7 +14,9 @@
             "@utils": ["utils"],
             "@data": ["data"],
             "@hooks": ["hooks"],
-            "@api": ["api"]
+            "@api": ["api"],
+            "@store": ["store"],
+            "@queries": ["queries"]
         }
     }
 }

@@ -1,0 +1,16 @@
+import { Route } from 'react-router-dom';
+import { Layout } from '@layouts';
+import { PrivateRoute } from './ProtectedRoute';
+import { FacultyOverviewPage, FacultyStudentPage, ViewStudent } from '@pages';
+
+export const adminRoutes = () => {
+    return (
+        <Route element={<PrivateRoute allowedRoles={'admin'} />}>
+            <Route path='/admin' element={<Layout />}>
+                <Route index element={<FacultyOverviewPage />} />
+                <Route path='students' element={<FacultyStudentPage />} />
+                <Route path='students/view' element={<ViewStudent />} />
+            </Route>
+        </Route>
+    );
+};

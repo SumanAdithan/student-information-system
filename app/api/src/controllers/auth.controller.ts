@@ -1,8 +1,8 @@
 import { catchAsyncError } from '@middlewares';
 import { UserRole } from '@sis/types';
-import { ErrorHandler, tokenResponse } from '@utils';
+import { ErrorHandler, successResponse, tokenResponse } from '@utils';
 import { AuthService } from '@services';
-import { Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
 
 // Login by password - api/v1/login
 export const loginByPassword = (role: UserRole) =>
@@ -11,7 +11,7 @@ export const loginByPassword = (role: UserRole) =>
         if (!email || !password) return next(new ErrorHandler(400, 'Please enter email and password'));
 
         const { token, redirectUrl } = await AuthService.loginUserByPassword(role, email, password);
-        return tokenResponse(response, token, 200, redirectUrl);
+        tokenResponse(response, token, 200, redirectUrl);
     });
 
 // Login by Qr code - api/v1/login/qr
@@ -21,7 +21,7 @@ export const loginByQrCode = (role: UserRole) =>
         if (!qrToken) return next(new ErrorHandler(400, 'Invalid QR Code'));
 
         const { token, redirectUrl } = await AuthService.loginUserByQrCode(role, qrToken);
-        return tokenResponse(response, token, 200, redirectUrl);
+        tokenResponse(response, token, 200, redirectUrl);
     });
 
 // change password - api/v1/changepassword
@@ -31,28 +31,20 @@ export const changePassword = (role: UserRole) =>
         const { id, password } = request.user;
         await AuthService.changePassword(role, id, password, newPassword);
 
-        return response.status(200).json({
-            success: true,
-        });
+        successResponse(response, 200, null, 'Password Changed Successfully');
     });
 
 // logout - api/v1/logout
 export const logout = (request: Request, response: Response) => {
-    response.clearCookie('token').status(200).json({
-        success: true,
-        redirectUrl: '/',
-    });
+    response.clearCookie('token');
+    successResponse(response, 200, null, ' Logged out successfully', '/');
 };
 
 // auth status - api/v1/auth/status
-export const authStatus = (request: Request, response: Response) => {
-    if (!request.user) {
-        response.status(400).json({ isAuthenticated: false });
-        return;
-    }
+export const authStatus = (request: Request, response: Response, next: NextFunction) => {
+    if (!request.user) return next(new ErrorHandler(401, 'Not Authenticated'));
 
     const { role } = request.user;
 
-    response.status(200).json({ isAuthenticated: true, role });
-    return;
+    successResponse(response, 200, { isAuthenticated: true, role }, 'Authenticated', `/${role}`);
 };
