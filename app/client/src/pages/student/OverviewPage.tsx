@@ -2,8 +2,8 @@ import { useDispatch } from 'react-redux';
 import { AppDispatch, setProfile } from '@store';
 import { useEffect } from 'react';
 import { useGetAuthenticatedStudent } from '@queries';
-import { ViewStudent } from '@pages';
 import { setStudent } from '@store';
+import { ViewStudent } from '@components';
 
 export const OverviewPage = () => {
     const dispatch = useDispatch<AppDispatch>();

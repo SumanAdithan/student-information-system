@@ -8,3 +8,5 @@ export * from './tables/TablePageination';
 export * from './loader/Loading';
 // button
 export * from './buttons/BackButton';
+// input
+export * from './inputs/InputFields';

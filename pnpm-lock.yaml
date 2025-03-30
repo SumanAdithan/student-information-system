@@ -81,6 +81,9 @@ importers:
 
   app/client:
     dependencies:
+      '@hookform/resolvers':
+        specifier: ^4.1.3
+        version: 4.1.3(react-hook-form@7.55.0(react@19.0.0))
       '@reduxjs/toolkit':
         specifier: ^2.6.1
         version: 2.6.1(react-redux@9.2.0(@types/react@19.0.10)(react@19.0.0)(redux@5.0.1))(react@19.0.0)
@@ -114,6 +117,9 @@ importers:
       react-dom:
         specifier: ^19.0.0
         version: 19.0.0(react@19.0.0)
+      react-hook-form:
+        specifier: ^7.55.0
+        version: 7.55.0(react@19.0.0)
       react-redux:
         specifier: ^9.2.0
         version: 9.2.0(@types/react@19.0.10)(react@19.0.0)(redux@5.0.1)
@@ -123,9 +129,15 @@ importers:
       react-router-dom:
         specifier: ^7.2.0
         version: 7.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      remeda:
+        specifier: ^2.21.2
+        version: 2.21.2
       tailwindcss:
         specifier: ^4.0.8
         version: 4.0.8
+      zod:
+        specifier: ^3.24.2
+        version: 3.24.2
     devDependencies:
       '@eslint/js':
         specifier: ^9.19.0
@@ -363,6 +375,11 @@ packages:
     resolution: {integrity: sha512-JubJ5B2pJ4k4yGxaNLdbjrnk9d/iDz6/q8wOilpIowd6PJPgaxCuHBnBszq7Ce2TyMrywm5r4PnKm6V3iiZF+g==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
+  '@hookform/resolvers@4.1.3':
+    resolution: {integrity: sha512-Jsv6UOWYTrEFJ/01ZrnwVXs7KDvP8XIo115i++5PWvNkNvkrsTfGiLS6w+eJ57CYtUtDQalUWovCZDHFJ8u1VQ==}
+    peerDependencies:
+      react-hook-form: ^7.0.0
+
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
     engines: {node: '>=18.18.0'}
@@ -527,6 +544,9 @@ packages:
     resolution: {integrity: sha512-U0FaE5O1BCpZSeE6gBl3c5ObhePQSfk9vDRToMmTkbhCOgW4jqvtS5LGyQ76L1fH8sM0keRp4uDTsbjiUyjk0g==}
     cpu: [x64]
     os: [win32]
+
+  '@standard-schema/utils@0.3.0':
+    resolution: {integrity: sha512-e7Mew686owMaPJVNNLs55PUvgz371nKgwsc4vxE49zsODpJEnxgxRo2y/OKrqueavXgZNMDVj3DdHFlaSAeU8g==}
 
   '@swc/core-darwin-arm64@1.10.18':
     resolution: {integrity: sha512-FdGqzAIKVQJu8ROlnHElP59XAUsUzCFSNsou+tY/9ba+lhu8R9v0OI5wXiPErrKGZpQFMmx/BPqqhx3X4SuGNg==}
@@ -1913,6 +1933,12 @@ packages:
     peerDependencies:
       react: ^19.0.0
 
+  react-hook-form@7.55.0:
+    resolution: {integrity: sha512-XRnjsH3GVMQz1moZTW53MxfoWN7aDpUg/GpVNc4A3eXRVNdGXfbzJ4vM4aLQ8g6XCUh1nIbx70aaNCl7kxnjog==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18 || ^19
+
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
@@ -1970,6 +1996,9 @@ packages:
 
   redux@5.0.1:
     resolution: {integrity: sha512-M9/ELqF6fy8FwmkpnF0S3YKOqMyoWJ4+CS5Efg2ct3oY9daQvd/Pc71FpGZsVsbl3Cpb+IIcjBDUnnyBdQbq4w==}
+
+  remeda@2.21.2:
+    resolution: {integrity: sha512-wdhkMDou8HRpD7RnxKJ/FHJWEGXRH7jV/pb0NsdLLSoBo+G9RjtxcY41hVhogLfEMkThk6aySKjs+Yd6PnpzBA==}
 
   require-directory@2.1.1:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
@@ -2209,6 +2238,10 @@ packages:
   type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
     engines: {node: '>= 0.8.0'}
+
+  type-fest@4.38.0:
+    resolution: {integrity: sha512-2dBz5D5ycHIoliLYLi0Q2V7KRaDlH0uWIvmk7TYlAg5slqwiPv1ezJdZm1QEM0xgk29oYWMCbIG7E6gHpvChlg==}
+    engines: {node: '>=16'}
 
   type-is@1.6.18:
     resolution: {integrity: sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==}
@@ -2496,6 +2529,11 @@ snapshots:
       '@eslint/core': 0.12.0
       levn: 0.4.1
 
+  '@hookform/resolvers@4.1.3(react-hook-form@7.55.0(react@19.0.0))':
+    dependencies:
+      '@standard-schema/utils': 0.3.0
+      react-hook-form: 7.55.0(react@19.0.0)
+
   '@humanfs/core@0.19.1': {}
 
   '@humanfs/node@0.16.6':
@@ -2615,6 +2653,8 @@ snapshots:
 
   '@rollup/rollup-win32-x64-msvc@4.34.8':
     optional: true
+
+  '@standard-schema/utils@0.3.0': {}
 
   '@swc/core-darwin-arm64@1.10.18':
     optional: true
@@ -3960,6 +4000,10 @@ snapshots:
       react: 19.0.0
       scheduler: 0.25.0
 
+  react-hook-form@7.55.0(react@19.0.0):
+    dependencies:
+      react: 19.0.0
+
   react-is@16.13.1: {}
 
   react-redux@9.2.0(@types/react@19.0.10)(react@19.0.0)(redux@5.0.1):
@@ -4012,6 +4056,10 @@ snapshots:
       redux: 5.0.1
 
   redux@5.0.1: {}
+
+  remeda@2.21.2:
+    dependencies:
+      type-fest: 4.38.0
 
   require-directory@2.1.1: {}
 
@@ -4268,6 +4316,8 @@ snapshots:
   type-check@0.4.0:
     dependencies:
       prelude-ls: 1.2.1
+
+  type-fest@4.38.0: {}
 
   type-is@1.6.18:
     dependencies:

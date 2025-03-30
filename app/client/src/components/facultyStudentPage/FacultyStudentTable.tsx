@@ -3,6 +3,9 @@ import { facultyStudentColumnConfig as columns } from './FacultyStudentColumn';
 import { RenderListTable, TablePageination } from '@components';
 import { useState } from 'react';
 import { Search } from 'lucide-react';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState, setModal } from '@store';
+import { FacultyStudentTableForm } from './FacultyStudentTableForm';
 
 interface DownloadNotesTableProps {
     title: string;
@@ -10,10 +13,12 @@ interface DownloadNotesTableProps {
 }
 
 export const FacultyStudentTable = ({ title, data }: DownloadNotesTableProps) => {
+    const dispatch = useDispatch();
     const [globalFilter, setGlobalFilter] = useState('');
     const table = useTableConfig({ data, columns, globalFilter, setGlobalFilter, pageSize: 10 });
+    const { editModal } = useSelector((state: RootState) => state.modal);
     return (
-        <div className='bg-white p-6 pb-10 rounded-2xl shadow-section mb-7'>
+        <div className='relative bg-white p-6 pb-10 rounded-2xl shadow-section mb-7 backdrop-blur-md  z-20 overflow-hidden'>
             <div className='flex justify-between  mb-6 min-w-max gap-5 flex-col lg:items-center lg:flex-row'>
                 <h1 className='text-2xl font-medium'>{title}</h1>
                 <div className='relative flex items-center gap-2 '>
@@ -25,18 +30,19 @@ export const FacultyStudentTable = ({ title, data }: DownloadNotesTableProps) =>
                         placeholder='Search Notes...'
                         className='bg-search-input text-font-primary placeholder-font-primary rounded-lg pl-10 pr-4 py-2 w-[150px] sm:w-full  outline-none focus:ring-2 focus:ring-blue-500'
                     />
-                    {/* <button
-                        className='text-white hover:bg-green-700 bg-green-600 py-2 px-4 rounded-lg'
-                        onClick={() => openModal('ADD')}
+                    <button
+                        className='text-white  bg-primary py-2 px-4 rounded-lg'
+                        onClick={() => dispatch(setModal({ active: true, status: 'add' }))}
                     >
                         <h3>Add</h3>
-                    </button> */}
+                    </button>
                 </div>
             </div>
             <div className='overflow-x-scroll font-secondary'>
                 <RenderListTable table={table} />
             </div>
             <TablePageination table={table} name={title} />
+            {editModal.active && <FacultyStudentTableForm />}
         </div>
     );
 };

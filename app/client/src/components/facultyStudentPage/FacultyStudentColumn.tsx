@@ -1,6 +1,6 @@
 // import { download } from '@assets';
-import { view } from '@assets';
-import { RootState, setStudent } from '@store';
+import { edit, trash, view } from '@assets';
+import { AppDispatch, RootState, setModal, setStudent } from '@store';
 import { createColumnHelper } from '@tanstack/react-table';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -18,7 +18,7 @@ export const facultyStudentColumnConfig = [
         header: 'View',
         cell: ({ row }) => {
             const navigate = useNavigate();
-            const dispatch = useDispatch();
+            const dispatch = useDispatch<AppDispatch>();
 
             const { role } = useSelector((state: RootState) => state.profile);
             const path = role === 'faculty' ? 'faculty' : role === 'admin' ? 'admin' : '';
@@ -28,8 +28,28 @@ export const facultyStudentColumnConfig = [
                 navigate(`/${path}/students/view`);
             };
             return (
-                <div className='flex justify-center'>
-                    <img src={view} alt='true' className='w-6' onClick={handleViewClick} />
+                <div className='flex justify-center gap-2'>
+                    <img
+                        src={view}
+                        alt='view'
+                        className='w-6 h-6 transition-transform duration-300 hover:scale-125'
+                        onClick={handleViewClick}
+                    />
+                    <img
+                        src={edit}
+                        alt='edit'
+                        className='w-6 h-6 transition-transform duration-300 hover:scale-125'
+                        onClick={() => {
+                            dispatch(setStudent(row.original));
+                            dispatch(setModal({ active: true, status: 'edit' }));
+                        }}
+                    />
+                    <img
+                        src={trash}
+                        alt='delete'
+                        className='w-6 h-6 transition-transform duration-300 hover:scale-125'
+                        onClick={handleViewClick}
+                    />
                 </div>
             );
         },

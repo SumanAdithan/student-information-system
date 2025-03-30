@@ -1,7 +1,8 @@
 import { Route } from 'react-router-dom';
 import { Layout } from '@layouts';
 import { PrivateRoute } from './ProtectedRoute';
-import { FacultyOverviewPage, FacultyStudentPage, ViewStudent } from '@pages';
+import { FacultyOverviewPage, FacultyStudentPage } from '@pages';
+import { ViewStudent } from '@components';
 
 export const adminRoutes = () => {
     return (
