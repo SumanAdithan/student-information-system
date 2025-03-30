@@ -10,3 +10,6 @@ export * from './loginPage';
 
 // faculty
 export * from './facultyStudentPage';
+
+// view
+export * from './view';

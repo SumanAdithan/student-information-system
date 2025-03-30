@@ -9,5 +9,21 @@ import download from './download.png';
 import activePayBtn from './active-pay-btn.png';
 import inActivePayBtn from './in-active-pay-btn.png';
 import view from './view.png';
+import edit from './edit.png';
+import trash from './trash.png';
 
-export { logo, profile, attendance, cgpa, dues, tickMark, xMark, download, activePayBtn, inActivePayBtn, view };
+export {
+    logo,
+    profile,
+    attendance,
+    cgpa,
+    dues,
+    tickMark,
+    xMark,
+    download,
+    activePayBtn,
+    inActivePayBtn,
+    view,
+    edit,
+    trash,
+};

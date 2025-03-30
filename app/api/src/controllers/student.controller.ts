@@ -14,7 +14,8 @@ export const getAuthenticatedStudent = (request: Request, response: Response, ne
 
 // Get All Student - api/v1/students
 export const getAllStudent = catchAsyncError(async (request, response, next) => {
-    const students = await StudentService.getAllStudent();
+    const includeCredentials = request.user.role === 'admin';
+    const students = await StudentService.getAllStudent(includeCredentials);
     successResponse(response, 200, students);
 });
 

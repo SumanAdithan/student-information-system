@@ -20,8 +20,9 @@ export class StudentService {
         newStudent.save();
     }
 
-    static async getAllStudent() {
-        return await getAllStudentData();
+    static async getAllStudent(includeCredentials = false) {
+        if (!includeCredentials) return getAllStudentData();
+        return await getAllStudentData().select('+password');
     }
 
     static async updateStudent(studentId: string, updatedItems: UpdateStudent, next: NextFunction) {
