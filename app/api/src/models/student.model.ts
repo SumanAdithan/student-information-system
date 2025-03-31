@@ -62,6 +62,10 @@ const StudentSchema = new Schema(
             type: String,
             default: 'B.E',
         },
+        regulation: {
+            type: String,
+            default: 'R2021',
+        },
         email: {
             type: String,
             required: true,

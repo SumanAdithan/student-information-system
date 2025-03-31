@@ -9,7 +9,7 @@ interface InputFieldProps {
         type: string;
         name: string;
         float?: boolean;
-        valueAsNumber: boolean;
+        valueAsNumber?: boolean;
         placeholder?: string;
         options?: Options[];
         disabled?: boolean;
@@ -28,7 +28,9 @@ export const InputField = ({ data, register, error }: InputFieldProps) => {
                 <select
                     className='w-full px-4 py-2 bg-search-input text-font-primary placeholder-font-primary  rounded-md'
                     disabled={disabled}
-                    {...register(name)}
+                    {...register(name, {
+                        setValueAs: (val: any) => (valueAsNumber ? (val === '' ? undefined : Number(val)) : val || ''),
+                    })}
                 >
                     {options.map((option) => (
                         <option key={option.value} value={option.value}>
@@ -44,7 +46,10 @@ export const InputField = ({ data, register, error }: InputFieldProps) => {
                     className='w-full px-4 py-2 bg-search-input text-font-primary placeholder-font-primary  rounded-md'
                     placeholder={placeholder}
                     disabled={disabled}
-                    {...register(name, { valueAsNumber })}
+                    {...register(name, {
+                        setValueAs: (val: any) =>
+                            type === 'number' ? (val === '' ? undefined : Number(val)) : val || '',
+                    })}
                 />
             )}
             {error && <p className='text-red-500 text-sm'>{error}</p>}

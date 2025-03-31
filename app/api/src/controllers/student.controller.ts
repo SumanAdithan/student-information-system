@@ -14,8 +14,7 @@ export const getAuthenticatedStudent = (request: Request, response: Response, ne
 
 // Get All Student - api/v1/students
 export const getAllStudent = catchAsyncError(async (request, response, next) => {
-    const includeCredentials = request.user.role === 'admin';
-    const students = await StudentService.getAllStudent(includeCredentials);
+    const students = await StudentService.getAllStudent();
     successResponse(response, 200, students);
 });
 
@@ -23,7 +22,7 @@ export const getAllStudent = catchAsyncError(async (request, response, next) => 
 export const createNewStudent = catchAsyncError(async (request, response) => {
     const student = request.body as Student;
     await StudentService.createStudent(student);
-    successResponse(response, 201, 'Student created');
+    successResponse(response, 201, null, 'Student Created');
 });
 
 // Admin: Update existing Student - api/v1/admin/student/:studentId

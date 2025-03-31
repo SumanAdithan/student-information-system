@@ -1,5 +1,5 @@
 import { api } from './apiClient';
-import { Student } from '@sis/types';
+import { Student, UpdateStudent } from '@sis/types';
 
 export const getAuthenticatedStudent = async () => {
     const { data } = await api.get('/student');
@@ -15,6 +15,20 @@ export const getAllStudentsData = async () => {
     };
 };
 
-export const createNewStudent = async (studentId: string, studentData: Student) => {
-    await api.post(`/student/${studentId}`, studentData);
+export const createNewStudent = async ({ studentData }: { studentData: Student }) => {
+    await api.post('/admin/student/new', studentData);
+};
+
+export const updateStudent = async ({
+    studentId,
+    updatedStudentData,
+}: {
+    studentId: string;
+    updatedStudentData: UpdateStudent;
+}) => {
+    await api.patch(`/admin/student/${studentId}`, updatedStudentData);
+};
+
+export const deleteStudent = async ({ studentId }: { studentId: string }) => {
+    await api.delete(`/admin/student/${studentId}`);
 };

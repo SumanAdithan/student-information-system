@@ -8,7 +8,9 @@ export const Loading = () => {
                 <div className='absolute inset-0 border-t-4 border-blue-500 rounded-full animate-spin'></div>
 
                 <div className='absolute inset-0 flex justify-center items-center'>
-                    <img src={logo} alt='Logo' className='w-12 h-12 rounded-sm' />
+                    <div className='w-12 h-12 rounded-sm overflow-hidden'>
+                        <img src={logo} alt='Logo' className='w-full h-full' />
+                    </div>
                 </div>
             </div>
         </div>
