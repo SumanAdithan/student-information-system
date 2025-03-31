@@ -1,10 +1,15 @@
 import { z } from 'zod';
 
 export const StudentSchema = z.object({
-    profileImage: z.string({
-        required_error: 'Please enter profile image URL',
-        invalid_type_error: 'Profile image URL must be a string',
-    }),
+    profileImage: z
+        .union([
+            z.string({
+                required_error: 'Please enter profile image URL',
+                invalid_type_error: 'Profile image URL must be a string',
+            }),
+            z.instanceof(File, { message: 'Profile image must be a file' }),
+        ])
+        .optional(),
 
     name: z
         .string({
@@ -12,6 +17,7 @@ export const StudentSchema = z.object({
             invalid_type_error: 'Name must be a string',
         })
         .min(3, 'Name must be at least 3 characters')
+        .regex(/^[A-Za-z\s]+$/, 'Name must contain only letters and spaces')
         .trim(),
 
     registerNo: z
@@ -28,7 +34,8 @@ export const StudentSchema = z.object({
         })
         .min(0, 'CGPA cannot be negative')
         .max(10, 'CGPA cannot exceed 10')
-        .default(0),
+        .default(0)
+        .optional(),
 
     attendance: z
         .number({
@@ -36,14 +43,16 @@ export const StudentSchema = z.object({
         })
         .min(0, 'Attendance cannot be negative')
         .max(100, 'Attendance cannot exceed 100')
-        .default(0),
+        .default(0)
+        .optional(),
 
     dues: z
         .number({
             invalid_type_error: 'Dues must be a number',
         })
         .min(0, 'Dues cannot be negative')
-        .default(0),
+        .default(0)
+        .optional(),
 
     dob: z
         .string({
@@ -60,7 +69,8 @@ export const StudentSchema = z.object({
         .string({
             invalid_type_error: 'Department must be a string',
         })
-        .default('CSE'),
+        .default('CSE')
+        .optional(),
 
     year: z
         .number({
@@ -70,10 +80,13 @@ export const StudentSchema = z.object({
         .min(1, 'Year must be at least 1')
         .max(4, 'Year cannot exceed 4'),
 
-    regulation: z.string({
-        required_error: 'Please enter regulation',
-        invalid_type_error: 'Regulation must be a string',
-    }),
+    regulation: z
+        .string({
+            required_error: 'Please enter regulation',
+            invalid_type_error: 'Regulation must be a string',
+        })
+        .default('R2021')
+        .optional(),
 
     semester: z
         .number({
@@ -95,13 +108,15 @@ export const StudentSchema = z.object({
             invalid_type_error: 'Arrears must be a number',
         })
         .min(0, 'Arrears cannot be negative')
-        .default(0),
+        .default(0)
+        .optional(),
 
     degree: z
         .string({
             invalid_type_error: 'Degree must be a string',
         })
-        .default('B.E'),
+        .default('B.E')
+        .optional(),
 
     email: z
         .string({

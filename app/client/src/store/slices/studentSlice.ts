@@ -2,11 +2,12 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Student } from '@sis/types';
 
 interface StudentState {
-    student: Student;
+    student: { _id: string } & Student;
 }
 
 const initialState: StudentState = {
     student: {
+        _id: '',
         profileImage: '',
         name: '',
         registerNo: 0,
@@ -32,7 +33,7 @@ const studentSlice = createSlice({
     name: 'student',
     initialState,
     reducers: {
-        setStudent: (state, action: PayloadAction<Student>) => {
+        setStudent: (state, action: PayloadAction<{ _id: string } & Student>) => {
             state.student = action.payload;
         },
     },

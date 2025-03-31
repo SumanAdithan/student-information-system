@@ -6,6 +6,7 @@ import { X } from 'lucide-react';
 import { useEffect } from 'react';
 import { Student, StudentSchema } from '@sis/types';
 import { useChangedInputValues, useZodForm } from '@hooks';
+import { useStudentMutations } from '@queries';
 
 export const FacultyStudentTableForm = () => {
     const {
@@ -27,6 +28,8 @@ export const FacultyStudentTableForm = () => {
     const dispatch = useDispatch<AppDispatch>();
     const watchedValues = watch();
 
+    const { createStudentMutation, updateStudentMutation } = useStudentMutations();
+
     useEffect(() => {
         if (modal.status === 'edit' && student) {
             reset(student);
@@ -36,20 +39,32 @@ export const FacultyStudentTableForm = () => {
     const saveData = (data: Student) => {
         const changedFields = useChangedInputValues(student, watchedValues);
         if (modal.status === 'edit' && changedFields) {
-            console.log('Changed Fields:', changedFields);
+            updateStudentMutation.mutate({
+                studentId: student._id,
+                updatedStudentData: changedFields,
+            });
         } else {
-            console.log('New Student Data:', data);
+            createStudentMutation.mutate({ studentData: data });
         }
         dispatch(toggleModal());
     };
 
     return (
-        <div className='fixed inset-0 py-5 px-10 flex items-center justify-center bg-background-blur text-font-primary z-40 overflow-auto'>
+        <div className='absolute inset-0 py-5 px-10 flex items-center justify-center bg-background-blur text-font-primary z-40 overflow-auto'>
             <div className='bg-white p-5 rounded-xl text-font-primary'>
                 <h1 className='text-3xl font-semibold  mb-3 underline tracking-wider'>
                     {modal.status === 'edit' ? 'Edit Student' : 'Add Student'}
                 </h1>
-                <form onSubmit={handleSubmit(saveData)} className='grid grid-cols-1 md:grid-cols-4 gap-4  '>
+                <form
+                    onSubmit={handleSubmit(saveData)}
+                    onKeyDown={(e) => {
+                        if (e.key === 'Enter') {
+                            e.preventDefault();
+                            handleSubmit(saveData)();
+                        }
+                    }}
+                    className='grid grid-cols-1 md:grid-cols-4 gap-4'
+                >
                     {inputFields.map((input) => (
                         <InputField
                             key={input.name}

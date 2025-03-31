@@ -18,8 +18,6 @@ export const OverviewPage = () => {
         }
     }, [data, dispatch]);
 
-    console.log(data?.student);
-
     if (isLoading) return <div>Loading...</div>;
     if (error) return <div>Error fetching student data</div>;
 

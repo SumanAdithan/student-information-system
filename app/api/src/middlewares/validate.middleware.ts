@@ -13,8 +13,7 @@ export const validate =
                 acc[key] = (value as any)._errors[0];
                 return acc;
             }, {});
-            new ErrorHandler(400, 'validation failed', 'ZodError', zodError);
-            return;
+            return next(new ErrorHandler(400, 'validation failed', 'ZodError', zodError));
         }
         next();
     };
