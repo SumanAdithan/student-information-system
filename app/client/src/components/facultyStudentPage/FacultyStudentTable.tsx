@@ -17,7 +17,7 @@ export const FacultyStudentTable = ({ title, data }: DownloadNotesTableProps) =>
     const [globalFilter, setGlobalFilter] = useState('');
     const { facultyStudentColumnConfig: columns } = FacultyStudentColumnConfig();
     const table = useTableConfig({ data, columns, globalFilter, setGlobalFilter, pageSize: 10 });
-    const { editModal } = useSelector((state: RootState) => state.modal);
+    const { editModal } = useSelector((state: RootState) => state.action);
     return (
         <>
             <div className='relative bg-white p-6 pb-10 rounded-2xl shadow-section mb-7 backdrop-blur-md  z-20 overflow-hidden'>

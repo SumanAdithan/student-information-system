@@ -1,12 +1,7 @@
 import { PersonalDetailsCard, ProfileCard, StatCard } from '@components';
-import { Student } from '@sis/types';
 import { RootState } from '@store';
 import { getStudentOverviewData } from '@utils';
 import { useSelector } from 'react-redux';
-
-interface ViewStudentProps {
-    student: Student;
-}
 
 export const ViewStudent = () => {
     const { student } = useSelector((state: RootState) => state.student);

@@ -1,5 +1,5 @@
 import { createNewStudent, deleteStudent, getAllStudentsData, getAuthenticatedStudent, updateStudent } from '@api';
-import { QueryClient, useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 
 export const useGetAuthenticatedStudent = () => {
     return useQuery({

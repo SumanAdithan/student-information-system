@@ -6,7 +6,7 @@ const StudentSchema = new Schema(
     {
         profileImage: {
             type: String,
-            required: true,
+            default: '',
         },
         name: {
             type: String,

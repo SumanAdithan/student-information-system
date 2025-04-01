@@ -1,24 +1,18 @@
-// import { download } from '@assets';
 import { edit, trash, view } from '@assets';
 import { useStudentMutations } from '@queries';
-import { AppDispatch, RootState, setModal, setStudent } from '@store';
+import { AppDispatch, setModal, setStudent, toggleView } from '@store';
 import { createColumnHelper } from '@tanstack/react-table';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 const columnHelper = createColumnHelper<any>();
 
 export const FacultyStudentColumnConfig = () => {
-    const navigate = useNavigate();
     const dispatch = useDispatch<AppDispatch>();
     const { deleteStudentMutation } = useStudentMutations();
 
-    const { role } = useSelector((state: RootState) => state.profile);
-    const path = role === 'faculty' ? 'faculty' : role === 'admin' ? 'admin' : '';
-
     const handleViewClick = (student: any) => {
         dispatch(setStudent(student));
-        navigate(`/${path}/students/view`);
+        dispatch(toggleView());
     };
 
     const handleEditClick = (student: any) => {

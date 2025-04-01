@@ -20,7 +20,7 @@ export const FacultyStudentTableForm = () => {
     const { student, modal } = useSelector(
         (state: RootState) => ({
             student: state.student.student,
-            modal: state.modal.editModal,
+            modal: state.action.editModal,
         }),
         shallowEqual
     );

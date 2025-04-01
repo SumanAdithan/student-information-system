@@ -2,13 +2,13 @@ import { combineReducers } from '@reduxjs/toolkit';
 import { layoutReducer } from './slices/layoutSlice';
 import { profileReducer } from './slices/profileSlice';
 import { studentReducer } from './slices/studentSlice';
-import { modalReducer } from './slices/modalSlice';
+import { actionReducer } from './slices/actionSlice';
 
 const rootReducer = combineReducers({
     layout: layoutReducer,
     profile: profileReducer,
     student: studentReducer,
-    modal: modalReducer,
+    action: actionReducer,
 });
 
 export default rootReducer;

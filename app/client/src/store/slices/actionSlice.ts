@@ -5,21 +5,26 @@ interface EditModal {
     status: string;
 }
 
-interface ModalState {
+interface ActionState {
+    view: boolean;
     editModal: EditModal;
 }
 
-const initialState: ModalState = {
+const initialState: ActionState = {
+    view: false,
     editModal: {
         active: false,
         status: '',
     },
 };
 
-const modalSlice = createSlice({
-    name: 'modal',
+const actionSlice = createSlice({
+    name: 'action',
     initialState,
     reducers: {
+        toggleView: (state) => {
+            state.view = !state.view;
+        },
         toggleModal: (state) => {
             state.editModal.active = !state.editModal.active;
         },
@@ -29,5 +34,5 @@ const modalSlice = createSlice({
     },
 });
 
-export const { toggleModal, setModal } = modalSlice.actions;
-export const modalReducer = modalSlice.reducer;
+export const { toggleView, toggleModal, setModal } = actionSlice.actions;
+export const actionReducer = actionSlice.reducer;
