@@ -2,7 +2,7 @@ import { catchAsyncError } from '@middlewares';
 import { StudentService } from '@services';
 import { Student, UpdateStudent } from '@sis/types';
 import { ErrorHandler, successResponse } from '@utils';
-import { NextFunction, Request, RequestHandler, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
 
 // Get Authenticated Student - api/v1/student
 export const getAuthenticatedStudent = (request: Request, response: Response, next: NextFunction) => {
@@ -19,9 +19,10 @@ export const getAllStudent = catchAsyncError(async (request, response, next) => 
 });
 
 // Admin: Create new Student - api/v1/admin/student/new
-export const createNewStudent = catchAsyncError(async (request, response) => {
+export const createNewStudent = catchAsyncError(async (request, response, next) => {
     const student = request.body as Student;
-    await StudentService.createStudent(student);
+    const profileImage = request.file ? request.file : undefined;
+    await StudentService.createStudent(student, profileImage, next);
     successResponse(response, 201, null, 'Student Created');
 });
 
@@ -29,7 +30,9 @@ export const createNewStudent = catchAsyncError(async (request, response) => {
 export const updateStudent = catchAsyncError(async (request: Request<{ studentId: string }>, response, next) => {
     const { studentId } = request.params;
     const updatedItems = request.body as UpdateStudent;
-    await StudentService.updateStudent(studentId, updatedItems, next);
+
+    const profileImage = request.file ? request.file : undefined;
+    await StudentService.updateStudent(studentId, updatedItems, profileImage, next);
     successResponse(response, 201, 'Student updated');
 });
 

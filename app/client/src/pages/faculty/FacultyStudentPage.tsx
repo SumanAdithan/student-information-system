@@ -1,10 +1,14 @@
-import { FacultyStudentTable } from '@components';
+import { FacultyStudentTable, ViewStudent } from '@components';
 import { useGetAllStudents } from '@queries';
+import { RootState } from '@store';
+import { useSelector } from 'react-redux';
 
 export const FacultyStudentPage = () => {
     const facultyStudentPageConfig = {
         title: 'Students',
     };
+
+    const { view } = useSelector((state: RootState) => state.action);
 
     const getAllStudents = useGetAllStudents();
     const { data, isLoading, error } = getAllStudents;
@@ -13,7 +17,11 @@ export const FacultyStudentPage = () => {
     if (error) return <div>Error fetching student data</div>;
     return (
         <>
-            <FacultyStudentTable title={facultyStudentPageConfig.title} data={data?.students} />
+            {view ? (
+                <ViewStudent />
+            ) : (
+                <FacultyStudentTable title={facultyStudentPageConfig.title} data={data?.students} />
+            )}
         </>
     );
 };

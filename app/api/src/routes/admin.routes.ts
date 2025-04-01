@@ -1,8 +1,7 @@
 import type { Router } from 'express';
 import { createNewStudent, deleteStudent, loginByPassword, loginByQrCode, updateStudent } from '@controllers';
-import { validate } from 'middlewares/validate.middleware';
 import { StudentSchema, UpdateStudentSchema } from '@sis/types';
-import { authorizeRoles, isAuthenticated } from 'middlewares/authenticate.middleware';
+import { authorizeRoles, isAuthenticated, validate, uploadSingleFile } from '@middlewares';
 
 export const adminRoutes = (router: Router) => {};
 
@@ -18,6 +17,7 @@ export const adminStudentRoutes = (router: Router) => {
         '/admin/student/new',
         isAuthenticated(),
         authorizeRoles('admin'),
+        uploadSingleFile('profileImage'),
         validate(StudentSchema),
         createNewStudent
     );
