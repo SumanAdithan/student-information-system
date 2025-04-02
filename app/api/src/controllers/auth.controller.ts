@@ -44,7 +44,12 @@ export const logout = (request: Request, response: Response) => {
 export const authStatus = (request: Request, response: Response, next: NextFunction) => {
     if (!request.user) return next(new ErrorHandler(401, 'Not Authenticated'));
 
-    const { role } = request.user;
+    const { name, profileImage, role } = request.user;
 
-    successResponse(response, 200, { isAuthenticated: true, role }, 'Authenticated', `/${role}`);
+    const authorizedData = {
+        isAuthenticated: true,
+        profileData: { name, profileImage, role },
+    };
+
+    successResponse(response, 200, authorizedData, 'Authenticated', `/${role}`);
 };

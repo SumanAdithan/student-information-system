@@ -10,3 +10,5 @@ export * from './loader/Loading';
 export * from './buttons/BackButton';
 // input
 export * from './inputs/InputFields';
+// image
+export * from './images/LazyImage';

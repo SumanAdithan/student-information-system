@@ -46,9 +46,7 @@ export class AwsService {
         }
     }
 
-    async deleteFile(folder: string, fileName: string) {
-        const fileKey = `${folder}/${fileName}`;
-
+    async deleteFile(fileKey: string) {
         try {
             const deleteParams = {
                 Bucket: this.bucketName,

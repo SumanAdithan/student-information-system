@@ -1,3 +1,4 @@
+import { jsonToFormData } from '@utils';
 import { api } from './apiClient';
 import { Student, UpdateStudent } from '@sis/types';
 
@@ -16,7 +17,8 @@ export const getAllStudentsData = async () => {
 };
 
 export const createNewStudent = async ({ studentData }: { studentData: Student }) => {
-    await api.post('/admin/student/new', studentData);
+    const formData = jsonToFormData(studentData, ['profileImage']);
+    await api.post('/admin/student/new', formData);
 };
 
 export const updateStudent = async ({
@@ -26,7 +28,8 @@ export const updateStudent = async ({
     studentId: string;
     updatedStudentData: UpdateStudent;
 }) => {
-    await api.patch(`/admin/student/${studentId}`, updatedStudentData);
+    const formData = jsonToFormData(updatedStudentData, ['profileImage']);
+    await api.patch(`/admin/student/${studentId}`, formData);
 };
 
 export const deleteStudent = async ({ studentId }: { studentId: string }) => {

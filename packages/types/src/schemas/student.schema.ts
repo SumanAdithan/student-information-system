@@ -1,15 +1,8 @@
 import { z } from 'zod';
+import { profileImageSchema } from './file.schema';
 
 export const StudentSchema = z.object({
-    profileImage: z
-        .union([
-            z.string({
-                required_error: 'Please enter profile image URL',
-                invalid_type_error: 'Profile image URL must be a string',
-            }),
-            z.instanceof(File, { message: 'Profile image must be a file' }),
-        ])
-        .optional(),
+    profileImage: profileImageSchema.optional(),
 
     name: z
         .string({

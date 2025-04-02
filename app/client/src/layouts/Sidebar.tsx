@@ -1,5 +1,5 @@
 import { sidebarConfig } from '@constants';
-import { AppDispatch, RootState, toggleSidebarOpen } from '@store';
+import { AppDispatch, closeView, RootState, toggleSidebarOpen } from '@store';
 import { ExpandableSidebar } from '@ui';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
@@ -44,6 +44,7 @@ export const Sidebar = () => {
                                     ? 'bg-primary text-font-primary'
                                     : 'hover:bg-primary hover:text-font-primary text-font-secondary'
                             }`}
+                            onClick={() => dispatch(closeView())}
                         >
                             <AnimatePresence>
                                 {isSidebarOpen && (

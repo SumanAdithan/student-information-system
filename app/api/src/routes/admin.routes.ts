@@ -25,6 +25,7 @@ export const adminStudentRoutes = (router: Router) => {
         '/admin/student/:studentId',
         isAuthenticated(),
         authorizeRoles('admin'),
+        uploadSingleFile('profileImage'),
         validate(UpdateStudentSchema),
         updateStudent
     );

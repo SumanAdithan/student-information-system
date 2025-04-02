@@ -1,7 +1,7 @@
 import { Navigate, Outlet } from 'react-router-dom';
 import { Loading } from '@components';
 import { useDispatch } from 'react-redux';
-import { AppDispatch, setRole } from '@store';
+import { AppDispatch, setProfile } from '@store';
 import { useEffect } from 'react';
 import { useIsAuthenticated } from '@queries';
 
@@ -11,15 +11,16 @@ export const PrivateRoute = ({ allowedRoles }: { allowedRoles: string }) => {
     const { data: authData, isLoading } = isAuthenticated;
 
     useEffect(() => {
-        if (authData?.role) {
-            dispatch(setRole(authData.role));
+        if (authData?.profileData) {
+            dispatch(setProfile(authData.profileData));
         }
     }, [authData, dispatch]);
 
     if (isLoading) return <Loading />;
 
     if (!authData?.isAuthenticated) return <Navigate to={authData?.redirectUrl || '/'} replace />;
-    if (!allowedRoles.includes(authData.role)) return <Navigate to={authData?.redirectUrl || '/'} replace />;
+    if (!allowedRoles.includes(authData.profileData.role))
+        return <Navigate to={authData?.redirectUrl || '/'} replace />;
 
     return <Outlet />;
 };
