@@ -25,6 +25,9 @@ const actionSlice = createSlice({
         toggleView: (state) => {
             state.view = !state.view;
         },
+        closeView: (state) => {
+            state.view = false;
+        },
         toggleModal: (state) => {
             state.editModal.active = !state.editModal.active;
         },
@@ -34,5 +37,5 @@ const actionSlice = createSlice({
     },
 });
 
-export const { toggleView, toggleModal, setModal } = actionSlice.actions;
+export const { toggleView, closeView, toggleModal, setModal } = actionSlice.actions;
 export const actionReducer = actionSlice.reducer;

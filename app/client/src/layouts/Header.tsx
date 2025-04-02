@@ -1,4 +1,4 @@
-import { profile } from '@assets';
+import { LazyImage } from '@components';
 import { headerConfig } from '@constants';
 import { useLogout } from '@queries';
 import { AppDispatch, RootState, toggleSidebarOpen } from '@store';
@@ -56,7 +56,7 @@ export const Header = () => {
                             onClick={() => setIsDropDownOpen((prev) => !prev)}
                             ref={profileRef}
                         >
-                            <img src={profileImage || profile} alt='profile' />
+                            <LazyImage image={profileImage} name='profile' className='w-full h-full object-cover' />
                         </div>
                         <h2 className='font-medium'>{name}</h2>
                     </div>

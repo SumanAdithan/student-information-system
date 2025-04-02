@@ -1,3 +1,5 @@
+import { useFormContext } from 'react-hook-form';
+
 interface Options {
     label: string;
     value: number | string;
@@ -20,6 +22,7 @@ interface InputFieldProps {
 
 export const InputField = ({ data, register, error }: InputFieldProps) => {
     const { label, float, type, valueAsNumber, placeholder = '', name, options, disabled = false } = data;
+    const { setValue } = useFormContext();
 
     return (
         <div className='flex flex-col space-y-1'>
@@ -47,8 +50,11 @@ export const InputField = ({ data, register, error }: InputFieldProps) => {
                     placeholder={placeholder}
                     disabled={disabled}
                     {...register(name, {
-                        setValueAs: (val: any) =>
-                            type === 'number' ? (val === '' ? undefined : Number(val)) : val || '',
+                        setValueAs: (value: any) => {
+                            if (type === 'number') return value === '' ? undefined : Number(value);
+
+                            return value;
+                        },
                     })}
                 />
             )}

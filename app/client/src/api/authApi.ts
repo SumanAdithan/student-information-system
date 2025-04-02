@@ -19,13 +19,13 @@ export const checkIsAuthenticated = async () => {
         const { data } = await api.get('/auth/status');
         return {
             isAuthenticated: data.data.isAuthenticated,
-            role: data.data.role,
+            profileData: data.data.profileData,
             redirectUrl: data.redirectUrl || '/',
         };
     } catch (err) {
         return {
             isAuthenticated: false,
-            role: '',
+            profileData: '',
             redirectUrl: '/',
         };
     }

@@ -48,15 +48,13 @@ export class StudentService {
         if (!student) return next(new ErrorHandler(404, 'Student not found'));
 
         if (image) {
-            const existingImageUrl = student.profileImage;
-            if (existingImageUrl) {
-                const existingImage = existingImageUrl.split('/').pop();
-                const deleteImage = await awsService.deleteFile('students', existingImage);
-                if (!deleteImage.success) return next(new ErrorHandler(400, 'Failed to delete'));
+            if (student.profileImage) {
+                const deleteImage = await awsService.deleteFile(student.profileImage);
+                if (!deleteImage.success) return next(new ErrorHandler(400, `Can't upload image`));
             }
 
             const profileImage = await awsService.uploadFile('students', image.originalname, student.id, image.buffer);
-            if (!profileImage.success) return next(new ErrorHandler(400, 'Error while upload image'));
+            if (!profileImage.success) return next(new ErrorHandler(400, `Can't upload image`));
             updatedItems.profileImage = profileImage.fileName;
         }
 
@@ -66,6 +64,10 @@ export class StudentService {
     static async deleteStudent(studentId: string, next: NextFunction) {
         const student = await getStudentById(studentId);
         if (!student) return next(new ErrorHandler(404, 'Student not found'));
+        if (student.profileImage) {
+            const deleteImage = await awsService.deleteFile(student.profileImage);
+            if (!deleteImage.success) return next(new ErrorHandler(400, `Can't delete Student`));
+        }
         await deleteStudentById(studentId);
     }
 }

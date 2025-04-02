@@ -22,6 +22,7 @@ export const upload = multer({ storage, fileFilter, limits });
 export const uploadSingleFile = (fieldName: string) => {
     return (request: Request, response: Response, next: NextFunction) => {
         upload.single(fieldName)(request, response, (err: any) => {
+            console.log(request.file);
             if (err) {
                 return next(new ErrorHandler(400, 'Error while upload file'));
             }

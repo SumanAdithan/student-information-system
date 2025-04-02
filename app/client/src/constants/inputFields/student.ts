@@ -1,7 +1,7 @@
 export const STUDENT_TABLE_INPUT_FIELDS = [
     {
         label: 'Profile Image',
-        type: 'text',
+        type: 'file',
         placeholder: 'Select profile',
         name: 'profileImage',
     },

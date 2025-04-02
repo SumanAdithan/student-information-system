@@ -12,8 +12,6 @@ export const OverviewPage = () => {
 
     useEffect(() => {
         if (data?.student) {
-            const { name, role, profileImage } = data.student;
-            dispatch(setProfile({ name, role, profileImage }));
             dispatch(setStudent(data.student));
         }
     }, [data, dispatch]);
