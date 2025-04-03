@@ -126,14 +126,12 @@ export const StudentSchema = z.object({
         .int('Mobile number must be an integer')
         .positive('Mobile number must be positive'),
 
-    accomodation: z.enum(['Day Scholar', 'Hosteller'], {
-        errorMap: () => ({ message: 'Please select correct accomodation' }),
+    accommodation: z.enum(['Day Scholar', 'Hosteller'], {
+        errorMap: () => ({ message: 'Please select correct accommodation' }),
     }),
     password: z.string().optional(),
 });
 
 export const UpdateStudentSchema = StudentSchema.partial();
-
-export type Student = z.infer<typeof StudentSchema>;
 
 export type UpdateStudent = z.infer<typeof UpdateStudentSchema>;

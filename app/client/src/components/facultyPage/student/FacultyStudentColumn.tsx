@@ -31,7 +31,7 @@ export const FacultyStudentColumnConfig = () => {
         columnHelper.accessor('batch', { header: 'Batch' }),
         columnHelper.display({
             id: 'view',
-            header: 'View',
+            header: 'Action',
             cell: ({ row }) => (
                 <div className='flex justify-center gap-2'>
                     <img

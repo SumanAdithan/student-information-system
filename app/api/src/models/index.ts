@@ -1,3 +1,7 @@
 export * from './student.model';
+export * from './assignment.model';
+export * from './internal.model';
+export * from './semester.model';
+export * from './regulationInfo.model';
 export * from './faculty.model';
 export * from './admin.model';

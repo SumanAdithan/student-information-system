@@ -1,3 +1,5 @@
+import { AssignmentResult } from '@sis/types';
+import { Document } from 'mongoose';
 import { Schema, model } from 'mongoose';
 
 const AdminSchema = new Schema({

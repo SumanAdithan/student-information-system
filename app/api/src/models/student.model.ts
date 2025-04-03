@@ -71,7 +71,7 @@ const StudentSchema = new Schema(
             required: true,
             unique: true,
         },
-        accomodation: {
+        accommodation: {
             type: String,
             required: true,
             enum: ['Day Scholar', 'Hosteller'],

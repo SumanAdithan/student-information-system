@@ -116,7 +116,7 @@ export const STUDENT_TABLE_INPUT_FIELDS = [
         label: 'Accommodation',
         type: 'select',
         placeholder: 'Select accommodation',
-        name: 'accomodation',
+        name: 'accommodation',
         options: [
             { label: 'Day Scholar', value: 'Day Scholar' },
             { label: 'Hosteller', value: 'Hosteller' },

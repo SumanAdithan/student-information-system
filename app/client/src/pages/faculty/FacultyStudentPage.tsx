@@ -1,4 +1,4 @@
-import { FacultyStudentTable, ViewStudent } from '@components';
+import { FacultyStudentTable, Loading, ViewStudent } from '@components';
 import { useGetAllStudents } from '@queries';
 import { RootState } from '@store';
 import { useSelector } from 'react-redux';
@@ -13,7 +13,7 @@ export const FacultyStudentPage = () => {
     const getAllStudents = useGetAllStudents();
     const { data, isLoading, error } = getAllStudents;
 
-    if (isLoading) return <div>Loading...</div>;
+    if (isLoading) return <Loading />;
     if (error) return <div>Error fetching student data</div>;
     return (
         <>

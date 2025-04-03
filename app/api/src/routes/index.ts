@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { studentAuthRoutes, studentRoutes } from './student.routes';
-import { facultyAuthRoutes } from './faculty.routes';
+import { facultyAuthRoutes, facultyRoutes } from './faculty.routes';
 import { adminAuthRoutes, adminStudentRoutes } from './admin.routes';
 import { commonRoutes } from './common.routes';
 
@@ -13,6 +13,7 @@ export default (): Router => {
 
     // Faculty routes
     facultyAuthRoutes(router);
+    facultyRoutes(router);
 
     // Admin routes
     adminAuthRoutes(router);

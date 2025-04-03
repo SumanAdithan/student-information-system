@@ -1,7 +1,7 @@
 export interface SemesterEntry {
     code: string;
     name: string;
-    grade?: number;
+    grade?: string;
 }
 
 export interface SemesterResult {
