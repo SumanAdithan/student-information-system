@@ -9,7 +9,7 @@ export * from './payDuesPage';
 export * from './loginPage';
 
 // faculty
-export * from './facultyStudentPage';
+export * from './facultyPage';
 
 // view
 export * from './view';

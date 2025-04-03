@@ -1,9 +1,10 @@
 import type { Router } from 'express';
-import { getAuthenticatedStudent, loginByPassword, loginByQrCode } from '@controllers';
+import { getAuthenticatedAssignment, getAuthenticatedStudent, loginByPassword, loginByQrCode } from '@controllers';
 import { authorizeRoles, isAuthenticated } from 'middlewares/authenticate.middleware';
 
 export const studentRoutes = (router: Router) => {
     router.get('/student', isAuthenticated(), authorizeRoles('student'), getAuthenticatedStudent);
+    router.get('/student/assignment', isAuthenticated(), authorizeRoles('student'), getAuthenticatedAssignment);
 };
 
 // Auth routes

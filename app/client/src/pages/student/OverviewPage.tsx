@@ -1,14 +1,14 @@
 import { useDispatch } from 'react-redux';
-import { AppDispatch, setProfile } from '@store';
+import { AppDispatch } from '@store';
 import { useEffect } from 'react';
 import { useGetAuthenticatedStudent } from '@queries';
 import { setStudent } from '@store';
-import { ViewStudent } from '@components';
+import { Loading, ViewStudent } from '@components';
 
 export const OverviewPage = () => {
     const dispatch = useDispatch<AppDispatch>();
-    const getStudent = useGetAuthenticatedStudent();
-    const { data, isLoading, error } = getStudent;
+    const student = useGetAuthenticatedStudent();
+    const { data, isLoading, error } = student;
 
     useEffect(() => {
         if (data?.student) {
@@ -16,7 +16,7 @@ export const OverviewPage = () => {
         }
     }, [data, dispatch]);
 
-    if (isLoading) return <div>Loading...</div>;
+    if (isLoading) return <Loading />;
     if (error) return <div>Error fetching student data</div>;
 
     return <ViewStudent />;

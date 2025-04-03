@@ -18,9 +18,11 @@ export const sidebarConfig = {
     facultyNavLinks: [
         { name: 'Overview', href: '/faculty' },
         { name: 'Students', href: '/faculty/students' },
+        { name: 'Assignments', href: '/faculty/assignments' },
     ],
     adminNavLinks: [
         { name: 'Overview', href: '/admin' },
         { name: 'Students', href: '/admin/students' },
+        { name: 'Assignments', href: '/admin/assignments' },
     ],
 };

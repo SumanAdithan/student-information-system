@@ -25,7 +25,7 @@ export const getStudentOverviewData = (data: any) => {
         sem: data.semester,
         mobile: data.mobile,
         batch: data.batch,
-        accomodation: data.accomodation,
+        accommodation: data.accommodation,
     };
 
     overviewDetails = Object.entries(overviewDetails).reduce((acc, [key, value]) => {

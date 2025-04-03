@@ -7,7 +7,7 @@ connectDatabase();
 const PORT = config.PORT || 8000;
 
 const server = app.listen(PORT, () => {
-    console.log(`Server running on port ${config.PORT} in ${config.PORT} mode`);
+    console.log(`Server running on port ${config.PORT} in ${config.NODE_ENV} mode`);
 });
 
 process.on('unhandledRejection', (err: Error) => {

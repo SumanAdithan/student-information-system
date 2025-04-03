@@ -1,20 +1,23 @@
-import { AssignmentResultTable } from '@components';
-import { assignmentResultData } from '@data';
-import { getAssignmentResultData } from '@utils';
+import { Loading, ViewAssignment } from '@components';
+import { useGetAuthenticatedAssignment } from '@queries';
+import { AppDispatch } from '@store';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { setAssignment } from '@store';
 
 export const AssignmentsPage = () => {
-    const { results } = assignmentResultData;
-    const assignmentResultConfig = {
-        resultTitles: ['First Assignment', 'Second Assignment', 'Third Assignment'],
-    };
+    const dispatch = useDispatch<AppDispatch>();
+    const assignment = useGetAuthenticatedAssignment();
+    const { data, isLoading, error } = assignment;
 
-    const assignments = getAssignmentResultData(assignmentResultConfig.resultTitles, results);
+    useEffect(() => {
+        if (data) {
+            dispatch(setAssignment(data));
+        }
+    }, [assignment, dispatch]);
 
-    return (
-        <>
-            {assignments.map((assignment: any, index: number) => (
-                <AssignmentResultTable title={assignment.title} results={assignment.result} key={index} />
-            ))}
-        </>
-    );
+    if (isLoading) return <Loading />;
+    if (error) return <div>Error fetching student data</div>;
+
+    return <ViewAssignment />;
 };

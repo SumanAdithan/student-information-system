@@ -26,7 +26,7 @@ const initialState: StudentState = {
         degree: 'B.E',
         email: '',
         mobile: 0,
-        accomodation: 'Day Scholar',
+        accommodation: 'Day Scholar',
     },
 };
 

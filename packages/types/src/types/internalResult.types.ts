@@ -11,6 +11,6 @@ export interface InternalResult {
         one: InternalEntry[];
         two: InternalEntry[];
         three: InternalEntry[];
-        semester: InternalEntry[];
+        four: InternalEntry[];
     };
 }

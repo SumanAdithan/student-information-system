@@ -4,8 +4,10 @@ import { ErrorHandler, getQrToken } from '@utils';
 import { NextFunction } from 'express';
 import QR from 'qrcode';
 import { AwsService } from './aws.service';
+import { AssignDefaults } from './assignDefaults.service';
 
 const awsService = new AwsService();
+const assignDefaults = new AssignDefaults();
 
 export class StudentService {
     static async createStudent(student: Student, image: Express.Multer.File, next: NextFunction) {
@@ -32,6 +34,8 @@ export class StudentService {
         const dataImage = await QR.toDataURL(token);
         newStudent.qrCode = dataImage;
         await newStudent.save();
+
+        await assignDefaults.assignStudentDefaults([newStudent]);
     }
 
     static async getAllStudent() {
