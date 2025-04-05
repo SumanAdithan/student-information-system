@@ -2,7 +2,7 @@ import { Layout } from '@layouts';
 import {
     AssignmentsPage,
     DownloadNotesPage,
-    InternalResulsPage,
+    InternalResultPage,
     OverviewPage,
     PayDuesPage,
     SemesterResultsPage,
@@ -16,7 +16,7 @@ export const studentRoutes = () => {
             <Route path='/student' element={<Layout />}>
                 <Route index element={<OverviewPage />} />
                 <Route path='assignments' element={<AssignmentsPage />} />
-                <Route path='internal-results' element={<InternalResulsPage />} />
+                <Route path='internal-results' element={<InternalResultPage />} />
                 <Route path='semester-results' element={<SemesterResultsPage />} />
                 <Route path='download-notes' element={<DownloadNotesPage />} />
                 <Route path='pay-dues' element={<PayDuesPage />} />

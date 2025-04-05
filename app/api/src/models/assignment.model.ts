@@ -1,8 +1,6 @@
 import { AssignmentResult, QueryParams } from '@sis/types';
 import { Schema, model } from 'mongoose';
 
-export interface AssignmentDocument extends AssignmentResult, Document {}
-
 const AssignmentEntry = new Schema(
     {
         code: { type: String, required: [true, 'please enter subject code'] },
@@ -13,7 +11,7 @@ const AssignmentEntry = new Schema(
     { _id: false }
 );
 
-const AssignmentResultSchema = new Schema<AssignmentDocument>({
+const AssignmentResultSchema = new Schema({
     registerNo: { type: Number, required: [true, 'please enter register no'] },
     name: { type: String, required: [true, 'please enter name'] },
     year: { type: Number, required: [true, 'please enter a year'] },
@@ -24,7 +22,7 @@ const AssignmentResultSchema = new Schema<AssignmentDocument>({
     },
 });
 
-const AssignmentResultModel = model<AssignmentDocument>('Assignment', AssignmentResultSchema);
+const AssignmentResultModel = model('Assignment', AssignmentResultSchema);
 
 export const createAssignmentData = (assignmentResult: AssignmentResult) =>
     AssignmentResultModel.create(assignmentResult);

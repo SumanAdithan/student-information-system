@@ -1,10 +1,4 @@
-import {
-    AssignmentDocument,
-    getAllAssignmentData,
-    getAssignmentDataByRegisterNo,
-    getFilteredAssignments,
-    updateAssignmentDataMark,
-} from '@models';
+import { getAssignmentDataByRegisterNo, getFilteredAssignments, updateAssignmentDataMark } from '@models';
 import { AssignmentResult, QueryParams } from '@sis/types';
 
 export class AssignmentService {

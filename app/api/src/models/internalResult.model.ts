@@ -32,7 +32,7 @@ export const getInternalResultAssignmentData = () => InternalResultModel.find();
 export const updateInternalResultMark = (registerNo: number, result: string, code: string, mark: number) =>
     InternalResultModel.updateOne(
         { [`results.${result}.code`]: code, registerNo },
-        { $set: { [`results.${result}.$.mark`]: mark, [`results.${result}.$.status`]: mark > 0 } }
+        { $set: { [`results.${result}.$.mark`]: mark, [`results.${result}.$.status`]: mark >= 50 } }
     );
 
 export const getFilteredInternalResult = async (queryStr: QueryParams) => {

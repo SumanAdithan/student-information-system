@@ -8,7 +8,7 @@ export const InternalResultSchema = z.object({
     status: z.coerce.boolean(),
     code: z.string(),
     result: z.enum(['one', 'two', 'three', 'four']),
-    mark: z.number().min(0).max(10),
+    mark: z.number().min(0).max(100),
 });
 
 export type UpdateInternalResult = z.infer<typeof InternalResultSchema>;

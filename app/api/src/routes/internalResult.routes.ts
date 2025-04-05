@@ -15,15 +15,15 @@ export const internalResultRoutes = (router: Router) => {
         authorizeRoles('student'),
         getAuthenticatedInternalResult
     );
-    router.get('/internal-result', isAuthenticated(), authorizeRoles('admin', 'faculty'), getAllInternalResult);
+    router.get('/internal-results', isAuthenticated(), authorizeRoles('admin', 'faculty'), getAllInternalResult);
     router.get(
-        '/internal-result/:registerNo',
+        '/internal-results/:registerNo',
         isAuthenticated(),
         authorizeRoles('admin', 'faculty'),
         getInternalResults
     );
     router.patch(
-        '/internal-result',
+        '/internal-results',
         isAuthenticated(),
         authorizeRoles('admin', 'faculty'),
         validate(InternalResultSchema),

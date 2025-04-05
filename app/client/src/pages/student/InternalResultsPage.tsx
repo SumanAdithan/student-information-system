@@ -1,23 +1,22 @@
-import { InternalResultsTable } from '@components';
-import { internalResultData } from '@data';
-import { getInternalResultData } from '@utils';
+import { Loading, ViewInternalResult } from '@components';
+import { useGetAuthenticatedInternalResult } from '@queries';
+import { AppDispatch, setInternalResult } from '@store';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
-export const InternalResulsPage = () => {
-    const { results } = internalResultData;
-    const internalResultConfig = {
-        resultTitles: [
-            'First Internal Examination',
-            'Second Internal Examination',
-            'Third Internal Examination',
-            'Sem Internal Marks',
-        ],
-    };
-    const internalResults = getInternalResultData(internalResultConfig.resultTitles, results);
-    return (
-        <>
-            {internalResults.map((assignment: any, index: number) => (
-                <InternalResultsTable title={assignment.title} results={assignment.result} key={index} />
-            ))}
-        </>
-    );
+export const InternalResultPage = () => {
+    const dispatch = useDispatch<AppDispatch>();
+    const internalResult = useGetAuthenticatedInternalResult();
+    const { data, isLoading, error } = internalResult;
+
+    useEffect(() => {
+        if (data) {
+            dispatch(setInternalResult(data));
+        }
+    }, [internalResult, dispatch]);
+
+    if (isLoading) return <Loading />;
+    if (error) return <div>Error fetching student data</div>;
+
+    return <ViewInternalResult />;
 };

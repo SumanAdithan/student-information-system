@@ -55,7 +55,7 @@ export class AssignDefaults {
     }
 
     private internalResults(initialState: InitialState, subjects: Subject[]) {
-        const internal = ['one', 'two', 'three', 'semester'];
+        const internal = ['one', 'two', 'three', 'four'];
         return internal.reduce(
             (acc, key) => {
                 acc.results[key] = subjects;

@@ -5,7 +5,7 @@ interface EditAssignmentState {
     registerNo: number;
     name: string;
     subject: string;
-    result: string;
+    result: 'one' | 'two' | 'three';
     status: boolean;
     year: number;
     code: string;
@@ -36,7 +36,7 @@ const initialState: AssignmentState = {
         year: 0,
         subject: '',
         status: false,
-        result: '',
+        result: 'one',
         code: '',
         mark: 0,
     },

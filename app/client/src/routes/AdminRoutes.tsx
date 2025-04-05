@@ -1,7 +1,7 @@
 import { Route } from 'react-router-dom';
 import { Layout } from '@layouts';
 import { PrivateRoute } from './ProtectedRoute';
-import { FacultyAssignmentPage, FacultyOverviewPage, FacultyStudentPage } from '@pages';
+import { FacultyAssignmentPage, FacultyInternalResultPage, FacultyOverviewPage, FacultyStudentPage } from '@pages';
 import { ViewStudent } from '@components';
 
 export const adminRoutes = () => {
@@ -12,6 +12,7 @@ export const adminRoutes = () => {
                 <Route path='students' element={<FacultyStudentPage />} />
                 <Route path='students/view' element={<ViewStudent />} />
                 <Route path='assignments' element={<FacultyAssignmentPage />} />
+                <Route path='internal-results' element={<FacultyInternalResultPage />} />
             </Route>
         </Route>
     );

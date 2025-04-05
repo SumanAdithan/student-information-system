@@ -22,7 +22,7 @@ export const useGetAllAssignment = (year: string, status: string, result: string
     });
 };
 
-export const useAssignmentMudation = () => {
+export const useAssignmentMutation = () => {
     const queryClient = useQueryClient();
     const updateAssignmentMutation = useMutation({
         mutationFn: updateAssignmentData,

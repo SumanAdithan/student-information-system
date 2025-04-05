@@ -1,6 +1,6 @@
 import { getAllAssignment, getAssignments, getAuthenticatedAssignment, updateAssignment } from '@controllers';
 import { authorizeRoles, isAuthenticated, validate } from '@middlewares';
-import { AssignmentResultsSchema } from '@sis/types';
+import { AssignmentResultSchema } from '@sis/types';
 import { Router } from 'express';
 
 export const assignmentRoutes = (router: Router) => {
@@ -11,7 +11,7 @@ export const assignmentRoutes = (router: Router) => {
         '/assignments',
         isAuthenticated(),
         authorizeRoles('admin', 'faculty'),
-        validate(AssignmentResultsSchema),
+        validate(AssignmentResultSchema),
         updateAssignment
     );
 };

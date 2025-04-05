@@ -1,7 +1,7 @@
 import { Route } from 'react-router-dom';
 import { Layout } from '@layouts';
 import { PrivateRoute } from './ProtectedRoute';
-import { FacultyAssignmentPage, FacultyOverviewPage, FacultyStudentPage } from '@pages';
+import { FacultyAssignmentPage, FacultyInternalResultPage, FacultyOverviewPage, FacultyStudentPage } from '@pages';
 
 export const facultyRoutes = () => {
     return (
@@ -10,6 +10,7 @@ export const facultyRoutes = () => {
                 <Route index element={<FacultyOverviewPage />} />
                 <Route path='students' element={<FacultyStudentPage />} />
                 <Route path='assignments' element={<FacultyAssignmentPage />} />
+                <Route path='internal-results' element={<FacultyInternalResultPage />} />
             </Route>
         </Route>
     );

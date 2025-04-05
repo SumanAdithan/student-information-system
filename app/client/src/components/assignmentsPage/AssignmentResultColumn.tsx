@@ -17,5 +17,5 @@ export const assignmentResultColumnConfig = [
             </div>
         ),
     }),
-    columnHelper.accessor('mark', { header: 'Mark' }),
+    columnHelper.accessor('mark', { header: 'Mark', cell: (info) => `${info.getValue()}/10` }),
 ];
