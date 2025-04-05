@@ -2,7 +2,7 @@ import {
     createAssignmentData,
     // createDues,
     createInternalResultData,
-    createSemesterResult,
+    createSemesterResultData,
     getRegulationDetails,
 } from '@models';
 import { AssignmentResult, InternalResult, SemesterResult, Semesters, Student, Subject } from '@sis/types';
@@ -34,7 +34,7 @@ export class AssignDefaults {
 
                     await createAssignmentData(assignmentResult as AssignmentResult);
                     await createInternalResultData(internalResult as InternalResult);
-                    // await createSemesterResult(semesterResult as SemesterResult);
+                    await createSemesterResultData(semesterResult as SemesterResult);
                     // await createDues(initialState);
                 } catch (err) {
                     console.error(`Failed to assign default data: ${err}`);
