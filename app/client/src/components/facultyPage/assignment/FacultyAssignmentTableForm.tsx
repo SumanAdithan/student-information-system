@@ -1,12 +1,12 @@
 import { AppDispatch, RootState, toggleModal } from '@store';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
-import { STUDENT_TABLE_INPUT_FIELDS as inputFields } from '@constants';
+import { ASSIGNMENT_TABLE_INPUT_FIELDS as inputFields } from '@constants';
 import { InputField } from '@components';
 import { X } from 'lucide-react';
 import { useEffect } from 'react';
-import { Student, StudentSchema } from '@sis/types';
-import { useChangedInputValues, useZodForm } from '@hooks';
-import { useStudentMutations } from '@queries';
+import { AssignmentResultsSchema, UpdateAssignmentResult } from '@sis/types';
+import { useZodForm } from '@hooks';
+import { useAssignmentMudation } from '@queries';
 import { FormProvider, useForm } from 'react-hook-form';
 
 export const FacultyAssignmentTableForm = () => {
@@ -15,14 +15,11 @@ export const FacultyAssignmentTableForm = () => {
         handleSubmit,
         formState: { errors },
         reset,
-        watch,
-    } = useZodForm(StudentSchema, {
-        profileImage: '',
-    });
+    } = useZodForm(AssignmentResultsSchema);
 
-    const { student, modal } = useSelector(
+    const { assignment, modal } = useSelector(
         (state: RootState) => ({
-            student: state.student.student,
+            assignment: state.assignment.editAssignmentResult,
             modal: state.action.editModal,
         }),
         shallowEqual
@@ -30,27 +27,18 @@ export const FacultyAssignmentTableForm = () => {
 
     const methods = useForm();
     const dispatch = useDispatch<AppDispatch>();
-    const watchedValues = watch();
 
-    const { createStudentMutation, updateStudentMutation } = useStudentMutations();
+    const { updateAssignmentMutation } = useAssignmentMudation();
 
     useEffect(() => {
-        if (modal.status === 'edit' && student) {
-            reset(student);
+        if (modal.status === 'edit' && assignment) {
+            reset(assignment);
         }
     }, [modal.active, reset]);
 
-    const saveData = (data: Student) => {
-        const changedFields = useChangedInputValues(student, watchedValues);
-        if (modal.status === 'edit' && changedFields) {
-            console.log(changedFields);
-            updateStudentMutation.mutate({
-                studentId: student._id,
-                updatedStudentData: changedFields,
-            });
-        } else {
-            createStudentMutation.mutate({ studentData: data });
-        }
+    const saveData = (data: UpdateAssignmentResult) => {
+        updateAssignmentMutation.mutate(data);
+
         dispatch(toggleModal());
     };
 
@@ -69,20 +57,20 @@ export const FacultyAssignmentTableForm = () => {
                                 handleSubmit(saveData)();
                             }
                         }}
-                        className='grid grid-cols-1 md:grid-cols-4 gap-4'
+                        className='grid grid-cols-1 md:grid-cols-3 gap-4'
                     >
                         {inputFields.map((input) => (
                             <InputField
                                 key={input.name}
                                 data={input}
                                 register={register}
-                                error={errors[input.name as keyof Student]?.message as string}
+                                error={errors[input.name as keyof UpdateAssignmentResult]?.message as string}
                             />
                         ))}
 
                         <div className='flex justify-end items-center mt-5 space-x-2'>
                             <button
-                                className='bg-search-input hover:bg-font-secondary  px-4 py-2 rounded-md '
+                                className='bg-search-input hover:bg-font-secondary  px-4 py-3 rounded-md '
                                 onClick={() => dispatch(toggleModal())}
                             >
                                 <X size={22} />

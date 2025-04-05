@@ -43,7 +43,6 @@ export const FacultyStudentTableForm = () => {
     const saveData = (data: Student) => {
         const changedFields = useChangedInputValues(student, watchedValues);
         if (modal.status === 'edit' && changedFields) {
-            console.log(changedFields);
             updateStudentMutation.mutate({
                 studentId: student._id,
                 updatedStudentData: changedFields,

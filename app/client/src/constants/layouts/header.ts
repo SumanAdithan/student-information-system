@@ -13,6 +13,12 @@ export const headerConfig = {
         '/faculty/students': 'STUDENTS',
     },
 
+    adminHeaderTitles: {
+        '/admin': 'OVERVIEW',
+        '/admin/students': 'STUDENTS',
+        '/admin/assignments': 'STUDENTS',
+    },
+
     dropDownItems: [
         { title: 'Notification', action: () => null },
         { title: 'Circular', action: () => null },

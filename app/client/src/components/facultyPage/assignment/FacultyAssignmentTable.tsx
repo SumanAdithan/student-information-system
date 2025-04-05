@@ -1,38 +1,66 @@
 import { useTableConfig } from '@hooks';
 import { FacultyAssignmentColumnConfig } from './FacultyAssignmentCloumn';
-import { RenderListTable, TablePageination } from '@components';
+import { Loading, RenderListTable, SearchBar, Select, TablePageination } from '@components';
 import { useState } from 'react';
-import { Search } from 'lucide-react';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState, setModal } from '@store';
+import { AppDispatch, RootState, toggleSelect } from '@store';
 import { FacultyAssignmentTableForm } from './FacultyAssignmentTableForm';
+import { useGetAllAssignment } from '@queries';
+import { RESULT_OPTIONS, STATUD_OPTIONS, YEAR_OPTIONS } from '@constants';
 
 interface DownloadNotesTableProps {
     title: string;
-    data: any;
 }
 
-export const FacultyAssignmentTable = ({ title, data }: DownloadNotesTableProps) => {
-    const [globalFilter, setGlobalFilter] = useState('');
-    const { facultyAssignmentColumnConfig: columns } = FacultyAssignmentColumnConfig();
+export const FacultyAssignmentTable = ({ title }: DownloadNotesTableProps) => {
+    const dispatch = useDispatch<AppDispatch>();
 
-    const table = useTableConfig({ data, columns, globalFilter, setGlobalFilter, pageSize: 5 });
+    // state for filtering
+    const [year, setYear] = useState(YEAR_OPTIONS[0].value);
+    const [status, setStatus] = useState(STATUD_OPTIONS[0].value);
+    const [result, setResult] = useState(RESULT_OPTIONS[0].value);
+    const [globalFilter, setGlobalFilter] = useState('');
+    const { data, isLoading, error } = useGetAllAssignment(year, status, result);
+
+    const { facultyAssignmentColumnConfig: columns } = FacultyAssignmentColumnConfig();
+    const table = useTableConfig({ data: data?.assignments, columns, globalFilter, setGlobalFilter, pageSize: 5 });
 
     const { editModal } = useSelector((state: RootState) => state.action);
+    const { activeSelect } = useSelector((state: RootState) => state.layout);
+
+    if (isLoading) return <Loading />;
+    if (error) return <div>Error fetching student data</div>;
     return (
         <>
-            <div className='relative bg-white p-6 pb-10 rounded-2xl shadow-section mb-7 backdrop-blur-md  z-20 overflow-hidden'>
+            <div className='relative bg-white p-6 pb-10 rounded-2xl shadow-section mb-7 backdrop-blur-md  overflow-hidden'>
                 <div className='flex justify-between  mb-6 min-w-max gap-5 flex-col lg:items-center lg:flex-row'>
                     <h1 className='text-2xl font-medium'>{title}</h1>
-                    <div className='relative flex items-center gap-2 '>
-                        <Search className='absolute left-3 text-font-primary sm:left-2.5 top-2.5' size={20} />
-                        <input
-                            type='text'
-                            value={globalFilter}
-                            onChange={(e) => setGlobalFilter(e.target.value)}
-                            placeholder='Search Notes...'
-                            className='bg-search-input text-font-primary placeholder-font-primary rounded-lg pl-10 pr-4 py-2 w-[150px] sm:w-full  outline-none focus:ring-2 focus:ring-blue-500'
+                    <div className=' flex items-center gap-2 '>
+                        <Select
+                            value={year}
+                            onChange={setYear}
+                            options={YEAR_OPTIONS}
+                            isOpen={activeSelect === 'year'}
+                            toggleOpen={() => dispatch(toggleSelect('year'))}
+                            onClose={() => dispatch(toggleSelect('year'))}
                         />
+                        <Select
+                            value={status}
+                            onChange={setStatus}
+                            options={STATUD_OPTIONS}
+                            isOpen={activeSelect === 'status'}
+                            toggleOpen={() => dispatch(toggleSelect('status'))}
+                            onClose={() => dispatch(toggleSelect('status'))}
+                        />
+                        <Select
+                            value={result}
+                            onChange={setResult}
+                            options={RESULT_OPTIONS}
+                            isOpen={activeSelect === 'result'}
+                            toggleOpen={() => dispatch(toggleSelect('result'))}
+                            onClose={() => dispatch(toggleSelect('result'))}
+                        />
+                        <SearchBar value={globalFilter} onChange={setGlobalFilter} placeholder='Search Subjects...' />
                     </div>
                 </div>
                 <div className='overflow-x-scroll font-secondary'>

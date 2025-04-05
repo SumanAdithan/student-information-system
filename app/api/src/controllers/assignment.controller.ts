@@ -15,7 +15,6 @@ export const getAuthenticatedAssignment = catchAsyncError(async (request, respon
 
 export const getAllAssignment = catchAsyncError(async (request, response, next) => {
     const assignments = await AssignmentService.getAllAssignment(request.query);
-    console.log(assignments);
     if (!assignments) return next(new ErrorHandler(400, 'Unable to get Assignments'));
 
     successResponse(response, 200, assignments);
@@ -25,4 +24,11 @@ export const getAssignments = catchAsyncError(async (request: Request<{ register
     const assignmentResult = await AssignmentService.getAssignments(parseInt(request.params.registerNo));
     if (!assignmentResult) return next(new ErrorHandler(400, 'Unable to get Assignments'));
     successResponse(response, 200, assignmentResult);
+});
+
+export const updateAssignment = catchAsyncError(async (request, response, next) => {
+    const assignment = request.body;
+    const { registerNo, result, code, mark } = assignment;
+    await AssignmentService.updateAssignment(registerNo, result, code, mark);
+    successResponse(response, 200, '', 'assignment updated');
 });

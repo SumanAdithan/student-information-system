@@ -8,6 +8,7 @@ export interface AssignmentEntry {
 export interface AssignmentResult {
     registerNo: number;
     name: string;
+    year: number;
     results: {
         one: AssignmentEntry[];
         two: AssignmentEntry[];

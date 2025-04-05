@@ -83,7 +83,6 @@ export class AwsService {
 
             return { success: true };
         } catch (err) {
-            console.log(err);
             return { success: false };
         }
     }

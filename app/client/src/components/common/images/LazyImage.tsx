@@ -5,7 +5,7 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 export const LazyImage = ({ image, name, className }: { image: string; name: string; className?: string }) => {
     return (
         <LazyLoadImage
-            src={image}
+            src={image ? image : profile}
             alt={name}
             className={className}
             wrapperClassName={className}

@@ -1,5 +1,3 @@
-import { useFormContext } from 'react-hook-form';
-
 interface Options {
     label: string;
     value: number | string;
@@ -22,14 +20,15 @@ interface InputFieldProps {
 
 export const InputField = ({ data, register, error }: InputFieldProps) => {
     const { label, float, type, valueAsNumber, placeholder = '', name, options, disabled = false } = data;
-    const { setValue } = useFormContext();
 
     return (
         <div className='flex flex-col space-y-1'>
             <label className='text-md text-font-primary font-semibold'>{label}</label>
             {type === 'select' && options ? (
                 <select
-                    className='w-full px-4 py-2 bg-search-input text-font-primary placeholder-font-primary  rounded-md'
+                    className={`w-full px-4 py-2 bg-search-input text-font-primary placeholder-font-primary  rounded-md ${
+                        disabled ? 'appearance-none' : 'appearance-auto'
+                    }`}
                     disabled={disabled}
                     {...register(name, {
                         setValueAs: (val: any) => (valueAsNumber ? (val === '' ? undefined : Number(val)) : val || ''),
@@ -37,7 +36,7 @@ export const InputField = ({ data, register, error }: InputFieldProps) => {
                 >
                     {options.map((option) => (
                         <option key={option.value} value={option.value}>
-                            {option.value}
+                            {option.label}
                         </option>
                     ))}
                 </select>

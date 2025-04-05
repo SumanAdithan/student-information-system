@@ -19,6 +19,7 @@
         "framer-motion": "^12.4.7",
         "html5-qrcode": "^2.3.8",
         "lucide-react": "^0.476.0",
+        "qs": "^6.14.0",
         "react": "^19.0.0",
         "react-device-detect": "^2.2.3",
         "react-dom": "^19.0.0",
@@ -34,6 +35,7 @@
     "devDependencies": {
         "@eslint/js": "^9.19.0",
         "@sis/types": "workspace:^",
+        "@types/qs": "^6.9.18",
         "@types/react": "^19.0.8",
         "@types/react-dom": "^19.0.3",
         "@types/react-lazy-load-image-component": "^1.6.4",
