@@ -1,5 +1,5 @@
 import { getAssignmentData } from '@api';
-import { edit, view } from '@assets';
+import { edit, tickMark, view, xMark } from '@assets';
 import { UpdateAssignmentResult } from '@sis/types';
 import { AppDispatch, setAssignment, setEditAssignment, setModal, toggleView } from '@store';
 import { createColumnHelper } from '@tanstack/react-table';
@@ -27,7 +27,18 @@ export const FacultyAssignmentColumnConfig = () => {
         columnHelper.accessor('name', { header: 'Name' }),
         columnHelper.accessor('subject', { header: 'Subject' }),
         columnHelper.accessor('code', { header: 'Code' }),
-        columnHelper.accessor('status', { header: 'Submitted' }),
+        columnHelper.accessor('status', {
+            header: 'Submitted',
+            cell: (info) => (
+                <div className='flex justify-center'>
+                    {info.getValue() ? (
+                        <img src={tickMark} alt='true' className='w-3' />
+                    ) : (
+                        <img src={xMark} alt='false' className='w-3' />
+                    )}
+                </div>
+            ),
+        }),
         columnHelper.accessor('mark', { header: 'Mark' }),
         columnHelper.display({
             id: 'view',

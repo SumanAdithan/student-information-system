@@ -1,9 +1,7 @@
-import { AssignmentResult, QueryParams } from '@sis/types';
+import { InternalResult, QueryParams } from '@sis/types';
 import { Schema, model } from 'mongoose';
 
-export interface AssignmentDocument extends AssignmentResult, Document {}
-
-const AssignmentEntry = new Schema(
+const InternalEntry = new Schema(
     {
         code: { type: String, required: [true, 'please enter subject code'] },
         name: { type: String, required: [true, 'please enter subject code'] },
@@ -13,31 +11,31 @@ const AssignmentEntry = new Schema(
     { _id: false }
 );
 
-const AssignmentResultSchema = new Schema<AssignmentDocument>({
+const InternalResultSchema = new Schema({
     registerNo: { type: Number, required: [true, 'please enter register no'] },
-    name: { type: String, required: [true, 'please enter name'] },
+    name: { type: String, required: true },
     year: { type: Number, required: [true, 'please enter a year'] },
     results: {
-        one: [AssignmentEntry],
-        two: [AssignmentEntry],
-        three: [AssignmentEntry],
+        one: [InternalEntry],
+        two: [InternalEntry],
+        three: [InternalEntry],
+        four: [InternalEntry],
     },
 });
 
-const AssignmentResultModel = model<AssignmentDocument>('Assignment', AssignmentResultSchema);
+const InternalResultModel = model('InternalMark', InternalResultSchema);
 
-export const createAssignmentData = (assignmentResult: AssignmentResult) =>
-    AssignmentResultModel.create(assignmentResult);
-export const getAssignmentDataByRegisterNo = (registerNo: number) => AssignmentResultModel.findOne({ registerNo });
-export const getAllAssignmentData = () => AssignmentResultModel.find();
+export const createInternalResultData = (internalResult: InternalResult) => InternalResultModel.create(internalResult);
+export const getInternalResultDataByRegisterNo = (registerNo: number) => InternalResultModel.findOne({ registerNo });
+export const getInternalResultAssignmentData = () => InternalResultModel.find();
 
-export const updateAssignmentDataMark = (registerNo: number, result: string, code: string, mark: number) =>
-    AssignmentResultModel.updateOne(
+export const updateInternalResultMark = (registerNo: number, result: string, code: string, mark: number) =>
+    InternalResultModel.updateOne(
         { [`results.${result}.code`]: code, registerNo },
         { $set: { [`results.${result}.$.mark`]: mark, [`results.${result}.$.status`]: mark > 0 } }
     );
 
-export const getFilteredAssignments = async (queryStr: QueryParams) => {
+export const getFilteredInternalResult = async (queryStr: QueryParams) => {
     const year = parseInt(queryStr.year);
     const result = queryStr.result;
     const status = queryStr.status === 'true';
@@ -81,5 +79,5 @@ export const getFilteredAssignments = async (queryStr: QueryParams) => {
         });
     }
 
-    return AssignmentResultModel.aggregate(pipeline);
+    return InternalResultModel.aggregate(pipeline);
 };

@@ -6,7 +6,6 @@ import {
     updateAssignmentDataMark,
 } from '@models';
 import { AssignmentResult, QueryParams } from '@sis/types';
-import { ApiFeatues } from '@utils';
 
 export class AssignmentService {
     static async getAssignments(registerNo: number) {
@@ -19,7 +18,7 @@ export class AssignmentService {
         return filteredAssignments;
     }
 
-    static async updateAssignment(registerNo: number, result: 'one' | 'two' | 'three', code: string, mark: number) {
+    static async updateAssignment(registerNo: number, result: string, code: string, mark: number) {
         return updateAssignmentDataMark(registerNo, result, code, mark);
     }
 }

@@ -1,6 +1,6 @@
 import { catchAsyncError } from '@middlewares';
 import { StudentService } from '@services';
-import { Student, UpdateStudent } from '@sis/types';
+import { Student, StudentDto, UpdateStudent, UpdateStudentDto } from '@sis/types';
 import { ErrorHandler, successResponse } from '@utils';
 import { NextFunction, Request, Response } from 'express';
 
@@ -19,7 +19,7 @@ export const getAllStudent = catchAsyncError(async (request, response, next) => 
 });
 
 // Admin: Create new Student - api/v1/admin/student/new
-export const createNewStudent = catchAsyncError(async (request, response, next) => {
+export const createNewStudent = catchAsyncError(async (request: Request<{}, {}, StudentDto>, response, next) => {
     const student = request.body as Student;
     const profileImage = request.file ? request.file : undefined;
     await StudentService.createStudent(student, profileImage, next);
@@ -27,14 +27,16 @@ export const createNewStudent = catchAsyncError(async (request, response, next) 
 });
 
 // Admin: Update existing Student - api/v1/admin/student/:studentId
-export const updateStudent = catchAsyncError(async (request: Request<{ studentId: string }>, response, next) => {
-    const { studentId } = request.params;
-    const updatedItems = request.body as UpdateStudent;
+export const updateStudent = catchAsyncError(
+    async (request: Request<{ studentId: string }, {}, UpdateStudentDto>, response, next) => {
+        const { studentId } = request.params;
+        const updatedItems = request.body as UpdateStudent;
 
-    const profileImage = request.file ? request.file : undefined;
-    await StudentService.updateStudent(studentId, updatedItems, profileImage, next);
-    successResponse(response, 201, 'Student updated');
-});
+        const profileImage = request.file ? request.file : undefined;
+        await StudentService.updateStudent(studentId, updatedItems, profileImage, next);
+        successResponse(response, 201, 'Student updated');
+    }
+);
 
 // Admin: Delete existing Student - api/v1/admin/student/:studentId
 export const deleteStudent = catchAsyncError(async (request: Request<{ studentId: string }>, response, next) => {

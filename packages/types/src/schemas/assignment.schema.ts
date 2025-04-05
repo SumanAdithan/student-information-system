@@ -12,3 +12,4 @@ export const AssignmentResultsSchema = z.object({
 });
 
 export type UpdateAssignmentResult = z.infer<typeof AssignmentResultsSchema>;
+export type AssignmentResultDto = z.infer<typeof AssignmentResultsSchema>;
