@@ -1,4 +1,5 @@
 import { api } from './apiClient';
+import qs from 'qs';
 
 const resultTitles = ['First Assignment', 'Second Assignment', 'Third Assignment'];
 
@@ -10,8 +11,10 @@ export const getAuthenticatedAssignment = async () => {
     };
 };
 
-export const getAllAssignmentData = async () => {
-    const { data } = await api.get('/assignments');
+export const getAllAssignmentData = async (params: { year: string; status: string; result: string }) => {
+    const query = qs.stringify(params, { skipNulls: true });
+    const { data } = await api.get(`/assignments?${query}`);
+
     return {
         assignments: data.data,
     };
@@ -23,4 +26,8 @@ export const getAssignmentData = async (registerNo: number) => {
         resultTitles: resultTitles,
         assignmentResult: data.data,
     };
+};
+
+export const updateAssignmentData = async (assignmentData: any) => {
+    return api.patch('/assignments', assignmentData);
 };

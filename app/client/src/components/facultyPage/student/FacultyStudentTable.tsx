@@ -20,7 +20,7 @@ export const FacultyStudentTable = ({ title, data }: DownloadNotesTableProps) =>
     const { editModal } = useSelector((state: RootState) => state.action);
     return (
         <>
-            <div className='relative bg-white p-6 pb-10 rounded-2xl shadow-section mb-7 backdrop-blur-md  z-20 overflow-hidden'>
+            <div className='relative bg-white p-6 pb-10 rounded-2xl shadow-section mb-7 backdrop-blur-md  overflow-hidden'>
                 <div className='flex justify-between  mb-6 min-w-max gap-5 flex-col lg:items-center lg:flex-row'>
                     <h1 className='text-2xl font-medium'>{title}</h1>
                     <div className='relative flex items-center gap-2 '>

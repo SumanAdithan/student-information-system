@@ -1,4 +1,10 @@
-import { AssignmentDocument, getAllAssignmentData, getAssignmentDataByRegisterNo } from '@models';
+import {
+    AssignmentDocument,
+    getAllAssignmentData,
+    getAssignmentDataByRegisterNo,
+    getFilteredAssignments,
+    updateAssignmentDataMark,
+} from '@models';
 import { AssignmentResult, QueryParams } from '@sis/types';
 import { ApiFeatues } from '@utils';
 
@@ -8,12 +14,12 @@ export class AssignmentService {
     }
 
     static async getAllAssignment(queryStr: QueryParams) {
-        let query = getAllAssignmentData();
-        const filteredAssignments = new ApiFeatues<AssignmentDocument>(query, queryStr)
-            .filterByYear()
-            .filterByStatus()
-            .exec();
+        const filteredAssignments = getFilteredAssignments(queryStr);
 
         return filteredAssignments;
+    }
+
+    static async updateAssignment(registerNo: number, result: 'one' | 'two' | 'three', code: string, mark: number) {
+        return updateAssignmentDataMark(registerNo, result, code, mark);
     }
 }

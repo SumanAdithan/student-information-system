@@ -4,12 +4,14 @@ interface LayoutState {
     isSidebarOpen: boolean;
     isMenuBtnVisible: boolean;
     isMobile: boolean;
+    activeSelect: string | null;
 }
 
 const initialState: LayoutState = {
     isSidebarOpen: true,
     isMenuBtnVisible: false,
     isMobile: false,
+    activeSelect: null,
 };
 
 const layoutSlice = createSlice({
@@ -28,8 +30,12 @@ const layoutSlice = createSlice({
         setIsMobile: (state, action: PayloadAction<boolean>) => {
             state.isMobile = action.payload;
         },
+        toggleSelect: (state, action: PayloadAction<string>) => {
+            const key = action.payload;
+            state.activeSelect = state.activeSelect === key ? null : key;
+        },
     },
 });
 
-export const { setSidebarOpen, toggleSidebarOpen, setMenuBtnVisible, setIsMobile } = layoutSlice.actions;
+export const { setSidebarOpen, toggleSidebarOpen, setMenuBtnVisible, setIsMobile, toggleSelect } = layoutSlice.actions;
 export const layoutReducer = layoutSlice.reducer;

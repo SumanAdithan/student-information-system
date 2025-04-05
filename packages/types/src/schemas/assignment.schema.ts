@@ -1,26 +1,14 @@
 import { z } from 'zod';
 
-const SubjectSchema = z
-    .object({
-        code: z.string().min(1, 'Subject code is required'),
-        name: z.string().min(1, 'Subject name is required'),
-        status: z.boolean(),
-        mark: z.number().min(0, 'Mark cannot be negative'),
-    })
-    .partial();
+export const AssignmentResultsSchema = z.object({
+    registerNo: z.number(),
+    name: z.string(),
+    year: z.number(),
+    subject: z.string(),
+    status: z.coerce.boolean(),
+    code: z.string(),
+    result: z.string(),
+    mark: z.number().min(0).max(10),
+});
 
-const ResultsSchema = z
-    .object({
-        one: SubjectSchema,
-        two: SubjectSchema,
-        three: SubjectSchema,
-    })
-    .partial();
-
-export const AssignmentResultsSchema = z
-    .object({
-        results: ResultsSchema,
-    })
-    .partial();
-
-export const UpdateAssignmentResultSchema = AssignmentResultsSchema.partial();
+export type UpdateAssignmentResult = z.infer<typeof AssignmentResultsSchema>;

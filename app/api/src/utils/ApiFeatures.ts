@@ -17,24 +17,26 @@ export class ApiFeatues<T> {
         return this;
     }
 
-    filterByStatus() {
-        if (this.queryStr.status) {
-            this.query = this.query.find({
-                $or: [
-                    { 'results.one.status': this.queryStr.status },
-                    { 'results.two.status': this.queryStr.status },
-                    { 'results.three.status': this.queryStr.status },
-                ],
-            });
+    filterByResult() {
+        if (this.queryStr.result) {
+            const assignmentField = `results.${this.queryStr.result}`;
+            this.query = this.query.select(`registerNo name year ${assignmentField}`) as Query<T[], T>;
         }
         return this;
     }
 
-    filterByResult() {
-        if (this.queryStr.assignment) {
-            const assignmentField = `results.${this.queryStr.assignment}`;
-            this.query = this.query.select(`registerNo name ${assignmentField}`) as Query<T[], T>;
+    filterByStatus() {
+        const { result, status } = this.queryStr;
+
+        if (result && typeof status !== 'undefined') {
+            const statusBool = status === 'true';
+            const fieldPath = `results.${result}`;
+
+            this.query = this.query.find({
+                [fieldPath]: { $elemMatch: { status: statusBool } },
+            });
         }
+
         return this;
     }
 

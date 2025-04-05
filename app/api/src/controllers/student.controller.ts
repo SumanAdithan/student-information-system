@@ -40,5 +40,5 @@ export const updateStudent = catchAsyncError(async (request: Request<{ studentId
 export const deleteStudent = catchAsyncError(async (request: Request<{ studentId: string }>, response, next) => {
     const { studentId } = request.params;
     await StudentService.deleteStudent(studentId, next);
-    successResponse(response, 201, 'Student deleted');
+    successResponse(response, 201, null, 'Student deleted');
 });

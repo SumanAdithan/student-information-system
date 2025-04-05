@@ -10,5 +10,7 @@ export * from './loader/Loading';
 export * from './buttons/BackButton';
 // input
 export * from './inputs/InputFields';
+export * from './inputs/SearchBar';
+export * from './inputs/Select';
 // image
 export * from './images/LazyImage';

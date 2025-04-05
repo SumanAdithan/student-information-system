@@ -18,7 +18,7 @@ export const getAllStudentsData = async () => {
 
 export const createNewStudent = async ({ studentData }: { studentData: Student }) => {
     const formData = jsonToFormData(studentData, ['profileImage']);
-    await api.post('/admin/student/new', formData);
+    return await api.post('/admin/student/new', formData);
 };
 
 export const updateStudent = async ({
@@ -29,9 +29,9 @@ export const updateStudent = async ({
     updatedStudentData: UpdateStudent;
 }) => {
     const formData = jsonToFormData(updatedStudentData, ['profileImage']);
-    await api.patch(`/admin/student/${studentId}`, formData);
+    return await api.patch(`/admin/student/${studentId}`, formData);
 };
 
 export const deleteStudent = async ({ studentId }: { studentId: string }) => {
-    await api.delete(`/admin/student/${studentId}`);
+    return await api.delete(`/admin/student/${studentId}`);
 };

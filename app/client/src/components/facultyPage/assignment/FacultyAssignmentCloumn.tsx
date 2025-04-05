@@ -1,6 +1,7 @@
 import { getAssignmentData } from '@api';
 import { edit, view } from '@assets';
-import { AppDispatch, setAssignment, setModal, setStudent, toggleView } from '@store';
+import { UpdateAssignmentResult } from '@sis/types';
+import { AppDispatch, setAssignment, setEditAssignment, setModal, toggleView } from '@store';
 import { createColumnHelper } from '@tanstack/react-table';
 import { useDispatch } from 'react-redux';
 
@@ -17,8 +18,8 @@ export const FacultyAssignmentColumnConfig = () => {
         dispatch(toggleView());
     };
 
-    const handleEditClick = (student: any) => {
-        dispatch(setStudent(student));
+    const handleEditClick = (assignment: UpdateAssignmentResult) => {
+        dispatch(setEditAssignment(assignment));
         dispatch(setModal({ active: true, status: 'edit' }));
     };
 
@@ -26,7 +27,7 @@ export const FacultyAssignmentColumnConfig = () => {
         columnHelper.accessor('name', { header: 'Name' }),
         columnHelper.accessor('subject', { header: 'Subject' }),
         columnHelper.accessor('code', { header: 'Code' }),
-        columnHelper.accessor('status', { header: 'Status' }),
+        columnHelper.accessor('status', { header: 'Submitted' }),
         columnHelper.accessor('mark', { header: 'Mark' }),
         columnHelper.display({
             id: 'view',
@@ -43,7 +44,7 @@ export const FacultyAssignmentColumnConfig = () => {
                         src={edit}
                         alt='edit'
                         className='w-6 h-6 transition-transform duration-300 hover:scale-125'
-                        onClick={() => console.log(row.original)}
+                        onClick={() => handleEditClick(row.original)}
                     />
                 </div>
             ),

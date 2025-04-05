@@ -1,14 +1,16 @@
 import { edit, trash, view } from '@assets';
 import { useStudentMutations } from '@queries';
-import { AppDispatch, setModal, setStudent, toggleView } from '@store';
+import { AppDispatch, RootState, setModal, setStudent, toggleView } from '@store';
 import { createColumnHelper } from '@tanstack/react-table';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 const columnHelper = createColumnHelper<any>();
 
 export const FacultyStudentColumnConfig = () => {
     const dispatch = useDispatch<AppDispatch>();
     const { deleteStudentMutation } = useStudentMutations();
+    const { role } = useSelector((state: RootState) => state.profile);
+    console.log(role);
 
     const handleViewClick = (student: any) => {
         dispatch(setStudent(student));
@@ -40,18 +42,22 @@ export const FacultyStudentColumnConfig = () => {
                         className='w-6 h-6 transition-transform duration-300 hover:scale-125'
                         onClick={() => handleViewClick(row.original)}
                     />
-                    <img
-                        src={edit}
-                        alt='edit'
-                        className='w-6 h-6 transition-transform duration-300 hover:scale-125'
-                        onClick={() => handleEditClick(row.original)}
-                    />
-                    <img
-                        src={trash}
-                        alt='delete'
-                        className='w-6 h-6 transition-transform duration-300 hover:scale-125'
-                        onClick={() => handleDeleteClick(row.original._id)}
-                    />
+                    {role === 'admin' && (
+                        <>
+                            <img
+                                src={edit}
+                                alt='edit'
+                                className='w-6 h-6 transition-transform duration-300 hover:scale-125'
+                                onClick={() => handleEditClick(row.original)}
+                            />
+                            <img
+                                src={trash}
+                                alt='delete'
+                                className='w-6 h-6 transition-transform duration-300 hover:scale-125'
+                                onClick={() => handleDeleteClick(row.original._id)}
+                            />
+                        </>
+                    )}
                 </div>
             ),
         }),

@@ -3,6 +3,14 @@ import { Document } from 'mongoose';
 import { Schema, model } from 'mongoose';
 
 const AdminSchema = new Schema({
+    profileImage: {
+        type: String,
+        default: '',
+    },
+    name: {
+        type: String,
+        required: true,
+    },
     email: {
         type: String,
         required: true,

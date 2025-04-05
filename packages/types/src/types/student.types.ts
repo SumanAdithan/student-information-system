@@ -23,5 +23,4 @@ export interface Student {
     mobile: number;
     accommodation: Accommodation;
     password?: string;
-    semesterWord?: string;
 }

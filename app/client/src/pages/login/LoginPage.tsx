@@ -34,11 +34,7 @@ export const LoginPage = () => {
 
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
-        try {
-            loginByPassword.mutate({ path, loginData });
-        } catch (err) {
-            console.log(err);
-        }
+        loginByPassword.mutate({ path, loginData });
     };
     const renderLoginForm = () => (
         <form onSubmit={handleSubmit} className='flex flex-col gap-6'>
