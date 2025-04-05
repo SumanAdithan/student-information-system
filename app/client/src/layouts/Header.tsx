@@ -19,7 +19,7 @@ export const Header = () => {
     const logoutMutation = useLogout();
 
     const { pathname } = useLocation();
-    const { studentHeaderTitles, facultyHeaderTitles, adminHeaderTitles } = headerConfig;
+    const { studentHeaderTitles, facultyHeaderTitles, adminHeaderTitles, dropDownItems } = headerConfig;
 
     const headerTitles =
         role === 'student'
@@ -45,7 +45,7 @@ export const Header = () => {
 
     return (
         <div className='relative md:z-20 bg-background shadow-header'>
-            <div className='relative flex items-center justify-between max-w-7xl mx-auto px-4 py-3 xs:py-2 sm:px-6 lg:px-8'>
+            <div className='relative flex items-center justify-between max-w-7xl mx-auto px-4 py-3 xs:py-2 sm:px-6 lg:px-8 '>
                 <div className='flex items-center gap-2'>
                     {isMenuBtnVisible && (
                         <Menu
@@ -67,14 +67,19 @@ export const Header = () => {
                         </div>
                         <h2 className='font-medium'>{name}</h2>
                     </div>
-                    <div className='absolute right-0 top-16 w-48 rounded-b-md bg-background shadow-lg z-20'>
-                        <button
-                            className='block px-4 py-2 text-sm text-font-primary hover:bg-gray-200 w-full text-left'
-                            onClick={() => logoutMutation.mutate()}
-                        >
-                            Logout
-                        </button>
-                    </div>
+                    {isDropDownOpen && (
+                        <div className='absolute right-0 top-16 w-48 rounded-b-md bg-background shadow-lg z-20 overflow-hidden'>
+                            {dropDownItems.map((item, i) => (
+                                <button
+                                    className='block px-4 py-2 text-sm  text-font-primary hover:bg-gray-200 w-full text-left'
+                                    key={i}
+                                    onClick={() => item.action(logoutMutation.mutate())}
+                                >
+                                    {item.title}
+                                </button>
+                            ))}
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

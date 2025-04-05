@@ -1,7 +1,8 @@
 import { catchAsyncError } from '@middlewares';
 import { AssignmentService } from '@services';
+import { AssignmentResultDto } from '@sis/types';
 import { ErrorHandler, successResponse } from '@utils';
-import { NextFunction, Request, Response } from 'express';
+import { Request } from 'express';
 
 export const getAuthenticatedAssignment = catchAsyncError(async (request, response, next) => {
     const { user } = request;
@@ -26,9 +27,11 @@ export const getAssignments = catchAsyncError(async (request: Request<{ register
     successResponse(response, 200, assignmentResult);
 });
 
-export const updateAssignment = catchAsyncError(async (request, response, next) => {
-    const assignment = request.body;
-    const { registerNo, result, code, mark } = assignment;
-    await AssignmentService.updateAssignment(registerNo, result, code, mark);
-    successResponse(response, 200, '', 'assignment updated');
-});
+export const updateAssignment = catchAsyncError(
+    async (request: Request<{}, {}, AssignmentResultDto>, response, next) => {
+        const assignment = request.body;
+        const { registerNo, result, code, mark } = assignment;
+        await AssignmentService.updateAssignment(registerNo, result, code, mark);
+        successResponse(response, 200, '', 'assignment updated');
+    }
+);

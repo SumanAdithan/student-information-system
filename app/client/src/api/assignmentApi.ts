@@ -1,3 +1,4 @@
+import { UpdateAssignmentResult } from '@sis/types';
 import { api } from './apiClient';
 import qs from 'qs';
 
@@ -28,6 +29,6 @@ export const getAssignmentData = async (registerNo: number) => {
     };
 };
 
-export const updateAssignmentData = async (assignmentData: any) => {
+export const updateAssignmentData = async (assignmentData: UpdateAssignmentResult) => {
     return api.patch('/assignments', assignmentData);
 };

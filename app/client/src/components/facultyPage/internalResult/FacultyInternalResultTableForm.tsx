@@ -1,25 +1,25 @@
 import { AppDispatch, RootState, toggleModal } from '@store';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
-import { ASSIGNMENT_TABLE_INPUT_FIELDS as inputFields } from '@constants';
+import { INTERNAL_RESULT_TABLE_INPUT_FIELDS as inputFields } from '@constants';
 import { InputField } from '@components';
 import { X } from 'lucide-react';
 import { useEffect } from 'react';
-import { AssignmentResultSchema, UpdateAssignmentResult } from '@sis/types';
+import { InternalResultSchema, UpdateInternalResult } from '@sis/types';
 import { useZodForm } from '@hooks';
-import { useAssignmentMutation } from '@queries';
+import { useInternalResultMutation } from '@queries';
 import { FormProvider, useForm } from 'react-hook-form';
 
-export const FacultyAssignmentTableForm = () => {
+export const FacultyInternalResultTableForm = () => {
     const {
         register,
         handleSubmit,
         formState: { errors },
         reset,
-    } = useZodForm(AssignmentResultSchema);
+    } = useZodForm(InternalResultSchema);
 
-    const { assignment, modal } = useSelector(
+    const { internalResult, modal } = useSelector(
         (state: RootState) => ({
-            assignment: state.assignment.editAssignmentResult,
+            internalResult: state.internalResult.editInternalResult,
             modal: state.action.editModal,
         }),
         shallowEqual
@@ -28,16 +28,16 @@ export const FacultyAssignmentTableForm = () => {
     const methods = useForm();
     const dispatch = useDispatch<AppDispatch>();
 
-    const { updateAssignmentMutation } = useAssignmentMutation();
+    const { updateInternalResultMutation } = useInternalResultMutation();
 
     useEffect(() => {
-        if (modal.status === 'edit' && assignment) {
-            reset(assignment);
+        if (modal.status === 'edit' && internalResult) {
+            reset(internalResult);
         }
     }, [modal.active, reset]);
 
-    const saveData = (data: UpdateAssignmentResult) => {
-        updateAssignmentMutation.mutate(data);
+    const saveData = (data: UpdateInternalResult) => {
+        updateInternalResultMutation.mutate(data);
 
         dispatch(toggleModal());
     };
@@ -64,7 +64,7 @@ export const FacultyAssignmentTableForm = () => {
                                 key={input.name}
                                 data={input}
                                 register={register}
-                                error={errors[input.name as keyof UpdateAssignmentResult]?.message as string}
+                                error={errors[input.name as keyof UpdateInternalResult]?.message as string}
                             />
                         ))}
 

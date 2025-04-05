@@ -1,29 +1,29 @@
 import { useTableConfig } from '@hooks';
-import { FacultyAssignmentColumnConfig } from './FacultyAssignmentCloumn';
+import { FacultyInternalResultColumn } from './FacultyInternalResultColumn';
 import { Loading, RenderListTable, SearchBar, Select, TablePageination } from '@components';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState, toggleSelect } from '@store';
-import { FacultyAssignmentTableForm } from './FacultyAssignmentTableForm';
-import { useGetAllAssignment } from '@queries';
-import { ASSIGNMENT_RESULT_OPTIONS, ASSIGNMENT_STATUS_OPTIONS, ASSIGNMENT_YEAR_OPTIONS } from '@constants';
+import { FacultyInternalResultTableForm } from './FacultyInternalResultTableForm';
+import { useGetAllInternalResult } from '@queries';
+import { INTERNAL_RESULT_OPTIONS, INTERNAL_STATUS_OPTIONS, INTERNAL_YEAR_OPTIONS } from '@constants';
 
-interface FacultyAssignmentTableProps {
+interface FacultyInternalResultTableProps {
     title: string;
 }
 
-export const FacultyAssignmentTable = ({ title }: FacultyAssignmentTableProps) => {
+export const FacultyInternalResultTable = ({ title }: FacultyInternalResultTableProps) => {
     const dispatch = useDispatch<AppDispatch>();
 
     // state for filtering
-    const [year, setYear] = useState(ASSIGNMENT_YEAR_OPTIONS[0].value);
-    const [status, setStatus] = useState(ASSIGNMENT_STATUS_OPTIONS[0].value);
-    const [result, setResult] = useState(ASSIGNMENT_RESULT_OPTIONS[0].value);
+    const [year, setYear] = useState(INTERNAL_YEAR_OPTIONS[0].value);
+    const [status, setStatus] = useState(INTERNAL_STATUS_OPTIONS[0].value);
+    const [result, setResult] = useState(INTERNAL_RESULT_OPTIONS[0].value);
     const [globalFilter, setGlobalFilter] = useState('');
-    const { data, isLoading, error } = useGetAllAssignment(year, status, result);
+    const { data, isLoading, error } = useGetAllInternalResult(year, status, result);
 
-    const { facultyAssignmentColumnConfig: columns } = FacultyAssignmentColumnConfig();
-    const table = useTableConfig({ data: data?.assignments, columns, globalFilter, setGlobalFilter, pageSize: 5 });
+    const { facultyInternalResultColumnConfig: columns } = FacultyInternalResultColumn();
+    const table = useTableConfig({ data: data?.internalResults, columns, globalFilter, setGlobalFilter, pageSize: 5 });
 
     const { editModal } = useSelector((state: RootState) => state.action);
     const { activeSelect } = useSelector((state: RootState) => state.layout);
@@ -39,7 +39,7 @@ export const FacultyAssignmentTable = ({ title }: FacultyAssignmentTableProps) =
                         <Select
                             value={year}
                             onChange={setYear}
-                            options={ASSIGNMENT_YEAR_OPTIONS}
+                            options={INTERNAL_YEAR_OPTIONS}
                             isOpen={activeSelect === 'year'}
                             toggleOpen={() => dispatch(toggleSelect('year'))}
                             onClose={() => dispatch(toggleSelect('year'))}
@@ -47,7 +47,7 @@ export const FacultyAssignmentTable = ({ title }: FacultyAssignmentTableProps) =
                         <Select
                             value={status}
                             onChange={setStatus}
-                            options={ASSIGNMENT_STATUS_OPTIONS}
+                            options={INTERNAL_STATUS_OPTIONS}
                             isOpen={activeSelect === 'status'}
                             toggleOpen={() => dispatch(toggleSelect('status'))}
                             onClose={() => dispatch(toggleSelect('status'))}
@@ -55,7 +55,7 @@ export const FacultyAssignmentTable = ({ title }: FacultyAssignmentTableProps) =
                         <Select
                             value={result}
                             onChange={setResult}
-                            options={ASSIGNMENT_RESULT_OPTIONS}
+                            options={INTERNAL_RESULT_OPTIONS}
                             isOpen={activeSelect === 'result'}
                             toggleOpen={() => dispatch(toggleSelect('result'))}
                             onClose={() => dispatch(toggleSelect('result'))}
@@ -68,7 +68,7 @@ export const FacultyAssignmentTable = ({ title }: FacultyAssignmentTableProps) =
                 </div>
                 <TablePageination table={table} name={title} />
             </div>
-            {editModal.active && <FacultyAssignmentTableForm />}
+            {editModal.active && <FacultyInternalResultTableForm />}
         </>
     );
 };

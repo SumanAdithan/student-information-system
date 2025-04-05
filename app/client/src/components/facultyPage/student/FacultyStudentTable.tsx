@@ -7,12 +7,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState, setModal } from '@store';
 import { FacultyStudentTableForm } from './FacultyStudentTableForm';
 
-interface DownloadNotesTableProps {
+interface FacultyStudentTableProps {
     title: string;
     data: any;
 }
 
-export const FacultyStudentTable = ({ title, data }: DownloadNotesTableProps) => {
+export const FacultyStudentTable = ({ title, data }: FacultyStudentTableProps) => {
     const dispatch = useDispatch();
     const [globalFilter, setGlobalFilter] = useState('');
     const { facultyStudentColumnConfig: columns } = FacultyStudentColumnConfig();

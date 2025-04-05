@@ -1,22 +1,23 @@
-export const ASSIGNMENT_YEAR_OPTIONS = [
+export const INTERNAL_YEAR_OPTIONS = [
     { label: 'I Year', value: '1' },
     { label: 'II Year', value: '2' },
     { label: 'III Year', value: '3' },
     { label: 'VI Year', value: '4' },
 ];
 
-export const ASSIGNMENT_STATUS_OPTIONS = [
-    { label: 'Submitted', value: 'true' },
-    { label: 'Not Submitted', value: 'false' },
+export const INTERNAL_STATUS_OPTIONS = [
+    { label: 'Pass', value: 'true' },
+    { label: 'Fail', value: 'false' },
 ];
 
-export const ASSIGNMENT_RESULT_OPTIONS = [
+export const INTERNAL_RESULT_OPTIONS = [
     { label: 'one', value: 'one' },
     { label: 'two', value: 'two' },
     { label: 'three', value: 'three' },
+    { label: 'four', value: 'four' },
 ];
 
-export const ASSIGNMENT_TABLE_INPUT_FIELDS = [
+export const INTERNAL_RESULT_TABLE_INPUT_FIELDS = [
     { label: 'RegisterNo', type: 'text', placeholder: 'RegisterNo', name: 'registerNo', disabled: true },
     { label: 'Name', type: 'text', placeholder: 'Name', name: 'name', disabled: true },
     { label: 'Year', type: 'text', placeholder: 'Year', name: 'year', disabled: true },
@@ -28,8 +29,8 @@ export const ASSIGNMENT_TABLE_INPUT_FIELDS = [
         name: 'status',
         disabled: true,
         options: [
-            { label: 'Submitted', value: 'true' },
-            { label: 'Not Submitted', value: 'false' },
+            { label: 'Pass', value: 'true' },
+            { label: 'Fail', value: 'false' },
         ],
     },
     { label: 'Code', type: 'text', placeholder: 'Code', name: 'code', disabled: true },

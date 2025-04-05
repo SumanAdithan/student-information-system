@@ -1,26 +1,17 @@
 import { Router } from 'express';
-import { studentAuthRoutes, studentRoutes } from './student.routes';
-import { facultyAuthRoutes, facultyRoutes } from './faculty.routes';
-import { adminAuthRoutes, adminStudentRoutes } from './admin.routes';
-import { commonRoutes } from './common.routes';
+import { studentRoutes } from './student.routes';
+import { assignmentRoutes } from './assignment.routes';
+import { fileRoutes } from './file.routes';
+import { authRoutes } from './auth.routes';
+import { internalResultRoutes } from './internalResult.routes';
 
 const router = Router();
 
 export default (): Router => {
-    // Student routes
-    studentAuthRoutes(router);
+    authRoutes(router);
     studentRoutes(router);
-
-    // Faculty routes
-    facultyAuthRoutes(router);
-    facultyRoutes(router);
-
-    // Admin routes
-    adminAuthRoutes(router);
-    adminStudentRoutes(router);
-
-    // common routes
-    commonRoutes(router);
-
+    assignmentRoutes(router);
+    internalResultRoutes(router);
+    fileRoutes(router);
     return router;
 };

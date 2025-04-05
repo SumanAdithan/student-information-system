@@ -133,5 +133,7 @@ export const StudentSchema = z.object({
 });
 
 export const UpdateStudentSchema = StudentSchema.partial();
-
 export type UpdateStudent = z.infer<typeof UpdateStudentSchema>;
+
+export type StudentDto = z.infer<typeof StudentSchema>;
+export type UpdateStudentDto = z.infer<typeof UpdateStudentSchema>;

@@ -1,7 +1,7 @@
 import {
     createAssignmentData,
     // createDues,
-    createInternalResult,
+    createInternalResultData,
     createSemesterResult,
     getRegulationDetails,
 } from '@models';
@@ -33,7 +33,7 @@ export class AssignDefaults {
                     const semesterResult = this.semesterResults(initialState, regulationInfo.semesters as Semesters);
 
                     await createAssignmentData(assignmentResult as AssignmentResult);
-                    // await createInternalResult(internalResult as InternalResult);
+                    await createInternalResultData(internalResult as InternalResult);
                     // await createSemesterResult(semesterResult as SemesterResult);
                     // await createDues(initialState);
                 } catch (err) {
@@ -55,7 +55,7 @@ export class AssignDefaults {
     }
 
     private internalResults(initialState: InitialState, subjects: Subject[]) {
-        const internal = ['one', 'two', 'three', 'semester'];
+        const internal = ['one', 'two', 'three', 'four'];
         return internal.reduce(
             (acc, key) => {
                 acc.results[key] = subjects;

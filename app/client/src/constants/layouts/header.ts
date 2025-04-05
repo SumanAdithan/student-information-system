@@ -11,12 +11,15 @@ export const headerConfig = {
     facultyHeaderTitles: {
         '/faculty': 'OVERVIEW',
         '/faculty/students': 'STUDENTS',
+        '/faculty/assignments': 'ASSIGNMENTS',
+        '/faculty/internal-results': 'RESULTS',
     },
 
     adminHeaderTitles: {
         '/admin': 'OVERVIEW',
         '/admin/students': 'STUDENTS',
-        '/admin/assignments': 'STUDENTS',
+        '/admin/assignments': 'ASSIGNMENTS',
+        '/admin/internal-results': 'INTERNAL RESULTS',
     },
 
     dropDownItems: [
