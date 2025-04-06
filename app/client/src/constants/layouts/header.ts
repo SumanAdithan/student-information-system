@@ -5,7 +5,7 @@ export const headerConfig = {
         '/student/internal-results': 'INTERNAL RESULTS',
         '/student/semester-results': 'SEMESTER RESULTS',
         '/student/download-notes': 'DOWNLOAD NOTES',
-        '/student/pay-dues': 'PAY DUES',
+        '/student/dues': 'PAY DUES',
     },
 
     facultyHeaderTitles: {
@@ -14,6 +14,7 @@ export const headerConfig = {
         '/faculty/assignments': 'ASSIGNMENTS',
         '/faculty/internal-results': 'INTERNAL RESULTS',
         '/faculty/semester-results': 'SEMESTER RESULTS',
+        '/faculty/dues': 'DUES',
     },
 
     adminHeaderTitles: {
@@ -22,6 +23,7 @@ export const headerConfig = {
         '/admin/assignments': 'ASSIGNMENTS',
         '/admin/internal-results': 'INTERNAL RESULTS',
         '/admin/semester-results': 'SEMESTER RESULTS',
+        '/admin/dues': 'Dues',
     },
 
     dropDownItems: [

@@ -17,4 +17,7 @@ export const config = {
     AWS_SSL: process.env.AWS_SSL,
     AWS_FORCE_STYLE: Boolean(process.env.AWS_FORCE_STYLE),
     BUCKET_NAME: process.env.BUCKET_NAME,
+
+    RAZORPAY_API_KEY: process.env.RAZORPAY_API_KEY,
+    RAZORPAY_API_SECRET: process.env.RAZORPAY_API_SECRET,
 };

@@ -1,9 +1,8 @@
 import {
     createAssignmentData,
-    createDues,
+    createDuesData,
     createInternalResultData,
     createSemesterResultData,
-    deleteStudentById,
     getRegulationDetails,
 } from '@models';
 import { AssignmentResult, InternalResult, SemesterResult, Semesters, StudentWithId, Subject } from '@sis/types';
@@ -34,7 +33,7 @@ export class AssignDefaults {
             await createAssignmentData(assignmentResult as AssignmentResult);
             await createInternalResultData(internalResult as InternalResult);
             await createSemesterResultData(semesterResult as SemesterResult);
-            await createDues(name, year, registerNo);
+            await createDuesData(name, year, registerNo);
             return {
                 success: true,
             };

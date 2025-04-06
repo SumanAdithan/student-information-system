@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState, toggleSelect } from '@store';
 import { FacultyAssignmentTableForm } from './FacultyAssignmentTableForm';
 import { useGetAllAssignment } from '@queries';
-import { ASSIGNMENT_RESULT_OPTIONS, ASSIGNMENT_STATUS_OPTIONS, ASSIGNMENT_YEAR_OPTIONS } from '@constants';
+import { ASSIGNMENT_RESULT_OPTIONS, ASSIGNMENT_STATUS_OPTIONS, YEAR_OPTIONS } from '@constants';
 
 interface FacultyAssignmentTableProps {
     title: string;
@@ -16,7 +16,7 @@ export const FacultyAssignmentTable = ({ title }: FacultyAssignmentTableProps) =
     const dispatch = useDispatch<AppDispatch>();
 
     // state for filtering
-    const [year, setYear] = useState(ASSIGNMENT_YEAR_OPTIONS[0].value);
+    const [year, setYear] = useState(YEAR_OPTIONS[0].value);
     const [status, setStatus] = useState(ASSIGNMENT_STATUS_OPTIONS[0].value);
     const [result, setResult] = useState(ASSIGNMENT_RESULT_OPTIONS[0].value);
     const [globalFilter, setGlobalFilter] = useState('');
@@ -39,7 +39,7 @@ export const FacultyAssignmentTable = ({ title }: FacultyAssignmentTableProps) =
                         <Select
                             value={year}
                             onChange={setYear}
-                            options={ASSIGNMENT_YEAR_OPTIONS}
+                            options={YEAR_OPTIONS}
                             isOpen={activeSelect === 'year'}
                             toggleOpen={() => dispatch(toggleSelect('year'))}
                             onClose={() => dispatch(toggleSelect('year'))}

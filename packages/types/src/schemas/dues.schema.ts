@@ -1,52 +1,17 @@
 import { z } from 'zod';
 
-export const FeeDetailsSchema = z
-    .object({
-        monthly_pay: z.number(),
-        total: z.number(),
-        paid: z.number(),
-        pending: z.number(),
-        fully_paid: z.boolean(),
-    })
-    .partial();
+export const DuesSchema = z.object({
+    registerNo: z.number(),
+    name: z.string(),
+    year: z.number(),
+    tuition_fee: z.number(),
+    bus_fee: z.number(),
+    stationary_fee: z.number(),
+    sports_placement_fee: z.number(),
+    apparel_fee: z.number(),
+    examination_fee: z.number(),
+    fine: z.number(),
+});
 
-export const DuesDetailsSchema = z
-    .object({
-        tuition_fee: FeeDetailsSchema,
-        bus_fee: FeeDetailsSchema,
-        stationary_fee: FeeDetailsSchema,
-        sports_placement_fee: FeeDetailsSchema,
-        apparel_fee: FeeDetailsSchema,
-        examination_fee: FeeDetailsSchema,
-        fine: FeeDetailsSchema,
-    })
-    .partial();
-
-export const TotalDetailsSchema = z
-    .object({
-        total_amount: z.number(),
-        paid_amount: z.number(),
-        pending_amount: z.number(),
-        isPartial_paid: z.boolean(),
-    })
-    .partial();
-
-export const TransactionSchema = z
-    .object({
-        date: z.string(),
-        transactionId: z.string(),
-        category: z.string(),
-        amount: z.string(),
-        method: z.string(),
-    })
-    .partial();
-
-export const DuesSchema = z
-    .object({
-        dues_details: DuesDetailsSchema,
-        total_details: TotalDetailsSchema,
-        transaction_history: z.array(TransactionSchema),
-    })
-    .partial();
-
-export const UpdateDuesSchema = DuesSchema.partial();
+export type UpdateDues = z.infer<typeof DuesSchema>;
+export type DuesDto = z.infer<typeof DuesSchema>;

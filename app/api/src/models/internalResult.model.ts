@@ -27,7 +27,6 @@ const InternalResultModel = model('InternalMark', InternalResultSchema);
 
 export const createInternalResultData = (internalResult: InternalResult) => InternalResultModel.create(internalResult);
 export const getInternalResultDataByRegisterNo = (registerNo: number) => InternalResultModel.findOne({ registerNo });
-export const getInternalResultAssignmentData = () => InternalResultModel.find();
 
 export const updateInternalResultMark = (registerNo: number, result: string, code: string, mark: number) =>
     InternalResultModel.updateOne(

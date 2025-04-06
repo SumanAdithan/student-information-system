@@ -28,7 +28,6 @@ const SemesterResultModel = model('SemesterResult', SemesterResultSchema);
 
 export const createSemesterResultData = (semesterResult: SemesterResult) => SemesterResultModel.create(semesterResult);
 export const getSemesterResultDataByRegisterNo = (registerNo: number) => SemesterResultModel.findOne({ registerNo });
-export const getSemesterResultAssignmentData = () => SemesterResultModel.find();
 
 export const updateSemesterResultGrade = (registerNo: number, result: string, code: string, grade: string) => {
     const status = grade !== 'U' && grade !== 'UA';

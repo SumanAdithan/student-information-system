@@ -1,25 +1,25 @@
 import { AppDispatch, RootState, toggleModal } from '@store';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
-import { SEMESTER_RESULT_TABLE_INPUT_FIELDS as inputFields } from '@constants';
+import { DUES_TABLE_INPUT_FIELDS as inputFields } from '@constants';
 import { InputField } from '@components';
 import { X } from 'lucide-react';
 import { useEffect } from 'react';
-import { SemesterResultSchema, UpdateSemesterResult } from '@sis/types';
+import { DuesSchema, UpdateDues } from '@sis/types';
 import { useZodForm } from '@hooks';
-import { useSemesterResultMutation } from '@queries';
+import { useDuesMutation } from '@queries';
 import { FormProvider, useForm } from 'react-hook-form';
 
-export const FacultySemesterResultTableForm = () => {
+export const FacultyDuesTableForm = () => {
     const {
         register,
         handleSubmit,
         formState: { errors },
         reset,
-    } = useZodForm(SemesterResultSchema);
+    } = useZodForm(DuesSchema);
 
-    const { semesterResult, modal } = useSelector(
+    const { dues, modal } = useSelector(
         (state: RootState) => ({
-            semesterResult: state.semesterResult.editSemesterResult,
+            dues: state.dues.editDues,
             modal: state.action.editModal,
         }),
         shallowEqual
@@ -28,17 +28,16 @@ export const FacultySemesterResultTableForm = () => {
     const methods = useForm();
     const dispatch = useDispatch<AppDispatch>();
 
-    const { updateSemesterResultMutation } = useSemesterResultMutation();
+    const { updateDuesMutation } = useDuesMutation();
 
     useEffect(() => {
-        if (modal.status === 'edit' && semesterResult) {
-            reset(semesterResult);
+        if (modal.status === 'edit' && dues) {
+            reset(dues);
         }
     }, [modal.active, reset]);
 
-    const saveData = (data: UpdateSemesterResult) => {
-        console.log(data);
-        updateSemesterResultMutation.mutate(data);
+    const saveData = (data: UpdateDues) => {
+        updateDuesMutation.mutate(data);
 
         dispatch(toggleModal());
     };
@@ -58,18 +57,18 @@ export const FacultySemesterResultTableForm = () => {
                                 handleSubmit(saveData)();
                             }
                         }}
-                        className='grid grid-cols-1 md:grid-cols-3 gap-4'
+                        className='grid grid-cols-1 md:grid-cols-2 gap-4'
                     >
                         {inputFields.map((input) => (
                             <InputField
                                 key={input.name}
                                 data={input}
                                 register={register}
-                                error={errors[input.name as keyof UpdateSemesterResult]?.message as string}
+                                error={errors[input.name as keyof UpdateDues]?.message as string}
                             />
                         ))}
 
-                        <div className='flex justify-end items-center mt-5 space-x-2'>
+                        <div className='md:col-start-2 flex justify-end items-center mt-5 space-x-2'>
                             <button
                                 className='bg-search-input hover:bg-font-secondary  px-4 py-3 rounded-md '
                                 onClick={() => dispatch(toggleModal())}

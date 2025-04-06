@@ -1,4 +1,4 @@
-import { UpdateAssignmentResult } from '@sis/types';
+import { QueryParams, UpdateAssignmentResult } from '@sis/types';
 import { api } from './apiClient';
 import qs from 'qs';
 
@@ -12,7 +12,7 @@ export const getAuthenticatedAssignment = async () => {
     };
 };
 
-export const getAllAssignmentData = async (params: { year: string; status: string; result: string }) => {
+export const getAllAssignmentData = async (params: QueryParams) => {
     const query = qs.stringify(params, { skipNulls: true });
     const { data } = await api.get(`/assignments?${query}`);
 

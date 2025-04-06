@@ -1,21 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { SemesterResult } from '@sis/types';
-
-interface EditSemesterResultState {
-    registerNo: number;
-    name: string;
-    subject: string;
-    result: 'one' | 'two' | 'three' | 'four' | 'five' | 'six' | 'seven' | 'eight';
-    status: boolean;
-    year: number;
-    code: string;
-    grade: '-' | 'UA' | 'U' | 'C' | 'B' | 'B+' | 'A' | 'A+' | 'O';
-}
+import { SemesterResult, UpdateSemesterResult } from '@sis/types';
 
 interface SemesterResultState {
     resultTitles: string[];
     semesterResult: SemesterResult;
-    editSemesterResult?: EditSemesterResultState;
+    editSemesterResult?: UpdateSemesterResult;
 }
 
 const initialState: SemesterResultState = {
@@ -54,7 +43,7 @@ const semesterResultSlice = createSlice({
         setSemesterResult: (state, action: PayloadAction<SemesterResultState>) => {
             return { ...state, ...action.payload };
         },
-        setEditSemesterResult: (state, action: PayloadAction<EditSemesterResultState>) => {
+        setEditSemesterResult: (state, action: PayloadAction<UpdateSemesterResult>) => {
             state.editSemesterResult = action.payload;
         },
     },

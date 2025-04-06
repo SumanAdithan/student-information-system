@@ -6,3 +6,4 @@ export * from './slices/actionSlice';
 export * from './slices/assignmentSlice';
 export * from './slices/internalResultSlice';
 export * from './slices/semesterResultSlice';
+export * from './slices/duesSlice';
