@@ -2,6 +2,7 @@ import { config } from '@config';
 import { UserRole } from '@sis/types';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
+import crypto from 'crypto';
 
 // Hash password
 export const hashPassword = async (password: string) => {
@@ -29,4 +30,13 @@ export const verifyJwtToken = (token: string) => {
 // Generate QR Token
 export const getQrToken = (id: string) => {
     return jwt.sign({ id }, config.JWT_SECRET);
+};
+
+// Verify payment signature
+export const verifyPaymentSignature = (verifyId: string, signature: string) => {
+    const expectedSignature = crypto
+        .createHmac('sha256', process.env.RAZORPAY_API_SECRET)
+        .update(verifyId)
+        .digest('hex');
+    return expectedSignature === signature;
 };

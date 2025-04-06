@@ -13,5 +13,7 @@ declare namespace NodeJS {
         AWS_SSL: string;
         AWS_FORCE_STYLE: string;
         BUCKET_NAME: string;
+        RAZORPAY_API_KEY: string;
+        RAZORPAY_API_SECRET: string;
     }
 }
