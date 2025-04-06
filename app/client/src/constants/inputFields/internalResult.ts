@@ -2,7 +2,7 @@ export const INTERNAL_YEAR_OPTIONS = [
     { label: 'I Year', value: '1' },
     { label: 'II Year', value: '2' },
     { label: 'III Year', value: '3' },
-    { label: 'VI Year', value: '4' },
+    { label: 'IV Year', value: '4' },
 ];
 
 export const INTERNAL_STATUS_OPTIONS = [

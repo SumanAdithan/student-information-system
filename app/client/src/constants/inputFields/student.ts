@@ -54,9 +54,10 @@ export const STUDENT_TABLE_INPUT_FIELDS = [
     },
     {
         label: 'Department',
-        type: 'text',
+        type: 'select',
         placeholder: 'CSE',
         name: 'department',
+        options: [{ label: 'CSE', value: 'CSE' }],
     },
     {
         label: 'Year',
@@ -72,21 +73,40 @@ export const STUDENT_TABLE_INPUT_FIELDS = [
     },
     {
         label: 'Regulation',
-        type: 'text',
-        placeholder: 'R2021',
+        type: 'select',
+        placeholder: 'regulation',
         name: 'regulation',
+        options: [
+            { label: '2021', value: 'R2021' },
+            { label: '2025', value: 'R2025' },
+        ],
     },
     {
         label: 'Semester',
-        type: 'number',
+        type: 'select',
         placeholder: 'Enter semester',
+        valueAsNumber: true,
         name: 'semester',
+        options: [
+            { label: '1', value: 1 },
+            { label: '2', value: 2 },
+            { label: '3', value: 3 },
+            { label: '4', value: 4 },
+            { label: '5', value: 5 },
+            { label: '6', value: 6 },
+            { label: '7', value: 7 },
+            { label: '8', value: 8 },
+        ],
     },
     {
         label: 'Batch',
-        type: 'text',
+        type: 'select',
         placeholder: 'Enter batch',
         name: 'batch',
+        options: [
+            { label: '2021-2025', value: '2021-2025' },
+            { label: '2025-2029', value: '2025-2029' },
+        ],
     },
     {
         label: 'Arrears',
@@ -96,9 +116,10 @@ export const STUDENT_TABLE_INPUT_FIELDS = [
     },
     {
         label: 'Degree',
-        type: 'text',
-        placeholder: 'B.E',
+        type: 'select',
+        placeholder: 'Degree',
         name: 'degree',
+        options: [{ label: 'B.E', value: 'B.E' }],
     },
     {
         label: 'Email',

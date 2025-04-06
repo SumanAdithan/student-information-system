@@ -1,12 +1,14 @@
 export interface SemesterEntry {
     code: string;
     name: string;
-    grade?: string;
+    status: boolean;
+    grade?: '-' | 'UA' | 'U' | 'C' | 'B' | 'B+' | 'A' | 'A+' | 'O';
 }
 
 export interface SemesterResult {
     registerNo: number;
     name: string;
+    year: number;
     results: {
         one: SemesterEntry[];
         two: SemesterEntry[];

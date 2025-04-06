@@ -12,7 +12,8 @@ export const headerConfig = {
         '/faculty': 'OVERVIEW',
         '/faculty/students': 'STUDENTS',
         '/faculty/assignments': 'ASSIGNMENTS',
-        '/faculty/internal-results': 'RESULTS',
+        '/faculty/internal-results': 'INTERNAL RESULTS',
+        '/faculty/semester-results': 'SEMESTER RESULTS',
     },
 
     adminHeaderTitles: {
@@ -20,6 +21,7 @@ export const headerConfig = {
         '/admin/students': 'STUDENTS',
         '/admin/assignments': 'ASSIGNMENTS',
         '/admin/internal-results': 'INTERNAL RESULTS',
+        '/admin/semester-results': 'SEMESTER RESULTS',
     },
 
     dropDownItems: [

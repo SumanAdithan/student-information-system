@@ -22,7 +22,7 @@ export const getStudentOverviewData = (data: any) => {
         department: data.department,
         email: data.email,
         year: yearMapping[data.year as keyof typeof yearMapping],
-        sem: data.semester,
+        sem: `0${data.semester}`,
         mobile: data.mobile,
         batch: data.batch,
         accommodation: data.accommodation,

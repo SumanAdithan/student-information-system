@@ -5,7 +5,7 @@ import {
     InternalResultPage,
     OverviewPage,
     PayDuesPage,
-    SemesterResultsPage,
+    SemesterResultPage,
 } from '@pages';
 import { Route } from 'react-router-dom';
 import { PrivateRoute } from './ProtectedRoute';
@@ -17,7 +17,7 @@ export const studentRoutes = () => {
                 <Route index element={<OverviewPage />} />
                 <Route path='assignments' element={<AssignmentsPage />} />
                 <Route path='internal-results' element={<InternalResultPage />} />
-                <Route path='semester-results' element={<SemesterResultsPage />} />
+                <Route path='semester-results' element={<SemesterResultPage />} />
                 <Route path='download-notes' element={<DownloadNotesPage />} />
                 <Route path='pay-dues' element={<PayDuesPage />} />
             </Route>

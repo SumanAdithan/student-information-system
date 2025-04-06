@@ -1,7 +1,13 @@
 import { Route } from 'react-router-dom';
 import { Layout } from '@layouts';
 import { PrivateRoute } from './ProtectedRoute';
-import { FacultyAssignmentPage, FacultyInternalResultPage, FacultyOverviewPage, FacultyStudentPage } from '@pages';
+import {
+    FacultyAssignmentPage,
+    FacultyInternalResultPage,
+    FacultyOverviewPage,
+    FacultySemesterResultPage,
+    FacultyStudentPage,
+} from '@pages';
 
 export const facultyRoutes = () => {
     return (
@@ -11,6 +17,7 @@ export const facultyRoutes = () => {
                 <Route path='students' element={<FacultyStudentPage />} />
                 <Route path='assignments' element={<FacultyAssignmentPage />} />
                 <Route path='internal-results' element={<FacultyInternalResultPage />} />
+                <Route path='semester-results' element={<FacultySemesterResultPage />} />
             </Route>
         </Route>
     );
