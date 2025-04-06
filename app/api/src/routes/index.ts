@@ -5,6 +5,7 @@ import { fileRoutes } from './file.routes';
 import { authRoutes } from './auth.routes';
 import { internalResultRoutes } from './internalResult.routes';
 import { semesterResultRoutes } from './semesterResult.routes';
+import { duesRoutes } from './dues.routes';
 
 const router = Router();
 
@@ -14,6 +15,7 @@ export default (): Router => {
     assignmentRoutes(router);
     internalResultRoutes(router);
     semesterResultRoutes(router);
+    duesRoutes(router);
     fileRoutes(router);
     return router;
 };

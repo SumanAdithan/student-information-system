@@ -6,11 +6,7 @@ import { useSelector } from 'react-redux';
 export const ViewStudent = () => {
     const { student } = useSelector((state: RootState) => state.student);
     const { overviewStat, overviewProfile, overviewDetails } = getStudentOverviewData(student);
-    const data = {
-        overviewProfile: overviewProfile,
-        overviewDetails: overviewDetails,
-        overviewStat: overviewStat,
-    };
+
     return (
         <>
             <div className='bg-white p-6 pb-8 rounded-2xl shadow-section mb-7'>

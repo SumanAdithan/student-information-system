@@ -1,10 +1,3 @@
-export const SEMESTER_YEAR_OPTIONS = [
-    { label: 'I Year', value: '1' },
-    { label: 'II Year', value: '2' },
-    { label: 'III Year', value: '3' },
-    { label: 'IV Year', value: '4' },
-];
-
 export const SEMESTER_STATUS_OPTIONS = [
     { label: 'Pass', value: 'true' },
     { label: 'Fail', value: 'false' },
@@ -15,6 +8,10 @@ export const SEMESTER_RESULT_OPTIONS = [
     { label: 'two', value: 'two' },
     { label: 'three', value: 'three' },
     { label: 'four', value: 'four' },
+    { label: 'five', value: 'five' },
+    { label: 'six', value: 'six' },
+    { label: 'seven', value: 'seven' },
+    { label: 'eight', value: 'eight' },
 ];
 
 export const SEMESTER_RESULT_TABLE_INPUT_FIELDS = [

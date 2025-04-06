@@ -1,0 +1,94 @@
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { Dues, UpdateDues } from '@sis/types';
+
+interface DuesState {
+    dues: Dues;
+    editDues?: UpdateDues;
+}
+
+const initialState: DuesState = {
+    dues: {
+        name: '',
+        registerNo: 0,
+        year: 0,
+        dues_details: {
+            tuition_fee: {
+                total: 0,
+                paid: 0,
+                pending: 0,
+                fully_paid: false,
+            },
+            bus_fee: {
+                total: 0,
+                paid: 0,
+                pending: 0,
+                fully_paid: false,
+            },
+            stationary_fee: {
+                total: 0,
+                paid: 0,
+                pending: 0,
+                fully_paid: false,
+            },
+            sports_placement_fee: {
+                total: 0,
+                paid: 0,
+                pending: 0,
+                fully_paid: false,
+            },
+            apparel_fee: {
+                total: 0,
+                paid: 0,
+                pending: 0,
+                fully_paid: false,
+            },
+            examination_fee: {
+                total: 0,
+                paid: 0,
+                pending: 0,
+                fully_paid: false,
+            },
+            fine: {
+                total: 0,
+                paid: 0,
+                pending: 0,
+                fully_paid: false,
+            },
+        },
+        total_details: {
+            total_amount: 0,
+            paid_amount: 0,
+            pending_amount: 0,
+            isPartial_paid: false,
+        },
+        transaction_history: [],
+    },
+    editDues: {
+        name: '',
+        registerNo: 0,
+        year: 0,
+        tuition_fee: 0,
+        bus_fee: 0,
+        stationary_fee: 0,
+        sports_placement_fee: 0,
+        apparel_fee: 0,
+        examination_fee: 0,
+        fine: 0,
+    },
+};
+
+const duesSlice = createSlice({
+    name: 'dues',
+    initialState,
+    reducers: {
+        setDues: (state, action: PayloadAction<Dues>) => {
+            state.dues = action.payload;
+        },
+        setEditDues: (state, action: PayloadAction<UpdateDues>) => {
+            state.editDues = action.payload;
+        },
+    },
+});
+
+export const { setDues, setEditDues } = duesSlice.actions;
+export const duesReducer = duesSlice.reducer;

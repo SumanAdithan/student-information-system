@@ -9,7 +9,7 @@ export const sidebarConfig = {
         { name: 'Internal Results', href: '/student/internal-results' },
         { name: 'Semester Results', href: '/student/semester-results' },
         { name: 'Download Notes', href: '/student/download-notes' },
-        { name: 'Pay Dues', href: '/student/pay-dues' },
+        { name: 'Pay Dues', href: '/student/dues' },
         { name: 'Dues & Approvals', href: '/student/dues-approvals' },
         { name: 'Time Table', href: '/student/time-table' },
         { name: 'Circular', href: '/student/circular' },
@@ -21,6 +21,7 @@ export const sidebarConfig = {
         { name: 'Assignments', href: '/faculty/assignments' },
         { name: 'Internal Results', href: '/faculty/internal-results' },
         { name: 'Semester Results', href: '/faculty/semester-results' },
+        { name: 'Dues', href: '/faculty/dues' },
     ],
     adminNavLinks: [
         { name: 'Overview', href: '/admin' },
@@ -28,5 +29,6 @@ export const sidebarConfig = {
         { name: 'Assignments', href: '/admin/assignments' },
         { name: 'Internal Results', href: '/admin/internal-results' },
         { name: 'Semester Results', href: '/admin/semester-results' },
+        { name: 'Dues', href: '/admin/dues' },
     ],
 };

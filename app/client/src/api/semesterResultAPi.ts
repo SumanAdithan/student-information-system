@@ -1,4 +1,4 @@
-import { UpdateSemesterResult } from '@sis/types';
+import { QueryParams, UpdateSemesterResult } from '@sis/types';
 import { api } from './apiClient';
 import qs from 'qs';
 
@@ -21,7 +21,7 @@ export const getAuthenticatedSemesterResult = async () => {
     };
 };
 
-export const getAllSemesterResultData = async (params: { year: string; status: string; result: string }) => {
+export const getAllSemesterResultData = async (params: QueryParams) => {
     const query = qs.stringify(params, { skipNulls: true });
     const { data } = await api.get(`/semester-results?${query}`);
 

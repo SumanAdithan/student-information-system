@@ -27,7 +27,6 @@ const AssignmentResultModel = model('Assignment', AssignmentResultSchema);
 export const createAssignmentData = (assignmentResult: AssignmentResult) =>
     AssignmentResultModel.create(assignmentResult);
 export const getAssignmentDataByRegisterNo = (registerNo: number) => AssignmentResultModel.findOne({ registerNo });
-export const getAllAssignmentData = () => AssignmentResultModel.find();
 
 export const updateAssignmentDataMark = (registerNo: number, result: string, code: string, mark: number) =>
     AssignmentResultModel.updateOne(

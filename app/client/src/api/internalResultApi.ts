@@ -1,4 +1,4 @@
-import { UpdateInternalResult } from '@sis/types';
+import { QueryParams, UpdateInternalResult } from '@sis/types';
 import { api } from './apiClient';
 import qs from 'qs';
 
@@ -17,7 +17,7 @@ export const getAuthenticatedInternalResult = async () => {
     };
 };
 
-export const getAllInternalResultData = async (params: { year: string; status: string; result: string }) => {
+export const getAllInternalResultData = async (params: QueryParams) => {
     const query = qs.stringify(params, { skipNulls: true });
     const { data } = await api.get(`/internal-results?${query}`);
 

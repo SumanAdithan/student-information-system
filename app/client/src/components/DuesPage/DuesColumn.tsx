@@ -3,9 +3,8 @@ import { createColumnHelper } from '@tanstack/react-table';
 
 const columnHelper = createColumnHelper<any>();
 
-export const payDuesColumnConfig = [
+export const DuesColumnConfig = [
     columnHelper.accessor('category', { header: 'Category' }),
-    columnHelper.accessor('monthly_pay', { header: 'Monthly Pay' }),
     columnHelper.accessor('total', { header: 'Total' }),
     columnHelper.accessor('paid', { header: 'Paid' }),
     columnHelper.accessor('pending', { header: 'Pending' }),

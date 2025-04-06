@@ -4,7 +4,7 @@ import {
     DownloadNotesPage,
     InternalResultPage,
     OverviewPage,
-    PayDuesPage,
+    DuesPage,
     SemesterResultPage,
 } from '@pages';
 import { Route } from 'react-router-dom';
@@ -19,7 +19,7 @@ export const studentRoutes = () => {
                 <Route path='internal-results' element={<InternalResultPage />} />
                 <Route path='semester-results' element={<SemesterResultPage />} />
                 <Route path='download-notes' element={<DownloadNotesPage />} />
-                <Route path='pay-dues' element={<PayDuesPage />} />
+                <Route path='dues' element={<DuesPage />} />
             </Route>
         </Route>
     );

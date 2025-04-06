@@ -1,5 +1,4 @@
 export interface FeeDetails {
-    monthly_pay: number;
     total: number;
     paid: number;
     pending: number;
@@ -38,6 +37,7 @@ export interface Transaction {
 export interface Dues {
     name: string;
     registerNo: number;
+    year: number;
     dues_details: DuesDetails;
     total_details: TotalDetails;
     transaction_history: Transaction[];

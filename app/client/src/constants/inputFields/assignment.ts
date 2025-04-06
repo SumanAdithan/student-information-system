@@ -1,4 +1,4 @@
-export const ASSIGNMENT_YEAR_OPTIONS = [
+export const YEAR_OPTIONS = [
     { label: 'I Year', value: '1' },
     { label: 'II Year', value: '2' },
     { label: 'III Year', value: '3' },

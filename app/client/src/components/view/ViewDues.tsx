@@ -1,13 +1,16 @@
 import { PayDuesTable, TransactionHistoryTable } from '@components';
-import { payDuesData } from '@data';
-import { getPayDuesData } from '@utils';
+import { RootState } from '@store';
+import { getDuesData } from '@utils';
+import { useSelector } from 'react-redux';
 
-export const PayDuesPage = () => {
-    const { transaction_history, dues_details, total_details } = getPayDuesData(payDuesData.data);
+export const ViewDues = () => {
     const payDuesConfig = {
         payDuesTitle: 'Pay Dues',
         transactionHistoryTitle: 'Transaction History',
     };
+    const { dues } = useSelector((state: RootState) => state.dues);
+    const { dues_details, total_details, transaction_history } = getDuesData(dues);
+
     return (
         <>
             <PayDuesTable title={payDuesConfig.payDuesTitle} duesDetails={dues_details} totalDetails={total_details} />

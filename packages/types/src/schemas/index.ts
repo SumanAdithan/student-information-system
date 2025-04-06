@@ -3,3 +3,4 @@ export * from './file.schema';
 export * from './assignment.schema';
 export * from './internalResult.schema';
 export * from './semesterResult.schema';
+export * from './dues.schema';
