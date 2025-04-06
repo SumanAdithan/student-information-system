@@ -1,22 +1,23 @@
-export const ASSIGNMENT_YEAR_OPTIONS = [
+export const SEMESTER_YEAR_OPTIONS = [
     { label: 'I Year', value: '1' },
     { label: 'II Year', value: '2' },
     { label: 'III Year', value: '3' },
     { label: 'IV Year', value: '4' },
 ];
 
-export const ASSIGNMENT_STATUS_OPTIONS = [
-    { label: 'Submitted', value: 'true' },
-    { label: 'Not Submitted', value: 'false' },
+export const SEMESTER_STATUS_OPTIONS = [
+    { label: 'Pass', value: 'true' },
+    { label: 'Fail', value: 'false' },
 ];
 
-export const ASSIGNMENT_RESULT_OPTIONS = [
+export const SEMESTER_RESULT_OPTIONS = [
     { label: 'one', value: 'one' },
     { label: 'two', value: 'two' },
     { label: 'three', value: 'three' },
+    { label: 'four', value: 'four' },
 ];
 
-export const ASSIGNMENT_TABLE_INPUT_FIELDS = [
+export const SEMESTER_RESULT_TABLE_INPUT_FIELDS = [
     { label: 'RegisterNo', type: 'text', placeholder: 'RegisterNo', name: 'registerNo', disabled: true },
     { label: 'Name', type: 'text', placeholder: 'Name', name: 'name', disabled: true },
     { label: 'Year', type: 'text', placeholder: 'Year', name: 'year', disabled: true },
@@ -28,11 +29,27 @@ export const ASSIGNMENT_TABLE_INPUT_FIELDS = [
         name: 'status',
         disabled: true,
         options: [
-            { label: 'Submitted', value: 'true' },
-            { label: 'Not Submitted', value: 'false' },
+            { label: 'Pass', value: 'true' },
+            { label: 'Fail', value: 'false' },
         ],
     },
     { label: 'Code', type: 'text', placeholder: 'Code', name: 'code', disabled: true },
     { label: 'Assignment', type: 'text', placeholder: 'Assignment', name: 'result', disabled: true },
-    { label: 'Mark', type: 'number', placeholder: 'Mark', name: 'mark', disabled: false },
+    {
+        label: 'Grade',
+        type: 'select',
+        placeholder: 'Grade',
+        name: 'grade',
+        disabled: false,
+        options: [
+            { label: '-', value: '-' },
+            { label: 'UA', value: 'UA' },
+            { label: 'U', value: 'U' },
+            { label: 'B', value: 'B' },
+            { label: 'B+', value: 'B+' },
+            { label: 'A', value: 'A' },
+            { label: 'A+', value: 'A+' },
+            { label: 'O', value: 'O' },
+        ],
+    },
 ];

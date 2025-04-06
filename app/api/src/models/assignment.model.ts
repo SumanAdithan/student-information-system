@@ -81,3 +81,5 @@ export const getFilteredAssignments = async (queryStr: QueryParams) => {
 
     return AssignmentResultModel.aggregate(pipeline);
 };
+
+export const deleteAssignmentByRegisterNo = (registerNo: number) => AssignmentResultModel.deleteOne({ registerNo });

@@ -40,7 +40,7 @@ const StudentSchema = new Schema(
         },
         department: {
             type: String,
-            default: 'CSE',
+            required: true,
         },
         year: {
             type: Number,
@@ -60,11 +60,11 @@ const StudentSchema = new Schema(
         },
         degree: {
             type: String,
-            default: 'B.E',
+            required: true,
         },
         regulation: {
             type: String,
-            default: 'R2021',
+            required: true,
         },
         email: {
             type: String,

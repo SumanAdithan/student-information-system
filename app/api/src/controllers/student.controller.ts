@@ -22,7 +22,8 @@ export const getAllStudent = catchAsyncError(async (request, response, next) => 
 export const createNewStudent = catchAsyncError(async (request: Request<{}, {}, StudentDto>, response, next) => {
     const student = request.body as Student;
     const profileImage = request.file ? request.file : undefined;
-    await StudentService.createStudent(student, profileImage, next);
+    const createStudent = await StudentService.createStudent(student, profileImage);
+    if (!createStudent.success) return next(new ErrorHandler(400, 'Unable to create a student'));
     successResponse(response, 201, null, 'Student Created');
 });
 

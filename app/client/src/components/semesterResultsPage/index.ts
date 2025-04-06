@@ -1,2 +1,2 @@
-export * from './SemesterResultsColumn';
-export * from './SemesterResultsTable';
+export * from './SemesterResultColumn';
+export * from './SemesterResultTable';

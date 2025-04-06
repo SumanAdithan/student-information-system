@@ -81,3 +81,5 @@ export const getFilteredInternalResult = async (queryStr: QueryParams) => {
 
     return InternalResultModel.aggregate(pipeline);
 };
+
+export const deleteInternalResultByRegisterNo = (registerNo: number) => InternalResultModel.deleteOne({ registerNo });

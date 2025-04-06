@@ -24,3 +24,5 @@ export interface Student {
     accommodation: Accommodation;
     password?: string;
 }
+
+export type StudentWithId = Student & { id: string };

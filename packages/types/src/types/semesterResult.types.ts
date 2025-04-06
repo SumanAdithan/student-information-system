@@ -2,7 +2,7 @@ export interface SemesterEntry {
     code: string;
     name: string;
     status: boolean;
-    grade?: '-' | 'UA' | 'U' | 'C' | 'B' | 'B+' | 'A' | 'A+';
+    grade?: '-' | 'UA' | 'U' | 'C' | 'B' | 'B+' | 'A' | 'A+' | 'O';
 }
 
 export interface SemesterResult {

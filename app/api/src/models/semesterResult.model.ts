@@ -5,7 +5,7 @@ const SemesterEntry = new Schema({
     code: { type: String, required: [true, 'please enter subject code'] },
     name: { type: String, required: [true, 'please enter subject code'] },
     status: { type: Boolean, default: false },
-    grade: { type: String, default: '-', enum: ['-', 'UA', 'U', 'C', 'B', 'B+', 'A', 'A+'] },
+    grade: { type: String, default: '-', enum: ['-', 'UA', 'U', 'C', 'B', 'B+', 'A', 'A+', 'O'] },
 });
 
 const SemesterResultSchema = new Schema({
@@ -30,11 +30,13 @@ export const createSemesterResultData = (semesterResult: SemesterResult) => Seme
 export const getSemesterResultDataByRegisterNo = (registerNo: number) => SemesterResultModel.findOne({ registerNo });
 export const getSemesterResultAssignmentData = () => SemesterResultModel.find();
 
-export const updateSemesterResultGrade = (registerNo: number, result: string, code: string, grade: string) =>
-    SemesterResultModel.updateOne(
+export const updateSemesterResultGrade = (registerNo: number, result: string, code: string, grade: string) => {
+    const status = grade !== 'U' && grade !== 'UA';
+    return SemesterResultModel.updateOne(
         { [`results.${result}.code`]: code, registerNo },
-        { $set: { [`results.${result}.$.grade`]: grade, [`results.${result}.$.status`]: grade } }
+        { $set: { [`results.${result}.$.grade`]: grade, [`results.${result}.$.status`]: status } }
     );
+};
 
 export const getFilteredSemesterResult = async (queryStr: QueryParams) => {
     const year = parseInt(queryStr.year);
@@ -82,3 +84,5 @@ export const getFilteredSemesterResult = async (queryStr: QueryParams) => {
 
     return SemesterResultModel.aggregate(pipeline);
 };
+
+export const deleteSemesterResultByRegisterNo = (registerNo: number) => SemesterResultModel.deleteOne({ registerNo });

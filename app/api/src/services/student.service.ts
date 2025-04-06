@@ -1,6 +1,15 @@
-import { createStudent, deleteStudentById, getAllStudentData, getStudentById, updateStudentById } from '@models';
-import { Student, UpdateStudent } from '@sis/types';
-import { ErrorHandler, getQrToken } from '@utils';
+import {
+    createStudent,
+    deleteAssignmentByRegisterNo,
+    deleteInternalResultByRegisterNo,
+    deleteSemesterResultByRegisterNo,
+    deleteStudentById,
+    getAllStudentData,
+    getStudentById,
+    updateStudentById,
+} from '@models';
+import { Student, StudentWithId, UpdateStudent } from '@sis/types';
+import { ErrorHandler, getQrToken, hashPassword } from '@utils';
 import { NextFunction } from 'express';
 import QR from 'qrcode';
 import { AwsService } from './aws.service';
@@ -10,8 +19,12 @@ const awsService = new AwsService();
 const assignDefaults = new AssignDefaults();
 
 export class StudentService {
-    static async createStudent(student: Student, image: Express.Multer.File, next: NextFunction) {
-        const password = [...student.registerNo.toString()].reverse().join();
+    static async createStudent(student: Student, image: Express.Multer.File) {
+        let password = student.password;
+        if (!password) {
+            password = [...student.registerNo.toString()].reverse().join('');
+        }
+
         const studentData = {
             ...student,
             password,
@@ -26,7 +39,7 @@ export class StudentService {
                 newStudent.id,
                 image.buffer
             );
-            if (!profileImage.success) return next(new ErrorHandler(400, 'Error while upload image'));
+            if (!profileImage.success) return { success: false };
             newStudent.profileImage = profileImage.fileName;
         }
 
@@ -35,7 +48,10 @@ export class StudentService {
         newStudent.qrCode = dataImage;
         await newStudent.save();
 
-        await assignDefaults.assignStudentDefaults([newStudent]);
+        const defaultData = await assignDefaults.assignStudentDefaults(newStudent as StudentWithId);
+        if (!defaultData.success) return { success: false };
+
+        return { success: true };
     }
 
     static async getAllStudent() {
@@ -48,8 +64,12 @@ export class StudentService {
         image: Express.Multer.File,
         next: NextFunction
     ) {
-        const student = await getStudentById(studentId);
+        const student = await getStudentById(studentId).select('+password');
         if (!student) return next(new ErrorHandler(404, 'Student not found'));
+
+        if (updatedItems.password) {
+            updatedItems.password = await hashPassword(updatedItems.password);
+        }
 
         if (image) {
             if (student.profileImage) {
@@ -72,6 +92,10 @@ export class StudentService {
             const deleteImage = await awsService.deleteFile(student.profileImage);
             if (!deleteImage.success) return next(new ErrorHandler(400, `Can't delete Student`));
         }
+
+        await deleteAssignmentByRegisterNo(student.registerNo);
+        await deleteInternalResultByRegisterNo(student.registerNo);
+        await deleteSemesterResultByRegisterNo(student.registerNo);
         await deleteStudentById(studentId);
     }
 }

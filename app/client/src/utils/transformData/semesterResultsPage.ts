@@ -4,6 +4,7 @@ export const getSemesterResultData = (titles: any, results: any) => {
             title: titles[i],
             result: (val as any).map((item: any) => ({
                 name: `(${item.code}) ${item.name}`,
+                status: item.status,
                 grade: item.grade,
             })),
         });

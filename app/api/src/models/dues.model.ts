@@ -40,17 +40,24 @@ const DuesSchema = new Schema(
     {
         name: { type: String, required: true },
         registerNo: { type: Number, required: true },
+        year: { type: Number, required: [true, 'please enter a year'] },
         dues_details: {
-            tuition_fee: { type: FeeDetailsSchema, required: true },
-            bus_fee: { type: FeeDetailsSchema, required: true },
-            stationary_fee: { type: FeeDetailsSchema, required: true },
-            sports_placement_fee: { type: FeeDetailsSchema, required: true },
-            apparel_fee: { type: FeeDetailsSchema, required: true },
-            examination_fee: { type: FeeDetailsSchema, required: true },
-            fine: { type: FeeDetailsSchema, required: true },
+            tuition_fee: { type: FeeDetailsSchema, default: () => ({}) },
+            bus_fee: { type: FeeDetailsSchema, default: () => ({}) },
+            stationary_fee: { type: FeeDetailsSchema, default: () => ({}) },
+            sports_placement_fee: { type: FeeDetailsSchema, default: () => ({}) },
+            apparel_fee: { type: FeeDetailsSchema, default: () => ({}) },
+            examination_fee: { type: FeeDetailsSchema, default: () => ({}) },
+            fine: { type: FeeDetailsSchema, default: () => ({}) },
         },
-        total_details: { type: TotalDetailsSchema, required: true },
+        total_details: { type: TotalDetailsSchema, default: () => ({}) },
         transaction_history: { type: [TransactionSchema], default: [] },
     },
     { timestamps: true }
 );
+
+const DuesModel = model('Dues', DuesSchema);
+
+export const createDues = (name: string, year: number, registerNo: number) =>
+    DuesModel.create({ name, year, registerNo });
+export const deleteDues = (registerNo: number) => DuesModel.deleteOne({ registerNo });

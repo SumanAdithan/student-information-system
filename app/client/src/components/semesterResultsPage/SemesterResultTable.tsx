@@ -1,5 +1,5 @@
 import { useTableConfig } from '@hooks';
-import { semesterResultColumnConfig as columns } from './SemesterResultsColumn';
+import { semesterResultColumnConfig as columns } from './SemesterResultColumn';
 import { RenderResultTable } from '@components';
 
 interface SemesterResultTableProps {

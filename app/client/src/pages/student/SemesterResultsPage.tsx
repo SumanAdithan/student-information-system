@@ -1,27 +1,22 @@
-import { SemesterResultTable } from '@components';
-import { semesterResultData } from '@data';
-import { getSemesterResultData } from '@utils';
+import { Loading, ViewSemesterResult } from '@components';
+import { useGetAuthenticatedSemesterResult } from '@queries';
+import { AppDispatch, setSemesterResult } from '@store';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
-export const SemesterResultsPage = () => {
-    const { results } = semesterResultData;
-    const semesterResultConfig = {
-        resultTitles: [
-            'First Semester',
-            'Second Semester',
-            'Third Semester',
-            'Fourth Semester',
-            'Fifth Semester',
-            'Sixth Semester',
-            'Seventh Semester',
-            'Eighth Semester',
-        ],
-    };
-    const semesterResults = getSemesterResultData(semesterResultConfig.resultTitles, results);
-    return (
-        <>
-            {semesterResults.map((assignment: any, index: number) => (
-                <SemesterResultTable title={assignment.title} results={assignment.result} key={index} />
-            ))}
-        </>
-    );
+export const SemesterResultPage = () => {
+    const dispatch = useDispatch<AppDispatch>();
+    const semesterResult = useGetAuthenticatedSemesterResult();
+    const { data, isLoading, error } = semesterResult;
+
+    useEffect(() => {
+        if (data) {
+            dispatch(setSemesterResult(data));
+        }
+    }, [semesterResult, dispatch]);
+
+    if (isLoading) return <Loading />;
+    if (error) return <div>Error fetching student data</div>;
+
+    return <ViewSemesterResult />;
 };

@@ -8,7 +8,7 @@ export const SemesterResultSchema = z.object({
     status: z.coerce.boolean(),
     code: z.string(),
     result: z.enum(['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight']),
-    grade: z.enum(['-', 'UA', 'U', 'C', 'B', 'B+', 'A', 'A+']),
+    grade: z.enum(['-', 'UA', 'U', 'C', 'B', 'B+', 'A', 'A+', 'O']),
 });
 
 export type UpdateSemesterResult = z.infer<typeof SemesterResultSchema>;
