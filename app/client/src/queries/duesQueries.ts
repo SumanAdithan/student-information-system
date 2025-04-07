@@ -14,7 +14,7 @@ export const useGetAllDues = (year: string, partialPaid: string) => {
         partialPaid,
     };
     return useQuery({
-        queryKey: ['allDuesData', year, partialPaid],
+        queryKey: ['allDuesData', year],
         queryFn: () => getAllDuesData(params),
         enabled: !!year,
         retry: false,
@@ -25,9 +25,9 @@ export const useDuesMutation = () => {
     const queryClient = useQueryClient();
     const updateDuesMutation = useMutation({
         mutationFn: updateDuesData,
-        onSuccess: (_, { year, category }) => {
+        onSuccess: (_, { year }) => {
             queryClient.invalidateQueries({
-                queryKey: ['allDues', String(year), String(category)],
+                queryKey: ['allDuesData', String(year)],
             });
         },
     });

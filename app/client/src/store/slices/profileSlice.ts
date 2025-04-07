@@ -5,12 +5,14 @@ interface ProfileState {
     name: string;
     role: string;
     profileImage: string;
+    email: string;
 }
 
 const initialState: ProfileState = {
     name: '',
     role: '',
     profileImage: '',
+    email: '',
 };
 
 const profileSlice = createSlice({

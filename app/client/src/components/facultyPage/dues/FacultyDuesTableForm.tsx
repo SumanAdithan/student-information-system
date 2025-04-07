@@ -5,7 +5,7 @@ import { InputField } from '@components';
 import { X } from 'lucide-react';
 import { useEffect } from 'react';
 import { DuesSchema, UpdateDues } from '@sis/types';
-import { useZodForm } from '@hooks';
+import { useChangedInputValues, useZodForm } from '@hooks';
 import { useDuesMutation } from '@queries';
 import { FormProvider, useForm } from 'react-hook-form';
 
@@ -15,6 +15,7 @@ export const FacultyDuesTableForm = () => {
         handleSubmit,
         formState: { errors },
         reset,
+        watch,
     } = useZodForm(DuesSchema);
 
     const { dues, modal } = useSelector(
@@ -27,6 +28,7 @@ export const FacultyDuesTableForm = () => {
 
     const methods = useForm();
     const dispatch = useDispatch<AppDispatch>();
+    const watchedValues = watch();
 
     const { updateDuesMutation } = useDuesMutation();
 
@@ -36,9 +38,16 @@ export const FacultyDuesTableForm = () => {
         }
     }, [modal.active, reset]);
 
-    const saveData = (data: UpdateDues) => {
-        updateDuesMutation.mutate(data);
+    const saveData = () => {
+        const changedFields = useChangedInputValues(dues?.amounts, watchedValues.amounts);
+        const data = {
+            registerNo: dues?.registerNo,
+            name: dues?.name,
+            year: dues?.year,
+            amounts: { ...changedFields },
+        };
 
+        updateDuesMutation.mutate(data as UpdateDues);
         dispatch(toggleModal());
     };
 

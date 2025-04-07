@@ -1,5 +1,5 @@
-import { getDuesDataByRegisterNo, getFilteredDuesData, updateDuesData } from '@models';
-import { QueryParams } from '@sis/types';
+import { adminUpdateDuesData, getDuesDataByRegisterNo, getFilteredDuesData, updateDuesData } from '@models';
+import { QueryParams, UpdateDues } from '@sis/types';
 
 export class DuesService {
     static getDues(registerNo: number) {
@@ -12,7 +12,7 @@ export class DuesService {
         return filteredDuesData;
     }
 
-    static updateDues(registerNo: number, category: string, amount: number) {
-        return updateDuesData(registerNo, category, amount);
+    static updateDues(dues: UpdateDues) {
+        return adminUpdateDuesData(dues);
     }
 }
