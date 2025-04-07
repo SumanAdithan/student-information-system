@@ -1,5 +1,5 @@
 import { useTableConfig } from '@hooks';
-import { RenderListTable, DuesColumnConfig as columns } from '@components';
+import { DuesColumn, RenderListTable } from '@components';
 import { tickMark, xMark } from '@assets';
 
 interface PayDuesTableProps {
@@ -9,7 +9,9 @@ interface PayDuesTableProps {
 }
 
 export const PayDuesTable = ({ title, duesDetails, totalDetails }: PayDuesTableProps) => {
+    const { duesColumnConfig: columns } = DuesColumn();
     const table = useTableConfig({ data: duesDetails, columns });
+
     return (
         <div className='bg-white p-6 pb-10 rounded-2xl shadow-section mb-7'>
             <h1 className='text-2xl font-medium mb-4'>{title}</h1>

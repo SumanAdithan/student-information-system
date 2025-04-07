@@ -1,4 +1,4 @@
-import { QueryParams } from '@sis/types';
+import { QueryParams, UpdateDues } from '@sis/types';
 import { Schema, model } from 'mongoose';
 
 const categoryFields = {
@@ -16,7 +16,7 @@ const FeeDetailsSchema = new Schema(
         total: { type: Number, default: 0 },
         paid: { type: Number, default: 0 },
         pending: { type: Number, default: 0 },
-        fully_paid: { type: Boolean, default: false },
+        fully_paid: { type: Boolean, default: true },
     },
     { _id: false }
 );
@@ -40,7 +40,7 @@ const TotalDetailsSchema = new Schema(
         total_amount: { type: Number, default: 0 },
         paid_amount: { type: Number, default: 0 },
         pending_amount: { type: Number, default: 0 },
-        isPartial_paid: { type: Boolean, default: false },
+        isPartial_paid: { type: Boolean, default: true },
     },
     { _id: false }
 );
@@ -72,7 +72,7 @@ export const createDuesData = (name: string, year: number, registerNo: number) =
 
 export const getDuesDataByRegisterNo = (registerNo: number) => DuesModel.findOne({ registerNo });
 
-export const getFilteredDuesData = async (queryStr: QueryParams) => {
+export const getFilteredDuesData = (queryStr: QueryParams) => {
     const year = parseInt(queryStr.year);
     const isPartialPaid = queryStr.partialPaid === 'true';
 
@@ -148,6 +148,59 @@ export const updateDuesData = (registerNo: number, category: string, amount: num
                 },
             },
         },
+        {
+            $set: {
+                'total_details.isPartial_paid': {
+                    $gte: [
+                        {
+                            $subtract: ['$total_details.total_amount', '$total_details.pending_amount'],
+                        },
+                        { $divide: ['$total_details.total_amount', 2] },
+                    ],
+                },
+            },
+        },
+    ]);
+};
+
+export const adminUpdateDuesData = async (dues: UpdateDues) => {
+    const { registerNo, amounts } = dues;
+
+    const setUpdates: Record<string, any> = {};
+
+    for (const [category, amount] of Object.entries(amounts)) {
+        (setUpdates[`dues_details.${category}.total`] = amount),
+            (setUpdates[`dues_details.${category}.pending`] = {
+                $subtract: [amount, `$dues_details.${category}.paid`],
+            });
+        setUpdates[`dues_details.${category}.fully_paid`] = {
+            $eq: [
+                {
+                    $subtract: [amount, `$dues_details.${category}.paid`],
+                },
+                0,
+            ],
+        };
+    }
+
+    await DuesModel.updateOne({ registerNo }, [
+        { $set: setUpdates },
+        {
+            $set: {
+                'total_details.total_amount': {
+                    $sum: Object.keys(categoryFields).map((field) => `$dues_details.${field}.total`),
+                },
+                'total_details.paid_amount': {
+                    $sum: Object.keys(categoryFields).map((field) => `$dues_details.${field}.paid`),
+                },
+                'total_details.pending_amount': {
+                    $sum: Object.keys(categoryFields).map((field) => `$dues_details.${field}.pending`),
+                },
+            },
+        },
+    ]);
+
+    return DuesModel.updateOne({ registerNo }, [
         {
             $set: {
                 'total_details.isPartial_paid': {

@@ -29,7 +29,6 @@ export const getDues = catchAsyncError(async (request: Request<{ registerNo: str
 
 export const updateDues = catchAsyncError(async (request: Request<{}, {}, DuesDto>, response, next) => {
     const dues = request.body;
-    const { registerNo, category, amount } = dues;
-    await DuesService.updateDues(registerNo, category, amount);
+    await DuesService.updateDues(dues);
     successResponse(response, 200, '', 'Dues Result updated');
 });

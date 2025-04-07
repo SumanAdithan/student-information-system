@@ -67,13 +67,15 @@ const initialState: DuesState = {
         name: '',
         registerNo: 0,
         year: 0,
-        tuition_fee: 0,
-        bus_fee: 0,
-        stationary_fee: 0,
-        sports_placement_fee: 0,
-        apparel_fee: 0,
-        examination_fee: 0,
-        fine: 0,
+        amounts: {
+            tuition_fee: 0,
+            bus_fee: 0,
+            stationary_fee: 0,
+            sports_placement_fee: 0,
+            apparel_fee: 0,
+            examination_fee: 0,
+            fine: 0,
+        },
     },
 };
 

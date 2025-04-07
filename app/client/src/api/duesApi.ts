@@ -28,13 +28,15 @@ export const getDuesData = async (registerNo: number, isEdit: boolean) => {
         name,
         year,
         registerNo: regNo,
-        tuition_fee: dues_details.tuition_fee.total,
-        bus_fee: dues_details.bus_fee.total,
-        stationary_fee: dues_details.stationary_fee.total,
-        sports_placement_fee: dues_details.sports_placement_fee.total,
-        apparel_fee: dues_details.apparel_fee.total,
-        examination_fee: dues_details.examination_fee.total,
-        fine: dues_details.fine.total,
+        amounts: {
+            tuition_fee: dues_details.tuition_fee.total,
+            bus_fee: dues_details.bus_fee.total,
+            stationary_fee: dues_details.stationary_fee.total,
+            sports_placement_fee: dues_details.sports_placement_fee.total,
+            apparel_fee: dues_details.apparel_fee.total,
+            examination_fee: dues_details.examination_fee.total,
+            fine: dues_details.fine.total,
+        },
     };
 };
 
