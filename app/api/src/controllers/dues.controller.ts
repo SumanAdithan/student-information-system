@@ -1,6 +1,6 @@
 import { catchAsyncError } from '@middlewares';
 import { DuesService } from '@services';
-import { DuesDto } from '@sis/types';
+import { DuesDto, PayDuesDto } from '@sis/types';
 import { ErrorHandler, successResponse } from '@utils';
 import { Request } from 'express';
 
@@ -17,7 +17,6 @@ export const getAuthenticatedDues = catchAsyncError(async (request, response, ne
 export const getAllDues = catchAsyncError(async (request, response, next) => {
     const duesData = await DuesService.getAllDues(request.query);
     if (!duesData) return next(new ErrorHandler(400, 'Unable to get Dues Result'));
-
     successResponse(response, 200, duesData);
 });
 
@@ -28,7 +27,11 @@ export const getDues = catchAsyncError(async (request: Request<{ registerNo: str
 });
 
 export const updateDues = catchAsyncError(async (request: Request<{}, {}, DuesDto>, response, next) => {
-    const dues = request.body;
-    await DuesService.updateDues(dues);
+    await DuesService.updateDues(request.body);
+    successResponse(response, 200, '', 'Dues Result updated');
+});
+
+export const updateOfflinePayment = catchAsyncError(async (request: Request<{}, {}, PayDuesDto>, response, next) => {
+    await DuesService.updateOfflinePayment(request.body);
     successResponse(response, 200, '', 'Dues Result updated');
 });

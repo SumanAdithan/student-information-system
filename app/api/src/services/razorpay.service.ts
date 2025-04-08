@@ -1,5 +1,7 @@
-import { ErrorHandler, verifyPaymentSignature } from '@utils';
+import { Category, PayDuesSchemaType, PaymentResponse, Transaction } from '@sis/types';
+import { verifyPaymentSignature } from '@utils';
 import Razorpay from 'razorpay';
+import { DuesService } from './dues.service';
 
 export class RazorpayService {
     private razorpayInstance;
@@ -11,12 +13,19 @@ export class RazorpayService {
         });
     }
 
-    async processPayment(amount: number, receiptId: string) {
+    async processPayment(orderData: PayDuesSchemaType) {
         try {
+            const { name, registerNo, amount, category } = orderData;
             const options = {
                 amount: amount * 100,
                 currency: 'INR',
-                receipt: receiptId,
+                receipt: `DUES_${Date.now()}`,
+                notes: {
+                    name,
+                    registerNo,
+                    amount,
+                    category,
+                },
             };
 
             const order = await this.razorpayInstance.orders.create(options);
@@ -27,9 +36,30 @@ export class RazorpayService {
         }
     }
 
-    async verifyPayment(paymentId: string, orderId: string, signature: string) {
-        const verifyId = orderId + '|' + paymentId;
-        const verifyPayment = verifyPaymentSignature(verifyId, signature);
-        if (!verifyPayment) throw new ErrorHandler(400, 'Invalid Payment');
+    async verifyPayment(paymentResponse: PaymentResponse) {
+        const { razorpay_order_id, razorpay_payment_id, razorpay_signature } = paymentResponse;
+        const verifyId = razorpay_order_id + '|' + razorpay_payment_id;
+        const verifyPayment = verifyPaymentSignature(verifyId, razorpay_signature);
+        if (!verifyPayment) return false;
+
+        const razorpayPayment = await this.razorpayInstance.payments.fetch(razorpay_payment_id);
+        const { method, created_at, notes: dues } = razorpayPayment;
+
+        const createdAt = new Date(created_at * 1000);
+        const paidOn = createdAt.toLocaleString();
+
+        await DuesService.updateOnlinePayment(dues);
+
+        const transactionHistory: Transaction = {
+            transactionId: razorpay_payment_id,
+            category: dues.category as Category,
+            amount: parseInt(dues.amount),
+            method,
+            paidOn,
+        };
+
+        await DuesService.createTransactionHistory(parseInt(dues.registerNo), transactionHistory);
+
+        return true;
     }
 }

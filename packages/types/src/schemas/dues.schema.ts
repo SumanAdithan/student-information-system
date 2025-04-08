@@ -17,3 +17,26 @@ export const DuesSchema = z.object({
 
 export type UpdateDues = z.infer<typeof DuesSchema>;
 export type DuesDto = z.infer<typeof DuesSchema>;
+
+export const createPayDuesSchema = (minAmount: number, maxAmount: number) =>
+    z.object({
+        name: z.string(),
+        registerNo: z.number(),
+        year: z.number(),
+        category: z.string(),
+        amount: z
+            .number()
+            .min(minAmount, `Minimum amount is ${minAmount}`)
+            .max(maxAmount, `Maximum amount is ${maxAmount}`),
+    });
+
+export const PayDuesSchema = z.object({
+    name: z.string(),
+    registerNo: z.number(),
+    year: z.number(),
+    category: z.string(),
+    amount: z.number().min(1).max(50000),
+});
+
+export type PayDuesDto = z.infer<typeof PayDuesSchema>;
+export type PayDuesSchemaType = z.infer<typeof PayDuesSchema>;

@@ -1,9 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Dues, UpdateDues } from '@sis/types';
+import { Dues, PayDues, UpdateDues } from '@sis/types';
 
 interface DuesState {
     dues: Dues;
     editDues?: UpdateDues;
+    payDues: PayDues;
 }
 
 const initialState: DuesState = {
@@ -14,43 +15,50 @@ const initialState: DuesState = {
         dues_details: {
             tuition_fee: {
                 total: 0,
-                paid: 0,
+                offline: 0,
+                online: 0,
                 pending: 0,
                 fully_paid: false,
             },
             bus_fee: {
                 total: 0,
-                paid: 0,
+                offline: 0,
+                online: 0,
                 pending: 0,
                 fully_paid: false,
             },
             stationary_fee: {
                 total: 0,
-                paid: 0,
+                offline: 0,
+                online: 0,
                 pending: 0,
                 fully_paid: false,
             },
             sports_placement_fee: {
                 total: 0,
-                paid: 0,
+                offline: 0,
+                online: 0,
                 pending: 0,
                 fully_paid: false,
             },
             apparel_fee: {
                 total: 0,
-                paid: 0,
+                offline: 0,
+                online: 0,
                 pending: 0,
                 fully_paid: false,
             },
             examination_fee: {
                 total: 0,
-                paid: 0,
+                offline: 0,
+                online: 0,
                 pending: 0,
                 fully_paid: false,
             },
             fine: {
                 total: 0,
-                paid: 0,
+                offline: 0,
+                online: 0,
                 pending: 0,
                 fully_paid: false,
             },
@@ -77,6 +85,13 @@ const initialState: DuesState = {
             fine: 0,
         },
     },
+    payDues: {
+        year: 0,
+        registerNo: 0,
+        name: '',
+        category: '',
+        pending: 0,
+    },
 };
 
 const duesSlice = createSlice({
@@ -89,8 +104,11 @@ const duesSlice = createSlice({
         setEditDues: (state, action: PayloadAction<UpdateDues>) => {
             state.editDues = action.payload;
         },
+        setPayDues: (state, action: PayloadAction<PayDues>) => {
+            state.payDues = action.payload;
+        },
     },
 });
 
-export const { setDues, setEditDues } = duesSlice.actions;
+export const { setDues, setEditDues, setPayDues } = duesSlice.actions;
 export const duesReducer = duesSlice.reducer;

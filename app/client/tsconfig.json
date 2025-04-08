@@ -16,7 +16,8 @@
             "@hooks": ["hooks"],
             "@api": ["api"],
             "@store": ["store"],
-            "@queries": ["queries"]
+            "@queries": ["queries"],
+            "@types": ["types"]
         }
     }
 }

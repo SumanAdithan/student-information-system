@@ -33,3 +33,19 @@ export const DUES_TABLE_INPUT_FIELDS = [
     },
     { label: 'Fine', type: 'number', placeholder: 'Fine', name: 'amounts.fine', disabled: false },
 ];
+
+export const ONLINE_PAYMENT_TABLE_INPUT_FIELDS = [
+    { label: 'RegisterNo', type: 'text', placeholder: 'RegisterNo', name: 'registerNo', disabled: true },
+    { label: 'Name', type: 'text', placeholder: 'Name', name: 'name', disabled: true },
+    { label: 'Year', type: 'text', placeholder: 'Year', name: 'year', disabled: true },
+    { label: 'Category', type: 'text', placeholder: 'Category', name: 'category', disabled: true },
+    { label: 'Amount', type: 'number', placeholder: 'Amount', name: 'amount', disabled: false },
+];
+
+export const OFFLINE_PAYMENT_TABLE_INPUT_FIELDS = [
+    { label: 'RegisterNo', type: 'text', placeholder: 'RegisterNo', name: 'registerNo', disabled: true },
+    { label: 'Name', type: 'text', placeholder: 'Name', name: 'name', disabled: true },
+    { label: 'Year', type: 'text', placeholder: 'Year', name: 'year', disabled: true },
+    { label: 'Category', type: 'text', placeholder: 'Category', name: 'category', disabled: true },
+    { label: 'Offline Pay', type: 'number', placeholder: 'Offline Pay', name: 'amount', disabled: false },
+];
