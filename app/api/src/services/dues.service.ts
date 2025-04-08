@@ -1,5 +1,12 @@
-import { adminUpdateDuesData, getDuesDataByRegisterNo, getFilteredDuesData, updateDuesData } from '@models';
-import { QueryParams, UpdateDues } from '@sis/types';
+import {
+    updateDuesData,
+    getDuesDataByRegisterNo,
+    getFilteredDuesData,
+    updateOnlinePaymentData,
+    createTransactionHistory,
+    updateOfflinePaymentData,
+} from '@models';
+import { PayDuesSchemaType, QueryParams, Transaction, UpdateDues } from '@sis/types';
 
 export class DuesService {
     static getDues(registerNo: number) {
@@ -13,6 +20,19 @@ export class DuesService {
     }
 
     static updateDues(dues: UpdateDues) {
-        return adminUpdateDuesData(dues);
+        return updateDuesData(dues);
+    }
+
+    static updateOnlinePayment(dues: PayDuesSchemaType) {
+        console.log(dues);
+        return updateOnlinePaymentData(dues);
+    }
+
+    static updateOfflinePayment(dues: PayDuesSchemaType) {
+        return updateOfflinePaymentData(dues);
+    }
+
+    static createTransactionHistory(registerNo: number, transaction: Transaction) {
+        return createTransactionHistory(registerNo, transaction);
     }
 }

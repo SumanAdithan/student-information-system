@@ -13,6 +13,7 @@ interface InputFieldProps {
         placeholder?: string;
         options?: Options[];
         disabled?: boolean;
+        isPaymentAmount?: boolean;
     };
     register?: any;
     error?: string;

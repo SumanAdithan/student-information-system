@@ -49,6 +49,5 @@ export const useIsAuthenticated = () => {
     return useQuery({
         queryKey: ['isAuthenticated'],
         queryFn: checkIsAuthenticated,
-        retry: false,
     });
 };

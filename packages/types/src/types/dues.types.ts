@@ -1,6 +1,7 @@
 export interface FeeDetails {
     total: number;
-    paid: number;
+    online: number;
+    offline: number;
     pending: number;
     fully_paid: boolean;
 }
@@ -22,16 +23,21 @@ export interface TotalDetails {
     isPartial_paid: boolean;
 }
 
-type Category = 'TuitionFee' | 'BusFee' | 'Stationary' | 'Sports&placement' | 'Apparel' | 'ExaminationFee' | 'Fine';
-type Status = 'Success' | 'Failed' | 'pending';
+export type Category =
+    | 'Tuition Fee'
+    | 'Bus Fee'
+    | 'Stationary Fee'
+    | 'Sports and Placement Fee'
+    | 'Apparel Fee'
+    | 'Examination Fee'
+    | 'Fine';
 
 export interface Transaction {
-    date: string;
     transactionId: string;
     category: Category;
     amount: number;
-    status: Status;
     method: string;
+    paidOn: string;
 }
 
 export interface Dues {
@@ -42,3 +48,17 @@ export interface Dues {
     total_details: TotalDetails;
     transaction_history: Transaction[];
 }
+
+export const categoryMap: Record<string, Category> = {
+    tuition_fee: 'Tuition Fee',
+    bus_fee: 'Bus Fee',
+    stationary_fee: 'Stationary Fee',
+    sports_placement_fee: 'Sports and Placement Fee',
+    apparel_fee: 'Apparel Fee',
+    examination_fee: 'Examination Fee',
+    fine: 'Fine',
+};
+
+export const reverseCategoryMap: Record<Category, string> = Object.fromEntries(
+    Object.entries(categoryMap).map(([key, value]) => [value, key])
+) as Record<Category, string>;

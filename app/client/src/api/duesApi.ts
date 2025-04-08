@@ -1,6 +1,6 @@
 import qs from 'qs';
 import { api } from './apiClient';
-import { QueryParams, UpdateDues } from '@sis/types';
+import { PayDuesSchemaType, QueryParams, UpdateDues } from '@sis/types';
 
 export const getAuthenticatedDues = async () => {
     const { data } = await api.get('/student/dues');
@@ -42,4 +42,8 @@ export const getDuesData = async (registerNo: number, isEdit: boolean) => {
 
 export const updateDuesData = async (duesData: UpdateDues) => {
     return api.patch('/dues', duesData);
+};
+
+export const updateOfflinePayment = async (duesData: PayDuesSchemaType) => {
+    return api.patch('/dues/offline-payment', duesData);
 };

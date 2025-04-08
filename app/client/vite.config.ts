@@ -20,6 +20,7 @@ export default defineConfig({
             '@api': resolve(__dirname, 'src/api'),
             '@store': resolve(__dirname, 'src/store'),
             '@queries': resolve(__dirname, 'src/queries'),
+            '@types': resolve(__dirname, 'src/types'),
         },
     },
     server: {

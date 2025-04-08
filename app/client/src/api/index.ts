@@ -4,3 +4,4 @@ export * from './assignmentApi';
 export * from './internalResultApi';
 export * from './semesterResultAPi';
 export * from './duesApi';
+export * from './paymentApi';
