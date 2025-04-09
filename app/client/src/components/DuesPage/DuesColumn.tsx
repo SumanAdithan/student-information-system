@@ -1,6 +1,6 @@
 import { activePayBtn, edit, inActivePayBtn, trash } from '@assets';
 import { PayDues } from '@sis/types';
-import { RootState, setModal, setPayDues, toggleModal } from '@store';
+import { RootState, setModal, setPayDues } from '@store';
 import { createColumnHelper } from '@tanstack/react-table';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -12,13 +12,12 @@ export const DuesColumn = () => {
 
     const payClick = (payDues: PayDues) => {
         dispatch(setPayDues(payDues));
-        dispatch(toggleModal());
+        dispatch(setModal({ active: true, status: 'payDues' }));
     };
 
     const handleEditClick = (payDues: PayDues) => {
-        console.log(payDues);
         dispatch(setPayDues(payDues));
-        dispatch(setModal({ active: true, status: 'edit' }));
+        dispatch(setModal({ active: true, status: 'editDues' }));
     };
 
     const duesColumnConfig = [
@@ -55,11 +54,6 @@ export const DuesColumn = () => {
                               alt='view'
                               className='w-6 h-6 transition-transform duration-300 hover:scale-125'
                               onClick={() => handleEditClick(row.original)}
-                          />
-                          <img
-                              src={trash}
-                              alt='edit'
-                              className='w-6 h-6 transition-transform duration-300 hover:scale-125'
                           />
                       </div>
                   ),

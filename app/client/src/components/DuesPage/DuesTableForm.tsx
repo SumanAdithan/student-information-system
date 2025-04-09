@@ -1,4 +1,4 @@
-import { AppDispatch, RootState, toggleModal } from '@store';
+import { AppDispatch, RootState, setDues, toggleModal } from '@store';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { ONLINE_PAYMENT_TABLE_INPUT_FIELDS, OFFLINE_PAYMENT_TABLE_INPUT_FIELDS } from '@constants';
 import { InputField } from '@components';
@@ -8,6 +8,8 @@ import { createPayDuesSchema, PayDuesSchemaType } from '@sis/types';
 import { useZodForm } from '@hooks';
 import { FormProvider, useForm } from 'react-hook-form';
 import { useDuesMutation } from '@queries';
+import { handlePayment } from '@utils';
+import { processDuesPayment, processPendingPayment, verifyDuesPayment, verifyPendingPayment } from '@api';
 
 export const DuesTableForm = () => {
     const { payDues, modal } = useSelector(
@@ -31,22 +33,40 @@ export const DuesTableForm = () => {
 
     const methods = useForm();
     const dispatch = useDispatch<AppDispatch>();
-    const { updateOfflinePaymentMutation, updateOnlinePaymentMutation } = useDuesMutation();
+    const { updateOfflineDuesPaymentMutation, updateOfflinePendingPaymentMutation } = useDuesMutation();
 
     useEffect(() => {
         const { name, registerNo, category, pending, year } = payDues;
         if (modal.status === 'edit' && payDues) {
             reset({ name, registerNo, category, amount: 0, year });
-        } else if (modal.status === '' && payDues) {
+        } else if (payDues) {
             reset({ name, registerNo, category, amount: pending, year });
         }
     }, [modal.active, reset]);
 
-    const saveData = (data: PayDuesSchemaType) => {
-        if (modal.status === 'edit') {
-            updateOfflinePaymentMutation.mutate(data);
-        } else if (modal.status === '') {
-            updateOnlinePaymentMutation.mutate(data);
+    const saveData = async (dues: PayDuesSchemaType) => {
+        if (modal.status === 'editDues') {
+            const data = await updateOfflineDuesPaymentMutation.mutateAsync(dues);
+            dispatch(setDues(data.dues));
+        } else if (modal.status === 'editPending') {
+            const data = await updateOfflinePendingPaymentMutation.mutateAsync(dues);
+            dispatch(setDues(data.dues));
+        } else if (modal.status === 'payDues') {
+            const options = {
+                orderData: dues,
+                processPayment: processDuesPayment,
+                verifyPayment: verifyDuesPayment,
+                dispatch,
+            };
+            handlePayment(options);
+        } else if (modal.status === 'payPending') {
+            const options = {
+                orderData: dues,
+                processPayment: processPendingPayment,
+                verifyPayment: verifyPendingPayment,
+                dispatch,
+            };
+            handlePayment(options);
         }
 
         dispatch(toggleModal());

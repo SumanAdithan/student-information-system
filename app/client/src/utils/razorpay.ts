@@ -1,8 +1,16 @@
-import { getPaymentKey, processPayment, verifyPayment } from '@api';
+import { getPaymentKey } from '@api';
 import { logo } from '@assets';
-import { PayDuesSchemaType, PaymentResponse } from '@sis/types';
+import { PayDuesSchemaType, RazorpayResponse } from '@sis/types';
+import { AppDispatch, setDues } from '@store';
 
-export const handlePayment = async (orderData: PayDuesSchemaType) => {
+interface HandlePaymentProps {
+    orderData: PayDuesSchemaType;
+    processPayment: (orderData: PayDuesSchemaType) => Promise<any>;
+    verifyPayment: (response: RazorpayResponse) => Promise<any>;
+    dispatch: AppDispatch;
+}
+
+export const handlePayment = async ({ orderData, processPayment, verifyPayment, dispatch }: HandlePaymentProps) => {
     const paymentKey = await getPaymentKey();
     const order = await processPayment(orderData);
 
@@ -13,8 +21,9 @@ export const handlePayment = async (orderData: PayDuesSchemaType) => {
         description: 'Pay Dues',
         order_id: order.id,
         image: logo,
-        handler: async (response: PaymentResponse) => {
-            await verifyPayment(response);
+        handler: async (response: RazorpayResponse) => {
+            const { dues } = await verifyPayment(response);
+            dispatch(setDues(dues));
         },
         prefill: {
             name: orderData.name,

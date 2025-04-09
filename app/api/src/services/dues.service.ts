@@ -5,8 +5,21 @@ import {
     updateOnlinePaymentData,
     createTransactionHistory,
     updateOfflinePaymentData,
+    updatePreviousPending,
 } from '@models';
-import { PayDuesSchemaType, QueryParams, Transaction, UpdateDues } from '@sis/types';
+import {
+    Category,
+    DuesDetails,
+    PayDuesSchemaType,
+    RazorpayResponse,
+    QueryParams,
+    reverseCategoryMap,
+    Transaction,
+    UpdateDues,
+} from '@sis/types';
+import { RazorpayService } from './razorpay.service';
+
+const razorpayService = new RazorpayService();
 
 export class DuesService {
     static getDues(registerNo: number) {
@@ -23,16 +36,72 @@ export class DuesService {
         return updateDuesData(dues);
     }
 
-    static updateOnlinePayment(dues: PayDuesSchemaType) {
-        console.log(dues);
-        return updateOnlinePaymentData(dues);
+    static async processOnlineDuesPayment(dues: PayDuesSchemaType) {
+        const { name, registerNo, amount, category: duesCategory } = dues;
+
+        const duesData = await getDuesDataByRegisterNo(registerNo);
+        const category = reverseCategoryMap[duesCategory as Category];
+        if (!category) return { success: false, error: 'Invalid fee category' };
+
+        const pendingAmount = duesData.dues_details[category as keyof DuesDetails]?.pending ?? 0;
+        if (amount > pendingAmount) {
+            return {
+                success: false,
+                error: `Amount exceeds pending dues. Max allowed: ₹${pendingAmount}`,
+            };
+        }
+
+        const processPayment = await razorpayService.processPayment(dues);
+        if (!processPayment.success) return { success: false, error: 'unable to make a payment' };
+
+        return { success: true, order: processPayment.order };
     }
 
-    static updateOfflinePayment(dues: PayDuesSchemaType) {
+    static async verifyOnlineDuesPayment(razorpayResponse: RazorpayResponse) {
+        const verifyPayment = await razorpayService.verifyPayment(razorpayResponse);
+        if (!verifyPayment.success) return { success: false, error: 'invalid payment' };
+
+        const { transactionHistory, dues } = verifyPayment;
+        await createTransactionHistory(parseInt(dues.registerNo), transactionHistory);
+        const duesData = await updateOnlinePaymentData(dues);
+
+        return { success: true, duesData };
+    }
+
+    static async processOnlinePendingPayment(dues: PayDuesSchemaType) {
+        const { name, registerNo, amount, category: duesCategory } = dues;
+
+        const duesData = await getDuesDataByRegisterNo(registerNo);
+        const pendingAmount = duesData.total_details.pending_amount;
+        if (amount > pendingAmount) {
+            return {
+                success: false,
+                error: `Amount exceeds pending dues. Max allowed: ₹${pendingAmount}`,
+            };
+        }
+
+        const processPayment = await razorpayService.processPayment(dues);
+        if (!processPayment.success) return { success: false, error: 'unable to make a payment' };
+
+        return { success: true, order: processPayment.order };
+    }
+
+    static async verifyOnlinePendingPayment(razorpayResponse: RazorpayResponse) {
+        const verifyPayment = await razorpayService.verifyPayment(razorpayResponse);
+        if (!verifyPayment.success) return { success: false, error: 'invalid payment' };
+
+        const { transactionHistory, dues } = verifyPayment;
+        await createTransactionHistory(parseInt(dues.registerNo), transactionHistory);
+        const duesData = await updatePreviousPending(dues);
+
+        return { success: true, duesData };
+    }
+
+    static updateOfflineDuesPayment(dues: PayDuesSchemaType) {
         return updateOfflinePaymentData(dues);
     }
 
-    static createTransactionHistory(registerNo: number, transaction: Transaction) {
-        return createTransactionHistory(registerNo, transaction);
+    static updateOfflinePendingPayment(dues: PayDuesSchemaType) {
+        return updatePreviousPending(dues);
     }
 }
