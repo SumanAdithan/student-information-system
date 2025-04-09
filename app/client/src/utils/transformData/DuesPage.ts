@@ -12,5 +12,12 @@ export const getDuesData = (data: Dues) => {
         };
     });
 
-    return { dues_details, total_details: data.total_details, transaction_history: data.transaction_history };
+    const total_details = {
+        registerNo: data.registerNo,
+        year: data.year,
+        name: data.name,
+        ...data.total_details,
+    };
+
+    return { dues_details, total_details, transaction_history: data.transaction_history };
 };

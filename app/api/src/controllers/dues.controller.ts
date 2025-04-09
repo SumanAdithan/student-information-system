@@ -28,10 +28,50 @@ export const getDues = catchAsyncError(async (request: Request<{ registerNo: str
 
 export const updateDues = catchAsyncError(async (request: Request<{}, {}, DuesDto>, response, next) => {
     await DuesService.updateDues(request.body);
-    successResponse(response, 200, '', 'Dues Result updated');
+    successResponse(response, 200, null, 'Dues Result updated');
 });
 
-export const updateOfflinePayment = catchAsyncError(async (request: Request<{}, {}, PayDuesDto>, response, next) => {
-    await DuesService.updateOfflinePayment(request.body);
-    successResponse(response, 200, '', 'Dues Result updated');
+export const updateOfflineDuesPayment = catchAsyncError(
+    async (request: Request<{}, {}, PayDuesDto>, response, next) => {
+        const dues = await DuesService.updateOfflineDuesPayment(request.body);
+        console.log(dues);
+        successResponse(response, 200, dues, 'Dues Result updated');
+    }
+);
+
+export const processOnlineDuesPayment = catchAsyncError(
+    async (request: Request<{}, {}, PayDuesDto>, response, next) => {
+        const processPayment = await DuesService.processOnlineDuesPayment(request.body);
+        if (!processPayment.success) return next(new ErrorHandler(400, 'Unable to make Payment'));
+        return successResponse(response, 200, processPayment.order);
+    }
+);
+
+export const verifyOnlineDuesPayment = catchAsyncError(async (request, response, next) => {
+    const isAuthentic = await DuesService.verifyOnlineDuesPayment(request.body);
+    if (!isAuthentic) return next(new ErrorHandler(400, 'Invalid Payment'));
+
+    return successResponse(response, 200, isAuthentic.duesData, 'Payment successfull');
 });
+
+export const processOnlinePendingPayment = catchAsyncError(
+    async (request: Request<{}, {}, PayDuesDto>, response, next) => {
+        const processPayment = await DuesService.processOnlinePendingPayment(request.body);
+        if (!processPayment.success) return next(new ErrorHandler(400, 'Unable to make Payment'));
+        return successResponse(response, 200, processPayment.order);
+    }
+);
+
+export const verifyOnlinePendingPayment = catchAsyncError(async (request, response, next) => {
+    const isAuthentic = await DuesService.verifyOnlinePendingPayment(request.body);
+    if (!isAuthentic) return next(new ErrorHandler(400, 'Invalid Payment'));
+
+    return successResponse(response, 200, isAuthentic.duesData, 'Payment successfull');
+});
+
+export const updateOfflinePendingPayment = catchAsyncError(
+    async (request: Request<{}, {}, PayDuesDto>, response, next) => {
+        const dues = await DuesService.updateOfflinePendingPayment(request.body);
+        successResponse(response, 200, dues, 'Dues Result updated');
+    }
+);

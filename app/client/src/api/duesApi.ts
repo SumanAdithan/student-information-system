@@ -1,6 +1,6 @@
 import qs from 'qs';
 import { api } from './apiClient';
-import { PayDuesSchemaType, QueryParams, UpdateDues } from '@sis/types';
+import { Dues, PayDuesSchemaType, QueryParams, RazorpayResponse, UpdateDues } from '@sis/types';
 
 export const getAuthenticatedDues = async () => {
     const { data } = await api.get('/student/dues');
@@ -44,6 +44,36 @@ export const updateDuesData = async (duesData: UpdateDues) => {
     return api.patch('/dues', duesData);
 };
 
-export const updateOfflinePayment = async (duesData: PayDuesSchemaType) => {
-    return api.patch('/dues/offline-payment', duesData);
+export const processDuesPayment = async (orderData: PayDuesSchemaType) => {
+    const { data } = await api.post('/dues/online-payment/process', orderData);
+    return data.data;
+};
+
+export const verifyDuesPayment = async (RazorpayResponse: RazorpayResponse): Promise<{ dues: Dues }> => {
+    const { data } = await api.post('/dues/online-payment/verify', RazorpayResponse);
+    return { dues: data.data };
+};
+
+export const processPendingPayment = async (orderData: PayDuesSchemaType) => {
+    const { data } = await api.post('/dues/pending/online-payment/process', orderData);
+    return data.data;
+};
+
+export const verifyPendingPayment = async (RazorpayResponse: RazorpayResponse): Promise<{ dues: Dues }> => {
+    const { data } = await api.post('/dues/pending/online-payment/verify', RazorpayResponse);
+    return { dues: data.data };
+};
+
+export const updateOfflineDuesPayment = async (duesData: PayDuesSchemaType) => {
+    const { data } = await api.patch('/dues/offline-payment', duesData);
+    return {
+        dues: data.data,
+    };
+};
+
+export const updateOfflinePendingPayment = async (duesData: PayDuesSchemaType) => {
+    const { data } = await api.patch('/dues/pending/offline-payment', duesData);
+    return {
+        dues: data.data,
+    };
 };

@@ -1,7 +1,16 @@
-import { Category, PayDuesSchemaType, PaymentResponse, Transaction } from '@sis/types';
+import {
+    Category,
+    categoryMap,
+    DuesDetails,
+    PayDuesSchemaType,
+    RazorpayResponse,
+    reverseCategoryMap,
+    Transaction,
+} from '@sis/types';
 import { verifyPaymentSignature } from '@utils';
 import Razorpay from 'razorpay';
 import { DuesService } from './dues.service';
+import { getDuesDataByRegisterNo } from '@models';
 
 export class RazorpayService {
     private razorpayInstance;
@@ -16,6 +25,7 @@ export class RazorpayService {
     async processPayment(orderData: PayDuesSchemaType) {
         try {
             const { name, registerNo, amount, category } = orderData;
+
             const options = {
                 amount: amount * 100,
                 currency: 'INR',
@@ -36,19 +46,17 @@ export class RazorpayService {
         }
     }
 
-    async verifyPayment(paymentResponse: PaymentResponse) {
-        const { razorpay_order_id, razorpay_payment_id, razorpay_signature } = paymentResponse;
+    async verifyPayment(RazorpayResponse: RazorpayResponse) {
+        const { razorpay_order_id, razorpay_payment_id, razorpay_signature } = RazorpayResponse;
         const verifyId = razorpay_order_id + '|' + razorpay_payment_id;
         const verifyPayment = verifyPaymentSignature(verifyId, razorpay_signature);
-        if (!verifyPayment) return false;
+        if (!verifyPayment) return { success: false, transactionHistory: null, dues: null };
 
         const razorpayPayment = await this.razorpayInstance.payments.fetch(razorpay_payment_id);
         const { method, created_at, notes: dues } = razorpayPayment;
 
         const createdAt = new Date(created_at * 1000);
         const paidOn = createdAt.toLocaleString();
-
-        await DuesService.updateOnlinePayment(dues);
 
         const transactionHistory: Transaction = {
             transactionId: razorpay_payment_id,
@@ -58,8 +66,8 @@ export class RazorpayService {
             paidOn,
         };
 
-        await DuesService.createTransactionHistory(parseInt(dues.registerNo), transactionHistory);
+        // const duesData = await DuesService.createTransactionHistory(parseInt(dues.registerNo), transactionHistory);
 
-        return true;
+        return { success: true, transactionHistory, dues };
     }
 }

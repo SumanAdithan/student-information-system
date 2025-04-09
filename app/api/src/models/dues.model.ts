@@ -47,6 +47,7 @@ const TransactionSchema = new Schema(
 
 const TotalDetailsSchema = new Schema(
     {
+        previous_pending: { type: Number, default: 0 },
         total_amount: { type: Number, default: 0 },
         paid_amount: { type: Number, default: 0 },
         pending_amount: { type: Number, default: 0 },
@@ -125,12 +126,29 @@ const updateTotalDetails = {
         $sum: Object.keys(categoryFields).map((field) => `$dues_details.${field}.total`),
     },
     'total_details.paid_amount': {
-        $sum: Object.keys(categoryFields).map((field) => ({
-            $add: [`$dues_details.${field}.online`, `$dues_details.${field}.offline`],
-        })),
+        $add: [
+            '$total_details.paid_amount',
+            {
+                $subtract: [
+                    {
+                        $sum: Object.keys(categoryFields).map((field) => ({
+                            $add: [`$dues_details.${field}.online`, `$dues_details.${field}.offline`],
+                        })),
+                    },
+                    {
+                        $sum: Object.keys(categoryFields).map((field) => ({
+                            $add: [`$$ROOT.dues_details.${field}.online`, `$$ROOT.dues_details.${field}.offline`],
+                        })),
+                    },
+                ],
+            },
+        ],
     },
     'total_details.pending_amount': {
-        $sum: Object.keys(categoryFields).map((field) => `$dues_details.${field}.pending`),
+        $add: [
+            { $sum: Object.keys(categoryFields).map((field) => `$dues_details.${field}.pending`) },
+            `$total_details.previous_pending`,
+        ],
     },
 };
 
@@ -179,11 +197,13 @@ export const updateOnlinePaymentData = (dues: PayDuesSchemaType) => {
         },
     };
 
-    return DuesModel.updateOne({ registerNo }, [
-        { $set: updateDueDetails },
-        { $set: updateTotalDetails },
-        { $set: updateIsPartialPaid },
-    ]);
+    return DuesModel.findOneAndUpdate(
+        { registerNo },
+        [{ $set: updateDueDetails }, { $set: updateTotalDetails }, { $set: updateIsPartialPaid }],
+        {
+            returnDocument: 'after',
+        }
+    );
 };
 
 export const updateOfflinePaymentData = (dues: PayDuesSchemaType) => {
@@ -212,11 +232,13 @@ export const updateOfflinePaymentData = (dues: PayDuesSchemaType) => {
         },
     };
 
-    return DuesModel.updateOne({ registerNo }, [
-        { $set: updateDueDetails },
-        { $set: updateTotalDetails },
-        { $set: updateIsPartialPaid },
-    ]);
+    return DuesModel.findOneAndUpdate(
+        { registerNo },
+        [{ $set: updateDueDetails }, { $set: updateTotalDetails }, { $set: updateIsPartialPaid }],
+        {
+            returnDocument: 'after',
+        }
+    );
 };
 
 export const updateDuesData = (dues: UpdateDues) => {
@@ -256,12 +278,75 @@ export const updateDuesData = (dues: UpdateDues) => {
 };
 
 export const createTransactionHistory = (registerNo: number, transactionData: Transaction) => {
-    return DuesModel.updateOne(
+    return DuesModel.findOneAndUpdate(
         { registerNo },
         {
             $push: {
                 transaction_history: transactionData,
             },
+        }
+    );
+};
+
+export const updatePreviousPending = (dues: PayDuesSchemaType) => {
+    const { registerNo, category, amount } = dues;
+
+    const updatePreviousPending = {
+        'total_details.total_amount': {
+            $subtract: ['$total_details.total_amount', amount],
+        },
+        'total_details.paid_amount': { $add: ['$total_details.paid_amount', amount] },
+        'total_details.pending_amount': {
+            $subtract: ['$total_details.pending_amount', amount],
+        },
+        'total_details.previous_pending': {
+            $subtract: ['$total_details.previous_pending', amount],
+        },
+    };
+
+    return DuesModel.findOneAndUpdate(
+        { registerNo },
+        [{ $set: updatePreviousPending }, { $set: updateIsPartialPaid }],
+        {
+            returnDocument: 'after',
+        }
+    );
+};
+
+export const resetDues = (registerNo: number) => {
+    const updateDueDetails = {
+        'due_details.tuition_fee': 0,
+        'due_details.bus_fee': 0,
+        'due_details.stationary_fee': 0,
+        'due_details.sports_placement_fee': 0,
+        'due_details.apparel_fee': 0,
+        'due_details.examination_fee': 0,
+        'due_details.fine': 0,
+    };
+    const updateTotalDues = {
+        'total_details.total_amount': 0,
+        'total_details.paid_amount': 0,
+        'total_details.pending_amount': '$total_details.previous_pending',
+    };
+    const updatePreviousDues = {
+        'total_details.previous_pending': {
+            $add: [
+                { $sum: Object.keys(categoryFields).map((field) => `$dues_details.${field}.total`) },
+                `$total_details.previous_pending`,
+            ],
+        },
+    };
+
+    return DuesModel.findOneAndUpdate(
+        { registerNo },
+        [
+            { $set: updatePreviousDues },
+            { $set: updateTotalDues },
+            { $set: updateDueDetails },
+            { $set: updateIsPartialPaid },
+        ],
+        {
+            returnDocument: 'after',
         }
     );
 };

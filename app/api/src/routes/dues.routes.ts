@@ -1,4 +1,15 @@
-import { getAllDues, getAuthenticatedDues, getDues, updateDues, updateOfflinePayment } from '@controllers';
+import {
+    getAllDues,
+    getAuthenticatedDues,
+    getDues,
+    processOnlineDuesPayment,
+    processOnlinePendingPayment,
+    updateDues,
+    updateOfflineDuesPayment,
+    updateOfflinePendingPayment,
+    verifyOnlineDuesPayment,
+    verifyOnlinePendingPayment,
+} from '@controllers';
 import { authorizeRoles, isAuthenticated, validate } from '@middlewares';
 import { DuesSchema, PayDuesSchema } from '@sis/types';
 import { Router } from 'express';
@@ -13,6 +24,27 @@ export const duesRoutes = (router: Router) => {
         isAuthenticated(),
         authorizeRoles('admin'),
         validate(PayDuesSchema),
-        updateOfflinePayment
+        updateOfflineDuesPayment
+    );
+    router.post('/dues/online-payment/process', isAuthenticated(), authorizeRoles('student'), processOnlineDuesPayment);
+    router.post('/dues/online-payment/verify', isAuthenticated(), authorizeRoles('student'), verifyOnlineDuesPayment);
+    router.post(
+        '/dues/pending/online-payment/process',
+        isAuthenticated(),
+        authorizeRoles('student'),
+        processOnlinePendingPayment
+    );
+    router.post(
+        '/dues/pending/online-payment/verify',
+        isAuthenticated(),
+        authorizeRoles('student'),
+        verifyOnlinePendingPayment
+    );
+    router.patch(
+        '/dues/pending/offline-payment',
+        isAuthenticated(),
+        authorizeRoles('admin'),
+        validate(PayDuesSchema),
+        updateOfflinePendingPayment
     );
 };

@@ -1,6 +1,11 @@
-import { getAllDuesData, getAuthenticatedDues, updateDuesData, updateOfflinePayment, verifyPayment } from '@api';
+import {
+    getAllDuesData,
+    getAuthenticatedDues,
+    updateDuesData,
+    updateOfflineDuesPayment,
+    updateOfflinePendingPayment,
+} from '@api';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { handlePayment } from '@utils';
 
 export const useGetAuthenticatedDues = () => {
     return useQuery({
@@ -26,30 +31,20 @@ export const useDuesMutation = () => {
     const queryClient = useQueryClient();
     const updateDuesMutation = useMutation({
         mutationFn: updateDuesData,
-        onSuccess: (_, { year }) => {
+        onSuccess: () => {
             queryClient.invalidateQueries({
-                queryKey: ['allDuesData', String(year)],
+                queryKey: ['allDuesData'],
             });
         },
     });
 
-    const updateOfflinePaymentMutation = useMutation({
-        mutationFn: updateOfflinePayment,
-        onSuccess: (_, { year }) => {
-            queryClient.invalidateQueries({
-                queryKey: ['allDuesData', String(year)],
-            });
-        },
+    const updateOfflineDuesPaymentMutation = useMutation({
+        mutationFn: updateOfflineDuesPayment,
     });
 
-    const updateOnlinePaymentMutation = useMutation({
-        mutationFn: handlePayment,
-        onSuccess: (_, { year }) => {
-            queryClient.invalidateQueries({
-                queryKey: ['allDuesData', String(year)],
-            });
-        },
+    const updateOfflinePendingPaymentMutation = useMutation({
+        mutationFn: updateOfflinePendingPayment,
     });
 
-    return { updateDuesMutation, updateOfflinePaymentMutation, updateOnlinePaymentMutation };
+    return { updateDuesMutation, updateOfflineDuesPaymentMutation, updateOfflinePendingPaymentMutation };
 };
