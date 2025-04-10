@@ -11,6 +11,7 @@ import inActivePayBtn from './in-active-pay-btn.png';
 import view from './view.png';
 import edit from './edit.png';
 import trash from './trash.png';
+import success from './success.png';
 
 export {
     logo,
@@ -26,4 +27,5 @@ export {
     view,
     edit,
     trash,
+    success,
 };

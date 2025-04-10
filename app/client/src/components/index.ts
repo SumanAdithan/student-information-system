@@ -13,3 +13,5 @@ export * from './facultyPage';
 
 // view
 export * from './view';
+
+export * from './paymentSuccess';
