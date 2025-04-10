@@ -33,6 +33,13 @@ export type Category =
     | 'Fine';
 
 export interface Transaction {
+    studentData?: {
+        name: string;
+        registerNo: number;
+        semester: number;
+        department: string;
+        batch: string;
+    };
     transactionId: string;
     category: Category;
     amount: number;

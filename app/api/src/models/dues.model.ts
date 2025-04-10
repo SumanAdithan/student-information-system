@@ -126,23 +126,9 @@ const updateTotalDetails = {
         $sum: Object.keys(categoryFields).map((field) => `$dues_details.${field}.total`),
     },
     'total_details.paid_amount': {
-        $add: [
-            '$total_details.paid_amount',
-            {
-                $subtract: [
-                    {
-                        $sum: Object.keys(categoryFields).map((field) => ({
-                            $add: [`$dues_details.${field}.online`, `$dues_details.${field}.offline`],
-                        })),
-                    },
-                    {
-                        $sum: Object.keys(categoryFields).map((field) => ({
-                            $add: [`$$ROOT.dues_details.${field}.online`, `$$ROOT.dues_details.${field}.offline`],
-                        })),
-                    },
-                ],
-            },
-        ],
+        $sum: Object.keys(categoryFields).map((field) => ({
+            $add: [`$dues_details.${field}.online`, `$dues_details.${field}.offline`],
+        })),
     },
     'total_details.pending_amount': {
         $add: [

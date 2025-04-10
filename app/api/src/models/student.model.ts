@@ -123,6 +123,7 @@ StudentSchema.pre('save', async function (next) {
 const StudentModel = model('Student', StudentSchema);
 
 export const getStudentById = (studentId: string) => StudentModel.findById(studentId);
+export const getStudentByRegisterNo = (registerNo: number) => StudentModel.findOne({ registerNo });
 export const getStudentByEmail = (studentEmail: string) => StudentModel.findOne({ email: studentEmail });
 export const createStudent = (student: Student) => StudentModel.create(student);
 export const getAllStudentData = () => StudentModel.find();

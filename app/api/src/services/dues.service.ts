@@ -6,6 +6,7 @@ import {
     createTransactionHistory,
     updateOfflinePaymentData,
     updatePreviousPending,
+    getStudentByRegisterNo,
 } from '@models';
 import {
     Category,
@@ -61,7 +62,20 @@ export class DuesService {
         const verifyPayment = await razorpayService.verifyPayment(razorpayResponse);
         if (!verifyPayment.success) return { success: false, error: 'invalid payment' };
 
-        const { transactionHistory, dues } = verifyPayment;
+        const { transaction, dues } = verifyPayment;
+        const student = await getStudentByRegisterNo(parseInt(dues.registerNo));
+        const studentData = {
+            name: student.name,
+            registerNo: student.registerNo,
+            semester: student.semester,
+            department: student.department,
+            batch: student.batch,
+        };
+        const transactionHistory = {
+            ...studentData,
+            ...transaction,
+        };
+
         await createTransactionHistory(parseInt(dues.registerNo), transactionHistory);
         const duesData = await updateOnlinePaymentData(dues);
 
@@ -90,7 +104,20 @@ export class DuesService {
         const verifyPayment = await razorpayService.verifyPayment(razorpayResponse);
         if (!verifyPayment.success) return { success: false, error: 'invalid payment' };
 
-        const { transactionHistory, dues } = verifyPayment;
+        const { transaction, dues } = verifyPayment;
+        const student = await getStudentByRegisterNo(parseInt(dues.registerNo));
+        const studentData = {
+            name: student.name,
+            registerNo: student.registerNo,
+            semester: student.semester,
+            department: student.department,
+            batch: student.batch,
+        };
+        const transactionHistory = {
+            ...studentData,
+            ...transaction,
+        };
+
         await createTransactionHistory(parseInt(dues.registerNo), transactionHistory);
         const duesData = await updatePreviousPending(dues);
 
