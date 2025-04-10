@@ -77,3 +77,10 @@ export const updateOfflinePendingPayment = async (duesData: PayDuesSchemaType) =
         dues: data.data,
     };
 };
+
+export const resetDues = async (registerNo: number) => {
+    const { data } = await api.post(`/dues/reset/${registerNo}`);
+    return {
+        dues: data.data,
+    };
+};

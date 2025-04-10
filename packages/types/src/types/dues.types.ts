@@ -38,6 +38,7 @@ export interface Transaction {
         registerNo: number;
         semester: number;
         department: string;
+        year: number;
         batch: string;
     };
     transactionId: string;

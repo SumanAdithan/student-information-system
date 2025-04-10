@@ -1,15 +1,17 @@
 import { Category, PayDuesSchemaType, QueryParams, reverseCategoryMap, Transaction, UpdateDues } from '@sis/types';
 import { Schema, model } from 'mongoose';
 
-const categoryFields = {
-    tuition_fee: 1,
-    bus_fee: 1,
-    stationary_fee: 1,
-    sports_placement_fee: 1,
-    apparel_fee: 1,
-    examination_fee: 1,
-    fine: 1,
-};
+const categoryFields = [
+    'tuition_fee',
+    'bus_fee',
+    'stationary_fee',
+    'sports_placement_fee',
+    'apparel_fee',
+    'examination_fee',
+    'fine',
+];
+
+const fieldsToReset = ['total', 'online', 'offline', 'pending', 'fully_paid'];
 
 const FeeDetailsSchema = new Schema(
     {
@@ -24,6 +26,14 @@ const FeeDetailsSchema = new Schema(
 
 const TransactionSchema = new Schema(
     {
+        studentData: {
+            name: { type: String, required: true },
+            registerNo: { type: Number, required: true },
+            semester: { type: Number, required: true },
+            department: { type: String, required: true },
+            year: { type: Number, required: true },
+            batch: { type: String, required: true },
+        },
         transactionId: { type: String, required: true },
         category: {
             type: String,
@@ -35,6 +45,7 @@ const TransactionSchema = new Schema(
                 'Apparel Fee',
                 'Examination Fee',
                 'Fine',
+                'Pending Fee',
             ],
         },
         amount: { type: Number, required: true },
@@ -123,16 +134,16 @@ export const deleteDuesByRegisterNo = (registerNo: number) => DuesModel.deleteOn
 
 const updateTotalDetails = {
     'total_details.total_amount': {
-        $sum: Object.keys(categoryFields).map((field) => `$dues_details.${field}.total`),
+        $sum: categoryFields.map((field) => `$dues_details.${field}.total`),
     },
     'total_details.paid_amount': {
-        $sum: Object.keys(categoryFields).map((field) => ({
+        $sum: categoryFields.map((field) => ({
             $add: [`$dues_details.${field}.online`, `$dues_details.${field}.offline`],
         })),
     },
     'total_details.pending_amount': {
         $add: [
-            { $sum: Object.keys(categoryFields).map((field) => `$dues_details.${field}.pending`) },
+            { $sum: categoryFields.map((field) => `$dues_details.${field}.pending`) },
             `$total_details.previous_pending`,
         ],
     },
@@ -268,7 +279,10 @@ export const createTransactionHistory = (registerNo: number, transactionData: Tr
         { registerNo },
         {
             $push: {
-                transaction_history: transactionData,
+                transaction_history: {
+                    $each: [transactionData],
+                    $position: 0,
+                },
             },
         }
     );
@@ -278,10 +292,6 @@ export const updatePreviousPending = (dues: PayDuesSchemaType) => {
     const { registerNo, category, amount } = dues;
 
     const updatePreviousPending = {
-        'total_details.total_amount': {
-            $subtract: ['$total_details.total_amount', amount],
-        },
-        'total_details.paid_amount': { $add: ['$total_details.paid_amount', amount] },
         'total_details.pending_amount': {
             $subtract: ['$total_details.pending_amount', amount],
         },
@@ -299,16 +309,14 @@ export const updatePreviousPending = (dues: PayDuesSchemaType) => {
     );
 };
 
-export const resetDues = (registerNo: number) => {
-    const updateDueDetails = {
-        'due_details.tuition_fee': 0,
-        'due_details.bus_fee': 0,
-        'due_details.stationary_fee': 0,
-        'due_details.sports_placement_fee': 0,
-        'due_details.apparel_fee': 0,
-        'due_details.examination_fee': 0,
-        'due_details.fine': 0,
-    };
+export const resetDuesData = (registerNo: number) => {
+    const updateDueDetails: Record<string, any> = {};
+    categoryFields.forEach((category) => {
+        fieldsToReset.forEach((field) => {
+            updateDueDetails[`dues_details.${category}.${field}`] = field === 'fully_paid' ? true : 0;
+        });
+    });
+
     const updateTotalDues = {
         'total_details.total_amount': 0,
         'total_details.paid_amount': 0,
@@ -317,7 +325,7 @@ export const resetDues = (registerNo: number) => {
     const updatePreviousDues = {
         'total_details.previous_pending': {
             $add: [
-                { $sum: Object.keys(categoryFields).map((field) => `$dues_details.${field}.total`) },
+                { $sum: categoryFields.map((field) => `$dues_details.${field}.pending`) },
                 `$total_details.previous_pending`,
             ],
         },
