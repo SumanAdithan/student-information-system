@@ -1,7 +1,7 @@
 import { useTableConfig } from '@hooks';
 import { DuesColumn, DuesTableForm, RenderListTable } from '@components';
 import { activePayBtn, edit, inActivePayBtn, tickMark, xMark } from '@assets';
-import { RootState, setDues, setModal, setPayDues, toggleModal } from '@store';
+import { RootState, setDues, setModal, setPayDues } from '@store';
 import { useDispatch, useSelector } from 'react-redux';
 import { resetDues } from '@api';
 

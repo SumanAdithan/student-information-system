@@ -1,8 +1,13 @@
 import { logo, success } from '@assets';
+import { Transaction } from '@sis/types';
+import { RefObject } from 'react';
 
-export const PaymentSuccess = () => {
+export const PaymentSuccess = (
+    { studentData, transactionId, category, amount, method, paidOn }: Transaction,
+    ref: RefObject<HTMLDivElement>
+) => {
     return (
-        <div className='bg-white shadow-section w-fit p-15 rounded-xl'>
+        <div ref={ref} className='bg-white shadow-section w-fit p-15 rounded-xl'>
             <div className='flex items-center gap-2'>
                 <div className='w-15 rounded-lg overflow-hidden'>
                     <img src={logo} alt='logo' />
@@ -11,12 +16,12 @@ export const PaymentSuccess = () => {
             </div>
 
             <div className='mt-10 grid grid-cols-2 gap-5 text-lg font-medium'>
-                <p>Name: John</p>
-                <p>RegisterNo: 961321104025</p>
-                <p>Semester: 01</p>
-                <p>Department: CSE</p>
-                <div>Year: I</div>
-                <p>Batch: 2021-2025</p>
+                <p>Name: {studentData?.name}</p>
+                <p>RegisterNo: {studentData?.registerNo}</p>
+                <p>Semester: 0{studentData?.semester}</p>
+                <p>Department: {studentData?.department}</p>
+                <div>Year: {studentData?.year}</div>
+                <p>Batch: {studentData?.batch}</p>
             </div>
 
             <div className='mt-10'>
@@ -27,10 +32,12 @@ export const PaymentSuccess = () => {
                     <h1 className='text-2xl font-medium text-success'>Payment Successfull</h1>
                 </div>
                 <div className='flex flex-col items-center mt-10 gap-5 text-lg font-medium'>
-                    <p>Payment Id: pay_182292998</p>
-                    <p>Category: 2000</p>
-                    <p>Method: UPI</p>
-                    <p>Paid On: 12.2.1/10.10</p>
+                    <p>Payment Id: {transactionId}</p>
+                    <p>
+                        {category}: {amount}
+                    </p>
+                    <p>Method: {method}</p>
+                    <p>Paid On: {paidOn}</p>
                 </div>
             </div>
             <div className='mt-10 text-lg font-medium'>Thanks you for your payment. Your payment was successfull</div>
