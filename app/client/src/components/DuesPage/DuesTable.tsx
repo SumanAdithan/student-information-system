@@ -1,8 +1,9 @@
 import { useTableConfig } from '@hooks';
 import { DuesColumn, DuesTableForm, RenderListTable } from '@components';
 import { activePayBtn, edit, inActivePayBtn, tickMark, xMark } from '@assets';
-import { RootState, setModal, setPayDues, toggleModal } from '@store';
+import { RootState, setDues, setModal, setPayDues } from '@store';
 import { useDispatch, useSelector } from 'react-redux';
+import { resetDues } from '@api';
 
 interface PayDuesTableProps {
     title: string;
@@ -35,10 +36,25 @@ export const PayDuesTable = ({ title, duesDetails, totalDetails }: PayDuesTableP
         dispatch(setModal({ active: true, status: 'editPending' }));
     };
 
+    const handleReset = async () => {
+        console.log('hi');
+        const { dues } = await resetDues(duesData.registerNo);
+        dispatch(setDues(dues));
+    };
+
     return (
         <>
             <div className='bg-white backdrop-blur-md  p-6 pb-10 rounded-2xl shadow-section mb-7 overflow-hidden'>
-                <h1 className='text-2xl font-medium mb-4 '>{title}</h1>
+                <div className='flex justify-between  mb-6 min-w-max gap-5 flex-col lg:items-center lg:flex-row'>
+                    <h1 className='text-2xl font-medium mb-4 '>{title}</h1>
+                    {role === 'admin' && (
+                        <div>
+                            <button className='text-white  bg-primary py-2 px-4 rounded-lg' onClick={handleReset}>
+                                Reset
+                            </button>
+                        </div>
+                    )}
+                </div>
                 <div className='overflow-x-scroll font-secondary'>
                     <RenderListTable table={table} />
                 </div>

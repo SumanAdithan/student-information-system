@@ -4,6 +4,7 @@ import {
     getDues,
     processOnlineDuesPayment,
     processOnlinePendingPayment,
+    resetDues,
     updateDues,
     updateOfflineDuesPayment,
     updateOfflinePendingPayment,
@@ -47,4 +48,5 @@ export const duesRoutes = (router: Router) => {
         validate(PayDuesSchema),
         updateOfflinePendingPayment
     );
+    router.post('/dues/reset/:registerNo', isAuthenticated(), authorizeRoles('admin'), resetDues);
 };

@@ -7,6 +7,7 @@ import {
     updateOfflinePaymentData,
     updatePreviousPending,
     getStudentByRegisterNo,
+    resetDuesData,
 } from '@models';
 import {
     Category,
@@ -19,8 +20,11 @@ import {
     UpdateDues,
 } from '@sis/types';
 import { RazorpayService } from './razorpay.service';
+import { PaymentReceiptService } from './paymentReceipt.service';
+import * as fs from 'fs';
 
 const razorpayService = new RazorpayService();
+const paymentReceiptService = new PaymentReceiptService();
 
 export class DuesService {
     static getDues(registerNo: number) {
@@ -54,7 +58,6 @@ export class DuesService {
 
         const processPayment = await razorpayService.processPayment(dues);
         if (!processPayment.success) return { success: false, error: 'unable to make a payment' };
-
         return { success: true, order: processPayment.order };
     }
 
@@ -69,16 +72,18 @@ export class DuesService {
             registerNo: student.registerNo,
             semester: student.semester,
             department: student.department,
+            year: student.year,
             batch: student.batch,
         };
         const transactionHistory = {
-            ...studentData,
+            studentData,
             ...transaction,
         };
 
+        await paymentReceiptService.generateReceipt(transactionHistory);
+
         await createTransactionHistory(parseInt(dues.registerNo), transactionHistory);
         const duesData = await updateOnlinePaymentData(dues);
-
         return { success: true, duesData };
     }
 
@@ -111,6 +116,7 @@ export class DuesService {
             registerNo: student.registerNo,
             semester: student.semester,
             department: student.department,
+            year: student.year,
             batch: student.batch,
         };
         const transactionHistory = {
@@ -130,5 +136,9 @@ export class DuesService {
 
     static updateOfflinePendingPayment(dues: PayDuesSchemaType) {
         return updatePreviousPending(dues);
+    }
+
+    static resetDues(registerNo: number) {
+        return resetDuesData(registerNo);
     }
 }

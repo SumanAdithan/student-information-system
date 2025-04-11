@@ -36,7 +36,7 @@ export const FacultyStudentTable = ({ title, data }: FacultyStudentTableProps) =
                             className='text-white  bg-primary py-2 px-4 rounded-lg'
                             onClick={() => dispatch(setModal({ active: true, status: 'add' }))}
                         >
-                            <h3>Add</h3>
+                            Add
                         </button>
                     </div>
                 </div>

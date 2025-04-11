@@ -75,3 +75,9 @@ export const updateOfflinePendingPayment = catchAsyncError(
         successResponse(response, 200, dues, 'Dues Result updated');
     }
 );
+
+export const resetDues = catchAsyncError(async (request: Request<{ registerNo: string }>, response, next) => {
+    console.log(request.params.registerNo);
+    const dues = await DuesService.resetDues(parseInt(request.params.registerNo));
+    successResponse(response, 200, dues, 'Dues Resetted updated');
+});
