@@ -24,7 +24,6 @@ import { PaymentReceiptService } from './paymentReceipt.service';
 import * as fs from 'fs';
 
 const razorpayService = new RazorpayService();
-const paymentReceiptService = new PaymentReceiptService();
 
 export class DuesService {
     static getDues(registerNo: number) {
@@ -80,11 +79,11 @@ export class DuesService {
             ...transaction,
         };
 
-        await paymentReceiptService.generateReceipt(transactionHistory);
-
         await createTransactionHistory(parseInt(dues.registerNo), transactionHistory);
+
+        const paymentReceipt = await PaymentReceiptService.generateReceipt(transactionHistory);
         const duesData = await updateOnlinePaymentData(dues);
-        return { success: true, duesData };
+        return { success: true, duesData, paymentReceipt };
     }
 
     static async processOnlinePendingPayment(dues: PayDuesSchemaType) {

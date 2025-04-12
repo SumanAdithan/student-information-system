@@ -51,7 +51,9 @@ export const verifyOnlineDuesPayment = catchAsyncError(async (request, response,
     const isAuthentic = await DuesService.verifyOnlineDuesPayment(request.body);
     if (!isAuthentic) return next(new ErrorHandler(400, 'Invalid Payment'));
 
-    return successResponse(response, 200, isAuthentic.duesData, 'Payment successfull');
+    const { duesData, paymentReceipt } = isAuthentic;
+
+    return successResponse(response, 200, duesData, 'Payment successfull');
 });
 
 export const processOnlinePendingPayment = catchAsyncError(

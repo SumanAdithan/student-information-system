@@ -7,3 +7,4 @@ export * from './semesterResult.service';
 export * from './dues.service';
 export * from './razorpay.service';
 export * from './paymentReceipt.service';
+export * from './paymentReceipt.service';

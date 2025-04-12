@@ -86,4 +86,21 @@ export class AwsService {
             return { success: false };
         }
     }
+
+    async getImages(icon: string) {
+        const fileKey = `/assets/${icon}`;
+        const getParams = {
+            Bucket: this.bucketName,
+            Key: fileKey,
+        };
+
+        const fileExtension = icon.split('.').pop();
+        const mimeType = mime.lookup(fileExtension) || 'application/octet-stream';
+
+        const { Body } = await this.s3.send(new GetObjectCommand(getParams));
+        const buffer = Buffer.from(await Body.transformToByteArray());
+        const image = buffer.toString('base64');
+
+        return image;
+    }
 }

@@ -9,6 +9,7 @@ import {
 } from '@pages';
 import { Route } from 'react-router-dom';
 import { PrivateRoute } from './ProtectedRoute';
+import { PaymentSuccess } from '@components';
 
 export const studentRoutes = () => {
     return (
@@ -20,6 +21,7 @@ export const studentRoutes = () => {
                 <Route path='semester-results' element={<SemesterResultPage />} />
                 <Route path='download-notes' element={<DownloadNotesPage />} />
                 <Route path='dues' element={<DuesPage />} />
+                <Route path='success' element={<PaymentSuccess />} />
             </Route>
         </Route>
     );
