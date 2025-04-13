@@ -37,7 +37,6 @@ export const PayDuesTable = ({ title, duesDetails, totalDetails }: PayDuesTableP
     };
 
     const handleReset = async () => {
-        console.log('hi');
         const { dues } = await resetDues(duesData.registerNo);
         dispatch(setDues(dues));
     };

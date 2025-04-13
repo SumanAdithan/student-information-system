@@ -19,7 +19,6 @@ export const FacultyDuesColumn = () => {
 
     const handleEditClick = async (registerNo: number) => {
         const dues = await getDuesData(registerNo, true);
-        console.log(dues);
         dispatch(setEditDues(dues));
         dispatch(setModal({ active: true, status: 'edit' }));
     };

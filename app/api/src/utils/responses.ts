@@ -28,3 +28,10 @@ export const tokenResponse = (response: Response, token: string, statusCode: num
         redirectUrl,
     });
 };
+
+export const sendPdf = (response: Response, fileName: string, pdfBuffer: Buffer) => {
+    response.setHeader('Content-Type', 'application/pdf');
+    response.setHeader('Content-Disposition', `attachment; filename="${fileName}"`);
+
+    response.end(pdfBuffer);
+};

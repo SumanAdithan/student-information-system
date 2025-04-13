@@ -1,6 +1,7 @@
 import qs from 'qs';
 import { api } from './apiClient';
-import { Dues, PayDuesSchemaType, QueryParams, RazorpayResponse, UpdateDues } from '@sis/types';
+import { saveAs } from 'file-saver';
+import { PayDuesSchemaType, QueryParams, RazorpayResponse, UpdateDues } from '@sis/types';
 
 export const getAuthenticatedDues = async () => {
     const { data } = await api.get('/student/dues');
@@ -49,9 +50,15 @@ export const processDuesPayment = async (orderData: PayDuesSchemaType) => {
     return data.data;
 };
 
-export const verifyDuesPayment = async (RazorpayResponse: RazorpayResponse): Promise<{ dues: Dues }> => {
-    const { data } = await api.post('/dues/online-payment/verify', RazorpayResponse);
-    return { dues: data.data };
+export const verifyDuesPayment = async (RazorpayResponse: RazorpayResponse) => {
+    const { data, headers } = await api.post('/dues/online-payment/verify', RazorpayResponse, {
+        responseType: 'arraybuffer',
+    });
+
+    const pdfBlob = new Blob([data], { type: 'application/pdf' });
+    const fileName = headers['content-disposition'].split('filename=')[1].replace(/"/g, '');
+
+    saveAs(pdfBlob, fileName);
 };
 
 export const processPendingPayment = async (orderData: PayDuesSchemaType) => {
@@ -59,9 +66,15 @@ export const processPendingPayment = async (orderData: PayDuesSchemaType) => {
     return data.data;
 };
 
-export const verifyPendingPayment = async (RazorpayResponse: RazorpayResponse): Promise<{ dues: Dues }> => {
-    const { data } = await api.post('/dues/pending/online-payment/verify', RazorpayResponse);
-    return { dues: data.data };
+export const verifyPendingPayment = async (RazorpayResponse: RazorpayResponse) => {
+    const { data, headers } = await api.post('/dues/pending/online-payment/verify', RazorpayResponse, {
+        responseType: 'arraybuffer',
+    });
+
+    const pdfBlob = new Blob([data], { type: 'application/pdf' });
+    const fileName = headers['content-disposition'].split('filename=')[1].replace(/"/g, '');
+
+    saveAs(pdfBlob, fileName);
 };
 
 export const updateOfflineDuesPayment = async (duesData: PayDuesSchemaType) => {

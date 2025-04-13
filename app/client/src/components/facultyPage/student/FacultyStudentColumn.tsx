@@ -10,7 +10,6 @@ export const FacultyStudentColumnConfig = () => {
     const dispatch = useDispatch<AppDispatch>();
     const { deleteStudentMutation } = useStudentMutations();
     const { role } = useSelector((state: RootState) => state.profile);
-    console.log(role);
 
     const handleViewClick = (student: any) => {
         dispatch(setStudent(student));

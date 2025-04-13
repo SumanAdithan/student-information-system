@@ -11,6 +11,7 @@ export const createApp = () => {
         cors({
             origin: 'http://localhost:5173',
             credentials: true,
+            exposedHeaders: ['Content-Disposition'],
         })
     );
     app.use(express.json());

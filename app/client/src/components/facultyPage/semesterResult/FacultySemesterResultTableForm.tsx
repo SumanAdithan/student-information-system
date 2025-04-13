@@ -37,7 +37,6 @@ export const FacultySemesterResultTableForm = () => {
     }, [modal.active, reset]);
 
     const saveData = (data: UpdateSemesterResult) => {
-        console.log(data);
         updateSemesterResultMutation.mutate(data);
 
         dispatch(toggleModal());

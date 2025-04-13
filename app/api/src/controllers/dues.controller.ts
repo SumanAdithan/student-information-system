@@ -1,7 +1,7 @@
 import { catchAsyncError } from '@middlewares';
 import { DuesService } from '@services';
 import { DuesDto, PayDuesDto } from '@sis/types';
-import { ErrorHandler, successResponse } from '@utils';
+import { ErrorHandler, sendPdf, successResponse } from '@utils';
 import { Request } from 'express';
 
 export const getAuthenticatedDues = catchAsyncError(async (request, response, next) => {
@@ -34,7 +34,6 @@ export const updateDues = catchAsyncError(async (request: Request<{}, {}, DuesDt
 export const updateOfflineDuesPayment = catchAsyncError(
     async (request: Request<{}, {}, PayDuesDto>, response, next) => {
         const dues = await DuesService.updateOfflineDuesPayment(request.body);
-        console.log(dues);
         successResponse(response, 200, dues, 'Dues Result updated');
     }
 );
@@ -51,9 +50,8 @@ export const verifyOnlineDuesPayment = catchAsyncError(async (request, response,
     const isAuthentic = await DuesService.verifyOnlineDuesPayment(request.body);
     if (!isAuthentic) return next(new ErrorHandler(400, 'Invalid Payment'));
 
-    const { duesData, paymentReceipt } = isAuthentic;
-
-    return successResponse(response, 200, duesData, 'Payment successfull');
+    const { paymentReceiptName, paymentReceipt } = isAuthentic;
+    return sendPdf(response, paymentReceiptName, paymentReceipt);
 });
 
 export const processOnlinePendingPayment = catchAsyncError(
@@ -68,7 +66,8 @@ export const verifyOnlinePendingPayment = catchAsyncError(async (request, respon
     const isAuthentic = await DuesService.verifyOnlinePendingPayment(request.body);
     if (!isAuthentic) return next(new ErrorHandler(400, 'Invalid Payment'));
 
-    return successResponse(response, 200, isAuthentic.duesData, 'Payment successfull');
+    const { paymentReceiptName, paymentReceipt } = isAuthentic;
+    return sendPdf(response, paymentReceiptName, paymentReceipt);
 });
 
 export const updateOfflinePendingPayment = catchAsyncError(
@@ -79,7 +78,6 @@ export const updateOfflinePendingPayment = catchAsyncError(
 );
 
 export const resetDues = catchAsyncError(async (request: Request<{ registerNo: string }>, response, next) => {
-    console.log(request.params.registerNo);
     const dues = await DuesService.resetDues(parseInt(request.params.registerNo));
     successResponse(response, 200, dues, 'Dues Resetted updated');
 });
