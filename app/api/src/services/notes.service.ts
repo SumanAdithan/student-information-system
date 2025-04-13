@@ -1,4 +1,4 @@
-import { addNotes, deleteNotesById, getNotesById } from '@models';
+import { addNotes, deleteNotesById, getAllNotes, getNotesById } from '@models';
 import { Notes } from '@sis/types';
 import { AwsService } from './aws.service';
 
@@ -19,6 +19,10 @@ export class NotesService {
         newNotes.fileName = notesFile.fileName;
 
         return { success: true };
+    }
+
+    static async getAllNotes() {
+        return await getAllNotes();
     }
 
     static async deleteNotes(notesId: string) {
