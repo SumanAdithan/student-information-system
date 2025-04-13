@@ -28,3 +28,6 @@ const NotesSchema = new Schema({
 const NotesModel = model('notes', NotesSchema);
 
 export const addNotes = (notesData: Notes) => NotesModel.create(notesData);
+export const getNotesById = (notesId: string) => NotesModel.findById(notesId);
+export const getAllNotes = () => NotesModel.find();
+export const deleteNotesById = (notesId: string) => NotesModel.findByIdAndDelete(notesId);
