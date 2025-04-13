@@ -1,0 +1,152 @@
+{{!-- prettier-ignore --}}
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8' />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+
+        
+        <style>
+            @font-face {
+                font-family: 'Roboto';
+                src: url('http://localhost:9000/met-public/assets/fonts/roboto.ttf') format('truetype');
+                font-weight: normal;
+                font-style: normal;
+            }
+
+            @page {
+                size: 600px 788px;
+            }
+
+            .body{
+                font-family: 'Roboto', Arial, Helvetica, sans-serif; 
+                background:#d9dce9;
+            }
+
+            .container{
+                position: relative;
+                margin: 15px 5px 10px;
+                background: #f1f1f1; 
+                box-shadow: 0 1px 5px 2px rgba(0, 0, 0, 0.25); 
+                width: fit-content; 
+                padding: 35px 50px; 
+                border-radius: 12px; 
+                color:#2e4765;
+                z-index: 20;
+            } 
+
+            .background-image{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 0.3;
+                width: 550px;
+                z-index: 10;
+            }
+
+            .header{
+                display: flex; 
+                align-items: center; 
+                gap: 8px; 
+            }
+
+            .logo{
+                width: 60px; 
+                height: 60px; 
+                border-radius: 8px; 
+                overflow: hidden;
+            }
+
+            .logo-txt{
+                font-size: 30px;
+                font-weight: 900; 
+                text-wrap: nowrap;
+            }
+
+            .biodata{
+                margin-top: 10px;
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                font-size: 18px;
+                font-weight: bold;
+            }
+
+            .paymentSuccess{
+                margin-top: 10px;
+            }
+
+            .paymentSuccess-header{
+                display: flex; 
+                flex-direction: column; 
+                align-items: center; 
+                justify-content: center; 
+                gap: 8px;
+                font-weight: 500;
+            }
+
+            .paymentSuccess-logo{
+                width: 80px; 
+                height: 80px;
+                z-index: 20;
+            }
+
+            .paymentSuccess-logo-txt{
+                font-size: 24px; 
+                font-weight: bold;
+                color:#2bb673
+            }
+
+            .paymentSuccess-details{
+                display: flex; 
+                flex-direction: column; 
+                align-items: center; 
+                font-size: 18px;
+                margin-top: 10px; 
+                font-weight: bold;
+            }
+
+            .footer{
+                text-wrap: nowrap;
+                margin-top: 15px; 
+                font-size: 18px; 
+                font-weight: 500;
+            }
+        </style>
+    </head>
+    <body class="body">
+        <div class='container'>
+            <img class="background-image" src={{backgroundImage}} alt="MET">
+
+            <div class="header">
+                <img class="logo" src='{{logoIcon}}' alt='logo' />
+                <h1 class="logo-txt"> MET ENGINEERING COLLEGE </h1>
+            </div>
+
+            <div class="biodata">
+                <p> Name: {{studentData.name}} </p>
+                <p> Register No: {{studentData.registerNo}} </p>
+                <p> Semester: 0{{studentData.semester}} </p>
+                <p> Department: {{studentData.department}} </p>
+                <p> Year: {{studentData.year}} </p>
+                <p> Batch: {{studentData.batch}} </p>
+            </div>
+
+            <div class="paymentSuccess">
+                <div class="paymentSuccess-header">
+                    <img src={{successIcon}} alt='success' class="paymentSuccess-logo" />
+                    <h1 class="paymentSuccess-logo-txt"> Payment Success </h1>
+                </div>
+                <div class="paymentSuccess-details">
+                    <p> Payment Id: {{transactionId}} </p>
+                    <p> {{category}}: ₹{{amount}} </p>
+                    <p> Method: {{method}} </p>
+                    <p> Paid On: {{paidOn}} </p>
+                </div>
+            </div>
+
+            <div class="footer">
+                Thank you for your payment. Your payment was successfull
+            </div>
+        </div>
+    </body>
+</html>

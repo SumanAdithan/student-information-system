@@ -16,15 +16,13 @@ import {
     RazorpayResponse,
     QueryParams,
     reverseCategoryMap,
-    Transaction,
     UpdateDues,
 } from '@sis/types';
 import { RazorpayService } from './razorpay.service';
 import { PaymentReceiptService } from './paymentReceipt.service';
-import * as fs from 'fs';
+import { getPaymentReceiptName } from '@utils';
 
 const razorpayService = new RazorpayService();
-const paymentReceiptService = new PaymentReceiptService();
 
 export class DuesService {
     static getDues(registerNo: number) {
@@ -80,11 +78,15 @@ export class DuesService {
             ...transaction,
         };
 
-        await paymentReceiptService.generateReceipt(transactionHistory);
-
         await createTransactionHistory(parseInt(dues.registerNo), transactionHistory);
-        const duesData = await updateOnlinePaymentData(dues);
-        return { success: true, duesData };
+        await updateOnlinePaymentData(dues);
+
+        const paymentReceiptName = getPaymentReceiptName(
+            transactionHistory.studentData.name,
+            transactionHistory.paidOn
+        );
+        const paymentReceipt = await PaymentReceiptService.generateReceipt(transactionHistory);
+        return { success: true, paymentReceipt, paymentReceiptName };
     }
 
     static async processOnlinePendingPayment(dues: PayDuesSchemaType) {
@@ -120,14 +122,19 @@ export class DuesService {
             batch: student.batch,
         };
         const transactionHistory = {
-            ...studentData,
+            studentData,
             ...transaction,
         };
 
         await createTransactionHistory(parseInt(dues.registerNo), transactionHistory);
-        const duesData = await updatePreviousPending(dues);
+        await updatePreviousPending(dues);
 
-        return { success: true, duesData };
+        const paymentReceiptName = getPaymentReceiptName(
+            transactionHistory.studentData.name,
+            transactionHistory.paidOn
+        );
+        const paymentReceipt = await PaymentReceiptService.generateReceipt(transactionHistory);
+        return { success: true, paymentReceipt, paymentReceiptName };
     }
 
     static updateOfflineDuesPayment(dues: PayDuesSchemaType) {
