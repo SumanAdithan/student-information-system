@@ -4,7 +4,7 @@ import { Response } from 'express';
 import mime from 'mime-types';
 import { PassThrough } from 'stream';
 
-type Folder = 'students' | 'faculties' | 'note';
+type Folder = 'students' | 'faculties' | 'notes';
 
 export class AwsService {
     private s3: S3Client;
@@ -24,13 +24,13 @@ export class AwsService {
         });
     }
 
-    getFileName(folder: Folder, id: string, fileName: string) {
+    getFileName(folder: Folder, name: string, fileName: string) {
         const ext = fileName.split('.').pop();
-        return `${folder}/${folder}-${id}-${Date.now()}.met.${ext}`;
+        return `${folder}/${name}.met.${ext}`;
     }
 
-    async uploadFile(folder: Folder, fileName: string, id: string, file: Buffer) {
-        const fileKey = this.getFileName(folder, id, fileName);
+    async uploadFile(folder: Folder, fileName: string, name: string, file: Buffer) {
+        const fileKey = this.getFileName(folder, name, fileName);
 
         try {
             const uploadParams = {

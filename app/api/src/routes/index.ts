@@ -7,6 +7,7 @@ import { internalResultRoutes } from './internalResult.routes';
 import { semesterResultRoutes } from './semesterResult.routes';
 import { duesRoutes } from './dues.routes';
 import { paymentRoutes } from './paymentRoutes';
+import { notesRoutes } from './notes.routes';
 
 const router = Router();
 
@@ -16,6 +17,7 @@ export default (): Router => {
     assignmentRoutes(router);
     internalResultRoutes(router);
     semesterResultRoutes(router);
+    notesRoutes(router);
     duesRoutes(router);
     fileRoutes(router);
     paymentRoutes(router);

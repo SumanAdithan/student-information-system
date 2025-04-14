@@ -1,8 +1,7 @@
 import { z } from 'zod';
-import { profileImageSchema } from './file.schema';
 
 export const StudentSchema = z.object({
-    profileImage: profileImageSchema.optional(),
+    profileImage: z.string().optional(),
 
     name: z
         .string({

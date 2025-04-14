@@ -1,10 +1,7 @@
-interface Subject {
+export interface Notes {
+    fileName: string;
+    subjectName: string;
     code: string;
-    name: string;
     regulation: string;
-    semester: string;
-}
-
-export interface SubjectsResponse {
-    data: Subject[];
+    semester: number;
 }

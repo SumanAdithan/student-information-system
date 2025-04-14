@@ -1,7 +1,5 @@
 import { catchAsyncError } from '@middlewares';
-import { PaymentReceiptService } from '@services';
-import { Category } from '@sis/types';
-import { ErrorHandler, successResponse } from '@utils';
+import { ErrorHandler } from '@utils';
 import { Request } from 'express';
 import { AwsService } from 'services/aws.service';
 

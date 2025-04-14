@@ -1,4 +1,3 @@
-import { download } from '@assets';
 import { createColumnHelper } from '@tanstack/react-table';
 
 const columnHelper = createColumnHelper<any>();
@@ -9,12 +8,4 @@ export const transactionHistoryColumnConfig = [
     columnHelper.accessor('amount', { header: 'Amount' }),
     columnHelper.accessor('method', { header: 'Method' }),
     columnHelper.accessor('paidOn', { header: 'Paid On' }),
-    columnHelper.display({
-        header: 'Receipt',
-        cell: () => (
-            <div className='flex justify-center'>
-                <img src={download} alt='true' className='w-6' />
-            </div>
-        ),
-    }),
 ];

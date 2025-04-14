@@ -8,3 +8,4 @@ export * from './dues.service';
 export * from './razorpay.service';
 export * from './paymentReceipt.service';
 export * from './paymentReceipt.service';
+export * from './notes.service';
