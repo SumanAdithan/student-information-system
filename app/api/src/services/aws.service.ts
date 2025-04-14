@@ -26,7 +26,7 @@ export class AwsService {
 
     getFileName(folder: Folder, name: string, fileName: string) {
         const ext = fileName.split('.').pop();
-        return `${folder}/${folder}-${name}-${Date.now()}.met.${ext}`;
+        return `${folder}/${name}.met.${ext}`;
     }
 
     async uploadFile(folder: Folder, fileName: string, name: string, file: Buffer) {

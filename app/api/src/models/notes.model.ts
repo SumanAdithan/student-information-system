@@ -4,7 +4,7 @@ import { Schema, model } from 'mongoose';
 const NotesSchema = new Schema({
     fileName: {
         type: String,
-        required: true,
+        default: '',
     },
     subjectName: {
         type: String,

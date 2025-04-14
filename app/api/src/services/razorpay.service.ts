@@ -9,8 +9,6 @@ import {
 } from '@sis/types';
 import { verifyPaymentSignature } from '@utils';
 import Razorpay from 'razorpay';
-import { DuesService } from './dues.service';
-import { getDuesDataByRegisterNo } from '@models';
 
 export class RazorpayService {
     private razorpayInstance;

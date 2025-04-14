@@ -16,7 +16,9 @@ export class NotesService {
             file.buffer
         );
         if (!notesFile.success) return { success: false };
+
         newNotes.fileName = notesFile.fileName;
+        await newNotes.save();
 
         return { success: true };
     }

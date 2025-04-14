@@ -40,7 +40,6 @@ export class StudentService {
                 newStudent.id,
                 image.buffer
             );
-            if (!profileImage.success) return { success: false };
             newStudent.profileImage = profileImage.fileName;
         }
 
