@@ -10,3 +10,8 @@ export const createNotes = catchAsyncError(async (request: Request<{}, {}, Notes
     if (!createNotes.success) return next(new ErrorHandler(400, 'Unable to create a notes'));
     successResponse(response, 201, null, 'Notes Created');
 });
+
+export const getAllNotes = catchAsyncError(async (request, response, next) => {
+    const notes = await NotesService.getAllNotes();
+    successResponse(response, 200, notes);
+});

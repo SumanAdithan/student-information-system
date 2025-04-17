@@ -21,6 +21,7 @@ export const sidebarConfig = {
         { name: 'Assignments', href: '/faculty/assignments' },
         { name: 'Internal Results', href: '/faculty/internal-results' },
         { name: 'Semester Results', href: '/faculty/semester-results' },
+        { name: 'Download Notes', href: '/faculty/download-notes' },
         { name: 'Dues', href: '/faculty/dues' },
     ],
     adminNavLinks: [
@@ -29,6 +30,7 @@ export const sidebarConfig = {
         { name: 'Assignments', href: '/admin/assignments' },
         { name: 'Internal Results', href: '/admin/internal-results' },
         { name: 'Semester Results', href: '/admin/semester-results' },
+        { name: 'Download Notes', href: '/admin/download-notes' },
         { name: 'Dues', href: '/admin/dues' },
     ],
 };

@@ -2,7 +2,6 @@ import { z } from 'zod';
 
 export const StudentSchema = z.object({
     profileImage: z.string().optional(),
-
     name: z
         .string({
             required_error: 'Please enter name',
