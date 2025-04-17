@@ -1,10 +1,8 @@
 type Gender = 'Male' | 'Female';
 type Accommodation = 'Day Scholar' | 'Hosteller';
 
-type ProfileImage = string | File;
-
 export interface Student {
-    profileImage?: ProfileImage;
+    profileImage?: string;
     name: string;
     registerNo: number;
     cgpa?: number;

@@ -1,5 +1,5 @@
 import { useTableConfig } from '@hooks';
-import { downloadNotesColumnConfig as columns } from './DownloadNotesColumn';
+import { DownloadNotesColumnConfig } from './DownloadNotesColumn';
 import { RenderListTable, TablePageination } from '@components';
 import { useState } from 'react';
 import { Search } from 'lucide-react';
@@ -11,6 +11,7 @@ interface DownloadNotesTableProps {
 
 export const DownloadNotesTable = ({ title, data }: DownloadNotesTableProps) => {
     const [globalFilter, setGlobalFilter] = useState('');
+    const { downloadNotesColumnConfig: columns } = DownloadNotesColumnConfig();
     const table = useTableConfig({ data, columns, globalFilter, setGlobalFilter, pageSize: 5 });
     return (
         <div className='bg-white p-6 pb-10 rounded-2xl shadow-section mb-7'>
