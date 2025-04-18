@@ -2,7 +2,7 @@ import { GetObjectCommand, DeleteObjectCommand, PutObjectCommand, S3Client } fro
 import { config } from '@config';
 import { Response } from 'express';
 import mime from 'mime-types';
-import { PassThrough } from 'stream';
+import { Readable } from 'stream';
 
 type Folder = 'students' | 'faculties' | 'notes';
 
@@ -24,18 +24,26 @@ export class AwsService {
         });
     }
 
-    getFileName(folder: Folder, name: string, fileName: string) {
+    getProfileImageName(folder: Folder, name: string, fileName: string) {
         const ext = fileName.split('.').pop();
-        return `${folder}/${name}.met.${ext}`;
+        return `${folder}-${name}-${Date.now()}.met.${ext}`;
+    }
+
+    getPdfFileName(name: string, fileName: string) {
+        const ext = fileName.split('.').pop();
+        return `${name}.met.${ext}`;
     }
 
     async uploadFile(folder: Folder, fileName: string, name: string, file: Buffer) {
-        const fileKey = this.getFileName(folder, name, fileName);
+        const fileKey =
+            folder === 'students'
+                ? this.getProfileImageName(folder, name, fileName)
+                : this.getPdfFileName(name, fileName);
 
         try {
             const uploadParams = {
                 Bucket: this.bucketName,
-                Key: fileKey,
+                Key: `${folder}/${fileKey}`,
                 Body: file,
             };
             await this.s3.send(new PutObjectCommand(uploadParams));
@@ -60,7 +68,7 @@ export class AwsService {
         }
     }
 
-    async streamFile(folder: string, fileName: string, response: Response) {
+    async streamFile(folder: string, fileName: string, response: Response, dispositionType: 'inline' | 'attachment') {
         const fileKey = `${folder}/${fileName}`;
         try {
             const getParams = {
@@ -75,10 +83,9 @@ export class AwsService {
             if (!Body) return { success: false };
 
             response.setHeader('Content-Type', mimeType);
-            response.setHeader('Content-Disposition', `inline; filename="${fileName}"`);
+            response.setHeader('Content-Disposition', `${dispositionType}; filename="${fileName}"`);
 
-            const stream = new PassThrough();
-            stream.end(await Body.transformToByteArray());
+            const stream = Body as Readable;
             stream.pipe(response);
 
             return { success: true };

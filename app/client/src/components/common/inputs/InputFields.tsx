@@ -1,3 +1,5 @@
+import { Control, Controller } from 'react-hook-form';
+
 interface Options {
     label: string;
     value: number | string;
@@ -11,16 +13,18 @@ interface InputFieldProps {
         float?: boolean;
         valueAsNumber?: boolean;
         placeholder?: string;
+        fileType?: string;
         options?: Options[];
         disabled?: boolean;
         isPaymentAmount?: boolean;
     };
+    control?: Control<any>;
     register?: any;
     error?: string;
 }
 
-export const InputField = ({ data, register, error }: InputFieldProps) => {
-    const { label, float, type, valueAsNumber, placeholder = '', name, options, disabled = false } = data;
+export const InputField = ({ data, register, control, error }: InputFieldProps) => {
+    const { label, float, type, valueAsNumber, placeholder = '', name, options, fileType, disabled = false } = data;
 
     return (
         <div className='flex flex-col space-y-1'>
@@ -41,10 +45,28 @@ export const InputField = ({ data, register, error }: InputFieldProps) => {
                         </option>
                     ))}
                 </select>
+            ) : type === 'file' ? (
+                <Controller
+                    name={name}
+                    control={control}
+                    render={({ field: { onChange, ref } }) => (
+                        <input
+                            type='file'
+                            accept={fileType}
+                            ref={ref}
+                            onChange={(e) => {
+                                const file = e.target.files?.[0];
+                                onChange(file ?? '');
+                            }}
+                            disabled={disabled}
+                            className='w-full px-4 py-2 bg-search-input text-font-primary placeholder-font-primary rounded-md'
+                        />
+                    )}
+                />
             ) : (
                 <input
                     type={type}
-                    accept={type === 'file' ? 'image/*' : undefined}
+                    accept={type === 'file' ? fileType : undefined}
                     step={float ? '0.01' : '1'}
                     className='w-full px-4 py-2 bg-search-input text-font-primary placeholder-font-primary  rounded-md'
                     placeholder={placeholder}

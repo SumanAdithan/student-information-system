@@ -1,5 +1,5 @@
 export interface Notes {
-    fileName: string;
+    file?: string | File;
     subjectName: string;
     code: string;
     regulation: string;

@@ -3,12 +3,21 @@ import { ErrorHandler } from '@utils';
 import { Request } from 'express';
 import { AwsService } from 'services/aws.service';
 
-export const getFile = catchAsyncError(
-    async (request: Request<{ folder: string; fileName: string }>, response, next) => {
-        const awsService = new AwsService();
-        const { folder, fileName } = request.params;
+const awsService = new AwsService();
 
-        const streamFile = await awsService.streamFile(folder, fileName, response);
+export const getFile = (folder: 'students' | 'notes') =>
+    catchAsyncError(async (request: Request<{ fileName: string }>, response, next) => {
+        const { fileName } = request.params;
+
+        const dispositionType = folder === 'notes' ? 'attachment' : 'inline';
+        const streamFile = await awsService.streamFile(folder, fileName, response, dispositionType);
         if (!streamFile.success) return next(new ErrorHandler(400, 'File not found'));
-    }
-);
+    });
+
+export const getAuthenticatedProfileImage = catchAsyncError(async (request, response, next) => {
+    const { profileImage } = request.user;
+
+    const dispositionType = 'inline';
+    const streamFile = await awsService.streamFile('students', profileImage, response, dispositionType);
+    if (!streamFile.success) return next(new ErrorHandler(400, 'File not found'));
+});

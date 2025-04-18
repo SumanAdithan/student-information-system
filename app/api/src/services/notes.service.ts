@@ -1,4 +1,4 @@
-import { addNotes, deleteNotesById, getAllNotes, getNotesById } from '@models';
+import { addNotesData, deleteNotesById, getAllNotes, getNotesById } from '@models';
 import { Notes } from '@sis/types';
 import { AwsService } from './aws.service';
 
@@ -7,7 +7,7 @@ const awsService = new AwsService();
 export class NotesService {
     static async createNotes(notes: Notes, file: Express.Multer.File) {
         if (!file) return { success: false };
-        const newNotes = await addNotes(notes);
+        const newNotes = await addNotesData(notes);
 
         const notesFile = await awsService.uploadFile(
             'notes',
@@ -17,7 +17,7 @@ export class NotesService {
         );
         if (!notesFile.success) return { success: false };
 
-        newNotes.fileName = notesFile.fileName;
+        newNotes.file = notesFile.fileName;
         await newNotes.save();
 
         return { success: true };
@@ -31,8 +31,8 @@ export class NotesService {
         const notes = await getNotesById(notesId);
         if (!notes) return { success: false, error: 'Notes not found' };
 
-        if (notes.fileName) {
-            const deleteNotes = await awsService.deleteFile(notes.fileName);
+        if (notes.file) {
+            const deleteNotes = await awsService.deleteFile(notes.file);
             if (!deleteNotes.success) return { success: false, error: `Can't delete Notes` };
         }
 

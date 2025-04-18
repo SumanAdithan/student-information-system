@@ -1,7 +1,8 @@
 import { z } from 'zod';
+import { ImageSchema } from './file.schema';
 
 export const StudentSchema = z.object({
-    profileImage: z.string().optional(),
+    profileImage: ImageSchema.optional(),
     name: z
         .string({
             required_error: 'Please enter name',

@@ -2,7 +2,7 @@ type Gender = 'Male' | 'Female';
 type Accommodation = 'Day Scholar' | 'Hosteller';
 
 export interface Student {
-    profileImage?: string;
+    profileImage?: string | File;
     name: string;
     registerNo: number;
     cgpa?: number;
