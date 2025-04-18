@@ -1,56 +1,28 @@
+import { useZodForm } from '@hooks';
+import { Notes, NotesSchemaClient } from '@sis/types';
+import { DOWNLOAD_NOTES_TABLE_INPUT_FIELDS as inputFields } from '@constants';
 import { AppDispatch, RootState, toggleModal } from '@store';
-import { shallowEqual, useDispatch, useSelector } from 'react-redux';
-import { STUDENT_TABLE_INPUT_FIELDS as inputFields } from '@constants';
+import { FormProvider } from 'react-hook-form';
+import { useDispatch, useSelector } from 'react-redux';
 import { InputField } from '@components';
 import { X } from 'lucide-react';
-import { useEffect } from 'react';
-import { Student, StudentSchema } from '@sis/types';
-import { useChangedInputValues, useZodForm } from '@hooks';
-import { useStudentMutations } from '@queries';
-import { FormProvider, useForm } from 'react-hook-form';
+import { useDownloadNotesMutation } from '@queries';
 
-export const FacultyStudentTableForm = () => {
+export const DownloadNotesTableForm = () => {
+    const methods = useZodForm(NotesSchemaClient);
     const {
         register,
         handleSubmit,
         formState: { errors },
-        reset,
-        watch,
         control,
-    } = useZodForm(StudentSchema, {
-        profileImage: '',
-    });
+    } = methods;
 
-    const { student, modal } = useSelector(
-        (state: RootState) => ({
-            student: state.student.student,
-            modal: state.action.editModal,
-        }),
-        shallowEqual
-    );
-
-    const methods = useForm();
+    const { editModal } = useSelector((state: RootState) => state.action);
     const dispatch = useDispatch<AppDispatch>();
-    const watchedValues = watch();
+    const { addNotesMutation } = useDownloadNotesMutation();
 
-    const { createStudentMutation, updateStudentMutation } = useStudentMutations();
-
-    useEffect(() => {
-        if (modal.status === 'edit' && student) {
-            reset(student);
-        }
-    }, [modal.active, reset]);
-
-    const saveData = (data: Student) => {
-        const changedFields = useChangedInputValues(student, watchedValues);
-        if (modal.status === 'edit' && changedFields) {
-            updateStudentMutation.mutate({
-                studentId: student._id,
-                updatedStudentData: changedFields,
-            });
-        } else {
-            createStudentMutation.mutate({ studentData: data });
-        }
+    const saveData = (data: Notes) => {
+        addNotesMutation.mutate({ notesData: data });
         dispatch(toggleModal());
     };
 
@@ -58,7 +30,7 @@ export const FacultyStudentTableForm = () => {
         <div className='absolute inset-0 py-5 px-10 flex items-center justify-center bg-background-blur text-font-primary z-40 overflow-auto'>
             <div className='bg-white p-5 rounded-xl text-font-primary'>
                 <h1 className='text-3xl font-semibold  mb-3 underline tracking-wider'>
-                    {modal.status === 'edit' ? 'Edit Student' : 'Add Student'}
+                    {editModal.status === 'edit' ? 'Edit Student' : 'Add Student'}
                 </h1>
                 <FormProvider {...methods}>
                     <form
@@ -69,7 +41,7 @@ export const FacultyStudentTableForm = () => {
                                 handleSubmit(saveData)();
                             }
                         }}
-                        className='grid grid-cols-1 md:grid-cols-4 gap-4'
+                        className='grid grid-cols-1 md:grid-cols-2 gap-4'
                     >
                         {inputFields.map((input) => (
                             <InputField
@@ -77,7 +49,7 @@ export const FacultyStudentTableForm = () => {
                                 data={input}
                                 register={register}
                                 control={control}
-                                error={errors[input.name as keyof Student]?.message as string}
+                                error={errors[input.name as keyof Notes]?.message as string}
                             />
                         ))}
 

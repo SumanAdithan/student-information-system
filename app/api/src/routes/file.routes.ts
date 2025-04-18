@@ -1,7 +1,14 @@
 import type { Router } from 'express';
-import { getFile } from '@controllers';
+import { getAuthenticatedProfileImage, getFile } from '@controllers';
 import { authorizeRoles, isAuthenticated } from 'middlewares/authenticate.middleware';
 
 export const fileRoutes = (router: Router) => {
-    router.get('/file/:folder/:fileName', isAuthenticated(), authorizeRoles('admin', 'faculty', 'student'), getFile);
+    router.get('/file/students/:fileName', isAuthenticated(), authorizeRoles('admin', 'faculty'), getFile('students'));
+    router.get(
+        '/file/notes/:fileName',
+        isAuthenticated(),
+        authorizeRoles('admin', 'faculty', 'student'),
+        getFile('notes')
+    );
+    router.get('/profile-image', isAuthenticated(), authorizeRoles('student'), getAuthenticatedProfileImage);
 };

@@ -1,3 +1,4 @@
+import { downloadNotesPdf } from '@api';
 import { download, trash } from '@assets';
 import { RootState } from '@store';
 import { createColumnHelper } from '@tanstack/react-table';
@@ -15,15 +16,19 @@ export const DownloadNotesColumnConfig = () => {
         columnHelper.display({
             id: 'download',
             header: 'Download',
-            cell: () => (
+            cell: ({ row }) => (
                 <div className='flex justify-center gap-2'>
-                    <img src={download} alt='true' className='w-6' />
+                    <img
+                        src={download}
+                        alt='true'
+                        className='w-6'
+                        onClick={() => downloadNotesPdf(`${row.original.subjectName}(${row.original.code}).met.pdf`)}
+                    />
                     {role === 'admin' && (
                         <img
                             src={trash}
                             alt='delete'
                             className='w-6 h-6 transition-transform duration-300 hover:scale-125'
-                            // onClick={() => handleDeleteClick(row.original._id)}
                         />
                     )}
                 </div>

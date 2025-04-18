@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-const apiUrl = import.meta.env.VITE_API_URL;
 import { Student } from '@sis/types';
 
 interface StudentState {
@@ -35,9 +34,7 @@ const studentSlice = createSlice({
     initialState,
     reducers: {
         setStudent: (state, action: PayloadAction<{ _id: string } & Student>) => {
-            const { profileImage } = action.payload;
-            const profileImageUrl = profileImage ? `${apiUrl}/file/${action.payload.profileImage}` : '';
-            state.student = { ...action.payload, profileImage: profileImageUrl };
+            state.student = { ...action.payload };
         },
     },
 });
