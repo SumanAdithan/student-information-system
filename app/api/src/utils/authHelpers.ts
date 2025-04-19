@@ -16,7 +16,7 @@ export const isValidPassword = async (plainPassword: string, hashedPassword: str
 };
 
 // Generate jwt token
-export const getJwtTokwn = (id: string, role: UserRole) => {
+export const getJwtToken = (id: string, role: UserRole) => {
     return jwt.sign({ id, role }, config.JWT_SECRET, {
         expiresIn: Number(config.JWT_EXPIRES_TIME) * 24 * 60 * 60,
     });

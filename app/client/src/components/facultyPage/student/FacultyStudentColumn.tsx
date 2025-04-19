@@ -1,4 +1,5 @@
-import { edit, trash, view } from '@assets';
+import { downloadStudentQrCode } from '@api';
+import { download, edit, trash, view } from '@assets';
 import { useStudentMutations } from '@queries';
 import { AppDispatch, RootState, setModal, setStudent, toggleView } from '@store';
 import { createColumnHelper } from '@tanstack/react-table';
@@ -53,7 +54,13 @@ export const FacultyStudentColumnConfig = () => {
                                 src={trash}
                                 alt='delete'
                                 className='w-6 h-6 transition-transform duration-300 hover:scale-125'
-                                onClick={() => handleDeleteClick(row.original._id)}
+                                onClick={() => handleDeleteClick(row.original.id)}
+                            />
+                            <img
+                                src={download}
+                                alt='download'
+                                className='w-6 h-6 transition-transform duration-300 hover:scale-125'
+                                onClick={() => downloadStudentQrCode(row.original.id)}
                             />
                         </>
                     )}

@@ -6,7 +6,7 @@ import {
     getStudentByEmail,
     getStudentById,
 } from '@models';
-import { ErrorHandler, getJwtTokwn, isValidPassword, verifyJwtToken } from '@utils';
+import { ErrorHandler, getJwtToken, isValidPassword, verifyJwtToken } from '@utils';
 
 import type { UserRole } from '@sis/types';
 
@@ -22,7 +22,7 @@ export class AuthService {
         const isMatch = await isValidPassword(password, user.password);
         if (!isMatch) throw new ErrorHandler(401, 'Invalid Email or Password');
 
-        const token = getJwtTokwn(user.id.toString(), user.role as UserRole);
+        const token = getJwtToken(user.id.toString(), user.role as UserRole);
 
         return { token, redirectUrl: AuthService.getRedirectUrl(role) };
     }
@@ -33,12 +33,15 @@ export class AuthService {
         if (typeof decodedToken === 'string') throw new ErrorHandler(400, 'Invalid QR Code');
 
         let user;
-        if (role === 'student') user = await getStudentById(decodedToken.id);
-        if (role === 'faculty') user = await getFacultyById(decodedToken.id);
-        if (role === 'admin') user = await getAdminById(decodedToken.id);
+        if (role === 'student') user = await getStudentById(decodedToken.id).select('+qrCode');
+        if (role === 'faculty') user = await getFacultyById(decodedToken.id).select('+qrCode');
+        if (role === 'admin') user = await getAdminById(decodedToken.id).select('+qrCode');
         if (!user) throw new ErrorHandler(400, 'Invalid QR Code');
 
-        const token = getJwtTokwn(user.id.toString(), user.role as UserRole);
+        const isValidToken = await isValidPassword(qrToken, user.qrCode);
+        if (!isValidToken) throw new ErrorHandler(400, 'Invalid QR Code');
+
+        const token = getJwtToken(user.id.toString(), user.role as UserRole);
         return { token, redirectUrl: AuthService.getRedirectUrl(role) };
     }
 
