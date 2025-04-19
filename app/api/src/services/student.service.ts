@@ -44,8 +44,9 @@ export class StudentService {
         }
 
         const token = getQrToken(newStudent.id);
-        const dataImage = await QR.toDataURL(token);
-        newStudent.qrCode = dataImage;
+        // const dataImage = await QR.toDataURL(token);
+        const hashedToken = await hashPassword(token);
+        newStudent.qrCode = hashedToken;
         await newStudent.save();
 
         const defaultData = await assignDefaults.assignStudentDefaults(newStudent as StudentWithId);
@@ -98,5 +99,14 @@ export class StudentService {
         await deleteSemesterResultByRegisterNo(student.registerNo);
         await deleteDuesByRegisterNo(student.registerNo);
         await deleteStudentById(studentId);
+    }
+
+    static async downloadQrCode(studentId: string, next: NextFunction) {
+        const student = await getStudentById(studentId);
+        if (!student) return next(new ErrorHandler(404, 'Student not found'));
+
+        const token = getQrToken(student.id);
+        const dataImage = await QR.toDataURL(token);
+        return { qrCode: dataImage, name: `${student.name}_(${student.registerNo})` };
     }
 }

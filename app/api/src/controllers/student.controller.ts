@@ -45,3 +45,11 @@ export const deleteStudent = catchAsyncError(async (request: Request<{ studentId
     await StudentService.deleteStudent(studentId, next);
     successResponse(response, 201, null, 'Student deleted');
 });
+
+export const downloadStudentQrcode = catchAsyncError(
+    async (request: Request<{ studentId: string }>, response, next) => {
+        const { studentId } = request.params;
+        const qrCode = await StudentService.downloadQrCode(studentId, next);
+        successResponse(response, 200, qrCode);
+    }
+);

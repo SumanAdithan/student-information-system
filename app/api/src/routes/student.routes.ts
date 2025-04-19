@@ -1,5 +1,12 @@
 import type { Router } from 'express';
-import { createNewStudent, deleteStudent, getAllStudent, getAuthenticatedStudent, updateStudent } from '@controllers';
+import {
+    createNewStudent,
+    deleteStudent,
+    downloadStudentQrcode,
+    getAllStudent,
+    getAuthenticatedStudent,
+    updateStudent,
+} from '@controllers';
 import { authorizeRoles, isAuthenticated } from 'middlewares/authenticate.middleware';
 import { uploadSingleFile, validate, validateFile } from '@middlewares';
 import { StudentSchema, UpdateStudentSchema } from '@sis/types';
@@ -25,4 +32,5 @@ export const studentRoutes = (router: Router) => {
         updateStudent
     );
     router.delete('/admin/student/:studentId', isAuthenticated(), authorizeRoles('admin'), deleteStudent);
+    router.get('/admin/student/:studentId/qrcode', isAuthenticated(), authorizeRoles('admin'), downloadStudentQrcode);
 };

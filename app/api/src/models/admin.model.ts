@@ -24,6 +24,10 @@ const AdminSchema = new Schema({
         required: true,
         select: false,
     },
+    qrCode: {
+        type: String,
+        select: false,
+    },
 });
 
 const AdminModel = model('Admin', AdminSchema);

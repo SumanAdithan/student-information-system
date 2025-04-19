@@ -1,6 +1,7 @@
-import { jsonToFormData } from '@utils';
+import { customizeQrCode, jsonToFormData } from '@utils';
 import { api } from './apiClient';
 import { Student, UpdateStudent } from '@sis/types';
+import { saveAs } from 'file-saver';
 
 export const getAuthenticatedStudent = async () => {
     const { data } = await api.get('/student');
@@ -34,4 +35,13 @@ export const updateStudent = async ({
 
 export const deleteStudent = async ({ studentId }: { studentId: string }) => {
     return await api.delete(`/admin/student/${studentId}`);
+};
+
+export const downloadStudentQrCode = async (studentId: string) => {
+    const {
+        data: { data },
+    } = await api.get(`/admin/student/${studentId}/qrcode`);
+
+    const qrCodeBlob = await customizeQrCode({ base64: data.qrCode });
+    saveAs(qrCodeBlob, `${data.name}.png`);
 };

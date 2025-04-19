@@ -4,6 +4,7 @@ export const STUDENT_TABLE_INPUT_FIELDS = [
         type: 'file',
         placeholder: 'Select profile',
         name: 'profileImage',
+        fileType: 'image/png, image/jpeg',
     },
     {
         label: 'Name',

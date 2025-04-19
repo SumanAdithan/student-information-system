@@ -14,6 +14,10 @@ const FacultySchema = new Schema({
         required: true,
         select: false,
     },
+    qrCode: {
+        type: String,
+        select: false,
+    },
 });
 
 const FacultyModel = model('Faculty', FacultySchema);
