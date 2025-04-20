@@ -11,7 +11,7 @@ export const sidebarConfig = {
         { name: 'Download Notes', href: '/student/download-notes' },
         { name: 'Pay Dues', href: '/student/dues' },
         { name: 'Dues & Approvals', href: '/student/dues-approvals' },
-        { name: 'Time Table', href: '/student/time-table' },
+        { name: 'Time Table', href: '/student/timetable' },
         { name: 'Circular', href: '/student/circular' },
         { name: 'Events', href: '/student/events' },
     ],

@@ -1,5 +1,6 @@
 import { catchAsyncError } from '@middlewares';
-import { ErrorHandler } from '@utils';
+import { createStudentTimetableData } from '@models';
+import { ErrorHandler, successResponse } from '@utils';
 import { Request } from 'express';
 import { AwsService } from 'services/aws.service';
 
@@ -20,4 +21,10 @@ export const getAuthenticatedProfileImage = catchAsyncError(async (request, resp
     const dispositionType = 'inline';
     const streamFile = await awsService.streamFile('students', profileImage, response, dispositionType);
     if (!streamFile.success) return next(new ErrorHandler(400, 'File not found'));
+});
+
+export const createTimetable = catchAsyncError(async (request, response, next) => {
+    const timetable = await createStudentTimetableData(request.body);
+
+    return successResponse(response, 200, timetable);
 });

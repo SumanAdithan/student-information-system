@@ -6,3 +6,4 @@ export * from './semesterResultAPi';
 export * from './duesApi';
 export * from './paymentApi';
 export * from './downloadNotesApi';
+export * from './timetableApi';
