@@ -5,4 +5,4 @@ export * from './semesterResultsPage';
 export * from './DuesPage';
 export * from './header';
 export * from './jsonToFormData';
-export * from './tableData';
+export * from './timetable';

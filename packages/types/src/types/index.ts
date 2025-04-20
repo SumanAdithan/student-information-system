@@ -8,3 +8,4 @@ export * from './dues.types';
 export * from './queryParams';
 export * from './payment.types';
 export * from './notes.types';
+export * from './studentTimetable.types';

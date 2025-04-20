@@ -1,5 +1,5 @@
 import type { Router } from 'express';
-import { getAuthenticatedProfileImage, getFile } from '@controllers';
+import { createTimetable, getAuthenticatedProfileImage, getFile } from '@controllers';
 import { authorizeRoles, isAuthenticated } from 'middlewares/authenticate.middleware';
 
 export const fileRoutes = (router: Router) => {

@@ -5,5 +5,6 @@ export * from './semesterResult.model';
 export * from './regulationInfo.model';
 export * from './notes.model';
 export * from './dues.model';
+export * from './studentTimetable.model';
 export * from './faculty.model';
 export * from './admin.model';

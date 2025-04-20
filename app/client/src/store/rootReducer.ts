@@ -7,6 +7,7 @@ import { assignmentReducer } from './slices/assignmentSlice';
 import { internalResultReducer } from './slices/internalResultSlice';
 import { semesterResultReducer } from './slices/semesterResultSlice';
 import { duesReducer } from './slices/duesSlice';
+import { timetableReducer } from './slices/timetableSlice';
 
 const rootReducer = combineReducers({
     layout: layoutReducer,
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
     internalResult: internalResultReducer,
     semesterResult: semesterResultReducer,
     dues: duesReducer,
+    timetable: timetableReducer,
 });
 
 export default rootReducer;
