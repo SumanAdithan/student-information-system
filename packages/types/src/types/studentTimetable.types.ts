@@ -7,7 +7,7 @@ export type PeriodType = {
     six: string;
 };
 
-type timetableDetailsType = {
+export type StudentTimetableDetailsType = {
     subjectName: string;
     code: string;
     staff: string;
@@ -22,5 +22,5 @@ export interface StudentTimetable {
         thursday: PeriodType;
         friday: PeriodType;
     };
-    timetableDetails: [timetableDetailsType];
+    timetableDetails: [StudentTimetableDetailsType];
 }

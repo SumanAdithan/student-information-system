@@ -4,7 +4,12 @@ import { Timetable } from '@components';
 import { useSelector } from 'react-redux';
 
 export const ViewTimetable = () => {
+    const timetableConfig = {
+        title: 'Timetable',
+    };
+
     const { timetable } = useSelector((state: RootState) => state.timetable);
-    const days = Object.entries(timetable.timetable);
-    return <Timetable days={days} />;
+    const { days, details } = getTimetableTableData(timetable);
+
+    return <Timetable title={timetableConfig.title} data={days} details={details} />;
 };
