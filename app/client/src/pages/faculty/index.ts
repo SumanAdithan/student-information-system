@@ -4,3 +4,4 @@ export * from './FacultyAssignmentPage';
 export * from './FacultyInternalResultPage';
 export * from './FacultySemesterResultPage';
 export * from './FacultyDuesPage';
+export * from './FacultyTimetablePage';

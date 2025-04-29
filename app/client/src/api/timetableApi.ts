@@ -7,3 +7,11 @@ export const getAuthenticatedStudentTimetable = async () => {
         timetable: data.data,
     };
 };
+
+export const getAllStudentTimetable = async () => {
+    const { data } = await api.get('/student/timetables');
+
+    return {
+        timetables: data.data,
+    };
+};
