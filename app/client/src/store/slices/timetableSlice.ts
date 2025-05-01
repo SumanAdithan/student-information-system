@@ -40,8 +40,12 @@ const timetableSlice = createSlice({
         setEditTimetable: (state, action: PayloadAction<TimetableType>) => {
             state.editTimetable = action.payload;
         },
+
+        setEditTimetableDetails: (state, action: PayloadAction<TimetableDetailsType[]>) => {
+            state.editTimetableDetails = action.payload;
+        },
     },
 });
 
-export const { setTimetable, setEditTimetable } = timetableSlice.actions;
+export const { setTimetable, setEditTimetable, setEditTimetableDetails } = timetableSlice.actions;
 export const timetableReducer = timetableSlice.reducer;

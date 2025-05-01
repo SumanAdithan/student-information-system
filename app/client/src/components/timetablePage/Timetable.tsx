@@ -15,11 +15,12 @@ interface TimetableProps {
 export const Timetable = ({ title, data, details }: TimetableProps) => {
     const dispatch = useDispatch();
     const { editModal } = useSelector((state: RootState) => state.action);
+    const { timetable } = useSelector((state: RootState) => state.timetable);
     const { role } = useSelector((state: RootState) => state.profile);
 
     const handleEditClick = () => {
-        dispatch(setEditTimetable(data));
-        dispatch(setModal({ active: true, status: 'editPending' }));
+        dispatch(setEditTimetable(timetable.timetable));
+        dispatch(setModal({ active: true, status: 'timetable' }));
     };
 
     return (
