@@ -1,8 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { StudentTimetable } from '@sis/types';
+import { StudentTimetable, TimetableType, TimetableDetailsType } from '@sis/types';
 
 interface timetableState {
     timetable: StudentTimetable;
+    editTimetable: TimetableType;
+    editTimetableDetails: TimetableDetailsType[];
 }
 
 const initialState: timetableState = {
@@ -17,6 +19,14 @@ const initialState: timetableState = {
         },
         timetableDetails: [{ subjectName: '', code: '', staff: '' }],
     },
+    editTimetable: {
+        monday: { one: '', two: '', three: '', four: '', five: '', six: '' },
+        tuesday: { one: '', two: '', three: '', four: '', five: '', six: '' },
+        wednesday: { one: '', two: '', three: '', four: '', five: '', six: '' },
+        thursday: { one: '', two: '', three: '', four: '', five: '', six: '' },
+        friday: { one: '', two: '', three: '', four: '', five: '', six: '' },
+    },
+    editTimetableDetails: [{ subjectName: '', code: '', staff: '' }],
 };
 
 const timetableSlice = createSlice({
@@ -26,8 +36,16 @@ const timetableSlice = createSlice({
         setTimetable: (state, action: PayloadAction<StudentTimetable>) => {
             state.timetable = { ...action.payload };
         },
+
+        setEditTimetable: (state, action: PayloadAction<TimetableType>) => {
+            state.editTimetable = action.payload;
+        },
+
+        setEditTimetableDetails: (state, action: PayloadAction<TimetableDetailsType[]>) => {
+            state.editTimetableDetails = action.payload;
+        },
     },
 });
 
-export const { setTimetable } = timetableSlice.actions;
+export const { setTimetable, setEditTimetable, setEditTimetableDetails } = timetableSlice.actions;
 export const timetableReducer = timetableSlice.reducer;

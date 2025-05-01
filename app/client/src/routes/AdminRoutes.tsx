@@ -9,6 +9,7 @@ import {
     FacultyOverviewPage,
     FacultySemesterResultPage,
     FacultyStudentPage,
+    FacultyTimetablePage,
 } from '@pages';
 import { ViewStudent } from '@components';
 
@@ -24,6 +25,7 @@ export const adminRoutes = () => {
                 <Route path='semester-results' element={<FacultySemesterResultPage />} />
                 <Route path='download-notes' element={<DownloadNotesPage />} />
                 <Route path='dues' element={<FacultyDuesPage />} />
+                <Route path='timetable' element={<FacultyTimetablePage />} />
             </Route>
         </Route>
     );

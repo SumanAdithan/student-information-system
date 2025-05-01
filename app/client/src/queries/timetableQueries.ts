@@ -1,9 +1,16 @@
-import { getAuthenticatedStudentTimetable } from '@api';
+import { getAllStudentTimetable, getAuthenticatedStudentTimetable } from '@api';
 import { useQuery } from '@tanstack/react-query';
 
 export const useGetAuthenticatedStudentTimetable = () => {
     return useQuery({
         queryKey: ['authenticatedTimetable'],
         queryFn: getAuthenticatedStudentTimetable,
+    });
+};
+
+export const useGetAllStudentTimetable = () => {
+    return useQuery({
+        queryKey: ['allStudentTimetable'],
+        queryFn: getAllStudentTimetable,
     });
 };

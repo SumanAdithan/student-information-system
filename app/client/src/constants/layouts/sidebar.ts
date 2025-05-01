@@ -23,6 +23,7 @@ export const sidebarConfig = {
         { name: 'Semester Results', href: '/faculty/semester-results' },
         { name: 'Download Notes', href: '/faculty/download-notes' },
         { name: 'Dues', href: '/faculty/dues' },
+        { name: 'Timetable', href: '/faculty/timetable' },
     ],
     adminNavLinks: [
         { name: 'Overview', href: '/admin' },
@@ -32,5 +33,6 @@ export const sidebarConfig = {
         { name: 'Semester Results', href: '/admin/semester-results' },
         { name: 'Download Notes', href: '/admin/download-notes' },
         { name: 'Dues', href: '/admin/dues' },
+        { name: 'Timetable', href: '/admin/timetable' },
     ],
 };

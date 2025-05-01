@@ -35,3 +35,6 @@ const StudentTimetableModel = model('StudentTimetable', TimetableSchema);
 
 export const createStudentTimetableData = (timeTable: StudentTimetable) => StudentTimetableModel.create(timeTable);
 export const getStudentTimetableByYear = (year: number) => StudentTimetableModel.findOne({ year });
+export const getAllStudentTimetableData = () => StudentTimetableModel.find();
+export const updateStudentTimetableData = (year: number, updatedItems: any) =>
+    StudentTimetableModel.findOneAndUpdate({ year }, updatedItems, { runValidators: true, new: true });
