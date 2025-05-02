@@ -6,3 +6,4 @@ export * from './semesterResultQueries';
 export * from './duesQueries';
 export * from './downloadNotesQueries';
 export * from './timetableQueries';
+export * from './circularQueries';

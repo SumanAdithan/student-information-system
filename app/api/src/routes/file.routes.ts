@@ -10,5 +10,11 @@ export const fileRoutes = (router: Router) => {
         authorizeRoles('admin', 'faculty', 'student'),
         getFile('notes')
     );
+    router.get(
+        '/file/circular/:fileName',
+        isAuthenticated(),
+        authorizeRoles('admin', 'faculty', 'student'),
+        getFile('circular')
+    );
     router.get('/profile-image', isAuthenticated(), authorizeRoles('student'), getAuthenticatedProfileImage);
 };

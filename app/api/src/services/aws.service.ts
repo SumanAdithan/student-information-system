@@ -4,7 +4,7 @@ import { Response } from 'express';
 import mime from 'mime-types';
 import { Readable } from 'stream';
 
-type Folder = 'students' | 'faculties' | 'notes';
+type Folder = 'students' | 'faculties' | 'notes' | 'circular';
 
 export class AwsService {
     private s3: S3Client;

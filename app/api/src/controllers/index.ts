@@ -8,3 +8,4 @@ export * from './dues.controller';
 export * from './payment.controller';
 export * from './notes.controller';
 export * from './studentTimetable.controller';
+export * from './circular.controller';

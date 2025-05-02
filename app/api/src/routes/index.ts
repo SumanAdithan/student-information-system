@@ -9,6 +9,7 @@ import { duesRoutes } from './dues.routes';
 import { paymentRoutes } from './paymentRoutes';
 import { notesRoutes } from './notes.routes';
 import { studentTimetableRoutes } from './studentTimetable.routes';
+import { circularRoutes } from './circular.routes';
 
 const router = Router();
 
@@ -21,6 +22,7 @@ export default (): Router => {
     notesRoutes(router);
     duesRoutes(router);
     studentTimetableRoutes(router);
+    circularRoutes(router);
     fileRoutes(router);
     paymentRoutes(router);
     return router;

@@ -8,6 +8,7 @@ export * from './downloadNotesPage';
 export * from './DuesPage';
 export * from './loginPage';
 export * from './timetablePage';
+export * from './circularPage';
 
 // faculty
 export * from './facultyPage';

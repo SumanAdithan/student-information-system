@@ -9,3 +9,4 @@ export * from './queryParams';
 export * from './payment.types';
 export * from './notes.types';
 export * from './studentTimetable.types';
+export * from './circular.types';

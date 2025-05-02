@@ -6,7 +6,7 @@ import { AwsService } from 'services/aws.service';
 
 const awsService = new AwsService();
 
-export const getFile = (folder: 'students' | 'notes') =>
+export const getFile = (folder: 'students' | 'notes' | 'circular') =>
     catchAsyncError(async (request: Request<{ fileName: string }>, response, next) => {
         const { fileName } = request.params;
 

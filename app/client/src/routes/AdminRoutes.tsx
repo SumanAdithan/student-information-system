@@ -2,6 +2,7 @@ import { Route } from 'react-router-dom';
 import { Layout } from '@layouts';
 import { PrivateRoute } from './ProtectedRoute';
 import {
+    CircularPage,
     DownloadNotesPage,
     FacultyAssignmentPage,
     FacultyDuesPage,
@@ -26,6 +27,7 @@ export const adminRoutes = () => {
                 <Route path='download-notes' element={<DownloadNotesPage />} />
                 <Route path='dues' element={<FacultyDuesPage />} />
                 <Route path='timetable' element={<FacultyTimetablePage />} />
+                <Route path='circular' element={<CircularPage />} />
             </Route>
         </Route>
     );
