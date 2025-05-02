@@ -1,5 +1,6 @@
 import { downloadNotesPdf } from '@api';
 import { download, trash } from '@assets';
+import { useDownloadNotesMutation } from '@queries';
 import { RootState } from '@store';
 import { createColumnHelper } from '@tanstack/react-table';
 import { useSelector } from 'react-redux';
@@ -7,6 +8,7 @@ import { useSelector } from 'react-redux';
 export const DownloadNotesColumnConfig = () => {
     const columnHelper = createColumnHelper<any>();
     const { role } = useSelector((state: RootState) => state.profile);
+    const { deleteNotesMutation } = useDownloadNotesMutation();
 
     const downloadNotesColumnConfig = [
         columnHelper.accessor('subjectName', { header: 'Name' }),
@@ -29,6 +31,7 @@ export const DownloadNotesColumnConfig = () => {
                             src={trash}
                             alt='delete'
                             className='w-6 h-6 transition-transform duration-300 hover:scale-125'
+                            onClick={() => deleteNotesMutation.mutate({ notesId: row.original._id })}
                         />
                     )}
                 </div>

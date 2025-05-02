@@ -25,3 +25,7 @@ export const downloadNotesPdf = async (notesName: string) => {
 
     saveAs(pdfBlob, fileName);
 };
+
+export const deleteNotes = async ({ notesId }: { notesId: string }) => {
+    return await api.delete(`/notes/${notesId}`);
+};

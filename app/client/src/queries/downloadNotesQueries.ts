@@ -1,4 +1,4 @@
-import { addNotes, getAllNotesData } from '@api';
+import { addNotes, deleteNotes, getAllNotesData } from '@api';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 
 export const useGetAllNotes = () => {
@@ -18,5 +18,12 @@ export const useDownloadNotesMutation = () => {
         },
     });
 
-    return { addNotesMutation };
+    const deleteNotesMutation = useMutation({
+        mutationFn: deleteNotes,
+        onSuccess: () => {
+            queryClient.invalidateQueries({ queryKey: ['allNotes'] });
+        },
+    });
+
+    return { addNotesMutation, deleteNotesMutation };
 };
