@@ -11,3 +11,4 @@ export * from './paymentReceipt.service';
 export * from './notes.service';
 export * from './studentTimetable.service';
 export * from './circular.service';
+export * from './event.service';

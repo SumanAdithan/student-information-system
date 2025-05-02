@@ -6,11 +6,11 @@ import { AwsService } from 'services/aws.service';
 
 const awsService = new AwsService();
 
-export const getFile = (folder: 'students' | 'notes' | 'circular') =>
+export const getFile = (folder: 'students' | 'notes' | 'circular' | 'event') =>
     catchAsyncError(async (request: Request<{ fileName: string }>, response, next) => {
         const { fileName } = request.params;
 
-        const dispositionType = folder === 'notes' ? 'attachment' : 'inline';
+        const dispositionType = folder === 'students' || 'event' ? 'inline' : 'attachment';
         const streamFile = await awsService.streamFile(folder, fileName, response, dispositionType);
         if (!streamFile.success) return next(new ErrorHandler(400, 'File not found'));
     });

@@ -8,3 +8,4 @@ export * from './paymentApi';
 export * from './downloadNotesApi';
 export * from './timetableApi';
 export * from './circularApi';
+export * from './eventApi';

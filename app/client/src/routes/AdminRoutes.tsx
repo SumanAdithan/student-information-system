@@ -4,6 +4,7 @@ import { PrivateRoute } from './ProtectedRoute';
 import {
     CircularPage,
     DownloadNotesPage,
+    EventPage,
     FacultyAssignmentPage,
     FacultyDuesPage,
     FacultyInternalResultPage,
@@ -27,7 +28,8 @@ export const adminRoutes = () => {
                 <Route path='download-notes' element={<DownloadNotesPage />} />
                 <Route path='dues' element={<FacultyDuesPage />} />
                 <Route path='timetable' element={<FacultyTimetablePage />} />
-                <Route path='circular' element={<CircularPage />} />
+                <Route path='circulars' element={<CircularPage />} />
+                <Route path='events' element={<EventPage />} />
             </Route>
         </Route>
     );

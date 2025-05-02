@@ -1,7 +1,7 @@
 import { ErrorHandler } from '@utils';
 import { NextFunction, Request, Response } from 'express';
 
-export const validateFile = (expectedType: 'profileImage' | 'notes' | 'circular') => {
+export const validateFile = (expectedType: 'profileImage' | 'notes' | 'circular' | 'event') => {
     return (request: Request, response: Response, next: NextFunction) => {
         const file = request.file;
 

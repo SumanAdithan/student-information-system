@@ -1,2 +1,3 @@
 export * from './DownloadNotesPage';
-export * from './Circular';
+export * from './CircularPage';
+export * from './EventPage';

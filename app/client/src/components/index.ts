@@ -9,6 +9,7 @@ export * from './DuesPage';
 export * from './loginPage';
 export * from './timetablePage';
 export * from './circularPage';
+export * from './eventPage';
 
 // faculty
 export * from './facultyPage';
