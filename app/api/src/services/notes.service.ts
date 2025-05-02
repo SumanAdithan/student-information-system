@@ -32,7 +32,7 @@ export class NotesService {
         if (!notes) return { success: false, error: 'Notes not found' };
 
         if (notes.file) {
-            const deleteNotes = await awsService.deleteFile(notes.file);
+            const deleteNotes = await awsService.deleteFile(`notes/${notes.file}`);
             if (!deleteNotes.success) return { success: false, error: `Can't delete Notes` };
         }
 

@@ -15,3 +15,9 @@ export const getAllNotes = catchAsyncError(async (request, response, next) => {
     const notes = await NotesService.getAllNotes();
     successResponse(response, 200, notes);
 });
+
+export const deleteNotes = catchAsyncError(async (request: Request<{ notesId: string }>, response, next) => {
+    const { notesId } = request.params;
+    const deleteNotes = await NotesService.deleteNotes(notesId);
+    successResponse(response, 200);
+});

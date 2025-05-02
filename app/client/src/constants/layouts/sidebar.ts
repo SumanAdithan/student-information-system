@@ -24,6 +24,7 @@ export const sidebarConfig = {
         { name: 'Download Notes', href: '/faculty/download-notes' },
         { name: 'Dues', href: '/faculty/dues' },
         { name: 'Timetable', href: '/faculty/timetable' },
+        { name: 'Circular', href: '/faculty/circular' },
     ],
     adminNavLinks: [
         { name: 'Overview', href: '/admin' },
@@ -34,5 +35,6 @@ export const sidebarConfig = {
         { name: 'Download Notes', href: '/admin/download-notes' },
         { name: 'Dues', href: '/admin/dues' },
         { name: 'Timetable', href: '/admin/timetable' },
+        { name: 'Circular', href: '/admin/circular' },
     ],
 };

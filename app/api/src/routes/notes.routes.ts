@@ -1,4 +1,4 @@
-import { addNotes, getAllNotes } from '@controllers';
+import { addNotes, deleteNotes, getAllNotes } from '@controllers';
 import { authorizeRoles, isAuthenticated, uploadSingleFile, validate, validateFile } from '@middlewares';
 import { NotesSchemaServer } from '@sis/types';
 import type { Router } from 'express';
@@ -14,4 +14,5 @@ export const notesRoutes = (router: Router) => {
         validate(NotesSchemaServer),
         addNotes
     );
+    router.delete('/notes/:notesId', isAuthenticated(), authorizeRoles('admin'), deleteNotes);
 };

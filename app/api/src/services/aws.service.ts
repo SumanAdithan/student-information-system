@@ -4,7 +4,7 @@ import { Response } from 'express';
 import mime from 'mime-types';
 import { Readable } from 'stream';
 
-type Folder = 'students' | 'faculties' | 'notes';
+type Folder = 'students' | 'faculties' | 'notes' | 'circular';
 
 export class AwsService {
     private s3: S3Client;
@@ -60,10 +60,11 @@ export class AwsService {
                 Bucket: this.bucketName,
                 Key: fileKey,
             };
-            await this.s3.send(new DeleteObjectCommand(deleteParams));
 
+            await this.s3.send(new DeleteObjectCommand(deleteParams));
             return { success: true };
         } catch (err) {
+            console.error('Delete failed:', err);
             return { success: false };
         }
     }

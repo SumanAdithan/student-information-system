@@ -90,7 +90,7 @@ export class StudentService {
         const student = await getStudentById(studentId);
         if (!student) return next(new ErrorHandler(404, 'Student not found'));
         if (student.profileImage) {
-            const deleteImage = await awsService.deleteFile(student.profileImage);
+            const deleteImage = await awsService.deleteFile(`students/${student.profileImage}`);
             if (!deleteImage.success) return next(new ErrorHandler(400, `Can't delete Student`));
         }
 

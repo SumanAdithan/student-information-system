@@ -1,20 +1,19 @@
-import { downloadNotesPdf } from '@api';
+import { downloadCircularPdf } from '@api';
 import { download, trash } from '@assets';
-import { useDownloadNotesMutation } from '@queries';
+import { useCircularMutation } from '@queries';
 import { RootState } from '@store';
 import { createColumnHelper } from '@tanstack/react-table';
 import { useSelector } from 'react-redux';
 
-export const DownloadNotesColumnConfig = () => {
+export const CircularColumnConfig = () => {
     const columnHelper = createColumnHelper<any>();
     const { role } = useSelector((state: RootState) => state.profile);
-    const { deleteNotesMutation } = useDownloadNotesMutation();
+    const { deleteCircularMutation } = useCircularMutation();
 
-    const downloadNotesColumnConfig = [
-        columnHelper.accessor('subjectName', { header: 'Name' }),
-        columnHelper.accessor('code', { header: 'Code' }),
-        columnHelper.accessor('regulation', { header: 'Regulation' }),
-        columnHelper.accessor('semester', { header: 'Semester' }),
+    const downloadCircularColumnConfig = [
+        columnHelper.accessor('name', { header: 'Name' }),
+        columnHelper.accessor('year', { header: 'Code' }),
+        columnHelper.accessor('date', { header: 'Regulation' }),
         columnHelper.display({
             id: 'download',
             header: 'Download',
@@ -24,14 +23,14 @@ export const DownloadNotesColumnConfig = () => {
                         src={download}
                         alt='true'
                         className='w-6'
-                        onClick={() => downloadNotesPdf(`${row.original.subjectName}(${row.original.code}).met.pdf`)}
+                        onClick={() => downloadCircularPdf(`${row.original.name}(${row.original.date}).met.pdf`)}
                     />
                     {role === 'admin' && (
                         <img
                             src={trash}
                             alt='delete'
                             className='w-6 h-6 transition-transform duration-300 hover:scale-125'
-                            onClick={() => deleteNotesMutation.mutate({ notesId: row.original._id })}
+                            onClick={() => deleteCircularMutation.mutate({ circularId: row.original._id })}
                         />
                     )}
                 </div>
@@ -39,5 +38,5 @@ export const DownloadNotesColumnConfig = () => {
         }),
     ];
 
-    return { downloadNotesColumnConfig };
+    return { downloadCircularColumnConfig };
 };

@@ -1,5 +1,6 @@
 import { catchAsyncError } from '@middlewares';
 import { StudentTimetableService } from '@services';
+import { UpdateTimetableDto } from '@sis/types';
 import { ErrorHandler, successResponse } from '@utils';
 import { Request } from 'express';
 
@@ -19,8 +20,10 @@ export const getAllStudentTimetable = catchAsyncError(async (request, response, 
     return successResponse(response, 200, timetables);
 });
 
-export const updateStudentTimetable = catchAsyncError(async (request: Request<{ year: string }>, response, next) => {
-    const { year } = request.params;
-    const timetable = await StudentTimetableService.updateStudentTimetable(parseInt(year), request.body);
-    return successResponse(response, 200);
-});
+export const updateStudentTimetable = catchAsyncError(
+    async (request: Request<{ year: string }, {}, UpdateTimetableDto>, response, next) => {
+        const { year } = request.params;
+        const timetable = await StudentTimetableService.updateStudentTimetable(parseInt(year), request.body);
+        return successResponse(response, 200, timetable);
+    }
+);
