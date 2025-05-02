@@ -7,5 +7,6 @@ export * from './notes.model';
 export * from './dues.model';
 export * from './studentTimetable.model';
 export * from './circular.model';
+export * from './event.model';
 export * from './faculty.model';
 export * from './admin.model';

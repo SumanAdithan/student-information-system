@@ -23,7 +23,7 @@ export const ImageSchema = z
             if (!(value instanceof File)) return false;
             return IMAGE_MIME_TYPES.includes(value.type) && value.size <= MAX_FILE_SIZE;
         },
-        { message: 'Invalid file. Must be a PDF under 50MB' }
+        { message: 'Invalid image. Must be a png/jpeg under 50MB' }
     );
 
 export const PdfFileSchema = z

@@ -10,3 +10,4 @@ export * from './payment.types';
 export * from './notes.types';
 export * from './studentTimetable.types';
 export * from './circular.types';
+export * from './event.types';

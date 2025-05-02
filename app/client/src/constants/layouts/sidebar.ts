@@ -12,7 +12,7 @@ export const sidebarConfig = {
         { name: 'Pay Dues', href: '/student/dues' },
         { name: 'Dues & Approvals', href: '/student/dues-approvals' },
         { name: 'Time Table', href: '/student/timetable' },
-        { name: 'Circular', href: '/student/circular' },
+        { name: 'Circular', href: '/student/circulars' },
         { name: 'Events', href: '/student/events' },
     ],
     facultyNavLinks: [
@@ -24,7 +24,8 @@ export const sidebarConfig = {
         { name: 'Download Notes', href: '/faculty/download-notes' },
         { name: 'Dues', href: '/faculty/dues' },
         { name: 'Timetable', href: '/faculty/timetable' },
-        { name: 'Circular', href: '/faculty/circular' },
+        { name: 'Circular', href: '/faculty/circulars' },
+        { name: 'Events', href: '/faculty/events' },
     ],
     adminNavLinks: [
         { name: 'Overview', href: '/admin' },
@@ -35,6 +36,7 @@ export const sidebarConfig = {
         { name: 'Download Notes', href: '/admin/download-notes' },
         { name: 'Dues', href: '/admin/dues' },
         { name: 'Timetable', href: '/admin/timetable' },
-        { name: 'Circular', href: '/admin/circular' },
+        { name: 'Circular', href: '/admin/circulars' },
+        { name: 'Events', href: '/admin/events' },
     ],
 };
