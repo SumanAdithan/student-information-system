@@ -8,3 +8,4 @@ export * from './slices/internalResultSlice';
 export * from './slices/semesterResultSlice';
 export * from './slices/duesSlice';
 export * from './slices/timetableSlice';
+export * from './slices/duesAndApprovalsSlice';

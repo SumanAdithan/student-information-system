@@ -8,3 +8,4 @@ export * from './file.schema';
 export * from './timetable.schema';
 export * from './circular.schema';
 export * from './event.schema';
+export * from './duesAndApprovals.schema';

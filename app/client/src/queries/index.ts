@@ -8,3 +8,4 @@ export * from './downloadNotesQueries';
 export * from './timetableQueries';
 export * from './circularQueries';
 export * from './eventQueries';
+export * from './duesAndApprovalsQueries';

@@ -7,6 +7,7 @@ import {
     DuesPage,
     SemesterResultPage,
     TimetablePage,
+    DuesAndApprovalsPage,
 } from '@pages';
 import { Route } from 'react-router-dom';
 import { PrivateRoute } from './ProtectedRoute';
@@ -21,6 +22,7 @@ export const studentRoutes = () => {
                 <Route path='semester-results' element={<SemesterResultPage />} />
                 <Route path='download-notes' element={<DownloadNotesPage />} />
                 <Route path='dues' element={<DuesPage />} />
+                <Route path='approvals' element={<DuesAndApprovalsPage />} />
                 <Route path='timetable' element={<TimetablePage />} />
             </Route>
         </Route>

@@ -4,3 +4,4 @@ export * from './InternalResultsPage';
 export * from './SemesterResultsPage';
 export * from './DuesPage';
 export * from './TimetablePage';
+export * from './DuesAndApprovals';

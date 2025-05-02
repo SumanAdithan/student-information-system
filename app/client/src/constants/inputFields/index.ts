@@ -7,3 +7,4 @@ export * from './downloadNotes';
 export * from './timetable';
 export * from './circular';
 export * from './event';
+export * from './duesAndApprovals';
