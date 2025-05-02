@@ -15,3 +15,9 @@ export const getAllCircular = catchAsyncError(async (request, response, next) =>
     const circular = await CircularService.getAllCircular();
     successResponse(response, 200, circular);
 });
+
+export const deleteCircular = catchAsyncError(async (request: Request<{ circularId: string }>, response, next) => {
+    const { circularId } = request.params;
+    const deleteCirculat = await CircularService.deleteCircular(circularId);
+    successResponse(response, 200);
+});

@@ -32,7 +32,7 @@ export class CircularService {
         if (!circular) return { success: false, error: 'Circular not found' };
 
         if (circular.file) {
-            const deleteCircular = await awsService.deleteFile(circular.file);
+            const deleteCircular = await awsService.deleteFile(`circular/${circular.file}`);
             if (!deleteCircular.success) return { success: false, error: `Can't delete Circular` };
         }
 

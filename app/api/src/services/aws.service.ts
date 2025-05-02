@@ -60,10 +60,11 @@ export class AwsService {
                 Bucket: this.bucketName,
                 Key: fileKey,
             };
-            await this.s3.send(new DeleteObjectCommand(deleteParams));
 
+            await this.s3.send(new DeleteObjectCommand(deleteParams));
             return { success: true };
         } catch (err) {
+            console.error('Delete failed:', err);
             return { success: false };
         }
     }

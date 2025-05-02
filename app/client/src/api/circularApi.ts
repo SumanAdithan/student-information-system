@@ -25,3 +25,7 @@ export const downloadCircularPdf = async (circularName: string) => {
 
     saveAs(pdfBlob, fileName);
 };
+
+export const deleteCircular = async ({ circularId }: { circularId: string }) => {
+    return await api.delete(`/circular/${circularId}`);
+};

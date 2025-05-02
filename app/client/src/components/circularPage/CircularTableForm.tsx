@@ -6,7 +6,7 @@ import { FormProvider } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { InputField } from '@components';
 import { X } from 'lucide-react';
-import { useDownloadCircularMutation } from '@queries';
+import { useCircularMutation } from '@queries';
 
 export const CircularTableForm = () => {
     const methods = useZodForm(CircularSchemaClient);
@@ -19,7 +19,7 @@ export const CircularTableForm = () => {
 
     const { editModal } = useSelector((state: RootState) => state.action);
     const dispatch = useDispatch<AppDispatch>();
-    const { addCircularMutation } = useDownloadCircularMutation();
+    const { addCircularMutation } = useCircularMutation();
 
     const saveData = (data: Circular) => {
         addCircularMutation.mutate({ circularData: data });

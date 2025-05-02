@@ -1,4 +1,4 @@
-import { addCircular, getAllCircularData } from '@api';
+import { addCircular, deleteCircular, getAllCircularData } from '@api';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 
 export const useGetAllCircular = () => {
@@ -9,7 +9,7 @@ export const useGetAllCircular = () => {
     });
 };
 
-export const useDownloadCircularMutation = () => {
+export const useCircularMutation = () => {
     const queryClient = useQueryClient();
     const addCircularMutation = useMutation({
         mutationFn: addCircular,
@@ -18,5 +18,12 @@ export const useDownloadCircularMutation = () => {
         },
     });
 
-    return { addCircularMutation };
+    const deleteCircularMutation = useMutation({
+        mutationFn: deleteCircular,
+        onSuccess: () => {
+            queryClient.invalidateQueries({ queryKey: ['allCirculars'] });
+        },
+    });
+
+    return { addCircularMutation, deleteCircularMutation };
 };

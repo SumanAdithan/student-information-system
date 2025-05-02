@@ -1,5 +1,6 @@
 import { downloadCircularPdf } from '@api';
 import { download, trash } from '@assets';
+import { useCircularMutation } from '@queries';
 import { RootState } from '@store';
 import { createColumnHelper } from '@tanstack/react-table';
 import { useSelector } from 'react-redux';
@@ -7,6 +8,7 @@ import { useSelector } from 'react-redux';
 export const CircularColumnConfig = () => {
     const columnHelper = createColumnHelper<any>();
     const { role } = useSelector((state: RootState) => state.profile);
+    const { deleteCircularMutation } = useCircularMutation();
 
     const downloadCircularColumnConfig = [
         columnHelper.accessor('name', { header: 'Name' }),
@@ -28,6 +30,7 @@ export const CircularColumnConfig = () => {
                             src={trash}
                             alt='delete'
                             className='w-6 h-6 transition-transform duration-300 hover:scale-125'
+                            onClick={() => deleteCircularMutation.mutate({ circularId: row.original._id })}
                         />
                     )}
                 </div>

@@ -1,4 +1,4 @@
-import { addCircular, getAllCircular } from '@controllers';
+import { addCircular, deleteCircular, getAllCircular } from '@controllers';
 import { authorizeRoles, isAuthenticated, uploadSingleFile, validate, validateFile } from '@middlewares';
 import { CircularSchemaServer } from '@sis/types';
 import type { Router } from 'express';
@@ -14,4 +14,5 @@ export const circularRoutes = (router: Router) => {
         validate(CircularSchemaServer),
         addCircular
     );
+    router.delete('/circular/:circularId', isAuthenticated(), authorizeRoles('admin'), deleteCircular);
 };
