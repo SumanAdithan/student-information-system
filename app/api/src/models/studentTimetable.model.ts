@@ -1,4 +1,4 @@
-import { StudentTimetable } from '@sis/types';
+import { StudentTimetable, UpdateTimetableType } from '@sis/types';
 import { Schema, model } from 'mongoose';
 
 const PeriodSchema = new Schema(
@@ -19,7 +19,7 @@ const TimetableDetailsSchema = new Schema({
     staff: { type: String },
 });
 
-const TimetableSchema = new Schema({
+const TimetablePeriodSchema = new Schema({
     year: { type: Number, enum: { values: [1, 2, 3, 4] } },
     timetable: {
         monday: PeriodSchema,
@@ -31,10 +31,10 @@ const TimetableSchema = new Schema({
     timetableDetails: [TimetableDetailsSchema],
 });
 
-const StudentTimetableModel = model('StudentTimetable', TimetableSchema);
+const StudentTimetableModel = model('StudentTimetable', TimetablePeriodSchema);
 
 export const createStudentTimetableData = (timeTable: StudentTimetable) => StudentTimetableModel.create(timeTable);
 export const getStudentTimetableByYear = (year: number) => StudentTimetableModel.findOne({ year });
 export const getAllStudentTimetableData = () => StudentTimetableModel.find();
-export const updateStudentTimetableData = (year: number, updatedItems: any) =>
+export const updateStudentTimetableData = (year: number, updatedItems: UpdateTimetableType) =>
     StudentTimetableModel.findOneAndUpdate({ year }, updatedItems, { runValidators: true, new: true });

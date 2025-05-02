@@ -7,8 +7,8 @@ export const RenderTimetable = ({ data }: { data: any }) => {
             <thead className='bg-primary'>
                 <tr className='divide-x divide-font-secondary'>
                     <th className='px-4 py-6'>Day/Period</th>
-                    {periods.map(({ period, time }) => (
-                        <th>
+                    {periods.map(({ period, time }, index) => (
+                        <th key={index}>
                             <div>{period}</div>
                             <div>{time}</div>
                         </th>

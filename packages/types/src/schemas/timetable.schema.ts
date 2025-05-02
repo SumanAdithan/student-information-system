@@ -9,16 +9,13 @@ const PeriodSchema = z.object({
     six: z.string().optional(),
 });
 
-export const TimetableSchema = z.object({
+export const TimetablePeriodSchema = z.object({
     monday: PeriodSchema.optional(),
     tuesday: PeriodSchema.optional(),
     wednesday: PeriodSchema.optional(),
     thursday: PeriodSchema.optional(),
     friday: PeriodSchema.optional(),
 });
-
-export type UpdateTimetableDto = z.infer<typeof TimetableSchema>;
-export type TimetableDto = z.infer<typeof TimetableSchema>;
 
 export const TimetableDetailsSchema = z.array(
     z.object({
@@ -29,5 +26,10 @@ export const TimetableDetailsSchema = z.array(
     })
 );
 
-export type UpdateTimetableDetailsDto = z.infer<typeof TimetableDetailsSchema>;
-export type TimetableDetailsDto = z.infer<typeof TimetableDetailsSchema>;
+export const TimetableSchema = z.object({
+    timetable: TimetablePeriodSchema.optional(),
+    timetableDetails: TimetableDetailsSchema.optional(),
+});
+
+export type UpdateTimetableDto = z.infer<typeof TimetableSchema>;
+export type UpdateTimetableType = z.infer<typeof TimetableSchema>;

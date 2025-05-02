@@ -1,13 +1,14 @@
 import { useChangedInputValues, useZodForm } from '@hooks';
-import { TimetableDetailsType, TimetableSchema, TimetableType } from '@sis/types';
+import { TimetableDetailsType, TimetablePeriodSchema, TimetableType } from '@sis/types';
 import { AppDispatch, RootState, toggleModal } from '@store';
 import { TIMETABLE_INPUT_FIELDS as inputFields } from '@constants';
 import { FormProvider, useForm } from 'react-hook-form';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { InputField } from '@components';
-import { Search, X } from 'lucide-react';
+import { X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { trash } from '@assets';
+import { useTimetableMutations } from '@queries';
 
 export const TimetableForm = () => {
     const { timetable, modal } = useSelector(
@@ -17,6 +18,7 @@ export const TimetableForm = () => {
         }),
         shallowEqual
     );
+    const { updateStudentTimetableMutation, updateStudentTimetableDetailsMutation } = useTimetableMutations();
 
     const [timetableDetails, setTimetableDetails] = useState<TimetableDetailsType[]>([
         { subjectName: '', code: '', staff: '' },
@@ -29,7 +31,7 @@ export const TimetableForm = () => {
         formState: { errors },
         reset,
         watch,
-    } = useZodForm(TimetableSchema);
+    } = useZodForm(TimetablePeriodSchema);
 
     const methods = useForm();
     const dispatch = useDispatch<AppDispatch>();
@@ -43,10 +45,21 @@ export const TimetableForm = () => {
         }
     }, [modal.active, reset]);
 
-    const saveData = (data: any) => {
-        console.log(data);
-        const changedFields = useChangedInputValues(timetable, watchedValues);
-        console.log(changedFields);
+    const saveData = (type: 'timetable' | 'timetableDetails') => {
+        if (type === 'timetable') {
+            const changedFields = useChangedInputValues(timetable, watchedValues);
+            updateStudentTimetableMutation.mutate({
+                year: timetable.timetable.year,
+                updatedTimetable: changedFields,
+            });
+        } else if (type === 'timetableDetails') {
+            updateStudentTimetableDetailsMutation.mutate({
+                year: timetable.timetable.year,
+                updatedTimetableDetails: timetableDetails,
+            });
+        }
+
+        dispatch(toggleModal());
     };
 
     const renderTimetableDetailsForm = () => {
@@ -117,6 +130,7 @@ export const TimetableForm = () => {
                     <button
                         type='submit'
                         className='bg-primary text-font-primary font-bold text-lg px-4 py-2 rounded-md w-24 '
+                        onClick={() => saveData('timetableDetails')}
                     >
                         Save
                     </button>
@@ -129,11 +143,11 @@ export const TimetableForm = () => {
         return (
             <FormProvider {...methods}>
                 <form
-                    onSubmit={handleSubmit(saveData)}
+                    onSubmit={handleSubmit(() => saveData('timetable'))}
                     onKeyDown={(e) => {
                         if (e.key === 'Enter') {
                             e.preventDefault();
-                            handleSubmit(saveData)();
+                            handleSubmit(() => saveData('timetable'))();
                         }
                     }}
                     className='grid grid-cols-1 md:grid-cols-6 gap-4'
