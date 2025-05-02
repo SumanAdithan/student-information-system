@@ -1,6 +1,7 @@
 import {
     createStudent,
     deleteAssignmentByRegisterNo,
+    deleteDuesAndApprovalsByRegisterNo,
     deleteDuesByRegisterNo,
     deleteInternalResultByRegisterNo,
     deleteSemesterResultByRegisterNo,
@@ -98,6 +99,7 @@ export class StudentService {
         await deleteInternalResultByRegisterNo(student.registerNo);
         await deleteSemesterResultByRegisterNo(student.registerNo);
         await deleteDuesByRegisterNo(student.registerNo);
+        await deleteDuesAndApprovalsByRegisterNo(student.registerNo);
         await deleteStudentById(studentId);
     }
 

@@ -11,6 +11,7 @@ import { notesRoutes } from './notes.routes';
 import { studentTimetableRoutes } from './studentTimetable.routes';
 import { circularRoutes } from './circular.routes';
 import { eventRoutes } from './event.routes';
+import { duesAndApprovalsRoutes } from './duesAndApprovals.routes';
 
 const router = Router();
 
@@ -25,6 +26,7 @@ export default (): Router => {
     studentTimetableRoutes(router);
     circularRoutes(router);
     eventRoutes(router);
+    duesAndApprovalsRoutes(router);
     fileRoutes(router);
     paymentRoutes(router);
     return router;

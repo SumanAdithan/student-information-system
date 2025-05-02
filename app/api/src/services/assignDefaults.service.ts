@@ -1,4 +1,5 @@
 import {
+    createDuesAndApprovalsData,
     createAssignmentData,
     createDuesData,
     createInternalResultData,
@@ -34,6 +35,13 @@ export class AssignDefaults {
             await createInternalResultData(internalResult as InternalResult);
             await createSemesterResultData(semesterResult as SemesterResult);
             await createDuesData(name, year, registerNo);
+            await createDuesAndApprovalsData({
+                name,
+                registerNo,
+                year,
+                semester,
+            });
+
             return {
                 success: true,
             };

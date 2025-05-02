@@ -6,6 +6,7 @@ import {
     DownloadNotesPage,
     EventPage,
     FacultyAssignmentPage,
+    FacultyDuesAndApprovalsPage,
     FacultyDuesPage,
     FacultyInternalResultPage,
     FacultyOverviewPage,
@@ -27,6 +28,7 @@ export const adminRoutes = () => {
                 <Route path='semester-results' element={<FacultySemesterResultPage />} />
                 <Route path='download-notes' element={<DownloadNotesPage />} />
                 <Route path='dues' element={<FacultyDuesPage />} />
+                <Route path='approvals' element={<FacultyDuesAndApprovalsPage />} />
                 <Route path='timetable' element={<FacultyTimetablePage />} />
                 <Route path='circulars' element={<CircularPage />} />
                 <Route path='events' element={<EventPage />} />

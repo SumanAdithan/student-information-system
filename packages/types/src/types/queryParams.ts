@@ -3,4 +3,6 @@ export interface QueryParams {
     status?: string;
     result?: string;
     partialPaid?: string;
+    fullyPaid?: string;
+    eligible?: string;
 }

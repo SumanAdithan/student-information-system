@@ -8,6 +8,7 @@ import { internalResultReducer } from './slices/internalResultSlice';
 import { semesterResultReducer } from './slices/semesterResultSlice';
 import { duesReducer } from './slices/duesSlice';
 import { timetableReducer } from './slices/timetableSlice';
+import { duesAndApprovalsReducer } from './slices/duesAndApprovalsSlice';
 
 const rootReducer = combineReducers({
     layout: layoutReducer,
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
     semesterResult: semesterResultReducer,
     dues: duesReducer,
     timetable: timetableReducer,
+    duesAndApprovals: duesAndApprovalsReducer,
 });
 
 export default rootReducer;
