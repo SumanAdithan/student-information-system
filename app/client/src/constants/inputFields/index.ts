@@ -8,3 +8,4 @@ export * from './timetable';
 export * from './circular';
 export * from './event';
 export * from './duesAndApprovals';
+export * from './faculty';

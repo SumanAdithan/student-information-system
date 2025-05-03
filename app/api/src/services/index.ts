@@ -13,3 +13,4 @@ export * from './studentTimetable.service';
 export * from './circular.service';
 export * from './event.service';
 export * from './duesAndApprovals.service';
+export * from './faculty.service';

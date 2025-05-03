@@ -14,7 +14,7 @@ export const StatCard = ({ name, value, icon }: StatCardProps) => {
             </div>
             <div className='w-1/2 flex justify-center sm:justify-start'>
                 <div className='text-lg sm:text-xl font-medium'>
-                    <h1 className='text-center'>{name}</h1>
+                    <h1 className='text-center text-nowrap'>{name}</h1>
                     <p className='text-center'>{value}</p>
                 </div>
             </div>

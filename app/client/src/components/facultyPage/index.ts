@@ -5,3 +5,4 @@ export * from './semesterResult';
 export * from './dues';
 export * from './timetable';
 export * from './duesAndApprovals';
+export * from './faculty';

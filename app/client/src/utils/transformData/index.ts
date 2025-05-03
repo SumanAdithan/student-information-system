@@ -7,3 +7,4 @@ export * from './header';
 export * from './jsonToFormData';
 export * from './timetable';
 export * from './DuesAndApprovals';
+export * from './facultyPage';

@@ -2,6 +2,7 @@ import { Route } from 'react-router-dom';
 import { Layout } from '@layouts';
 import { PrivateRoute } from './ProtectedRoute';
 import {
+    AdminFacultyPage,
     CircularPage,
     DownloadNotesPage,
     EventPage,
@@ -21,8 +22,8 @@ export const adminRoutes = () => {
         <Route element={<PrivateRoute allowedRoles={'admin'} />}>
             <Route path='/admin' element={<Layout />}>
                 <Route index element={<FacultyOverviewPage />} />
+                <Route path='faculties' element={<AdminFacultyPage />} />
                 <Route path='students' element={<FacultyStudentPage />} />
-                <Route path='students/view' element={<ViewStudent />} />
                 <Route path='assignments' element={<FacultyAssignmentPage />} />
                 <Route path='internal-results' element={<FacultyInternalResultPage />} />
                 <Route path='semester-results' element={<FacultySemesterResultPage />} />

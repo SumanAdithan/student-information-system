@@ -113,9 +113,7 @@ export const TimetableForm = () => {
                                 src={trash}
                                 alt='delete'
                                 className='w-4 h-4'
-                                onClick={() =>
-                                    setTimetableDetails((prev) => prev.filter((item) => item.code !== detail.code))
-                                }
+                                onClick={() => setTimetableDetails((prev) => prev.filter((_, i) => i !== index))}
                             />
                         </li>
                     ))}

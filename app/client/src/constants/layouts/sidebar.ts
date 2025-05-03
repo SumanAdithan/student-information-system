@@ -30,6 +30,7 @@ export const sidebarConfig = {
     ],
     adminNavLinks: [
         { name: 'Overview', href: '/admin' },
+        { name: 'Faculties', href: '/admin/faculties' },
         { name: 'Students', href: '/admin/students' },
         { name: 'Assignments', href: '/admin/assignments' },
         { name: 'Internal Results', href: '/admin/internal-results' },

@@ -10,3 +10,4 @@ export * from './timetableApi';
 export * from './circularApi';
 export * from './eventApi';
 export * from './duesAndApprovalsApi';
+export * from './facultyApi';
