@@ -12,7 +12,9 @@ import view from './view.png';
 import edit from './edit.png';
 import trash from './trash.png';
 import success from './success.png';
-import event from './Yellow and Orange Light Bulb Vector College Poster(2) 1.png';
+import subject from './subject.png';
+import classes from './classes.png';
+import role from './role.png';
 
 export {
     logo,
@@ -29,5 +31,7 @@ export {
     edit,
     trash,
     success,
-    event,
+    subject,
+    classes,
+    role,
 };

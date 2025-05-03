@@ -6,3 +6,4 @@ export * from './FacultySemesterResultPage';
 export * from './FacultyDuesPage';
 export * from './FacultyTimetablePage';
 export * from './FacultyDuesAndApprovalsPage';
+export * from './AdminFacultyPage';

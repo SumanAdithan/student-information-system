@@ -1,0 +1,50 @@
+export const FACULTY_TABLE_INPUT_FIELDS = [
+    {
+        label: 'Name',
+        type: 'text',
+        placeholder: 'Enter name',
+        name: 'name',
+    },
+    {
+        label: 'Email',
+        type: 'text',
+        placeholder: 'Enter email',
+        name: 'email',
+    },
+    {
+        label: 'Role',
+        type: 'select',
+        placeholder: 'Enter Role',
+        name: 'position',
+        options: [
+            { label: 'Principal', value: 'Principal' },
+            { label: 'Head of Department', value: 'Head of Department' },
+            { label: 'Assistant Professor', value: 'Assistant Professor' },
+            { label: 'Associate Professor', value: 'Associate Professor' },
+            { label: 'Professor', value: 'Professor' },
+            { label: 'Lecturer', value: 'Lecturer' },
+            { label: 'Guest Lecturer', value: 'Guest Lecturer' },
+            { label: 'Lab Assistant', value: 'Lab Assistant' },
+            { label: 'Dean', value: 'Dean' },
+            { label: 'Vice Principal', value: 'Vice Principal' },
+        ],
+    },
+    {
+        label: 'Total Subjects',
+        type: 'number',
+        placeholder: 'Enter total subjects',
+        name: 'total_subjects',
+    },
+    {
+        label: 'Total classes',
+        type: 'text',
+        placeholder: 'Enter total classes',
+        name: 'total_classes',
+    },
+    {
+        label: 'Password',
+        type: 'password',
+        placeholder: 'Enter password',
+        name: 'password',
+    },
+];

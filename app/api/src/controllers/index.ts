@@ -11,3 +11,4 @@ export * from './studentTimetable.controller';
 export * from './circular.controller';
 export * from './event.controller';
 export * from './duesAndApprovals.controller';
+export * from './faculty.controller';

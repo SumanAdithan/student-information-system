@@ -45,7 +45,6 @@ export class StudentService {
         }
 
         const token = getQrToken(newStudent.id);
-        // const dataImage = await QR.toDataURL(token);
         const hashedToken = await hashPassword(token);
         newStudent.qrCode = hashedToken;
         await newStudent.save();

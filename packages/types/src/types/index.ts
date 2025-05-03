@@ -12,3 +12,4 @@ export * from './studentTimetable.types';
 export * from './circular.types';
 export * from './event.types';
 export * from './duesAndApprovals';
+export * from './faculty.types';
