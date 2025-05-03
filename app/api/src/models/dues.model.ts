@@ -267,11 +267,13 @@ export const updateDuesData = (dues: UpdateDues) => {
         };
     }
 
-    return DuesModel.updateOne({ registerNo }, [
-        { $set: updateDueDetails },
-        { $set: updateTotalDetails },
-        { $set: updateIsPartialPaid },
-    ]);
+    return DuesModel.findOneAndUpdate(
+        { registerNo },
+        [{ $set: updateDueDetails }, { $set: updateTotalDetails }, { $set: updateIsPartialPaid }],
+        {
+            returnDocument: 'after',
+        }
+    );
 };
 
 export const createTransactionHistory = (registerNo: number, transactionData: Transaction) => {

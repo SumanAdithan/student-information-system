@@ -65,17 +65,38 @@ const DuesAndApprovalsSchema = new Schema({
 const DuesAndApprovalsModel = model('dues_and_approvals', DuesAndApprovalsSchema);
 
 export const createDuesAndApprovalsData = (data: DuesAndApprovals) => DuesAndApprovalsModel.create(data);
+
 export const getAuthenticatedDuesAndApprovalsData = (registerNo: number) =>
     DuesAndApprovalsModel.findOne({ registerNo });
 export const getDuesAndApprovalsByRegisterNo = (registerNo: number) => DuesAndApprovalsModel.findOne({ registerNo });
+
 export const updateDuesAndApprovalsData = (registerNo: number, updatedData: UpdateDuesAndApprovalsDto) =>
     DuesAndApprovalsModel.findOneAndUpdate({ registerNo }, updatedData, { new: true, runValidators: true });
+
+export const updateDuesAndApprovalsDefault = (
+    registerNo: number,
+    updatedData: { pending: number; isPartialPaid: boolean }
+) => {
+    const isApproved = updatedData.pending === 0;
+
+    return DuesAndApprovalsModel.findOneAndUpdate(
+        { registerNo },
+        {
+            ...updatedData,
+            'approvals.approved': isApproved,
+        },
+        {
+            new: true,
+            runValidators: true,
+        }
+    );
+};
+
 export const deleteDuesAndApprovalsByRegisterNo = (registerNo: number) =>
     DuesAndApprovalsModel.findOneAndDelete({ registerNo });
 
 export const getFilteredDuesAndApprovals = async (queryStr: QueryParams) => {
     const year = parseInt(queryStr.year);
-    const isPartialPaid = queryStr.partialPaid;
 
     const pipeline: any[] = [];
 

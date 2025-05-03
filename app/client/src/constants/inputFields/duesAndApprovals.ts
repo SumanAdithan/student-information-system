@@ -4,13 +4,13 @@ export const DUES_AND_APPROVALS_PARTIAL_PAID_OPTIONS = [
 ];
 
 export const DUES_AND_APPROVALS_FULLY_PAID_OPTIONS = [
-    { label: 'Fully Paid', value: 'true' },
     { label: 'Not Fully Paid', value: 'false' },
+    { label: 'Fully Paid', value: 'true' },
 ];
 
 export const DUES_AND_APPROVALS_ELIGIBLE_OPTIONS = [
-    { label: 'Eligible', value: 'true' },
     { label: 'Not Eligible', value: 'false' },
+    { label: 'Eligible', value: 'true' },
 ];
 
 export const DUES_AND_APPROVALS_TABLE_INPUT_FIELDS = [

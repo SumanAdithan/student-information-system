@@ -8,6 +8,7 @@ import {
     updatePreviousPending,
     getStudentByRegisterNo,
     resetDuesData,
+    updateDuesAndApprovalsDefault,
 } from '@models';
 import {
     Category,
@@ -35,8 +36,14 @@ export class DuesService {
         return filteredDuesData;
     }
 
-    static updateDues(dues: UpdateDues) {
-        return updateDuesData(dues);
+    static async updateDues(dues: UpdateDues) {
+        const duesData = await updateDuesData(dues);
+        await updateDuesAndApprovalsDefault(duesData.registerNo, {
+            pending: duesData.total_details.pending_amount,
+            isPartialPaid: duesData.total_details.isPartial_paid,
+        });
+
+        return duesData;
     }
 
     static async processOnlineDuesPayment(dues: PayDuesSchemaType) {
@@ -79,7 +86,12 @@ export class DuesService {
         };
 
         await createTransactionHistory(parseInt(dues.registerNo), transactionHistory);
-        await updateOnlinePaymentData(dues);
+
+        const duesData = await updateOnlinePaymentData(dues);
+        await updateDuesAndApprovalsDefault(parseInt(dues.registerNo), {
+            pending: duesData.total_details.pending_amount,
+            isPartialPaid: duesData.total_details.isPartial_paid,
+        });
 
         const paymentReceiptName = getPaymentReceiptName(
             transactionHistory.studentData.name,
@@ -127,7 +139,12 @@ export class DuesService {
         };
 
         await createTransactionHistory(parseInt(dues.registerNo), transactionHistory);
-        await updatePreviousPending(dues);
+
+        const duesData = await updatePreviousPending(dues);
+        await updateDuesAndApprovalsDefault(parseInt(dues.registerNo), {
+            pending: duesData.total_details.pending_amount,
+            isPartialPaid: duesData.total_details.isPartial_paid,
+        });
 
         const paymentReceiptName = getPaymentReceiptName(
             transactionHistory.studentData.name,
@@ -137,15 +154,32 @@ export class DuesService {
         return { success: true, paymentReceipt, paymentReceiptName };
     }
 
-    static updateOfflineDuesPayment(dues: PayDuesSchemaType) {
-        return updateOfflinePaymentData(dues);
+    static async updateOfflineDuesPayment(dues: PayDuesSchemaType) {
+        const duesData = await updateOfflinePaymentData(dues);
+
+        await updateDuesAndApprovalsDefault(duesData.registerNo, {
+            pending: duesData.total_details.pending_amount,
+            isPartialPaid: duesData.total_details.isPartial_paid,
+        });
+        return duesData;
     }
 
-    static updateOfflinePendingPayment(dues: PayDuesSchemaType) {
-        return updatePreviousPending(dues);
+    static async updateOfflinePendingPayment(dues: PayDuesSchemaType) {
+        const duesData = await updatePreviousPending(dues);
+
+        await updateDuesAndApprovalsDefault(duesData.registerNo, {
+            pending: duesData.total_details.pending_amount,
+            isPartialPaid: duesData.total_details.isPartial_paid,
+        });
+        return duesData;
     }
 
-    static resetDues(registerNo: number) {
-        return resetDuesData(registerNo);
+    static async resetDues(registerNo: number) {
+        const duesData = await resetDuesData(registerNo);
+        await updateDuesAndApprovalsDefault(duesData.registerNo, {
+            pending: duesData.total_details.pending_amount,
+            isPartialPaid: duesData.total_details.isPartial_paid,
+        });
+        return duesData;
     }
 }
