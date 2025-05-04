@@ -17,7 +17,8 @@
             "@api": ["api"],
             "@store": ["store"],
             "@queries": ["queries"],
-            "@types": ["types"]
+            "@types": ["types"],
+            "@charts": ["charts"]
         }
     }
 }

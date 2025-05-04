@@ -12,3 +12,4 @@ export * from './circular.controller';
 export * from './event.controller';
 export * from './duesAndApprovals.controller';
 export * from './faculty.controller';
+export * from './statistics.controller';

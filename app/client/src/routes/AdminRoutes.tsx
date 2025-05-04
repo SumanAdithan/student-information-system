@@ -21,8 +21,7 @@ export const adminRoutes = () => {
     return (
         <Route element={<PrivateRoute allowedRoles={'admin'} />}>
             <Route path='/admin' element={<Layout />}>
-                <Route index element={<FacultyOverviewPage />} />
-                <Route path='faculties' element={<AdminFacultyPage />} />
+                <Route index element={<AdminFacultyPage />} />
                 <Route path='students' element={<FacultyStudentPage />} />
                 <Route path='assignments' element={<FacultyAssignmentPage />} />
                 <Route path='internal-results' element={<FacultyInternalResultPage />} />
