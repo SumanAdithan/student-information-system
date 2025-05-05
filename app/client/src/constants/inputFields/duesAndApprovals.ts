@@ -4,13 +4,13 @@ export const DUES_AND_APPROVALS_PARTIAL_PAID_OPTIONS = [
 ];
 
 export const DUES_AND_APPROVALS_FULLY_PAID_OPTIONS = [
-    { label: 'Not Fully Paid', value: 'false' },
     { label: 'Fully Paid', value: 'true' },
+    { label: 'Not Fully Paid', value: 'false' },
 ];
 
 export const DUES_AND_APPROVALS_ELIGIBLE_OPTIONS = [
-    { label: 'Not Eligible', value: 'false' },
     { label: 'Eligible', value: 'true' },
+    { label: 'Not Eligible', value: 'false' },
 ];
 
 export const DUES_AND_APPROVALS_TABLE_INPUT_FIELDS = [
@@ -49,30 +49,14 @@ export const DUES_AND_APPROVALS_TABLE_INPUT_FIELDS = [
         type: 'select',
         placeholder: 'Year',
         name: 'year',
-        valueAsNumber: true,
-        options: [
-            { label: '1', value: 1 },
-            { label: '2', value: 2 },
-            { label: '3', value: 3 },
-            { label: '4', value: 4 },
-        ],
+        disabled: true,
     },
     {
         label: 'Semester',
         type: 'select',
         placeholder: 'Semester',
         name: 'semester',
-        valueAsNumber: true,
-        options: [
-            { label: '1', value: 1 },
-            { label: '2', value: 2 },
-            { label: '3', value: 3 },
-            { label: '4', value: 4 },
-            { label: '5', value: 5 },
-            { label: '6', value: 6 },
-            { label: '7', value: 7 },
-            { label: '8', value: 8 },
-        ],
+        disabled: true,
     },
     {
         label: 'Accountant',

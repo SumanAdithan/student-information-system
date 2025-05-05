@@ -29,7 +29,6 @@ export const DisplayEvent = ({ events }: { events: (Event & { _id: string })[] }
     const handleNext = () => {
         setCurrentPage((prev) => Math.min(prev + 1, totalPages - 1));
     };
-    console.log(`event.length:${events.length} currentPage:${currentPage}`);
 
     const setPageAfterDelete = () => {
         if (currentPage === 0 && events.length !== 0) {
@@ -68,7 +67,12 @@ export const DisplayEvent = ({ events }: { events: (Event & { _id: string })[] }
                                 />
                                 <p className='text-xl text-font-primary font-medium mt-2'>
                                     Register Here:{' '}
-                                    <a href='' className='text-primary-dark'>
+                                    <a
+                                        href={currentData[0].registerLink}
+                                        className='text-primary-dark'
+                                        target='_blank'
+                                        rel='noopener noreferrer'
+                                    >
                                         {currentData[0].registerLink}
                                     </a>
                                 </p>

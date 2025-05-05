@@ -83,4 +83,12 @@ export const getFilteredAssignments = async (queryStr: QueryParams) => {
     return AssignmentResultModel.aggregate(pipeline);
 };
 
+export const updateDefaultAssignmentData = ({
+    registerNo,
+    updatedItems,
+}: {
+    registerNo: number;
+    updatedItems: { name: string; registerNo: number; year: number };
+}) => AssignmentResultModel.findOneAndUpdate({ registerNo }, updatedItems);
+
 export const deleteAssignmentByRegisterNo = (registerNo: number) => AssignmentResultModel.deleteOne({ registerNo });

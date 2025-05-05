@@ -141,7 +141,7 @@ export const STUDENT_TABLE_INPUT_FIELDS = [
         name: 'accommodation',
         options: [
             { label: 'Day Scholar', value: 'Day Scholar' },
-            { label: 'Hosteller', value: 'Hosteller' },
+            { label: 'Hosteler', value: 'Hosteler' },
         ],
     },
     {

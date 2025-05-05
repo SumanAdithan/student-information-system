@@ -85,3 +85,11 @@ export const getFilteredSemesterResult = async (queryStr: QueryParams) => {
 };
 
 export const deleteSemesterResultByRegisterNo = (registerNo: number) => SemesterResultModel.deleteOne({ registerNo });
+
+export const updateDefaultSemesterResultData = ({
+    registerNo,
+    updatedItems,
+}: {
+    registerNo: number;
+    updatedItems: { name: string; registerNo: number; year: number };
+}) => SemesterResultModel.findOneAndUpdate({ registerNo }, updatedItems);

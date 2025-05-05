@@ -35,7 +35,6 @@ export const FacultyDuesAndApprovalsTableForm = () => {
 
     useEffect(() => {
         if (modal.status === 'edit' && duesAndApprovals) {
-            console.log(duesAndApprovals);
             reset(duesAndApprovals);
         }
     }, [modal.active, reset]);
@@ -46,8 +45,6 @@ export const FacultyDuesAndApprovalsTableForm = () => {
             registerNo: duesAndApprovals?.registerNo!,
             updatedData: changedFields as DuesAndApprovals,
         });
-
-        console.log(changedFields);
 
         dispatch(toggleModal());
     };

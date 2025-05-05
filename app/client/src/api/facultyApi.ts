@@ -3,6 +3,13 @@ import { api } from './apiClient';
 import { Faculty, UpdateFacultyDto } from '@sis/types';
 import { saveAs } from 'file-saver';
 
+export const getAuthenticatedFaculty = async () => {
+    const { data } = await api.get('/faculty');
+    return {
+        faculty: data.data,
+    };
+};
+
 export const getAllfacultiesData = async () => {
     const { data } = await api.get('/faculties');
     return {

@@ -1,4 +1,5 @@
 import { Faculty, UpdateFacultyDto } from '@sis/types';
+import { hashPassword } from '@utils';
 import { Schema, model } from 'mongoose';
 
 const FacultySchema = new Schema({
@@ -51,6 +52,12 @@ const FacultySchema = new Schema({
         type: String,
         select: false,
     },
+});
+
+FacultySchema.pre('save', async function (next) {
+    if (!this.isModified('password')) return next();
+    this.password = await hashPassword(this.password);
+    next();
 });
 
 const FacultyModel = model('Faculty', FacultySchema);

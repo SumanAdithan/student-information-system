@@ -15,10 +15,17 @@ export class FacultyService {
         return getAllFacultiesData();
     }
 
+    static cleanFacultyName(fullName: string): string {
+        return fullName.replace(/^(Dr\.|Mr\.|Ms\.|Mrs\.)\s*/i, '').trim();
+    }
+
     static async createNewFaculty(faculty: Faculty) {
         let password = faculty.password;
+
+        const name = FacultyService.cleanFacultyName(faculty.name);
+
         if (!password) {
-            password = `${faculty.name}@MetCSE`;
+            password = `${name}@MetCSE`;
         }
 
         const facultyData = {

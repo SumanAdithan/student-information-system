@@ -9,7 +9,7 @@ export const useGetAuthenticatedDuesAndApprovals = () => {
     });
 };
 
-export const useGetAllDuesAndApprovals = (year: string, fullyPaid: string, partialPaid: string, eligible: string) => {
+export const useGetAllDuesAndApprovals = (year: string, partialPaid: string, fullyPaid: string, eligible: string) => {
     const params = {
         year,
         fullyPaid,

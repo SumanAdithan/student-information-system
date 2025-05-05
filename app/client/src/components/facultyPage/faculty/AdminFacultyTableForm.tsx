@@ -47,7 +47,6 @@ export const AdminFacultyTableForm = () => {
     const saveData = (data: Faculty) => {
         const changedFields = useChangedInputValues(faculty, watchedValues);
         if (modal.status === 'edit') {
-            console.log(changedFields);
             updateFacultyMutation.mutate({
                 facultyId: faculty._id,
                 updatedFacultyData: {

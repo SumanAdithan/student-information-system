@@ -385,3 +385,11 @@ export const getDuesStatistics = async () => {
 
     return result;
 };
+
+export const updateDefaultDuesData = ({
+    registerNo,
+    updatedItems,
+}: {
+    registerNo: number;
+    updatedItems: { name: string; registerNo: number; year: number };
+}) => DuesModel.findOneAndUpdate({ registerNo }, updatedItems);

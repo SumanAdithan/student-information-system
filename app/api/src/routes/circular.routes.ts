@@ -8,7 +8,7 @@ export const circularRoutes = (router: Router) => {
     router.post(
         '/admin/circular/new',
         isAuthenticated(),
-        authorizeRoles('admin'),
+        authorizeRoles('admin', 'faculty'),
         uploadSingleFile('file'),
         validateFile('circular'),
         validate(CircularSchemaServer),

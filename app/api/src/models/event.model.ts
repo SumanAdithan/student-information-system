@@ -19,7 +19,6 @@ const EventSchema = new Schema({
 const EventModel = model('event', EventSchema);
 
 export const addEventData = (eventData: Event) => {
-    console.log(eventData);
     return EventModel.create(eventData);
 };
 export const getEventById = (eventId: string) => EventModel.findById(eventId);

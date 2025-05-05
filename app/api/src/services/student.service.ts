@@ -8,6 +8,11 @@ import {
     deleteStudentById,
     getAllStudentData,
     getStudentById,
+    updateDefaultAssignmentData,
+    updateDefaultDuesAndApprovalsData,
+    updateDefaultDuesData,
+    updateDefaultInternalResultData,
+    updateDefaultSemesterResultData,
     updateStudentById,
 } from '@models';
 import { Student, StudentWithId, UpdateStudent } from '@sis/types';
@@ -82,8 +87,29 @@ export class StudentService {
             if (!profileImage.success) return next(new ErrorHandler(400, `Can't upload image`));
             updatedItems.profileImage = profileImage.fileName;
         }
-
-        await updateStudentById(studentId, updatedItems);
+        const { registerNo, name, year, semester } = updatedItems;
+        const updatedStudent = await updateStudentById(studentId, updatedItems);
+        if (registerNo || name || year || semester) {
+            const data = {
+                registerNo: student.registerNo,
+                updatedItems: {
+                    name: updatedStudent.name,
+                    registerNo: updatedStudent.registerNo,
+                    year: updatedStudent.year,
+                },
+            };
+            await updateDefaultAssignmentData(data);
+            await updateDefaultInternalResultData(data);
+            await updateDefaultSemesterResultData(data);
+            await updateDefaultDuesData(data);
+            await updateDefaultDuesAndApprovalsData({
+                ...data,
+                updatedItems: {
+                    ...data.updatedItems,
+                    semester: updatedStudent.semester,
+                },
+            });
+        }
     }
 
     static async deleteStudent(studentId: string, next: NextFunction) {

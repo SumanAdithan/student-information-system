@@ -8,7 +8,7 @@ export const eventRoutes = (router: Router) => {
     router.post(
         '/admin/event/new',
         isAuthenticated(),
-        authorizeRoles('admin'),
+        authorizeRoles('admin', 'faculty'),
         uploadSingleFile('file'),
         validateFile('event'),
         validate(EventSchemaServer),

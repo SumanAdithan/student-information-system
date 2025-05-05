@@ -154,3 +154,11 @@ export const getFilteredDuesAndApprovals = async (queryStr: QueryParams) => {
 
     return DuesAndApprovalsModel.aggregate(pipeline);
 };
+
+export const updateDefaultDuesAndApprovalsData = ({
+    registerNo,
+    updatedItems,
+}: {
+    registerNo: number;
+    updatedItems: { name: string; registerNo: number; year: number; semester: number };
+}) => DuesAndApprovalsModel.findOneAndUpdate({ registerNo }, updatedItems);
