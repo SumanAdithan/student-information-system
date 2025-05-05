@@ -19,7 +19,7 @@ export const duesRoutes = (router: Router) => {
     router.get('/student/dues', isAuthenticated(), authorizeRoles('student'), getAuthenticatedDues);
     router.get('/dues', isAuthenticated(), authorizeRoles('admin', 'faculty'), getAllDues);
     router.get('/dues/:registerNo', isAuthenticated(), authorizeRoles('admin', 'faculty'), getDues);
-    router.patch('/dues', isAuthenticated(), authorizeRoles('admin'), validate(DuesSchema), updateDues);
+    router.patch('/dues', isAuthenticated(), authorizeRoles('admin', 'faculty'), validate(DuesSchema), updateDues);
     router.patch(
         '/dues/offline-payment',
         isAuthenticated(),

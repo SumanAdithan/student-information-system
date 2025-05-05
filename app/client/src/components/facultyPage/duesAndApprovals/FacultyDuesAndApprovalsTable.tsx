@@ -27,6 +27,7 @@ export const FacultyDuesAndApprovalsTable = ({ title }: FacultyDuesAndApprovalsT
     const [fullyPaid, setFullyPaid] = useState(DUES_AND_APPROVALS_FULLY_PAID_OPTIONS[0].value);
     const [eligible, setEligible] = useState(DUES_AND_APPROVALS_ELIGIBLE_OPTIONS[0].value);
     const [globalFilter, setGlobalFilter] = useState('');
+
     const { data, isLoading, error } = useGetAllDuesAndApprovals(year, partialPaid, fullyPaid, eligible);
 
     const { facultyDuesAndApprovalsColumnConfig: columns } = FacultyDuesAndApprovalsColumn();

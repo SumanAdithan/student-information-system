@@ -17,8 +17,12 @@ const profileCardConfig = {
 export const ProfileCard = ({ name, profileImage, regNo }: ProfileCardProps) => {
     const { role } = useSelector((state: RootState) => state.profile);
 
-    const profileUrl = role === 'student' ? `${apiUrl}/profile-image` : `${apiUrl}/file/students/${profileImage}`;
-
+    const timestamp = Date.now();
+    const profileUrl =
+        role === 'student'
+            ? `${apiUrl}/profile-image?t=${timestamp}`
+            : `${apiUrl}/file/students/${profileImage}?t=${timestamp}`;
+    console.log(profileUrl);
     const { title } = profileCardConfig;
     return (
         <SlideUp

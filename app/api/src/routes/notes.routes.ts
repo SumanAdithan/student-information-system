@@ -8,7 +8,7 @@ export const notesRoutes = (router: Router) => {
     router.post(
         '/admin/notes/new',
         isAuthenticated(),
-        authorizeRoles('admin'),
+        authorizeRoles('admin', 'faculty'),
         uploadSingleFile('file'),
         validateFile('notes'),
         validate(NotesSchemaServer),

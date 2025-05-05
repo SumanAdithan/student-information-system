@@ -1,5 +1,12 @@
-import { createNewFaculty, deleteFaculty, getAllfacultiesData, updateFaculty } from '@api';
+import { createNewFaculty, deleteFaculty, getAllfacultiesData, getAuthenticatedFaculty, updateFaculty } from '@api';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+
+export const useGetAuthenticatedFaculty = () => {
+    return useQuery({
+        queryKey: ['authenticatedFaculty'],
+        queryFn: getAuthenticatedFaculty,
+    });
+};
 
 export const useGetAllFaculties = () => {
     return useQuery({

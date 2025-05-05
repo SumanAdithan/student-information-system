@@ -27,7 +27,7 @@ export const RenderListTable = ({ table }: any) => {
                         {row.getVisibleCells().map((cell: any, i: number) => (
                             <td
                                 key={cell.id}
-                                className={`font-medium text-lg text-nowrap ${
+                                className={`font-medium text-lg  ${
                                     i === 0 ? 'text-left max-w-52' : 'text-center'
                                 } px-6 py-4`}
                             >

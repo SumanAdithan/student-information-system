@@ -23,9 +23,8 @@ const profileSlice = createSlice({
             state.role = action.payload;
         },
         setProfile: (_, action: PayloadAction<ProfileState>) => {
-            const { profileImage } = action.payload;
-            const profileImageUrl = profileImage ? `${apiUrl}/file/${action.payload.profileImage}` : '';
-            return { ...action.payload, profileImage: profileImageUrl };
+            const timestamp = Date.now();
+            return { ...action.payload, profileImage: `${apiUrl}/profile-image?t=${timestamp}` };
         },
     },
 });

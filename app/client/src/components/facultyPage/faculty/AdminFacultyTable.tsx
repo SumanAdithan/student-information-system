@@ -17,7 +17,7 @@ export const AdminFacultyTable = ({ title, data }: AdminFacultyTableProps) => {
     const dispatch = useDispatch();
     const [globalFilter, setGlobalFilter] = useState('');
     const { adminFacultyColumnConfig: columns } = AdminFacultyColumnConfig();
-    const table = useTableConfig({ data, columns, globalFilter, setGlobalFilter, pageSize: 10 });
+    const table = useTableConfig({ data, columns, globalFilter, setGlobalFilter, pageSize: 5 });
     const { editModal } = useSelector((state: RootState) => state.action);
     return (
         <>

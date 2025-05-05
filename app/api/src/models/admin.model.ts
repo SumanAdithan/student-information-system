@@ -1,4 +1,5 @@
 import { AssignmentResult } from '@sis/types';
+import { hashPassword } from '@utils';
 import { Document } from 'mongoose';
 import { Schema, model } from 'mongoose';
 
@@ -28,6 +29,12 @@ const AdminSchema = new Schema({
         type: String,
         select: false,
     },
+});
+
+AdminSchema.pre('save', async function (next) {
+    if (!this.isModified('password')) return next();
+    this.password = await hashPassword(this.password);
+    next();
 });
 
 const AdminModel = model('Admin', AdminSchema);

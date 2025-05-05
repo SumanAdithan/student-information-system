@@ -141,3 +141,11 @@ export const getInternalResultStatistics = async () => {
 
     return result;
 };
+
+export const updateDefaultInternalResultData = ({
+    registerNo,
+    updatedItems,
+}: {
+    registerNo: number;
+    updatedItems: { name: string; registerNo: number; year: number };
+}) => InternalResultModel.findOneAndUpdate({ registerNo }, updatedItems);

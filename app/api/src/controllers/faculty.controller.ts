@@ -1,8 +1,17 @@
 import { catchAsyncError } from '@middlewares';
+import { createNewFacultyData } from '@models';
 import { FacultyService } from '@services';
 import { FacultyDto, UpdateFacultyDto } from '@sis/types';
-import { successResponse } from '@utils';
+import { ErrorHandler, successResponse } from '@utils';
 import { Request } from 'express';
+import { request } from 'http';
+
+export const getAuthenticatedFaculty = catchAsyncError(async (request, response, next) => {
+    const { user } = request;
+    if (!user) return next(new ErrorHandler(401, 'Unauthenticated'));
+
+    successResponse(response, 200, user);
+});
 
 export const getAllFaculties = catchAsyncError(async (request, response, next) => {
     const faculties = await FacultyService.getAllFaculties();
@@ -11,6 +20,16 @@ export const getAllFaculties = catchAsyncError(async (request, response, next) =
 
 export const createFaculty = catchAsyncError(async (request: Request<FacultyDto>, response, next) => {
     const newfaculty = await FacultyService.createNewFaculty(request.body);
+    return successResponse(response, 200);
+});
+
+export const insertFaculty = catchAsyncError(async (request, response, next) => {
+    const { faculties } = request.body;
+    Promise.all(
+        faculties.map(async (faculty: any) => {
+            await FacultyService.createNewFaculty(faculty);
+        })
+    );
     return successResponse(response, 200);
 });
 

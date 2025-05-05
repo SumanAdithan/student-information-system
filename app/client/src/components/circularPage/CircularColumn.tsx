@@ -12,8 +12,8 @@ export const CircularColumnConfig = () => {
 
     const downloadCircularColumnConfig = [
         columnHelper.accessor('name', { header: 'Name' }),
-        columnHelper.accessor('year', { header: 'Code' }),
-        columnHelper.accessor('date', { header: 'Regulation' }),
+        columnHelper.accessor('year', { header: 'Year' }),
+        columnHelper.accessor('date', { header: 'Date' }),
         columnHelper.display({
             id: 'download',
             header: 'Download',

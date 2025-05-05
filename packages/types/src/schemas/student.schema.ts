@@ -125,7 +125,7 @@ export const StudentSchema = z.object({
         .int('Mobile number must be an integer')
         .positive('Mobile number must be positive'),
 
-    accommodation: z.enum(['Day Scholar', 'Hosteller'], {
+    accommodation: z.enum(['Day Scholar', 'Hosteler'], {
         errorMap: () => ({ message: 'Please select correct accommodation' }),
     }),
     password: z.string().optional(),
