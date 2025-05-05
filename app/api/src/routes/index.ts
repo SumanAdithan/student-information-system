@@ -13,6 +13,7 @@ import { circularRoutes } from './circular.routes';
 import { eventRoutes } from './event.routes';
 import { duesAndApprovalsRoutes } from './duesAndApprovals.routes';
 import { facultyRoutes } from './faculty.routes';
+import { statisticsRoutes } from './statistics.routes';
 
 const router = Router();
 
@@ -31,5 +32,6 @@ export default (): Router => {
     fileRoutes(router);
     paymentRoutes(router);
     facultyRoutes(router);
+    statisticsRoutes(router);
     return router;
 };

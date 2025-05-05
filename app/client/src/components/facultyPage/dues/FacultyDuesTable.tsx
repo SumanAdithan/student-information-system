@@ -7,6 +7,7 @@ import { AppDispatch, RootState, toggleSelect } from '@store';
 import { FacultyDuesTableForm } from './FacultyDuesTableForm';
 import { useGetAllDues } from '@queries';
 import { DUES_PARTIAL_PAID_OPTIONS, YEAR_OPTIONS } from '@constants';
+import { SlideUp } from '@ui';
 
 interface FacultyDuesTableProps {
     title: string;
@@ -31,7 +32,11 @@ export const FacultyDuesTable = ({ title }: FacultyDuesTableProps) => {
     if (error) return <div>Error fetching student data</div>;
     return (
         <>
-            <div className='relative bg-white p-6 pb-10 rounded-2xl shadow-section mb-7 backdrop-blur-md  overflow-hidden'>
+            <SlideUp
+                className='relative bg-white p-6 pb-10 rounded-2xl shadow-section mb-7 backdrop-blur-md  overflow-hidden'
+                initial={30}
+                duration={1}
+            >
                 <div className='flex justify-between  mb-6 min-w-max gap-5 flex-col lg:items-center lg:flex-row'>
                     <h1 className='text-2xl font-medium'>{title}</h1>
                     <div className=' flex items-center gap-2 '>
@@ -59,7 +64,7 @@ export const FacultyDuesTable = ({ title }: FacultyDuesTableProps) => {
                     <RenderListTable table={table} />
                 </div>
                 <TablePageination table={table} name={title} />
-            </div>
+            </SlideUp>
             {editModal.active && <FacultyDuesTableForm />}
         </>
     );

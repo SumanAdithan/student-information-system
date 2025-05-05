@@ -1,5 +1,6 @@
 import { tickMark, xMark } from '@assets';
 import { RootState } from '@store';
+import { SlideUp } from '@ui';
 import { getDuesAndApprovalsData } from '@utils';
 import { useSelector } from 'react-redux';
 
@@ -8,7 +9,7 @@ export const ViewDuesAndApprovals = () => {
     const { details, approvals } = getDuesAndApprovalsData(duesAndApprovals);
 
     return (
-        <div className='bg-white p-6 pb-10 rounded-2xl shadow-section mb-7'>
+        <SlideUp className='bg-white p-6 pb-10 rounded-2xl shadow-section mb-7' initial={30} duration={1}>
             <h1 className='text-2xl font-medium mb-4'>Dues And Approvals</h1>
             <div className='flex items-center justify-between gap-16'>
                 <div className='max-w-[500px] grid xs:grid-cols-2 gap-y-2 xs:gap-y-10 xl:pl-10 text-md sm:text-xl font-medium'>
@@ -81,6 +82,6 @@ export const ViewDuesAndApprovals = () => {
                     </table>
                 </div>
             </div>
-        </div>
+        </SlideUp>
     );
 };

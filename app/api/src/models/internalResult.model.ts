@@ -82,3 +82,62 @@ export const getFilteredInternalResult = async (queryStr: QueryParams) => {
 };
 
 export const deleteInternalResultByRegisterNo = (registerNo: number) => InternalResultModel.deleteOne({ registerNo });
+
+export const getInternalResultStatistics = async () => {
+    const result = await InternalResultModel.aggregate([
+        {
+            $project: {
+                year: 1,
+                one_pass: {
+                    $size: {
+                        $filter: {
+                            input: '$results.one',
+                            as: 'sub',
+                            cond: { $eq: ['$$sub.status', true] },
+                        },
+                    },
+                },
+                two_pass: {
+                    $size: {
+                        $filter: {
+                            input: '$results.two',
+                            as: 'sub',
+                            cond: { $eq: ['$$sub.status', true] },
+                        },
+                    },
+                },
+                three_pass: {
+                    $size: {
+                        $filter: {
+                            input: '$results.three',
+                            as: 'sub',
+                            cond: { $eq: ['$$sub.status', true] },
+                        },
+                    },
+                },
+            },
+        },
+        {
+            $group: {
+                _id: '$year',
+                internal_1_pass: { $sum: '$one_pass' },
+                internal_2_pass: { $sum: '$two_pass' },
+                internal_3_pass: { $sum: '$three_pass' },
+            },
+        },
+        {
+            $project: {
+                _id: 0,
+                year: '$_id',
+                internal_1_pass: 1,
+                internal_2_pass: 1,
+                internal_3_pass: 1,
+            },
+        },
+        {
+            $sort: { year: 1 },
+        },
+    ]);
+
+    return result;
+};

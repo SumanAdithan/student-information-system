@@ -14,3 +14,4 @@ export * from './circular.service';
 export * from './event.service';
 export * from './duesAndApprovals.service';
 export * from './faculty.service';
+export * from './statistics.service';

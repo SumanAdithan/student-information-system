@@ -346,3 +346,42 @@ export const resetDuesData = (registerNo: number) => {
         }
     );
 };
+
+export const getDuesStatistics = async () => {
+    const result = await DuesModel.aggregate([
+        {
+            $group: {
+                _id: '$year',
+                partial: {
+                    $sum: {
+                        $cond: [{ $eq: ['$total_details.isPartial_paid', true] }, 1, 0],
+                    },
+                },
+                not_partial: {
+                    $sum: {
+                        $cond: [{ $eq: ['$total_details.isPartial_paid', false] }, 1, 0],
+                    },
+                },
+                fully_paid: {
+                    $sum: {
+                        $cond: [{ $eq: ['$total_details.isFully_paid', true] }, 1, 0],
+                    },
+                },
+            },
+        },
+        {
+            $project: {
+                year: '$_id',
+                partial: 1,
+                not_partial: 1,
+                fully_paid: 1,
+                _id: 0,
+            },
+        },
+        {
+            $sort: { year: 1 },
+        },
+    ]);
+
+    return result;
+};

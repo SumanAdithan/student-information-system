@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState, setEditTimetable, setModal } from '@store';
 import { TimetableForm } from './TimetableForm';
 import { edit } from '@assets';
+import { SlideUp } from '@ui';
 
 interface TimetableProps {
     title: string;
@@ -25,18 +26,23 @@ export const Timetable = ({ title, data, details }: TimetableProps) => {
 
     return (
         <>
-            <div className='bg-white p-6 pb-10 rounded-2xl shadow-section mb-7'>
+            <SlideUp className='bg-white p-6 pb-10 rounded-2xl shadow-section mb-7' initial={30} duration={1}>
                 <h1 className='text-2xl font-medium mb-4 flex items-center gap-2'>
                     <span>{title}</span>
                     {role === 'admin' ? (
-                        <img src={edit} alt='edit' className='w-6 h-6' onClick={handleEditClick} />
+                        <img
+                            src={edit}
+                            alt='edit'
+                            className='w-6 h-6 duration-300 hover:scale-125'
+                            onClick={handleEditClick}
+                        />
                     ) : null}
                 </h1>
                 <div className='rounded-2xl border bg-clip-border overflow-x-scroll font-secondary'>
                     <RenderTimetable data={data} />
                 </div>
                 <StudentTimetableDetails details={details} />
-            </div>
+            </SlideUp>
             {editModal.active && <TimetableForm />}
         </>
     );

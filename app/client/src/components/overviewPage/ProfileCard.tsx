@@ -1,5 +1,6 @@
 import { LazyImage } from '@components';
 import { RootState } from '@store';
+import { SlideUp } from '@ui';
 import { useSelector } from 'react-redux';
 const apiUrl = import.meta.env.VITE_API_URL;
 
@@ -20,7 +21,12 @@ export const ProfileCard = ({ name, profileImage, regNo }: ProfileCardProps) => 
 
     const { title } = profileCardConfig;
     return (
-        <div className='bg-white p-6 rounded-t-2xl xl:rounded-2xl xl:w-1/2  xl:shadow-section'>
+        <SlideUp
+            className='bg-white p-6 rounded-t-2xl xl:rounded-2xl xl:w-1/2  xl:shadow-section'
+            initial={25}
+            duration={0.5}
+            delay={0.2}
+        >
             <h1 className='text-2xl font-medium mb-10 xl:mb-0'>{title}</h1>
             <div className='h-full flex flex-col justify-center items-center gap-5'>
                 <div className='w-40 h-40  sm:w-56 sm:h-56 rounded-full overflow-hidden'>
@@ -31,6 +37,6 @@ export const ProfileCard = ({ name, profileImage, regNo }: ProfileCardProps) => 
                     <p className='text-center'>{regNo}</p>
                 </div>
             </div>
-        </div>
+        </SlideUp>
     );
 };

@@ -1,3 +1,5 @@
+import { SlideUp } from '@ui';
+
 interface PersonalDetailsCardProps {
     personalDetails: Record<string, any>;
 }
@@ -9,7 +11,12 @@ const personalDetailsCardConfig = {
 export const PersonalDetailsCard = ({ personalDetails }: PersonalDetailsCardProps) => {
     const { title } = personalDetailsCardConfig;
     return (
-        <div className='bg-white p-6 rounded-b-2xl xl:rounded-2xl  xl:shadow-section grow'>
+        <SlideUp
+            className='bg-white p-6 rounded-b-2xl xl:rounded-2xl  xl:shadow-section grow'
+            initial={25}
+            duration={0.5}
+            delay={0.2}
+        >
             <h1 className='text-2xl font-medium mb-10'>{title}</h1>
             <div className='flex justify-center'>
                 <div className='grid xs:grid-cols-2 gap-y-2 xs:gap-y-10 xl:px-10 pb-8 text-lg sm:text-xl font-medium'>
@@ -18,6 +25,6 @@ export const PersonalDetailsCard = ({ personalDetails }: PersonalDetailsCardProp
                     })}
                 </div>
             </div>
-        </div>
+        </SlideUp>
     );
 };

@@ -2,6 +2,7 @@ import { useTableConfig } from '@hooks';
 import { RenderListTable, TablePageination, transactionHistoryColumnConfig as columns } from '@components';
 import { useState } from 'react';
 import { Search } from 'lucide-react';
+import { SlideUp } from '@ui';
 
 interface DownloadNotesTableProps {
     title: string;
@@ -12,7 +13,7 @@ export const TransactionHistoryTable = ({ title, data }: DownloadNotesTableProps
     const [globalFilter, setGlobalFilter] = useState('');
     const table = useTableConfig({ data, columns, globalFilter, setGlobalFilter, pageSize: 5 });
     return (
-        <div className='bg-white p-6 pb-10 rounded-2xl shadow-section mb-7'>
+        <SlideUp className='bg-white p-6 pb-10 rounded-2xl shadow-section mb-7' initial={25} duration={0.6} delay={0.5}>
             <div className='flex justify-between  mb-6 min-w-max gap-5 flex-col lg:items-center lg:flex-row'>
                 <h1 className='text-2xl font-medium'>{title}</h1>
                 <div className='relative flex items-center gap-2 '>
@@ -36,6 +37,6 @@ export const TransactionHistoryTable = ({ title, data }: DownloadNotesTableProps
                 <RenderListTable table={table} />
             </div>
             <TablePageination table={table} name={title} />
-        </div>
+        </SlideUp>
     );
 };

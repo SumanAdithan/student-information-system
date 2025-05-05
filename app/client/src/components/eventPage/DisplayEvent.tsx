@@ -7,6 +7,7 @@ import { EventForm } from './EventForm';
 import { LazyImage } from '@components';
 import { trash } from '@assets';
 import { useEventMutation } from '@queries';
+import { SlideUp } from '@ui';
 const apiUrl = import.meta.env.VITE_API_URL;
 
 export const DisplayEvent = ({ events }: { events: (Event & { _id: string })[] }) => {
@@ -40,12 +41,12 @@ export const DisplayEvent = ({ events }: { events: (Event & { _id: string })[] }
 
     return (
         <>
-            <div className='bg-white p-6 pb-10 rounded-2xl shadow-section mb-7'>
+            <SlideUp className='bg-white p-6 pb-10 rounded-2xl shadow-section mb-7' initial={30} duration={1}>
                 <div className='flex justify-between  mb-6 min-w-max gap-5 flex-col lg:items-center lg:flex-row'>
                     <h1 className='text-2xl font-medium'>Events</h1>
                     <div className='relative flex items-center gap-2 '>
                         <button
-                            className='text-white  bg-primary py-2 px-4 rounded-lg'
+                            className='text-white  bg-primary py-2 px-4 rounded-lg duration-300 hover:scale-110'
                             onClick={() => dispatch(setModal({ active: true, status: 'add' }))}
                         >
                             Add
@@ -120,7 +121,7 @@ export const DisplayEvent = ({ events }: { events: (Event & { _id: string })[] }
                         )}
                     </div>
                 </div>
-            </div>
+            </SlideUp>
             {editModal.active && <EventForm />}
         </>
     );

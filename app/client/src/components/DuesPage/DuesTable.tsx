@@ -4,6 +4,7 @@ import { activePayBtn, edit, inActivePayBtn, tickMark, xMark } from '@assets';
 import { RootState, setDues, setModal, setPayDues } from '@store';
 import { useDispatch, useSelector } from 'react-redux';
 import { resetDues } from '@api';
+import { SlideUp } from '@ui';
 
 interface PayDuesTableProps {
     title: string;
@@ -43,7 +44,12 @@ export const PayDuesTable = ({ title, duesDetails, totalDetails }: PayDuesTableP
 
     return (
         <>
-            <div className='bg-white backdrop-blur-md  p-6 pb-10 rounded-2xl shadow-section mb-7 overflow-hidden'>
+            <SlideUp
+                className='bg-white backdrop-blur-md  p-6 pb-10 rounded-2xl shadow-section mb-7 overflow-hidden'
+                initial={25}
+                duration={0.5}
+                delay={0.2}
+            >
                 <div className='flex justify-between  mb-6 min-w-max gap-5 flex-col lg:items-center lg:flex-row'>
                     <h1 className='text-2xl font-medium mb-4 '>{title}</h1>
                     {role === 'admin' && (
@@ -98,7 +104,7 @@ export const PayDuesTable = ({ title, duesDetails, totalDetails }: PayDuesTableP
                     </div>
                 </div>
                 {editModal.active && <DuesTableForm />}
-            </div>
+            </SlideUp>
         </>
     );
 };
