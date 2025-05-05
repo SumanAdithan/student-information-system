@@ -6,6 +6,7 @@ import { Search } from 'lucide-react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState, setModal } from '@store';
 import { CircularTableForm } from './CircularTableForm';
+import { SlideUp } from '@ui';
 
 interface CircularTableProps {
     title: string;
@@ -21,7 +22,7 @@ export const CircularTable = ({ title, data }: CircularTableProps) => {
 
     return (
         <>
-            <div className='bg-white p-6 pb-10 rounded-2xl shadow-section mb-7'>
+            <SlideUp className='bg-white p-6 pb-10 rounded-2xl shadow-section mb-7' initial={30} duration={1}>
                 <div className='flex justify-between  mb-6 min-w-max gap-5 flex-col lg:items-center lg:flex-row'>
                     <h1 className='text-2xl font-medium'>{title}</h1>
                     <div className='relative flex items-center gap-2 '>
@@ -34,7 +35,7 @@ export const CircularTable = ({ title, data }: CircularTableProps) => {
                             className='bg-search-input text-font-primary placeholder-font-primary rounded-lg pl-10 pr-4 py-2 w-[150px] sm:w-full  outline-none focus:ring-2 focus:ring-blue-500'
                         />
                         <button
-                            className='text-white  bg-primary py-2 px-4 rounded-lg'
+                            className='text-white  bg-primary py-2 px-4 rounded-lg duration-300 hover:scale-110'
                             onClick={() => dispatch(setModal({ active: true, status: 'add' }))}
                         >
                             Add
@@ -45,7 +46,7 @@ export const CircularTable = ({ title, data }: CircularTableProps) => {
                     <RenderListTable table={table} />
                 </div>
                 <TablePageination table={table} name={title} />
-            </div>
+            </SlideUp>
             {editModal.active && <CircularTableForm />}
         </>
     );

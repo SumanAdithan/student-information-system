@@ -3,7 +3,7 @@ import { attendance, cgpa, dues, profile } from '@assets';
 export const getStudentOverviewData = (data: any) => {
     const overviewStat = [
         { name: 'CGPA', icon: cgpa, value: data.cgpa.toString() },
-        { name: 'Attendance', icon: attendance, value: data.attendance.toString() },
+        { name: 'Attendance', icon: attendance, value: `${data.attendance.toString()} %` },
         { name: 'Dues', icon: dues, value: data.dues.toString() },
     ];
 

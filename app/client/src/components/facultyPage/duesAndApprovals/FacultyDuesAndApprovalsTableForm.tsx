@@ -8,6 +8,7 @@ import { DuesAndApprovals, DuesAndApprovalsDto, DuesAndApprovalsSchema } from '@
 import { useChangedInputValues, useZodForm } from '@hooks';
 import { useDuesAndApprovalsMutation } from '@queries';
 import { FormProvider, useForm } from 'react-hook-form';
+import { SlideUp } from '@ui';
 
 export const FacultyDuesAndApprovalsTableForm = () => {
     const {
@@ -52,7 +53,11 @@ export const FacultyDuesAndApprovalsTableForm = () => {
     };
 
     return (
-        <div className='absolute inset-0 py-5 px-10 flex items-center justify-center bg-background-blur text-font-primary z-40 overflow-auto'>
+        <SlideUp
+            className='absolute inset-0 py-5 px-10 flex items-center justify-center bg-background-blur text-font-primary z-40 overflow-auto'
+            initial={30}
+            duration={1}
+        >
             <div className='bg-white p-5 rounded-xl text-font-primary'>
                 <h1 className='text-3xl font-semibold  mb-3 underline tracking-wider'>
                     {modal.status === 'edit' ? 'Edit Student' : 'Add Student'}
@@ -94,6 +99,6 @@ export const FacultyDuesAndApprovalsTableForm = () => {
                     </form>
                 </FormProvider>
             </div>
-        </div>
+        </SlideUp>
     );
 };
