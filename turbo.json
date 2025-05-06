@@ -7,10 +7,16 @@
         "start:dev": {
             "cache": false,
             "persistent": true
+        }
+    },
+
+    "pipeline": {
+        "build": {
+            "dependsOn": ["^build"],
+            "outputs": ["dist/**", "build/**"]
         },
-        "seeder": {
-            "cache": false,
-            "persistent": false
+        "dev": {
+            "cache": false
         }
     }
 }
