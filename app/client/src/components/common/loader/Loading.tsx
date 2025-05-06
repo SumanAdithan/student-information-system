@@ -9,7 +9,7 @@ export const Loading = () => {
 
                 <div className='absolute inset-0 flex justify-center items-center'>
                     <div className='w-12 h-12 rounded-sm overflow-hidden'>
-                        <img src={logo} alt='Logo' className='w-full h-full' />
+                        <img src={logo} alt='MET' className='w-full h-full' />
                     </div>
                 </div>
             </div>
