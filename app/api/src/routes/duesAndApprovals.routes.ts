@@ -9,7 +9,7 @@ import type { Router } from 'express';
 
 export const duesAndApprovalsRoutes = (router: Router) => {
     router.get(
-        '/student/dues-and-approval',
+        '/student/dues-and-approvals',
         isAuthenticated(),
         authorizeRoles('student'),
         getAuthenticatedDuesAndApprovals
