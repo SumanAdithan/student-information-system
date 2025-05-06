@@ -43,14 +43,16 @@ export const DisplayEvent = ({ events }: { events: (Event & { _id: string })[] }
             <SlideUp className='bg-white p-6 pb-10 rounded-2xl shadow-section mb-7' initial={30} duration={1}>
                 <div className='flex justify-between  mb-6 min-w-max gap-5 flex-col lg:items-center lg:flex-row'>
                     <h1 className='text-2xl font-medium'>Events</h1>
-                    <div className='relative flex items-center gap-2 '>
-                        <button
-                            className='text-white  bg-primary py-2 px-4 rounded-lg duration-300 hover:scale-110'
-                            onClick={() => dispatch(setModal({ active: true, status: 'add' }))}
-                        >
-                            Add
-                        </button>
-                    </div>
+                    {role !== 'student' ? (
+                        <div className='relative flex items-center gap-2 '>
+                            <button
+                                className='text-white  bg-primary py-2 px-4 rounded-lg duration-300 hover:scale-110'
+                                onClick={() => dispatch(setModal({ active: true, status: 'add' }))}
+                            >
+                                Add
+                            </button>
+                        </div>
+                    ) : null}
                 </div>
 
                 <div>

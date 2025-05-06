@@ -8,6 +8,8 @@ import {
     SemesterResultPage,
     TimetablePage,
     DuesAndApprovalsPage,
+    CircularPage,
+    EventPage,
 } from '@pages';
 import { Route } from 'react-router-dom';
 import { PrivateRoute } from './ProtectedRoute';
@@ -24,6 +26,8 @@ export const studentRoutes = () => {
                 <Route path='dues' element={<DuesPage />} />
                 <Route path='approvals' element={<DuesAndApprovalsPage />} />
                 <Route path='timetable' element={<TimetablePage />} />
+                <Route path='circulars' element={<CircularPage />} />
+                <Route path='events' element={<EventPage />} />
             </Route>
         </Route>
     );
