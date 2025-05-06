@@ -5,7 +5,7 @@ import {
     updateStudentTimetableDetails,
 } from '@api';
 import { setTimetable } from '@store';
-import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import { useMutation, useQuery } from '@tanstack/react-query';
 import { useDispatch } from 'react-redux';
 
 export const useGetAuthenticatedStudentTimetable = () => {
@@ -23,7 +23,6 @@ export const useGetAllStudentTimetable = () => {
 };
 
 export const useTimetableMutations = () => {
-    const queryClient = useQueryClient();
     const dispatch = useDispatch();
 
     const updateStudentTimetableMutation = useMutation({

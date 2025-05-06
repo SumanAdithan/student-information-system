@@ -1,6 +1,6 @@
 import { edit } from '@assets';
 import { TimetableDetailsType } from '@sis/types';
-import { RootState, setEditTimetable, setEditTimetableDetails, setModal } from '@store';
+import { RootState, setEditTimetableDetails, setModal } from '@store';
 import { useDispatch, useSelector } from 'react-redux';
 
 export const StudentTimetableDetails = ({ details }: { details: [TimetableDetailsType] }) => {

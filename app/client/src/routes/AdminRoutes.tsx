@@ -10,12 +10,10 @@ import {
     FacultyDuesAndApprovalsPage,
     FacultyDuesPage,
     FacultyInternalResultPage,
-    FacultyOverviewPage,
     FacultySemesterResultPage,
     FacultyStudentPage,
     FacultyTimetablePage,
 } from '@pages';
-import { ViewStudent } from '@components';
 
 export const adminRoutes = () => {
     return (

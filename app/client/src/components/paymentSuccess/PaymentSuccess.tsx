@@ -1,6 +1,4 @@
 import { logo, success } from '@assets';
-import { Transaction } from '@sis/types';
-import { RefObject } from 'react';
 
 export const PaymentSuccess = () =>
     // { studentData, transactionId, category, amount, method, paidOn }: Transaction,

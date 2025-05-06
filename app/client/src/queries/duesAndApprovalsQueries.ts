@@ -1,5 +1,4 @@
 import { getAllDuesAndApprovalsData, getAuthenticatedDuesAndApprovals, updateDuesAndApprovalsData } from '@api';
-import { QueryParams } from '@sis/types';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 
 export const useGetAuthenticatedDuesAndApprovals = () => {

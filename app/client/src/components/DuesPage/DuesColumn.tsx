@@ -1,4 +1,4 @@
-import { activePayBtn, edit, inActivePayBtn, trash } from '@assets';
+import { activePayBtn, edit, inActivePayBtn } from '@assets';
 import { PayDues } from '@sis/types';
 import { RootState, setModal, setPayDues } from '@store';
 import { createColumnHelper } from '@tanstack/react-table';

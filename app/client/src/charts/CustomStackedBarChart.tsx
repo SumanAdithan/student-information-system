@@ -1,4 +1,3 @@
-import { CSSProperties } from 'react';
 import { CartesianGrid, BarChart, ResponsiveContainer, XAxis, YAxis, Tooltip, Legend, Bar } from 'recharts';
 
 const STACKED_BARS = [

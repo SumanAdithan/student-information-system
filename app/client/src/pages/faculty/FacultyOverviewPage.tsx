@@ -1,8 +1,8 @@
-import { AdminFacultyTable, Loading, ViewFaculty } from '@components';
-import { useGetAllFaculties, useGetAuthenticatedFaculty } from '@queries';
-import { AppDispatch, RootState, setFaculty } from '@store';
+import { Loading, ViewFaculty } from '@components';
+import { useGetAuthenticatedFaculty } from '@queries';
+import { AppDispatch, setFaculty } from '@store';
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 export const FacultyOverviewPage = () => {
     const dispatch = useDispatch<AppDispatch>();

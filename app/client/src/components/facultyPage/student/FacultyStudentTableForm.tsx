@@ -4,7 +4,7 @@ import { STUDENT_TABLE_INPUT_FIELDS as inputFields } from '@constants';
 import { InputField } from '@components';
 import { X } from 'lucide-react';
 import { useEffect } from 'react';
-import { Student, StudentSchema } from '@sis/types';
+import { Student, StudentDto, StudentSchema } from '@sis/types';
 import { useChangedInputValues, useZodForm } from '@hooks';
 import { useStudentMutations } from '@queries';
 import { FormProvider, useForm } from 'react-hook-form';
@@ -37,11 +37,11 @@ export const FacultyStudentTableForm = () => {
 
     useEffect(() => {
         if (modal.status === 'edit' && student) {
-            reset(student);
+            reset(student as StudentDto);
         }
     }, [modal.active, reset]);
 
-    const saveData = (data: Student) => {
+    const saveData = (data: StudentDto) => {
         const changedFields = useChangedInputValues(student, watchedValues);
         if (modal.status === 'edit' && changedFields) {
             updateStudentMutation.mutate({
@@ -49,7 +49,7 @@ export const FacultyStudentTableForm = () => {
                 updatedStudentData: changedFields,
             });
         } else {
-            createStudentMutation.mutate({ studentData: data });
+            createStudentMutation.mutate({ studentData: data as Student });
         }
         dispatch(toggleModal());
     };
