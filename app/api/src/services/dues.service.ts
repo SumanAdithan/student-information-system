@@ -9,6 +9,7 @@ import {
     getStudentByRegisterNo,
     resetDuesData,
     updateDuesAndApprovalsDefault,
+    updateStudentDues,
 } from '@models';
 import {
     Category,
@@ -42,6 +43,8 @@ export class DuesService {
             pending: duesData.total_details.pending_amount,
             isPartialPaid: duesData.total_details.isPartial_paid,
         });
+
+        await updateStudentDues(duesData.registerNo, { dues: duesData.total_details.pending_amount });
 
         return duesData;
     }
@@ -92,6 +95,7 @@ export class DuesService {
             pending: duesData.total_details.pending_amount,
             isPartialPaid: duesData.total_details.isPartial_paid,
         });
+        await updateStudentDues(parseInt(dues.registerNo), { dues: duesData.total_details.pending_amount });
 
         const paymentReceiptName = getPaymentReceiptName(
             transactionHistory.studentData.name,
@@ -145,6 +149,7 @@ export class DuesService {
             pending: duesData.total_details.pending_amount,
             isPartialPaid: duesData.total_details.isPartial_paid,
         });
+        await updateStudentDues(parseInt(dues.registerNo), { dues: duesData.total_details.pending_amount });
 
         const paymentReceiptName = getPaymentReceiptName(
             transactionHistory.studentData.name,
@@ -161,6 +166,9 @@ export class DuesService {
             pending: duesData.total_details.pending_amount,
             isPartialPaid: duesData.total_details.isPartial_paid,
         });
+
+        await updateStudentDues(duesData.registerNo, { dues: duesData.total_details.pending_amount });
+
         return duesData;
     }
 
@@ -171,6 +179,9 @@ export class DuesService {
             pending: duesData.total_details.pending_amount,
             isPartialPaid: duesData.total_details.isPartial_paid,
         });
+
+        await updateStudentDues(duesData.registerNo, { dues: duesData.total_details.pending_amount });
+
         return duesData;
     }
 
@@ -180,6 +191,9 @@ export class DuesService {
             pending: duesData.total_details.pending_amount,
             isPartialPaid: duesData.total_details.isPartial_paid,
         });
+
+        await updateStudentDues(duesData.registerNo, { dues: duesData.total_details.pending_amount });
+
         return duesData;
     }
 }

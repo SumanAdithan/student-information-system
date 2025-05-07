@@ -130,3 +130,9 @@ export const getAllStudentData = () => StudentModel.find();
 export const updateStudentById = (studentId: string, updatedItems: UpdateStudent) =>
     StudentModel.findByIdAndUpdate(studentId, updatedItems, { new: true, runValidators: true });
 export const deleteStudentById = (studentId: string) => StudentModel.findByIdAndDelete(studentId);
+
+export const updateStudentDues = (registerNo: number, updatedItems: { dues: number }) =>
+    StudentModel.findOneAndUpdate({ registerNo }, updatedItems, {
+        new: true,
+        runValidators: true,
+    });
