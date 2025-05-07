@@ -72,9 +72,7 @@ pnpm install
 
 ### 3. Setup environment variables
 
-```
-Create a .env file in the apps/api and apps/web directories with necessary credentials:
-```
+Create a .env file in the apps/api and apps/client directories with necessary credentials
 
 ### 4. Run the development servers
 
