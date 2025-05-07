@@ -46,7 +46,7 @@ A comprehensive web-based Student Information System designed for educational in
 
 ```
 /apps
-├─ web # React frontend
+├─ client # React frontend
 └─ api # Express backend
 
 /packages
