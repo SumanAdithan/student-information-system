@@ -1,0 +1,23 @@
+Proprietary License
+
+Copyright © 2025 Suman
+
+All rights reserved.
+
+This software and associated materials (the “Student Information System”) were developed by Suman and are intended solely for demonstration, evaluation, and internal educational use.
+
+You are NOT permitted to:
+- Copy, reproduce, or distribute this software or any part of it.
+- Modify, adapt, or create derivative works from this software.
+- Use the software for any commercial or revenue-generating activity.
+- Sell, sublicense, rent, or otherwise make the software available to third parties.
+
+This project includes institution-specific data and design assets belonging to [Your College Name]. Unauthorized use of these materials is strictly prohibited and may be subject to legal action.
+
+By accessing or using this software, you acknowledge and agree to these terms. Any unauthorized use constitutes a violation of this license and may result in legal consequences.
+
+To obtain permission for any use beyond these restrictions, including licensing or commercial use, please contact:
+
+SUMAN 
+sumanadithan34@gmail.com
+
