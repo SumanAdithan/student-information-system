@@ -14,10 +14,13 @@ import { eventRoutes } from './event.routes';
 import { duesAndApprovalsRoutes } from './duesAndApprovals.routes';
 import { facultyRoutes } from './faculty.routes';
 import { statisticsRoutes } from './statistics.routes';
+import { trackEndpointHit } from '@middlewares';
 
 const router = Router();
 
 export default (): Router => {
+    router.use(trackEndpointHit);
+
     authRoutes(router);
     studentRoutes(router);
     assignmentRoutes(router);

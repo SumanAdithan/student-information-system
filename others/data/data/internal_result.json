@@ -1,0 +1,4682 @@
+[
+    {
+        "registerNo": 961361104001,
+        "name": "Jane Brown",
+        "year": 1,
+        "results": {
+            "one": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 90,
+                    "status": true
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 87,
+                    "status": true
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 31,
+                    "status": false
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 72,
+                    "status": true
+                }
+            ],
+            "two": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 96,
+                    "status": true
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 22,
+                    "status": false
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 82,
+                    "status": true
+                }
+            ],
+            "three": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 88,
+                    "status": true
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 82,
+                    "status": true
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 5,
+                    "status": false
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 73,
+                    "status": true
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 99,
+                    "status": true
+                }
+            ],
+            "four": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 49,
+                    "status": false
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 47,
+                    "status": false
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 22,
+                    "status": false
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 45,
+                    "status": false
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961361104002,
+        "name": "Emily Clark",
+        "year": 1,
+        "results": {
+            "one": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 9,
+                    "status": false
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 85,
+                    "status": true
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 58,
+                    "status": true
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 0,
+                    "status": false
+                }
+            ],
+            "two": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 38,
+                    "status": false
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 99,
+                    "status": true
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 33,
+                    "status": false
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 31,
+                    "status": false
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 19,
+                    "status": false
+                }
+            ],
+            "three": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 36,
+                    "status": false
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 44,
+                    "status": false
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 60,
+                    "status": true
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 73,
+                    "status": true
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 7,
+                    "status": false
+                }
+            ],
+            "four": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 71,
+                    "status": true
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 84,
+                    "status": true
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961361104003,
+        "name": "Katie Johnson",
+        "year": 1,
+        "results": {
+            "one": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 10,
+                    "status": false
+                }
+            ],
+            "two": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 47,
+                    "status": false
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 75,
+                    "status": true
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 36,
+                    "status": false
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 0,
+                    "status": false
+                }
+            ],
+            "three": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 97,
+                    "status": true
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 82,
+                    "status": true
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 44,
+                    "status": false
+                }
+            ],
+            "four": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 15,
+                    "status": false
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 58,
+                    "status": true
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 6,
+                    "status": false
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 99,
+                    "status": true
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 0,
+                    "status": false
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961361104004,
+        "name": "Emily Taylor",
+        "year": 1,
+        "results": {
+            "one": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 54,
+                    "status": true
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 84,
+                    "status": true
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 28,
+                    "status": false
+                }
+            ],
+            "two": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 80,
+                    "status": true
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 38,
+                    "status": false
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 49,
+                    "status": false
+                }
+            ],
+            "three": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 61,
+                    "status": true
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 83,
+                    "status": true
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 69,
+                    "status": true
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 0,
+                    "status": false
+                }
+            ],
+            "four": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 16,
+                    "status": false
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 100,
+                    "status": true
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 20,
+                    "status": false
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 12,
+                    "status": false
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 56,
+                    "status": true
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961361104005,
+        "name": "Emily Walker",
+        "year": 1,
+        "results": {
+            "one": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 62,
+                    "status": true
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 59,
+                    "status": true
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 77,
+                    "status": true
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 81,
+                    "status": true
+                }
+            ],
+            "two": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 8,
+                    "status": false
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 9,
+                    "status": false
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 39,
+                    "status": false
+                }
+            ],
+            "three": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 1,
+                    "status": false
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 40,
+                    "status": false
+                }
+            ],
+            "four": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 51,
+                    "status": true
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 56,
+                    "status": true
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 8,
+                    "status": false
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 0,
+                    "status": false
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961361104006,
+        "name": "John Allen",
+        "year": 1,
+        "results": {
+            "one": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 3,
+                    "status": false
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 91,
+                    "status": true
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 52,
+                    "status": true
+                }
+            ],
+            "two": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 82,
+                    "status": true
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 30,
+                    "status": false
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 74,
+                    "status": true
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 0,
+                    "status": false
+                }
+            ],
+            "three": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 31,
+                    "status": false
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 91,
+                    "status": true
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 11,
+                    "status": false
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 83,
+                    "status": true
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 83,
+                    "status": true
+                }
+            ],
+            "four": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 97,
+                    "status": true
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 43,
+                    "status": false
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 34,
+                    "status": false
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 10,
+                    "status": false
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961361104007,
+        "name": "David Walker",
+        "year": 1,
+        "results": {
+            "one": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 97,
+                    "status": true
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 39,
+                    "status": false
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 77,
+                    "status": true
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 6,
+                    "status": false
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 0,
+                    "status": false
+                }
+            ],
+            "two": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 44,
+                    "status": false
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 51,
+                    "status": true
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 100,
+                    "status": true
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 95,
+                    "status": true
+                }
+            ],
+            "three": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 2,
+                    "status": false
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 38,
+                    "status": false
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 72,
+                    "status": true
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 13,
+                    "status": false
+                }
+            ],
+            "four": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 44,
+                    "status": false
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 12,
+                    "status": false
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 53,
+                    "status": true
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 12,
+                    "status": false
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 21,
+                    "status": false
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961361104008,
+        "name": "Jane Young",
+        "year": 1,
+        "results": {
+            "one": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 84,
+                    "status": true
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 92,
+                    "status": true
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 0,
+                    "status": false
+                }
+            ],
+            "two": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 53,
+                    "status": true
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 1,
+                    "status": false
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 52,
+                    "status": true
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 26,
+                    "status": false
+                }
+            ],
+            "three": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 61,
+                    "status": true
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 68,
+                    "status": true
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 22,
+                    "status": false
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 6,
+                    "status": false
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 0,
+                    "status": false
+                }
+            ],
+            "four": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 38,
+                    "status": false
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 77,
+                    "status": true
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 71,
+                    "status": true
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961361104009,
+        "name": "David Martin",
+        "year": 1,
+        "results": {
+            "one": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 17,
+                    "status": false
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 52,
+                    "status": true
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 83,
+                    "status": true
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 0,
+                    "status": false
+                }
+            ],
+            "two": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 21,
+                    "status": false
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 95,
+                    "status": true
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 61,
+                    "status": true
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 66,
+                    "status": true
+                }
+            ],
+            "three": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 32,
+                    "status": false
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 63,
+                    "status": true
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 15,
+                    "status": false
+                }
+            ],
+            "four": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 15,
+                    "status": false
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 47,
+                    "status": false
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 95,
+                    "status": true
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 1,
+                    "status": false
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 74,
+                    "status": true
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961361104010,
+        "name": "John Johnson",
+        "year": 1,
+        "results": {
+            "one": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 23,
+                    "status": false
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 27,
+                    "status": false
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 6,
+                    "status": false
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 69,
+                    "status": true
+                }
+            ],
+            "two": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 22,
+                    "status": false
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 37,
+                    "status": false
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 64,
+                    "status": true
+                }
+            ],
+            "three": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 63,
+                    "status": true
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 82,
+                    "status": true
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 0,
+                    "status": false
+                }
+            ],
+            "four": [
+                {
+                    "code": "HS3152",
+                    "name": "Professional English - I",
+                    "mark": 36,
+                    "status": false
+                },
+                {
+                    "code": "MA3151",
+                    "name": "Matrices and Calculus",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "PH3151",
+                    "name": "Engineering Physics",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CY3151",
+                    "name": "Engineering Chemistry",
+                    "mark": 77,
+                    "status": true
+                },
+                {
+                    "code": "GE3151",
+                    "name": "Problem Solving and Python Programming",
+                    "mark": 50,
+                    "status": true
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961351104001,
+        "name": "Chris Lee",
+        "year": 2,
+        "results": {
+            "one": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 43,
+                    "status": false
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 67,
+                    "status": true
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 61,
+                    "status": true
+                }
+            ],
+            "two": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 54,
+                    "status": true
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 49,
+                    "status": false
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 46,
+                    "status": false
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 0,
+                    "status": false
+                }
+            ],
+            "three": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 53,
+                    "status": true
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 97,
+                    "status": true
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 44,
+                    "status": false
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 12,
+                    "status": false
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 78,
+                    "status": true
+                }
+            ],
+            "four": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 17,
+                    "status": false
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 100,
+                    "status": true
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 83,
+                    "status": true
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 0,
+                    "status": false
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961351104002,
+        "name": "John Young",
+        "year": 2,
+        "results": {
+            "one": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 78,
+                    "status": true
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 91,
+                    "status": true
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 58,
+                    "status": true
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 65,
+                    "status": true
+                }
+            ],
+            "two": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 67,
+                    "status": true
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 50,
+                    "status": true
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 55,
+                    "status": true
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 0,
+                    "status": false
+                }
+            ],
+            "three": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 42,
+                    "status": false
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 73,
+                    "status": true
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 92,
+                    "status": true
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 61,
+                    "status": true
+                }
+            ],
+            "four": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 31,
+                    "status": false
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 72,
+                    "status": true
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 70,
+                    "status": true
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 81,
+                    "status": true
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 0,
+                    "status": false
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961351104003,
+        "name": "Alex Clark",
+        "year": 2,
+        "results": {
+            "one": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 28,
+                    "status": false
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 94,
+                    "status": true
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 95,
+                    "status": true
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 19,
+                    "status": false
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 0,
+                    "status": false
+                }
+            ],
+            "two": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 44,
+                    "status": false
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 38,
+                    "status": false
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 36,
+                    "status": false
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 48,
+                    "status": false
+                }
+            ],
+            "three": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 59,
+                    "status": true
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 86,
+                    "status": true
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 29,
+                    "status": false
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 67,
+                    "status": true
+                }
+            ],
+            "four": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 1,
+                    "status": false
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 99,
+                    "status": true
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961351104004,
+        "name": "Daniel Martin",
+        "year": 2,
+        "results": {
+            "one": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 61,
+                    "status": true
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 22,
+                    "status": false
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 79,
+                    "status": true
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 31,
+                    "status": false
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 0,
+                    "status": false
+                }
+            ],
+            "two": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 98,
+                    "status": true
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 62,
+                    "status": true
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 45,
+                    "status": false
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 80,
+                    "status": true
+                }
+            ],
+            "three": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 35,
+                    "status": false
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 60,
+                    "status": true
+                }
+            ],
+            "four": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 80,
+                    "status": true
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 69,
+                    "status": true
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 69,
+                    "status": true
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 0,
+                    "status": false
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961351104005,
+        "name": "Chris Allen",
+        "year": 2,
+        "results": {
+            "one": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 64,
+                    "status": true
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 94,
+                    "status": true
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 78,
+                    "status": true
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 68,
+                    "status": true
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 21,
+                    "status": false
+                }
+            ],
+            "two": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 78,
+                    "status": true
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 87,
+                    "status": true
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 75,
+                    "status": true
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 60,
+                    "status": true
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 0,
+                    "status": false
+                }
+            ],
+            "three": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 19,
+                    "status": false
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 53,
+                    "status": true
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 81,
+                    "status": true
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 60,
+                    "status": true
+                }
+            ],
+            "four": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 62,
+                    "status": true
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 0,
+                    "status": false
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961351104006,
+        "name": "Laura Johnson",
+        "year": 2,
+        "results": {
+            "one": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 20,
+                    "status": false
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 98,
+                    "status": true
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 99,
+                    "status": true
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 42,
+                    "status": false
+                }
+            ],
+            "two": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 100,
+                    "status": true
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 42,
+                    "status": false
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 53,
+                    "status": true
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 78,
+                    "status": true
+                }
+            ],
+            "three": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 95,
+                    "status": true
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 1,
+                    "status": false
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 47,
+                    "status": false
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 18,
+                    "status": false
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 7,
+                    "status": false
+                }
+            ],
+            "four": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 19,
+                    "status": false
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 51,
+                    "status": true
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 47,
+                    "status": false
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 0,
+                    "status": false
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961351104007,
+        "name": "Katie Allen",
+        "year": 2,
+        "results": {
+            "one": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 0,
+                    "status": false
+                }
+            ],
+            "two": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 18,
+                    "status": false
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 27,
+                    "status": false
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 22,
+                    "status": false
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 0,
+                    "status": false
+                }
+            ],
+            "three": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 5,
+                    "status": false
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 76,
+                    "status": true
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 38,
+                    "status": false
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 24,
+                    "status": false
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 82,
+                    "status": true
+                }
+            ],
+            "four": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 36,
+                    "status": false
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 60,
+                    "status": true
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 91,
+                    "status": true
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 0,
+                    "status": false
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961351104008,
+        "name": "Alex Young",
+        "year": 2,
+        "results": {
+            "one": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 2,
+                    "status": false
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 16,
+                    "status": false
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 87,
+                    "status": true
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 35,
+                    "status": false
+                }
+            ],
+            "two": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 37,
+                    "status": false
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 14,
+                    "status": false
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 34,
+                    "status": false
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 100,
+                    "status": true
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 52,
+                    "status": true
+                }
+            ],
+            "three": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 99,
+                    "status": true
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 87,
+                    "status": true
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 1,
+                    "status": false
+                }
+            ],
+            "four": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 77,
+                    "status": true
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 63,
+                    "status": true
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 21,
+                    "status": false
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 69,
+                    "status": true
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961351104009,
+        "name": "Katie Martin",
+        "year": 2,
+        "results": {
+            "one": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 90,
+                    "status": true
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 89,
+                    "status": true
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 60,
+                    "status": true
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 94,
+                    "status": true
+                }
+            ],
+            "two": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 76,
+                    "status": true
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 77,
+                    "status": true
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 47,
+                    "status": false
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 85,
+                    "status": true
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 9,
+                    "status": false
+                }
+            ],
+            "three": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 7,
+                    "status": false
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 84,
+                    "status": true
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 8,
+                    "status": false
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 87,
+                    "status": true
+                }
+            ],
+            "four": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 7,
+                    "status": false
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 13,
+                    "status": false
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 13,
+                    "status": false
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 72,
+                    "status": true
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 20,
+                    "status": false
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961351104010,
+        "name": "Katie Clark",
+        "year": 2,
+        "results": {
+            "one": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 90,
+                    "status": true
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 9,
+                    "status": false
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 17,
+                    "status": false
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 87,
+                    "status": true
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 28,
+                    "status": false
+                }
+            ],
+            "two": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 41,
+                    "status": false
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 71,
+                    "status": true
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 44,
+                    "status": false
+                }
+            ],
+            "three": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 24,
+                    "status": false
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 16,
+                    "status": false
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 0,
+                    "status": false
+                }
+            ],
+            "four": [
+                {
+                    "code": "MA3354",
+                    "name": "Discrete Mathematics",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3351",
+                    "name": "Digital Principles and Computer Organization",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3352",
+                    "name": "Foundations of Data Science",
+                    "mark": 23,
+                    "status": false
+                },
+                {
+                    "code": "CD3291",
+                    "name": "Data Structures and Algorithms",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3391",
+                    "name": "Object Oriented Programming",
+                    "mark": 0,
+                    "status": false
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961341104001,
+        "name": "John Martin",
+        "year": 3,
+        "results": {
+            "one": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 31,
+                    "status": false
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 11,
+                    "status": false
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 37,
+                    "status": false
+                }
+            ],
+            "two": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 60,
+                    "status": true
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 87,
+                    "status": true
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 92,
+                    "status": true
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 0,
+                    "status": false
+                }
+            ],
+            "three": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 29,
+                    "status": false
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 95,
+                    "status": true
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 6,
+                    "status": false
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 27,
+                    "status": false
+                }
+            ],
+            "four": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 65,
+                    "status": true
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 59,
+                    "status": true
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 35,
+                    "status": false
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 0,
+                    "status": false
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961341104002,
+        "name": "Jane Clark",
+        "year": 3,
+        "results": {
+            "one": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 63,
+                    "status": true
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 32,
+                    "status": false
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 91,
+                    "status": true
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 14,
+                    "status": false
+                }
+            ],
+            "two": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 17,
+                    "status": false
+                }
+            ],
+            "three": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 36,
+                    "status": false
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 24,
+                    "status": false
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 19,
+                    "status": false
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 0,
+                    "status": false
+                }
+            ],
+            "four": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 19,
+                    "status": false
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 51,
+                    "status": true
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 29,
+                    "status": false
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 0,
+                    "status": false
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961341104003,
+        "name": "David Brown",
+        "year": 3,
+        "results": {
+            "one": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 58,
+                    "status": true
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 7,
+                    "status": false
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 81,
+                    "status": true
+                }
+            ],
+            "two": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 70,
+                    "status": true
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 0,
+                    "status": false
+                }
+            ],
+            "three": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 30,
+                    "status": false
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 75,
+                    "status": true
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 96,
+                    "status": true
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 0,
+                    "status": false
+                }
+            ],
+            "four": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 65,
+                    "status": true
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 16,
+                    "status": false
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 0,
+                    "status": false
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961341104004,
+        "name": "Emily Brown",
+        "year": 3,
+        "results": {
+            "one": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 15,
+                    "status": false
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 30,
+                    "status": false
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 0,
+                    "status": false
+                }
+            ],
+            "two": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 15,
+                    "status": false
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 66,
+                    "status": true
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 17,
+                    "status": false
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 0,
+                    "status": false
+                }
+            ],
+            "three": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 3,
+                    "status": false
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 2,
+                    "status": false
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 0,
+                    "status": false
+                }
+            ],
+            "four": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 67,
+                    "status": true
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 37,
+                    "status": false
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 66,
+                    "status": true
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 9,
+                    "status": false
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961341104005,
+        "name": "Sara Martin",
+        "year": 3,
+        "results": {
+            "one": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 41,
+                    "status": false
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 55,
+                    "status": true
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 35,
+                    "status": false
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 93,
+                    "status": true
+                }
+            ],
+            "two": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 59,
+                    "status": true
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 16,
+                    "status": false
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 62,
+                    "status": true
+                }
+            ],
+            "three": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 6,
+                    "status": false
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 29,
+                    "status": false
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 13,
+                    "status": false
+                }
+            ],
+            "four": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 85,
+                    "status": true
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 10,
+                    "status": false
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 18,
+                    "status": false
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961341104006,
+        "name": "Laura Young",
+        "year": 3,
+        "results": {
+            "one": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 36,
+                    "status": false
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 71,
+                    "status": true
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 55,
+                    "status": true
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 81,
+                    "status": true
+                }
+            ],
+            "two": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 30,
+                    "status": false
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 55,
+                    "status": true
+                }
+            ],
+            "three": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 76,
+                    "status": true
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 11,
+                    "status": false
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 21,
+                    "status": false
+                }
+            ],
+            "four": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 34,
+                    "status": false
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 99,
+                    "status": true
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 86,
+                    "status": true
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 89,
+                    "status": true
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961341104007,
+        "name": "Laura Walker",
+        "year": 3,
+        "results": {
+            "one": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 23,
+                    "status": false
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 37,
+                    "status": false
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 53,
+                    "status": true
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 12,
+                    "status": false
+                }
+            ],
+            "two": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 34,
+                    "status": false
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 28,
+                    "status": false
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 0,
+                    "status": false
+                }
+            ],
+            "three": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 94,
+                    "status": true
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 20,
+                    "status": false
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 67,
+                    "status": true
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 80,
+                    "status": true
+                }
+            ],
+            "four": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 2,
+                    "status": false
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 35,
+                    "status": false
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 36,
+                    "status": false
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961341104008,
+        "name": "Emily Johnson",
+        "year": 3,
+        "results": {
+            "one": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 2,
+                    "status": false
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 31,
+                    "status": false
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 5,
+                    "status": false
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 57,
+                    "status": true
+                }
+            ],
+            "two": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 90,
+                    "status": true
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 51,
+                    "status": true
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 66,
+                    "status": true
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 34,
+                    "status": false
+                }
+            ],
+            "three": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 31,
+                    "status": false
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 75,
+                    "status": true
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 84,
+                    "status": true
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 79,
+                    "status": true
+                }
+            ],
+            "four": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 88,
+                    "status": true
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 83,
+                    "status": true
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961341104009,
+        "name": "Alex Brown",
+        "year": 3,
+        "results": {
+            "one": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 74,
+                    "status": true
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 12,
+                    "status": false
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 8,
+                    "status": false
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 38,
+                    "status": false
+                }
+            ],
+            "two": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 100,
+                    "status": true
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 43,
+                    "status": false
+                }
+            ],
+            "three": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 22,
+                    "status": false
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 47,
+                    "status": false
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 95,
+                    "status": true
+                }
+            ],
+            "four": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 81,
+                    "status": true
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 86,
+                    "status": true
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 71,
+                    "status": true
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961341104010,
+        "name": "Laura Allen",
+        "year": 3,
+        "results": {
+            "one": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 20,
+                    "status": false
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 63,
+                    "status": true
+                }
+            ],
+            "two": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 20,
+                    "status": false
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 50,
+                    "status": true
+                }
+            ],
+            "three": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 13,
+                    "status": false
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 14,
+                    "status": false
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 0,
+                    "status": false
+                }
+            ],
+            "four": [
+                {
+                    "code": "AL3501",
+                    "name": "Natural Language Processing",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "AL3502",
+                    "name": "Deep Learning for Vision",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CB3491",
+                    "name": "Cryptography and Cyber Security",
+                    "mark": 75,
+                    "status": true
+                },
+                {
+                    "code": "CS3551",
+                    "name": "Distributed Computing",
+                    "mark": 83,
+                    "status": true
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961321104001,
+        "name": "Katie Taylor",
+        "year": 4,
+        "results": {
+            "one": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 72,
+                    "status": true
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 82,
+                    "status": true
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 48,
+                    "status": false
+                }
+            ],
+            "two": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 61,
+                    "status": true
+                }
+            ],
+            "three": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 2,
+                    "status": false
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 49,
+                    "status": false
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 93,
+                    "status": true
+                }
+            ],
+            "four": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 71,
+                    "status": true
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 0,
+                    "status": false
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961321104002,
+        "name": "Chris Brown",
+        "year": 4,
+        "results": {
+            "one": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 4,
+                    "status": false
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 39,
+                    "status": false
+                }
+            ],
+            "two": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 81,
+                    "status": true
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 85,
+                    "status": true
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 19,
+                    "status": false
+                }
+            ],
+            "three": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 36,
+                    "status": false
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 57,
+                    "status": true
+                }
+            ],
+            "four": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 81,
+                    "status": true
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 64,
+                    "status": true
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 32,
+                    "status": false
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961321104003,
+        "name": "Daniel Allen",
+        "year": 4,
+        "results": {
+            "one": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 47,
+                    "status": false
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 84,
+                    "status": true
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 1,
+                    "status": false
+                }
+            ],
+            "two": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 95,
+                    "status": true
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 61,
+                    "status": true
+                }
+            ],
+            "three": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 84,
+                    "status": true
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 37,
+                    "status": false
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 35,
+                    "status": false
+                }
+            ],
+            "four": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 64,
+                    "status": true
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 0,
+                    "status": false
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961321104004,
+        "name": "Daniel Young",
+        "year": 4,
+        "results": {
+            "one": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 51,
+                    "status": true
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 14,
+                    "status": false
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 0,
+                    "status": false
+                }
+            ],
+            "two": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 8,
+                    "status": false
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 55,
+                    "status": true
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 32,
+                    "status": false
+                }
+            ],
+            "three": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 82,
+                    "status": true
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 95,
+                    "status": true
+                }
+            ],
+            "four": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 30,
+                    "status": false
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 29,
+                    "status": false
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961321104005,
+        "name": "Daniel Taylor",
+        "year": 4,
+        "results": {
+            "one": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 83,
+                    "status": true
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 69,
+                    "status": true
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 0,
+                    "status": false
+                }
+            ],
+            "two": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 93,
+                    "status": true
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 34,
+                    "status": false
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 0,
+                    "status": false
+                }
+            ],
+            "three": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 54,
+                    "status": true
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 16,
+                    "status": false
+                }
+            ],
+            "four": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 23,
+                    "status": false
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961321104006,
+        "name": "Alex Johnson",
+        "year": 4,
+        "results": {
+            "one": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 91,
+                    "status": true
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 34,
+                    "status": false
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 0,
+                    "status": false
+                }
+            ],
+            "two": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 30,
+                    "status": false
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 43,
+                    "status": false
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 0,
+                    "status": false
+                }
+            ],
+            "three": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 98,
+                    "status": true
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 1,
+                    "status": false
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 59,
+                    "status": true
+                }
+            ],
+            "four": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 84,
+                    "status": true
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 67,
+                    "status": true
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961321104007,
+        "name": "Sara Lee",
+        "year": 4,
+        "results": {
+            "one": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 25,
+                    "status": false
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 39,
+                    "status": false
+                }
+            ],
+            "two": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 7,
+                    "status": false
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 58,
+                    "status": true
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 0,
+                    "status": false
+                }
+            ],
+            "three": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 27,
+                    "status": false
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 46,
+                    "status": false
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 75,
+                    "status": true
+                }
+            ],
+            "four": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 18,
+                    "status": false
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 50,
+                    "status": true
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961321104008,
+        "name": "Chris Smith",
+        "year": 4,
+        "results": {
+            "one": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 65,
+                    "status": true
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 91,
+                    "status": true
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 86,
+                    "status": true
+                }
+            ],
+            "two": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 90,
+                    "status": true
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 18,
+                    "status": false
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 0,
+                    "status": false
+                }
+            ],
+            "three": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 81,
+                    "status": true
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 54,
+                    "status": true
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 47,
+                    "status": false
+                }
+            ],
+            "four": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 54,
+                    "status": true
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 37,
+                    "status": false
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 0,
+                    "status": false
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961321104009,
+        "name": "Jane Taylor",
+        "year": 4,
+        "results": {
+            "one": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 9,
+                    "status": false
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 53,
+                    "status": true
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 44,
+                    "status": false
+                }
+            ],
+            "two": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 27,
+                    "status": false
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 0,
+                    "status": false
+                }
+            ],
+            "three": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 34,
+                    "status": false
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 36,
+                    "status": false
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 48,
+                    "status": false
+                }
+            ],
+            "four": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 65,
+                    "status": true
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 42,
+                    "status": false
+                }
+            ]
+        }
+    },
+    {
+        "registerNo": 961321104010,
+        "name": "Jane Walker",
+        "year": 4,
+        "results": {
+            "one": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 82,
+                    "status": true
+                }
+            ],
+            "two": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 50,
+                    "status": true
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 79,
+                    "status": true
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 58,
+                    "status": true
+                }
+            ],
+            "three": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 97,
+                    "status": true
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 33,
+                    "status": false
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 0,
+                    "status": false
+                }
+            ],
+            "four": [
+                {
+                    "code": "GE3791",
+                    "name": "Human Values and Ethics",
+                    "mark": 0,
+                    "status": false
+                },
+                {
+                    "code": "CCS335",
+                    "name": "Cloud Computing",
+                    "mark": 61,
+                    "status": true
+                },
+                {
+                    "code": "CCS344",
+                    "name": "Ethical Hacking",
+                    "mark": 90,
+                    "status": true
+                }
+            ]
+        }
+    }
+]

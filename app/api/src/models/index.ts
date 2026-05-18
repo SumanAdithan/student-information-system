@@ -11,3 +11,4 @@ export * from './event.model';
 export * from './duesAndApprovals.model';
 export * from './faculty.model';
 export * from './admin.model';
+export * from './apiHit.model';

@@ -4,3 +4,4 @@ export * from './authenticate.middleware';
 export * from './validate.middleware';
 export * from './uploadFile.middleware';
 export * from './validateFile.middleware';
+export * from './trackEndpointHit.middleware';

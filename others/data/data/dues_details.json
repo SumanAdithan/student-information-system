@@ -1,0 +1,2602 @@
+[
+  {
+    "name": "Jane Brown",
+    "registerNo": 961361104001,
+    "year": 1,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 0,
+        "pending": 15000,
+        "fully_paid": false
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 5000,
+        "fully_paid": false
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 25000,
+      "pending_amount": 20000,
+      "isPartial_paid": true,
+      "isFully_paid": false
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "Emily Clark",
+    "registerNo": 961361104002,
+    "year": 1,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 0,
+        "pending": 15000,
+        "fully_paid": false
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 5000,
+        "fully_paid": false
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 25000,
+      "pending_amount": 20000,
+      "isPartial_paid": true,
+      "isFully_paid": false
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "Katie Johnson",
+    "registerNo": 961361104003,
+    "year": 1,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 0,
+        "pending": 15000,
+        "fully_paid": false
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 5000,
+        "fully_paid": false
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 25000,
+      "pending_amount": 20000,
+      "isPartial_paid": true,
+      "isFully_paid": false
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "Emily Taylor",
+    "registerNo": 961361104004,
+    "year": 1,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 0,
+        "pending": 15000,
+        "fully_paid": false
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 5000,
+        "fully_paid": false
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 25000,
+      "pending_amount": 20000,
+      "isPartial_paid": true,
+      "isFully_paid": false
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "Emily Walker",
+    "registerNo": 961361104005,
+    "year": 1,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 0,
+        "pending": 15000,
+        "fully_paid": false
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 5000,
+        "fully_paid": false
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 25000,
+      "pending_amount": 20000,
+      "isPartial_paid": true,
+      "isFully_paid": false
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "John Allen",
+    "registerNo": 961361104006,
+    "year": 1,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 0,
+        "pending": 15000,
+        "fully_paid": false
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 0,
+        "pending": 10000,
+        "fully_paid": false
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 20000,
+      "pending_amount": 25000,
+      "isPartial_paid": false,
+      "isFully_paid": false
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "David Walker",
+    "registerNo": 961361104007,
+    "year": 1,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 0,
+        "pending": 15000,
+        "fully_paid": false
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 0,
+        "pending": 10000,
+        "fully_paid": false
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 20000,
+      "pending_amount": 25000,
+      "isPartial_paid": false,
+      "isFully_paid": false
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "Jane Young",
+    "registerNo": 961361104008,
+    "year": 1,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 0,
+        "pending": 15000,
+        "fully_paid": false
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 0,
+        "pending": 10000,
+        "fully_paid": false
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 20000,
+      "pending_amount": 25000,
+      "isPartial_paid": false,
+      "isFully_paid": false
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "David Martin",
+    "registerNo": 961361104009,
+    "year": 1,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 0,
+        "pending": 15000,
+        "fully_paid": false
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 0,
+        "pending": 10000,
+        "fully_paid": false
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 20000,
+      "pending_amount": 25000,
+      "isPartial_paid": false,
+      "isFully_paid": false
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "John Johnson",
+    "registerNo": 961361104010,
+    "year": 1,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 0,
+        "pending": 15000,
+        "fully_paid": false
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 0,
+        "pending": 10000,
+        "fully_paid": false
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 20000,
+      "pending_amount": 25000,
+      "isPartial_paid": false,
+      "isFully_paid": false
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "Chris Lee",
+    "registerNo": 961351104001,
+    "year": 2,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 10000,
+        "fully_paid": false
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 10000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 35000,
+      "pending_amount": 10000,
+      "isPartial_paid": true,
+      "isFully_paid": false
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "John Young",
+    "registerNo": 961351104002,
+    "year": 2,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 10000,
+        "fully_paid": false
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 10000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 35000,
+      "pending_amount": 10000,
+      "isPartial_paid": true,
+      "isFully_paid": false
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "Alex Clark",
+    "registerNo": 961351104003,
+    "year": 2,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 10000,
+        "fully_paid": false
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 10000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 35000,
+      "pending_amount": 10000,
+      "isPartial_paid": true,
+      "isFully_paid": false
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "Daniel Martin",
+    "registerNo": 961351104004,
+    "year": 2,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 10000,
+        "fully_paid": false
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 10000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 35000,
+      "pending_amount": 10000,
+      "isPartial_paid": true,
+      "isFully_paid": false
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "Chris Allen",
+    "registerNo": 961351104005,
+    "year": 2,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 10000,
+        "fully_paid": false
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 10000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 35000,
+      "pending_amount": 10000,
+      "isPartial_paid": true,
+      "isFully_paid": false
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "Laura Johnson",
+    "registerNo": 961351104006,
+    "year": 2,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 10000,
+        "fully_paid": false
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 10000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 35000,
+      "pending_amount": 10000,
+      "isPartial_paid": true,
+      "isFully_paid": false
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "Katie Allen",
+    "registerNo": 961351104007,
+    "year": 2,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 15000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 10000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 45000,
+      "pending_amount": 0,
+      "isPartial_paid": false,
+      "isFully_paid": true
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "Alex Young",
+    "registerNo": 961351104008,
+    "year": 2,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 15000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 10000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 45000,
+      "pending_amount": 0,
+      "isPartial_paid": false,
+      "isFully_paid": true
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "Katie Martin",
+    "registerNo": 961351104009,
+    "year": 2,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 0,
+        "pending": 15000,
+        "fully_paid": false
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 0,
+        "pending": 10000,
+        "fully_paid": false
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 0,
+        "pending": 5000,
+        "fully_paid": false
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 15000,
+      "pending_amount": 30000,
+      "isPartial_paid": false,
+      "isFully_paid": false
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "Katie Clark",
+    "registerNo": 961351104010,
+    "year": 2,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 0,
+        "pending": 15000,
+        "fully_paid": false
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 0,
+        "pending": 10000,
+        "fully_paid": false
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 0,
+        "pending": 5000,
+        "fully_paid": false
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 15000,
+      "pending_amount": 30000,
+      "isPartial_paid": false,
+      "isFully_paid": false
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "John Martin",
+    "registerNo": 961341104001,
+    "year": 3,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 15000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 10000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 45000,
+      "pending_amount": 0,
+      "isPartial_paid": false,
+      "isFully_paid": true
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "Jane Clark",
+    "registerNo": 961341104002,
+    "year": 3,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 15000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 10000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 45000,
+      "pending_amount": 0,
+      "isPartial_paid": false,
+      "isFully_paid": true
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "David Brown",
+    "registerNo": 961341104003,
+    "year": 3,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 0,
+        "pending": 15000,
+        "fully_paid": false
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 10000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 30000,
+      "pending_amount": 15000,
+      "isPartial_paid": true,
+      "isFully_paid": false
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "Emily Brown",
+    "registerNo": 961341104004,
+    "year": 3,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 0,
+        "pending": 15000,
+        "fully_paid": false
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 0,
+        "pending": 10000,
+        "fully_paid": false
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 20000,
+      "pending_amount": 25000,
+      "isPartial_paid": false,
+      "isFully_paid": false
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "Sara Martin",
+    "registerNo": 961341104005,
+    "year": 3,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 0,
+        "pending": 15000,
+        "fully_paid": false
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 0,
+        "pending": 10000,
+        "fully_paid": false
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 0,
+        "pending": 5000,
+        "fully_paid": false
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 15000,
+      "pending_amount": 30000,
+      "isPartial_paid": false,
+      "isFully_paid": false
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "Laura Young",
+    "registerNo": 961341104006,
+    "year": 3,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 10000,
+        "fully_paid": false
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 10000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 35000,
+      "pending_amount": 10000,
+      "isPartial_paid": true,
+      "isFully_paid": false
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "Laura Walker",
+    "registerNo": 961341104007,
+    "year": 3,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 10000,
+        "fully_paid": false
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 10000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 35000,
+      "pending_amount": 10000,
+      "isPartial_paid": true,
+      "isFully_paid": false
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "Emily Johnson",
+    "registerNo": 961341104008,
+    "year": 3,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 10000,
+        "fully_paid": false
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 10000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 35000,
+      "pending_amount": 10000,
+      "isPartial_paid": true,
+      "isFully_paid": false
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "Alex Brown",
+    "registerNo": 961341104009,
+    "year": 3,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 15000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 10000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 45000,
+      "pending_amount": 0,
+      "isPartial_paid": false,
+      "isFully_paid": true
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "Laura Allen",
+    "registerNo": 961341104010,
+    "year": 3,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 15000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 10000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 45000,
+      "pending_amount": 0,
+      "isPartial_paid": false,
+      "isFully_paid": true
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "Katie Taylor",
+    "registerNo": 961321104001,
+    "year": 4,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 0,
+        "pending": 15000,
+        "fully_paid": false
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 5000,
+        "fully_paid": false
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 25000,
+      "pending_amount": 20000,
+      "isPartial_paid": true,
+      "isFully_paid": false
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "Chris Brown",
+    "registerNo": 961321104002,
+    "year": 4,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 0,
+        "pending": 15000,
+        "fully_paid": false
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 5000,
+        "fully_paid": false
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 25000,
+      "pending_amount": 20000,
+      "isPartial_paid": true,
+      "isFully_paid": false
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "Daniel Allen",
+    "registerNo": 961321104003,
+    "year": 4,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 0,
+        "pending": 15000,
+        "fully_paid": false
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 5000,
+        "fully_paid": false
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 25000,
+      "pending_amount": 20000,
+      "isPartial_paid": true,
+      "isFully_paid": false
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "Daniel Young",
+    "registerNo": 961321104004,
+    "year": 4,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 0,
+        "pending": 15000,
+        "fully_paid": false
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 5000,
+        "fully_paid": false
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 25000,
+      "pending_amount": 20000,
+      "isPartial_paid": true,
+      "isFully_paid": false
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "Daniel Taylor",
+    "registerNo": 961321104005,
+    "year": 4,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 15000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 10000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 45000,
+      "pending_amount": 0,
+      "isPartial_paid": false,
+      "isFully_paid": true
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "Alex Johnson",
+    "registerNo": 961321104006,
+    "year": 4,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 15000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 10000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 45000,
+      "pending_amount": 0,
+      "isPartial_paid": false,
+      "isFully_paid": true
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "Sara Lee",
+    "registerNo": 961321104007,
+    "year": 4,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 0,
+        "pending": 15000,
+        "fully_paid": false
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 0,
+        "pending": 10000,
+        "fully_paid": false
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 0,
+        "pending": 5000,
+        "fully_paid": false
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 15000,
+      "pending_amount": 30000,
+      "isPartial_paid": false,
+      "isFully_paid": false
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "Chris Smith",
+    "registerNo": 961321104008,
+    "year": 4,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 0,
+        "pending": 15000,
+        "fully_paid": false
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 0,
+        "pending": 10000,
+        "fully_paid": false
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 0,
+        "pending": 5000,
+        "fully_paid": false
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 15000,
+      "pending_amount": 30000,
+      "isPartial_paid": false,
+      "isFully_paid": false
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "Jane Taylor",
+    "registerNo": 961321104009,
+    "year": 4,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 10000,
+        "pending": 5000,
+        "fully_paid": false
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 10000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 40000,
+      "pending_amount": 5000,
+      "isPartial_paid": true,
+      "isFully_paid": false
+    },
+    "transaction_history": []
+  },
+  {
+    "name": "Jane Walker",
+    "registerNo": 961321104010,
+    "year": 4,
+    "dues_details": {
+      "tuition_fee": {
+        "total": 15000,
+        "online": 0,
+        "offline": 10000,
+        "pending": 5000,
+        "fully_paid": false
+      },
+      "bus_fee": {
+        "total": 10000,
+        "online": 0,
+        "offline": 10000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "stationary_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "sports_placement_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "apparel_fee": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "examination_fee": {
+        "total": 0,
+        "online": 0,
+        "offline": 0,
+        "pending": 0,
+        "fully_paid": true
+      },
+      "fine": {
+        "total": 5000,
+        "online": 0,
+        "offline": 5000,
+        "pending": 0,
+        "fully_paid": true
+      }
+    },
+    "total_details": {
+      "previous_pending": 0,
+      "total_amount": 45000,
+      "paid_amount": 40000,
+      "pending_amount": 5000,
+      "isPartial_paid": true,
+      "isFully_paid": false
+    },
+    "transaction_history": []
+  }
+]

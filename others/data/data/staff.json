@@ -1,0 +1,275 @@
+[
+    {
+        "name": "Dr. Anitha",
+        "email": "anitha@met.com",
+        "position": "Professor",
+        "total_subjects": 2,
+        "total_classes": "I",
+        "subjects": [
+            {
+                "subjectName": "Professional English - I",
+                "code": "HS3152",
+                "year": "I"
+            },
+            {
+                "subjectName": "English Laboratory",
+                "code": "GE3172",
+                "year": "I"
+            }
+        ]
+    },
+    {
+        "name": "Mr. Kumar",
+        "email": "kumar@met.com",
+        "position": "Professor",
+        "total_subjects": 1,
+        "total_classes": "I",
+        "subjects": [
+            {
+                "subjectName": "Matrices and Calculus",
+                "code": "MA3151",
+                "year": "I"
+            }
+        ]
+    },
+    {
+        "name": "Dr. Ravi",
+        "email": "ravi@met.com",
+        "position": "Professor",
+        "total_subjects": 2,
+        "total_classes": "I",
+        "subjects": [
+            {
+                "subjectName": "Engineering Physics",
+                "code": "PH3151",
+                "year": "I"
+            },
+            {
+                "subjectName": "Physics and Chemistry Laboratory",
+                "code": "BS3171",
+                "year": "I"
+            }
+        ]
+    },
+    {
+        "name": "Ms. Priya",
+        "email": "priya@met.com",
+        "position": "Professor",
+        "total_subjects": 2,
+        "total_classes": "I",
+        "subjects": [
+            {
+                "subjectName": "Engineering Chemistry",
+                "code": "CY3151",
+                "year": "I"
+            },
+            {
+                "subjectName": "Physics and Chemistry Laboratory",
+                "code": "BS3171",
+                "year": "I"
+            }
+        ]
+    },
+    {
+        "name": "Mr. Suresh",
+        "email": "suresh@met.com",
+        "position": "Professor",
+        "total_subjects": 2,
+        "total_classes": "I",
+        "subjects": [
+            {
+                "subjectName": "Problem Solving and Python Programming",
+                "code": "GE3151",
+                "year": "I"
+            },
+            {
+                "subjectName": "Problem Solving and Python Programming Laboratory",
+                "code": "GE3171",
+                "year": "I"
+            }
+        ]
+    },
+    {
+        "name": "Dr. Karthik",
+        "email": "karthik@met.com",
+        "position": "Professor",
+        "total_subjects": 1,
+        "total_classes": "II",
+        "subjects": [
+            {
+                "subjectName": "Discrete Mathematics",
+                "code": "MA3354",
+                "year": "II"
+            }
+        ]
+    },
+    {
+        "name": "Mr. Rajesh",
+        "email": "rajesh@met.com",
+        "position": "Professor",
+        "total_subjects": 1,
+        "total_classes": "II",
+        "subjects": [
+            {
+                "subjectName": "Digital Principles and Computer Organization",
+                "code": "CS3351",
+                "year": "II"
+            }
+        ]
+    },
+    {
+        "name": "Ms. Meena",
+        "email": "meena@met.com",
+        "position": "Professor",
+        "total_subjects": 2,
+        "total_classes": "II",
+        "subjects": [
+            {
+                "subjectName": "Foundations of Data Science",
+                "code": "CS3352",
+                "year": "II"
+            },
+            {
+                "subjectName": "Data Science Laboratory",
+                "code": "CS3361",
+                "year": "II"
+            }
+        ]
+    },
+    {
+        "name": "Mr. Arvind",
+        "email": "arvind@met.com",
+        "position": "Professor",
+        "total_subjects": 2,
+        "total_classes": "II",
+        "subjects": [
+            {
+                "subjectName": "Data Structures and Algorithms",
+                "code": "CD3291",
+                "year": "II"
+            },
+            {
+                "subjectName": "Data Structures and Algorithms Laboratory",
+                "code": "CD3281",
+                "year": "II"
+            }
+        ]
+    },
+    {
+        "name": "Dr. Sneha",
+        "email": "sneha@met.com",
+        "position": "Professor",
+        "total_subjects": 2,
+        "total_classes": "II",
+        "subjects": [
+            {
+                "subjectName": "Object Oriented Programming",
+                "code": "CS3391",
+                "year": "II"
+            },
+            {
+                "subjectName": "Object Oriented Programming Laboratory",
+                "code": "CS3381",
+                "year": "II"
+            }
+        ]
+    },
+    {
+        "name": "Dr. Kavitha",
+        "email": "kavitha@met.com",
+        "position": "Professor",
+        "total_subjects": 1,
+        "total_classes": "III",
+        "subjects": [
+            {
+                "subjectName": "Natural Language Processing",
+                "code": "AL3501",
+                "year": "III"
+            }
+        ]
+    },
+    {
+        "name": "Dr. Naren",
+        "email": "naren@met.com",
+        "position": "Professor",
+        "total_subjects": 1,
+        "total_classes": "III",
+        "subjects": [
+            {
+                "subjectName": "Deep Learning for Vision",
+                "code": "AL3502",
+                "year": "III"
+            }
+        ]
+    },
+    {
+        "name": "Ms. Swetha",
+        "email": "swetha@met.com",
+        "position": "Professor",
+        "total_subjects": 1,
+        "total_classes": "III",
+        "subjects": [
+            {
+                "subjectName": "Cryptography and Cyber Security",
+                "code": "CB3491",
+                "year": "III"
+            }
+        ]
+    },
+    {
+        "name": "Mr. Ajay",
+        "email": "ajay@met.com",
+        "position": "Professor",
+        "total_subjects": 1,
+        "total_classes": "III",
+        "subjects": [
+            {
+                "subjectName": "Distributed Computing",
+                "code": "CS3551",
+                "year": "III"
+            }
+        ]
+    },
+    {
+        "name": "Dr. Ramesh",
+        "email": "ramesh@met.com",
+        "position": "Professor",
+        "total_subjects": 1,
+        "total_classes": "IV",
+        "subjects": [
+            {
+                "subjectName": "Human Values and Ethics",
+                "code": "GE3791",
+                "year": "IV"
+            }
+        ]
+    },
+    {
+        "name": "Mr. Varun",
+        "email": "varun@met.com",
+        "position": "Professor",
+        "total_subjects": 1,
+        "total_classes": "IV",
+        "subjects": [
+            {
+                "subjectName": "Cloud Computing",
+                "code": "CCS335",
+                "year": "IV"
+            }
+        ]
+    },
+    {
+        "name": "Ms. Neha",
+        "email": "neha@met.com",
+        "position": "Professor",
+        "total_subjects": 1,
+        "total_classes": "IV",
+        "subjects": [
+            {
+                "subjectName": "Ethical Hacking",
+                "code": "CCS344",
+                "year": "IV"
+            }
+        ]
+    }
+]
